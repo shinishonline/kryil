@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { @apply h-full scroll-smooth; }
+  body, #root { @apply h-full bg-bg text-text antialiased; }
+  
+}
+  p, ul, li, span {
+    @apply font-opensans text-xs leading-6 font-[300];
+  }
+
+  
+
+@layer utilities {
+  .reveal { @apply opacity-0 translate-y-5 transition-all duration-700 ease-[cubic-bezier(.2,.9,.2,1)]; }
+  .in-view { @apply opacity-100 translate-y-0; }
+  .sidebar-width { width: 220px; }
+  .orb {
+    @apply absolute rounded-full border;
+    width: 260px;
+    height: 260px;
+    border-color: rgba(0,0,0,0.1);
+    background: radial-gradient(circle at 30% 30%, rgba(0,0,0,0.05), rgba(0,0,0,0.02));
+    filter: blur(.6px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15), inset 0 0 40px rgba(0,0,0,0.05);
+    transition: transform .2s linear;
+  }
+  
+}
