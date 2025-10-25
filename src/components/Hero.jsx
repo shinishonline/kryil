@@ -6,8 +6,8 @@ import LogoBanner from "./LogoBanner";
 import NavbarTop from "./NavbarTop";
 
 import b1 from '../assets/b1.jpg'
-import b2 from '../assets/b7.jpg'
-import b3 from '../assets/b5.jpg'
+import b2 from '../assets/b2.jpg'
+import b3 from '../assets/b3.jpg'
 
 export default function Hero() {
   const [visible, setVisible] = useState(true);
