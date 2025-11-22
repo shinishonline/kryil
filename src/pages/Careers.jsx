@@ -9,6 +9,7 @@ import {
 
 export default function Careers() {
   const [selectedDepartment, setSelectedDepartment] = useState("All");
+  const [selectedTab, setSelectedTab] = useState("jobs"); // "jobs" or "internships"
 
   const jobOpenings = [
     {
@@ -105,9 +106,178 @@ export default function Careers() {
 
   const departments = ["All", "Engineering", "Security", "AI & Data", "Design"];
 
+  const internshipPrograms = [
+    {
+      id: 1,
+      title: "Software Engineering Intern",
+      department: "Engineering",
+      location: "Bangalore, India",
+      duration: "3-6 months",
+      type: "Internship",
+      description: "Learn full-stack development, work on real projects, and gain hands-on experience with modern technologies.",
+      responsibilities: [
+        "Assist in developing web applications using React and Node.js",
+        "Participate in code reviews and team meetings",
+        "Work on assigned features under mentorship",
+        "Learn best practices for software development"
+      ],
+      eligibility: [
+        "Currently pursuing Bachelor's/Master's in Computer Science or related field",
+        "Knowledge of JavaScript, HTML, CSS",
+        "Familiarity with Git and version control",
+        "Strong problem-solving skills and eagerness to learn"
+      ],
+      benefits: [
+        "Monthly stipend",
+        "Mentorship from senior engineers",
+        "Certificate of completion",
+        "Potential for full-time offer upon graduation"
+      ]
+    },
+    {
+      id: 2,
+      title: "Cybersecurity Intern",
+      department: "Security",
+      location: "Bangalore, India / Remote",
+      duration: "3-6 months",
+      type: "Internship",
+      description: "Gain practical experience in cybersecurity, threat analysis, and security operations.",
+      responsibilities: [
+        "Assist in security monitoring and incident response",
+        "Learn to use security tools (SIEM, IDS/IPS)",
+        "Participate in vulnerability assessments",
+        "Document security procedures and findings"
+      ],
+      eligibility: [
+        "Pursuing degree in Cybersecurity, IT, or related field",
+        "Basic understanding of networking and security concepts",
+        "Interest in ethical hacking and security research",
+        "Good analytical and documentation skills"
+      ],
+      benefits: [
+        "Monthly stipend",
+        "Hands-on security experience",
+        "Access to security training resources",
+        "Industry-recognized certificate"
+      ]
+    },
+    {
+      id: 3,
+      title: "AI/ML Research Intern",
+      department: "AI & Data",
+      location: "Bangalore, India",
+      duration: "4-6 months",
+      type: "Internship",
+      description: "Work on cutting-edge AI/ML projects and research under guidance of experienced data scientists.",
+      responsibilities: [
+        "Assist in building and training machine learning models",
+        "Data preprocessing and feature engineering",
+        "Experiment with different ML algorithms",
+        "Document research findings and results"
+      ],
+      eligibility: [
+        "Pursuing Master's/PhD in Computer Science, AI, or related field",
+        "Strong foundation in Python and ML libraries (TensorFlow, PyTorch)",
+        "Understanding of statistics and linear algebra",
+        "Research-oriented mindset"
+      ],
+      benefits: [
+        "Competitive stipend",
+        "Access to high-performance computing resources",
+        "Opportunity to publish research",
+        "Mentorship from AI experts"
+      ]
+    },
+    {
+      id: 4,
+      title: "UI/UX Design Intern",
+      department: "Design",
+      location: "Bangalore, India / Remote",
+      duration: "3-6 months",
+      type: "Internship",
+      description: "Create user-centered designs for web and mobile applications while learning industry best practices.",
+      responsibilities: [
+        "Create wireframes, mockups, and prototypes",
+        "Conduct user research and usability testing",
+        "Collaborate with developers and product managers",
+        "Maintain design system and documentation"
+      ],
+      eligibility: [
+        "Pursuing degree in Design, HCI, or related field",
+        "Portfolio showcasing design projects",
+        "Proficiency in Figma, Adobe XD, or Sketch",
+        "Understanding of UX principles and design thinking"
+      ],
+      benefits: [
+        "Monthly stipend",
+        "Portfolio-building opportunities",
+        "Mentorship from senior designers",
+        "Latest design tools and resources"
+      ]
+    },
+    {
+      id: 5,
+      title: "DevOps Intern",
+      department: "Engineering",
+      location: "Bangalore, India",
+      duration: "3-6 months",
+      type: "Internship",
+      description: "Learn infrastructure automation, CI/CD pipelines, and cloud technologies in a production environment.",
+      responsibilities: [
+        "Assist in automating deployment processes",
+        "Learn Docker, Kubernetes, and cloud platforms",
+        "Monitor system performance and logs",
+        "Support DevOps team with daily operations"
+      ],
+      eligibility: [
+        "Pursuing Bachelor's/Master's in Computer Science or IT",
+        "Basic knowledge of Linux and command line",
+        "Interest in automation and infrastructure",
+        "Willingness to learn new technologies quickly"
+      ],
+      benefits: [
+        "Monthly stipend",
+        "Hands-on cloud platform experience",
+        "Industry certifications support",
+        "Fast-track career growth opportunity"
+      ]
+    },
+    {
+      id: 6,
+      title: "IoT Engineering Intern",
+      department: "Engineering",
+      location: "Bangalore, India",
+      duration: "4-6 months",
+      type: "Internship",
+      description: "Work on IoT projects involving sensors, embedded systems, and edge computing.",
+      responsibilities: [
+        "Develop IoT applications and integrations",
+        "Work with sensors and microcontrollers",
+        "Test and debug IoT systems",
+        "Document technical specifications"
+      ],
+      eligibility: [
+        "Pursuing degree in Electronics, Computer Engineering, or related field",
+        "Knowledge of C/C++, Python, or JavaScript",
+        "Basic understanding of IoT protocols (MQTT, HTTP)",
+        "Interest in hardware and embedded systems"
+      ],
+      benefits: [
+        "Monthly stipend",
+        "Access to IoT hardware and tools",
+        "Real-world project experience",
+        "Industry mentorship"
+      ]
+    }
+  ];
+
   const filteredJobs = selectedDepartment === "All"
     ? jobOpenings
     : jobOpenings.filter(job => job.department === selectedDepartment);
+
+  const filteredInternships = selectedDepartment === "All"
+    ? internshipPrograms
+    : internshipPrograms.filter(internship => internship.department === selectedDepartment);
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -182,6 +352,30 @@ export default function Careers() {
             Open Positions
           </h2>
 
+          {/* Tabs for Jobs vs Internships */}
+          <div className="flex justify-center gap-4 mb-8">
+            <button
+              onClick={() => setSelectedTab("jobs")}
+              className={`px-8 py-3 rounded-lg text-lg font-semibold transition-all ${
+                selectedTab === "jobs"
+                  ? "bg-emerald-600 text-white shadow-lg"
+                  : "bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-slate-300 hover:bg-gray-300 dark:hover:bg-slate-600"
+              }`}
+            >
+              Full-Time Jobs
+            </button>
+            <button
+              onClick={() => setSelectedTab("internships")}
+              className={`px-8 py-3 rounded-lg text-lg font-semibold transition-all ${
+                selectedTab === "internships"
+                  ? "bg-emerald-600 text-white shadow-lg"
+                  : "bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-slate-300 hover:bg-gray-300 dark:hover:bg-slate-600"
+              }`}
+            >
+              Internship Programs
+            </button>
+          </div>
+
           {/* Department Filter */}
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             {departments.map((dept) => (
@@ -200,6 +394,7 @@ export default function Careers() {
           </div>
 
           {/* Job Listings */}
+          {selectedTab === "jobs" && (
           <div className="space-y-6">
             {filteredJobs.map((job, idx) => (
               <motion.div
@@ -253,10 +448,101 @@ export default function Careers() {
               </motion.div>
             ))}
           </div>
+          )}
 
-          {filteredJobs.length === 0 && (
+          {/* Internship Listings */}
+          {selectedTab === "internships" && (
+          <div className="space-y-6">
+            {filteredInternships.map((internship, idx) => (
+              <motion.div
+                key={internship.id}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeIn}
+                custom={idx}
+                className="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 hover:border-emerald-500 transition-all hover:shadow-lg"
+              >
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                  <div>
+                    <div className="inline-block px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 rounded-full text-xs font-semibold mb-2">
+                      INTERNSHIP
+                    </div>
+                    <h3 className="text-3xl font-extralight text-gray-900 dark:text-white mb-2">
+                      {internship.title}
+                    </h3>
+                    <p className="text-base text-gray-600 dark:text-slate-300 mb-3">
+                      {internship.description}
+                    </p>
+                  </div>
+                  <button className="px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-500 transition-colors whitespace-nowrap">
+                    Apply Now
+                  </button>
+                </div>
+
+                <div className="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-slate-400 mb-4">
+                  <div className="flex items-center gap-2">
+                    <BriefcaseIcon className="w-5 h-5" />
+                    <span>{internship.department}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <MapPinIcon className="w-5 h-5" />
+                    <span>{internship.location}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <ClockIcon className="w-5 h-5" />
+                    <span>{internship.duration}</span>
+                  </div>
+                </div>
+
+                <div className="border-t border-gray-200 dark:border-slate-700 pt-4 space-y-4">
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                      Responsibilities:
+                    </h4>
+                    <ul className="list-disc list-inside space-y-1 text-base text-gray-600 dark:text-slate-300">
+                      {internship.responsibilities.map((resp, i) => (
+                        <li key={i}>{resp}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                      Eligibility:
+                    </h4>
+                    <ul className="list-disc list-inside space-y-1 text-base text-gray-600 dark:text-slate-300">
+                      {internship.eligibility.map((req, i) => (
+                        <li key={i}>{req}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                      Benefits:
+                    </h4>
+                    <ul className="list-disc list-inside space-y-1 text-base text-gray-600 dark:text-slate-300">
+                      {internship.benefits.map((benefit, i) => (
+                        <li key={i}>{benefit}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          )}
+
+          {selectedTab === "jobs" && filteredJobs.length === 0 && (
             <p className="text-center text-gray-600 dark:text-slate-400 text-lg py-12">
-              No openings in this department at the moment. Check back soon!
+              No job openings in this department at the moment. Check back soon!
+            </p>
+          )}
+
+          {selectedTab === "internships" && filteredInternships.length === 0 && (
+            <p className="text-center text-gray-600 dark:text-slate-400 text-lg py-12">
+              No internship programs in this department at the moment. Check back soon!
             </p>
           )}
         </div>
