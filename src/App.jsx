@@ -76,6 +76,8 @@ export default function App() {
         <Route path="/automation" element={<InfrastructureAutomation />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/admin" element={<Admin />} />
+        {/* 404 Catch-all - Redirect to home */}
+        <Route path="*" element={<Home />} />
       </Routes>
 
       <Footer />

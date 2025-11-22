@@ -351,6 +351,12 @@ export default function Careers() {
         })
       });
 
+      // Handle 404 and other HTTP errors
+      if (response.status === 404 || !response.ok) {
+        setSubmitError("Server not available. Please use the email button below.");
+        return;
+      }
+
       const data = await response.json();
 
       if (data.success) {
@@ -370,11 +376,11 @@ export default function Careers() {
         setSubmitSuccess(true);
         setTimeout(() => setSubmitSuccess(false), 5000);
       } else {
-        setSubmitError("Failed to save information. Please try again.");
+        setSubmitError("Server error. Please use the email button below.");
       }
     } catch (error) {
       console.error('Error saving visitor info:', error);
-      setSubmitError("Failed to save information. Please try again.");
+      setSubmitError("Unable to connect. Please use the email button below.");
     } finally {
       setIsSubmitting(false);
     }
@@ -421,6 +427,12 @@ export default function Careers() {
         })
       });
 
+      // Handle 404 and other HTTP errors
+      if (response.status === 404 || !response.ok) {
+        setSubmitError("Server not available. Please use the email button below to send your application directly.");
+        return;
+      }
+
       const data = await response.json();
 
       if (data.success) {
@@ -437,12 +449,13 @@ export default function Careers() {
           });
         }, 2000);
       } else {
-        setSubmitError("Failed to submit application. Please try again or email us directly at info@kryil.com");
+        setSubmitError("Server error. Please use the email button below to send your application directly.");
       }
 
     } catch (error) {
       console.error('Error submitting application:', error);
-      setSubmitError("Failed to submit application. Please try again or email us directly at info@kryil.com");
+      // Network error or server unavailable
+      setSubmitError("Unable to connect to server. Please use the email button below to send your application directly.");
     } finally {
       setIsSubmitting(false);
     }
