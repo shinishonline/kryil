@@ -31,12 +31,45 @@ export default function WhyPartner() {
     },
   ];
 
-  const itemVariant = {
-    hidden: { opacity: 0, y: 40 },
+  // Circle animation - appears first
+  const circleVariant = {
+    hidden: { opacity: 0, scale: 0 },
     visible: (i = 1) => ({
       opacity: 1,
-      y: 0,
-      transition: { delay: i * 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+      scale: 1,
+      transition: {
+        delay: i * 0.8,
+        duration: 0.5,
+        ease: [0.16, 1, 0.3, 1]
+      },
+    }),
+  };
+
+  // Text animation from left
+  const textFromLeft = {
+    hidden: { opacity: 0, x: -60 },
+    visible: (i = 1) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: i * 0.8 + 0.3, // Starts after circle
+        duration: 0.7,
+        ease: [0.16, 1, 0.3, 1]
+      },
+    }),
+  };
+
+  // Text animation from right
+  const textFromRight = {
+    hidden: { opacity: 0, x: 60 },
+    visible: (i = 1) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: i * 0.8 + 0.3, // Starts after circle
+        duration: 0.7,
+        ease: [0.16, 1, 0.3, 1]
+      },
     }),
   };
 
@@ -64,26 +97,32 @@ export default function WhyPartner() {
               const isEven = idx % 2 === 0;
 
               return (
-                <motion.div
-                  key={idx}
-                  className="relative"
-                  custom={idx}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.5 }}
-                  variants={itemVariant}
-                >
+                <div key={idx} className="relative">
                   {/* MOBILE / SMALL: simple stacked row */}
                   <div className="lg:hidden flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-tortoise bg-emerald-600 text-white flex items-center justify-center shadow-sm">
+                    <motion.div
+                      className="flex-shrink-0 w-12 h-12 rounded-full bg-tortoise bg-emerald-600 text-white flex items-center justify-center shadow-sm"
+                      custom={idx}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, amount: 0.5 }}
+                      variants={circleVariant}
+                    >
                       <Icon className="w-6 h-6" />
-                    </div>
-                    <div className="flex-1">
+                    </motion.div>
+                    <motion.div
+                      className="flex-1"
+                      custom={idx}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, amount: 0.5 }}
+                      variants={textFromLeft}
+                    >
                       <h3 className="text-2xl font-extralight mb-1 dark:text-slate-100">{f.title}</h3>
                       <p className="text-base text-gray-600 dark:text-slate-300 leading-relaxed font-Poppins font-normal">
                         {f.description}
                       </p>
-                    </div>
+                    </motion.div>
                   </div>
 
                   {/* DESKTOP / LARGE: alternating left / right */}
@@ -91,35 +130,56 @@ export default function WhyPartner() {
                     {/* Left column (text for even indexes) */}
                     <div className={`col-span-1 px-8 ${isEven ? "text-right" : ""}`}>
                       {isEven && (
-                        <div className="max-w-md ml-auto">
+                        <motion.div
+                          className="max-w-md ml-auto"
+                          custom={idx}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: true, amount: 0.5 }}
+                          variants={textFromLeft}
+                        >
                           <h3 className="text-2xl md:text-3xl font-extralight mb-2 dark:text-slate-100">{f.title}</h3>
                           <p className="text-base text-gray-600 dark:text-slate-300 leading-relaxed font-Poppins font-normal">
                             {f.description}
                           </p>
-                        </div>
+                        </motion.div>
                       )}
                     </div>
 
                     {/* Center column: icon over the vertical line */}
                     <div className="col-span-1 flex justify-center">
-                      <div className="w-16 h-16 rounded-full bg-tortoise bg-emerald-600 text-white flex items-center justify-center shadow-md z-10">
+                      <motion.div
+                        className="w-16 h-16 rounded-full bg-tortoise bg-emerald-600 text-white flex items-center justify-center shadow-md z-10"
+                        custom={idx}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.5 }}
+                        variants={circleVariant}
+                      >
                         <Icon className="w-7 h-7" />
-                      </div>
+                      </motion.div>
                     </div>
 
                     {/* Right column (text for odd indexes) */}
                     <div className={`col-span-1 px-8 ${!isEven ? "" : "hidden"}`}>
                       {!isEven && (
-                        <div className="max-w-md">
+                        <motion.div
+                          className="max-w-md"
+                          custom={idx}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: true, amount: 0.5 }}
+                          variants={textFromRight}
+                        >
                           <h3 className="text-2xl md:text-3xl font-extralight mb-2 dark:text-slate-100">{f.title}</h3>
                           <p className="text-base text-gray-600 dark:text-slate-300 leading-relaxed font-Poppins font-normal">
                             {f.description}
                           </p>
-                        </div>
+                        </motion.div>
                       )}
                     </div>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>

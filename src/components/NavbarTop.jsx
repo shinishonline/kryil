@@ -41,7 +41,7 @@ export default function NavbarTop({ inline = false }) {
 
   return (
     <nav
-      className={`antialiased uppercase font-[500] text-[12px] flex items-center gap-8 transition-colors duration-500
+      className={`antialiased uppercase font-[300] text-[12px] flex items-center gap-8 transition-colors duration-500
         ${
           inline
             ? "relative items-center"
@@ -61,8 +61,8 @@ export default function NavbarTop({ inline = false }) {
 
             ${
               activeSection === link.id
-                ? "text-black dark:text-white after:w-full after:bg-black dark:after:bg-white"
-                : "text-black dark:text-white/90 hover:text-black dark:hover:text-white after:w-0 hover:after:w-full after:bg-black dark:after:bg-white"
+                ? "text-black dark:text-white after:w-full after:bg-cyan-400 dark:after:bg-cyan-400 after:shadow-[0_0_10px_rgba(34,211,238,0.8),0_0_20px_rgba(34,211,238,0.4)]"
+                : "text-black dark:text-white/90 hover:text-black dark:hover:text-white after:w-0 hover:after:w-full after:bg-cyan-400 dark:after:bg-cyan-400 hover:after:shadow-[0_0_10px_rgba(34,211,238,0.8),0_0_20px_rgba(34,211,238,0.4)]"
             }
 
             after:content-[''] after:absolute after:left-0 after:-bottom-[2px] after:h-[2px]

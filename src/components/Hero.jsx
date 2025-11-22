@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import NavbarTop from "./NavbarTop";
+import logo from "../assets/logo_white.png";
 
 import b1 from "../assets/b1.jpg";
 import b2 from "../assets/b2.jpg";
@@ -15,6 +16,7 @@ export default function Hero() {
   const [visible, setVisible] = useState(true);
   const [currentImage, setCurrentImage] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentSubtitle, setCurrentSubtitle] = useState(0);
   const [isDark, setIsDark] = useState(false);
 
   const images = [b1, b2, b3];
@@ -22,6 +24,13 @@ export default function Hero() {
     "Cybersecurity solutions protecting your digital assets",
     "Custom software development tailored to your needs",
     "Mobile application development for iOS and Android",
+  ];
+
+  const subtitles = [
+    "We build next-generation digital infrastructure that empowers growth and innovation.",
+    "Transforming ideas into scalable, secure, and high-performance applications.",
+    "Delivering enterprise-grade solutions that drive digital transformation.",
+    "Engineering the future with cutting-edge technology and innovation.",
   ];
 
   const features = [
@@ -42,7 +51,7 @@ export default function Hero() {
     return () => observer.disconnect();
   }, []);
 
-  // Auto-change heading and features
+  // Auto-change heading, subtitle and features
   useEffect(() => {
     const imageInterval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
@@ -50,21 +59,31 @@ export default function Hero() {
     const featureInterval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % features.length);
     }, 4000);
+    const subtitleInterval = setInterval(() => {
+      setCurrentSubtitle((prev) => (prev + 1) % subtitles.length);
+    }, 4500);
     return () => {
       clearInterval(imageInterval);
       clearInterval(featureInterval);
+      clearInterval(subtitleInterval);
     };
   }, []);
 
-  // Navbar hide/show
+  // Navbar auto-hide after hero section
   useEffect(() => {
-    let lastScrollY = window.scrollY;
     const handleScroll = () => {
-      if (window.scrollY > lastScrollY && window.scrollY > 20) setVisible(false);
-      else setVisible(true);
-      lastScrollY = window.scrollY;
+      const heroSection = document.getElementById("hero");
+      if (heroSection) {
+        const heroHeight = heroSection.offsetHeight;
+        // Hide navbar once user scrolls past the hero section
+        if (window.scrollY > heroHeight - 100) {
+          setVisible(false);
+        } else {
+          setVisible(true);
+        }
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -107,11 +126,26 @@ export default function Hero() {
         }`}
       />
 
-      {/* 🔹 Top bar with Navbar */}
+      {/* 🔹 Top bar with Logo and Navbar */}
       <div
-        className={`transition-all duration-700 fixed top-0 left-0 right-0 z-30 flex items-center justify-end px-6 md:px-12 h-16
+        className={`transition-all duration-700 fixed top-0 left-0 right-0 z-30 flex items-center justify-between px-8 md:px-16 lg:px-32 h-16
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"}`}
       >
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex-shrink-0"
+        >
+          <img
+            src={logo}
+            alt="Kryil Infotech"
+            className="h-8 md:h-10 w-auto"
+          />
+        </motion.div>
+
+        {/* Navbar on the right */}
         <NavbarTop inline={false} />
       </div>
 
@@ -147,45 +181,73 @@ export default function Hero() {
             </motion.h1>
           </AnimatePresence>
 
-          <motion.p
-            className={`text-lg max-w-xl leading-relaxed mt-6 mb-12 transition-colors duration-700 ${
-              isDark ? "text-gray-100" : "text-gray-700"
-            }`}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-          >
-            We build next-generation digital infrastructure that empowers growth and innovation.
-          </motion.p>
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={currentSubtitle}
+              className={`text-lg max-w-xl leading-relaxed mt-6 mb-12 transition-colors duration-700 ${
+                isDark ? "text-gray-100" : "text-gray-700"
+              }`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.6 }}
+            >
+              {subtitles[currentSubtitle]}
+            </motion.p>
+          </AnimatePresence>
 
           <motion.div
-            className="flex gap-12 mt-6"
+            className="flex flex-wrap gap-8 md:gap-12 mt-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
             <div>
               <h3
-                className={`text-4xl font-bold transition-colors duration-700 ${
-                  isDark ? "text-emerald-400" : "text-emerald-600"
+                className={`text-4xl md:text-5xl font-bold transition-colors duration-700 ${
+                  isDark ? "text-cyan-400" : "text-cyan-600"
                 }`}
               >
-                721+
+                500+
               </h3>
-              <p className={`text-sm ${isDark ? "text-gray-100" : "text-gray-700"}`}>
-                Growth is our priority
+              <p className={`text-sm mt-1 ${isDark ? "text-gray-300" : "text-gray-600"}`}>
+                Projects Delivered
               </p>
             </div>
             <div>
               <h3
-                className={`text-4xl font-bold transition-colors duration-700 ${
-                  isDark ? "text-emerald-400" : "text-emerald-600"
+                className={`text-4xl md:text-5xl font-bold transition-colors duration-700 ${
+                  isDark ? "text-cyan-400" : "text-cyan-600"
                 }`}
               >
-                1000+
+                98%
               </h3>
-              <p className={`text-sm ${isDark ? "text-gray-100" : "text-gray-700"}`}>
-                Projects completed
+              <p className={`text-sm mt-1 ${isDark ? "text-gray-300" : "text-gray-600"}`}>
+                Client Satisfaction
+              </p>
+            </div>
+            <div>
+              <h3
+                className={`text-4xl md:text-5xl font-bold transition-colors duration-700 ${
+                  isDark ? "text-cyan-400" : "text-cyan-600"
+                }`}
+              >
+                15+
+              </h3>
+              <p className={`text-sm mt-1 ${isDark ? "text-gray-300" : "text-gray-600"}`}>
+                Years Experience
+              </p>
+            </div>
+            <div>
+              <h3
+                className={`text-4xl md:text-5xl font-bold transition-colors duration-700 ${
+                  isDark ? "text-cyan-400" : "text-cyan-600"
+                }`}
+              >
+                24/7
+              </h3>
+              <p className={`text-sm mt-1 ${isDark ? "text-gray-300" : "text-gray-600"}`}>
+                Support Available
               </p>
             </div>
           </motion.div>

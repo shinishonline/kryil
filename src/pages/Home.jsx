@@ -196,9 +196,9 @@ export default function Home() {
         </section>
 
         {/* About */}
-        <section id="about" className="relative pt-1 min-h-screen bg-gray-100 flex items-center">
-         
-            <div className="absolute inset-0 bg-[#272727] hidden dark:block" />
+        <section id="about" className="relative pt-1 min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50 dark:bg-gradient-to-br dark:from-[#1a1a1a] dark:via-[#272727] dark:to-[#1a1a1a] flex items-center transition-all duration-500">
+
+            <div className="absolute inset-0 bg-gradient-to-br from-transparent via-black/5 to-transparent hidden dark:block" />
             <motion.div
               className="ml-0 md:ml-[190px] w-full md:w-[calc(100%-200px-150px)]"
               variants={sectionVariants}
@@ -214,7 +214,7 @@ export default function Home() {
         {/* Mission */}
         <section
           id="mission"
-          className="relative py-16 pt-0 bg-bg dark:bg-darkBg transition-colors duration-500"
+          className="relative py-16 pt-0 bg-gradient-to-br from-white via-gray-50 to-white dark:bg-gradient-to-br dark:from-[#0f0f0f] dark:via-[#1a1a1a] dark:to-[#0f0f0f] transition-all duration-500"
         >
           <motion.div
             className="ml-0 md:ml-[200px] w-full md:w-[calc(100%-200px-150px)]"
@@ -230,7 +230,7 @@ export default function Home() {
         {/* Why Us */}
         <section
           id="why"
-          className="relative pt-1 min-h-screen flex items-center bg-gray-100 dark:bg-[#272727] transition-colors duration-500"
+          className="relative pt-1 min-h-screen flex items-center bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50 dark:bg-gradient-to-br dark:from-[#1a1a1a] dark:via-[#272727] dark:to-[#1a1a1a] transition-all duration-500"
         >
           <motion.div
             className="ml-0 md:ml-[200px] w-full md:w-[calc(100%-200px-150px)] px-6 py-10 pt-16"
@@ -246,7 +246,7 @@ export default function Home() {
         {/* Services */}
 <section
   id="services"
-  className="relative bg-bg dark:bg-darkBg transition-colors duration-500"
+  className="relative bg-gradient-to-br from-white via-gray-50 to-white dark:bg-gradient-to-br dark:from-[#0f0f0f] dark:via-[#1a1a1a] dark:to-[#0f0f0f] transition-all duration-500"
 >
   <motion.div
     className="ml-0 md:ml-[200px] w-full md:w-[calc(100%-200px-150px)] my-0 px-6 py-20"
@@ -262,7 +262,7 @@ export default function Home() {
         {/* Industries */}
 <section
   id="industries"
-  className="relative bg-gray-100 dark:bg-[#272727] transition-colors duration-500"
+  className="relative bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50 dark:bg-gradient-to-br dark:from-[#1a1a1a] dark:via-[#272727] dark:to-[#1a1a1a] transition-all duration-500"
 >
   <motion.div
     className="ml-0 md:ml-[200px] w-full md:w-[calc(100%-200px-150px)] my-0 px-6 py-20"
@@ -278,7 +278,7 @@ export default function Home() {
         {/* Contact */}
      <section
   id="contact"
-  className="relative flex items-start bg-white dark:bg-slate-900 transition-colors duration-500"
+  className="relative flex items-start bg-gradient-to-br from-white via-gray-50 to-white dark:bg-gradient-to-br dark:from-[#0a0a0a] dark:via-slate-900 dark:to-[#0a0a0a] transition-all duration-500"
 >
   <motion.div
     className="ml-0 md:ml-[190px] w-full md:w-[calc(100%-200px-150px)] px-[20px] py-24"

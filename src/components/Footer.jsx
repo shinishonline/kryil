@@ -6,16 +6,16 @@ import footerBg from '../assets/b3.jpg' // Background image for footer
 
 export default function Footer() {
   return (
-    <footer className="relative z-40 w-full overflow-hidden bg-teal-600 dark:bg-gray-900 text-white dark:text-gray-300 transition-colors duration-500">
+    <footer className="relative z-40 w-full overflow-hidden bg-teal-600 dark:bg-[#0a0a0a] text-white dark:text-gray-300 transition-colors duration-500">
       {/* Container */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-8 grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Company Logo + Info */}
         <div className="flex flex-col">
-          <div className="inline-flex items-center justify-center bg-teal-500 dark:bg-teal-600 px-4 py-2 rounded-lg mb-3 w-fit">
-            <h2 className="font-Poppins text-2xl font-bold text-white tracking-tight">
-              KRYIL
-            </h2>
-          </div>
+          <img
+            src={logo}
+            alt="Kryil Infotech Logo"
+            className="w-24 h-auto mb-2"
+          />
           <p className="font-Poppins text-sm text-white dark:text-gray-200 leading-relaxed">
             Empowering businesses with modern software solutions and innovative digital strategies.
           </p>
