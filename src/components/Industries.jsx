@@ -106,7 +106,7 @@ export default function Industries() {
                     custom={idx}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: false, amount: 0.2 }}
+                    viewport={{ once: false, amount: 0.3, margin: "0px 0px -100px 0px" }}
                     variants={fadeUp}
                     className="relative pr-4 border-r border-black/10 dark:border-slate-700 transition-all duration-300 hover:border-black dark:hover:border-cyan-700"
                   >

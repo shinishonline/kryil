@@ -37,11 +37,12 @@ export default function Services() {
 
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
-    visible: (i = 1) => ({
+    visible: (i = 0) => ({
       opacity: 1,
       y: 0,
       transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
     }),
+    exit: { opacity: 0, y: 30 },
   };
 
   return (
@@ -95,7 +96,7 @@ export default function Services() {
                   custom={idx}
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ once: false, amount: 0.2 }}
+                  viewport={{ once: false, amount: 0.3, margin: "0px 0px -100px 0px" }}
                   variants={fadeUp}
                   className="relative pl-4 border-l border-black/10 dark:border-slate-700 transition-all duration-300 hover:border-black dark:hover:border-cyan-700"
                 >

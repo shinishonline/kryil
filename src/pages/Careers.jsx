@@ -708,7 +708,7 @@ export default function Careers() {
                 key={job.id}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: false, amount: 0.2 }}
+                viewport={{ once: false, amount: 0.3, margin: "0px 0px -100px 0px" }}
                 variants={fadeIn}
                 custom={idx}
                 className="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 hover:border-cyan-500 transition-all hover:shadow-lg"
@@ -768,7 +768,7 @@ export default function Careers() {
                 key={internship.id}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: false, amount: 0.2 }}
+                viewport={{ once: false, amount: 0.3, margin: "0px 0px -100px 0px" }}
                 variants={fadeIn}
                 custom={idx}
                 className="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 hover:border-cyan-500 transition-all hover:shadow-lg"
