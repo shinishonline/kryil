@@ -135,7 +135,7 @@ export default function Hero() {
               animate="visible"
               exit="exit"
               className={`text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.2] tracking-tight transition-colors duration-700 ${
-                isDark ? "text-gray-100" : "text-gray-900"
+                isDark ? "text-gray-50" : "text-gray-900"
               }`}
             >
               <motion.span
@@ -153,7 +153,7 @@ export default function Hero() {
 
           <motion.p
             className={`text-lg max-w-xl leading-relaxed mt-6 mb-12 transition-colors duration-700 ${
-              isDark ? "text-gray-200" : "text-gray-700"
+              isDark ? "text-gray-100" : "text-gray-700"
             }`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -176,7 +176,7 @@ export default function Hero() {
               >
                 721+
               </h3>
-              <p className={`text-sm ${isDark ? "text-gray-300" : "text-gray-700"}`}>
+              <p className={`text-sm ${isDark ? "text-gray-100" : "text-gray-700"}`}>
                 Growth is our priority
               </p>
             </div>
@@ -188,7 +188,7 @@ export default function Hero() {
               >
                 1000+
               </h3>
-              <p className={`text-sm ${isDark ? "text-gray-300" : "text-gray-700"}`}>
+              <p className={`text-sm ${isDark ? "text-gray-100" : "text-gray-700"}`}>
                 Projects completed
               </p>
             </div>

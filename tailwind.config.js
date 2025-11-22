@@ -12,8 +12,8 @@ export default {
         text: "#000000",
         muted: "#666666",
         accent: "#00aaff",
-        darkBg: "#2d2d2d", // ✅ dark mode background
-        darkText: "#f5f5f5" // ✅ dark mode text
+        darkBg: "#1a1a1a", // ✅ dark mode background - darker for better contrast
+        darkText: "#f0f0f0" // ✅ dark mode text - lighter for better readability
       },
       fontFamily: {
         Poppins: ["Poppins", "sans-serif"],
