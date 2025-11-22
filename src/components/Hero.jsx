@@ -135,6 +135,23 @@ export default function Hero() {
         <NavbarTop inline={false} />
       </div>
 
+      {/* 🔹 Vertical KRYIL Text */}
+      <div className="fixed right-8 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 0.7, x: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="writing-mode-vertical text-8xl md:text-9xl font-bold tracking-wider"
+          style={{ writingMode: 'vertical-rl' }}
+        >
+          <span className={`transition-colors duration-700 ${
+            isDark ? "text-white" : "text-black"
+          }`}>
+            KRYIL
+          </span>
+        </motion.div>
+      </div>
+
       {/* 🔹 MAIN LEFT CONTENT */}
       <div className="flex flex-col items-start justify-center flex-grow relative pt-16 px-8 md:px-16 lg:px-32 text-left">
         <motion.div
