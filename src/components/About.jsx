@@ -38,7 +38,7 @@ export default function About() {
       >
         <motion.h2
         // text-slate-900 dark:text-slate-100
-          className="font-Poppins text-6xl md:text-7xl font-semibold text-emerald-600 text-center"
+          className="font-Poppins text-6xl md:text-7xl font-thin text-emerald-600 text-center"
           variants={fadeUp}
         >
           About Us

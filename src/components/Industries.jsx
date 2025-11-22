@@ -55,7 +55,7 @@ export default function Industries() {
   return (
     <section className="py-16 px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="font-Poppins text-6xl md:text-7xl font-semibold text-emerald-600 text-center mb-4">
+        <h2 className="font-Poppins text-6xl md:text-7xl font-thin text-emerald-600 text-center mb-4">
           Industries We Serve
         </h2>
         <p className="text-center text-base text-gray-600 dark:text-slate-300 max-w-3xl mx-auto mb-12 font-Poppins font-normal">

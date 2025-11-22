@@ -51,7 +51,7 @@ export default function Services() {
           {/* Left Sidebar */}
           <aside className="lg:col-span-4">
             <div className="lg:sticky lg:top-24">
-              <h2 className="font-Poppins text-5xl md:text-6xl font-semibold tracking-tight text-emerald-600 ">
+              <h2 className="font-Poppins text-5xl md:text-6xl font-thin tracking-tight text-emerald-600 ">
                 Services
               </h2>
 

@@ -49,7 +49,7 @@ export default function WhyPartner() {
       <div className="max-w-6xl mx-auto px-6 py-1">
         <h2
           id="why-partner-heading"
-          className="font-Poppins text-6xl md:text-7xl font-semibold text-center leading-tight mb-12 tracking-tight"
+          className="font-Poppins text-6xl md:text-7xl font-thin text-center leading-tight mb-12 tracking-tight"
         >
           Why Partner with Kryil?
         </h2>
