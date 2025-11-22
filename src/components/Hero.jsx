@@ -133,12 +133,12 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className={`text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.2] tracking-tight transition-colors duration-700 ${
+              className={`text-6xl sm:text-7xl lg:text-8xl font-extralight leading-[1.2] tracking-tight transition-colors duration-700 ${
                 isDark ? "text-gray-50" : "text-gray-900"
               }`}
             >
               <motion.span
-                className={`text-5xl sm:text-6xl lg:text-7xl font-extrabold inline-block ${
+                className={`text-6xl sm:text-7xl lg:text-8xl font-extralight inline-block ${
                   isDark ? "text-emerald-400" : "text-emerald-600"
                 }`}
                 animate={{ y: [0, -6, 0] }}

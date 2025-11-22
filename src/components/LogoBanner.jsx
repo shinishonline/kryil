@@ -90,7 +90,7 @@ const LogoBanner = () => {
         style={{ willChange: "transform" }}
       >
         <h1
-          className="text-6xl md:text-7xl font-extrabold tracking-tight font-Poppins glass-wave-text"
+          className="text-7xl md:text-8xl font-thin tracking-tight font-Poppins glass-wave-text"
           data-text="KRYIL"
         >
           KRYIL

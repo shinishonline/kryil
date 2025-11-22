@@ -39,7 +39,7 @@ export default function Mission() {
       >
         <h2
           id="mission-heading"
-          className="font-Poppins text-5xl md:text-6xl font-bold mb-4 text-emerald-600"
+          className="font-Poppins text-6xl md:text-7xl font-thin mb-4 text-emerald-600"
         >
           Our Mission
         </h2>

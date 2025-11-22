@@ -49,7 +49,7 @@ export default function WhyPartner() {
       <div className="max-w-6xl mx-auto px-6 py-1">
         <h2
           id="why-partner-heading"
-          className="font-Poppins text-5xl md:text-6xl font-extrabold text-center leading-tight mb-12 tracking-tight"
+          className="font-Poppins text-6xl md:text-7xl font-thin text-center leading-tight mb-12 tracking-tight"
         >
           Why Partner with Kryil?
         </h2>
@@ -79,7 +79,7 @@ export default function WhyPartner() {
                       <Icon className="w-6 h-6" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold mb-1 dark:text-slate-100">{f.title}</h3>
+                      <h3 className="text-2xl font-extralight mb-1 dark:text-slate-100">{f.title}</h3>
                       <p className="text-base text-gray-600 dark:text-slate-300 leading-relaxed font-Poppins font-normal">
                         {f.description}
                       </p>
@@ -92,7 +92,7 @@ export default function WhyPartner() {
                     <div className={`col-span-1 px-8 ${isEven ? "text-right" : ""}`}>
                       {isEven && (
                         <div className="max-w-md ml-auto">
-                          <h3 className="text-xl md:text-2xl font-semibold mb-2 dark:text-slate-100">{f.title}</h3>
+                          <h3 className="text-2xl md:text-3xl font-extralight mb-2 dark:text-slate-100">{f.title}</h3>
                           <p className="text-base text-gray-600 dark:text-slate-300 leading-relaxed font-Poppins font-normal">
                             {f.description}
                           </p>
@@ -111,7 +111,7 @@ export default function WhyPartner() {
                     <div className={`col-span-1 px-8 ${!isEven ? "" : "hidden"}`}>
                       {!isEven && (
                         <div className="max-w-md">
-                          <h3 className="text-xl md:text-2xl font-semibold mb-2 dark:text-slate-100">{f.title}</h3>
+                          <h3 className="text-2xl md:text-3xl font-extralight mb-2 dark:text-slate-100">{f.title}</h3>
                           <p className="text-base text-gray-600 dark:text-slate-300 leading-relaxed font-Poppins font-normal">
                             {f.description}
                           </p>

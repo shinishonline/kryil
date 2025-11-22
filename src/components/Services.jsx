@@ -51,7 +51,7 @@ export default function Services() {
           {/* Left Sidebar */}
           <aside className="lg:col-span-4">
             <div className="lg:sticky lg:top-24">
-              <h2 className="font-Poppins text-4xl md:text-5xl font-extrabold tracking-tight text-emerald-600 ">
+              <h2 className="font-Poppins text-5xl md:text-6xl font-thin tracking-tight text-emerald-600 ">
                 Services
               </h2>
 
@@ -100,7 +100,7 @@ export default function Services() {
                   className="relative pl-4 border-l border-black/10 dark:border-slate-700 transition-all duration-300 hover:border-black dark:hover:border-emerald-700"
                 >
                   {/* Title */}
-                  <h3 className="text-2xl md:text-3xl font-bold font-Poppins mb-3 text-emerald-600 ">
+                  <h3 className="text-3xl md:text-4xl font-extralight font-Poppins mb-3 text-emerald-600 ">
                     {it.title}
                   </h3>
                   <br />
