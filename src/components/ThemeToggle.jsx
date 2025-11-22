@@ -3,12 +3,17 @@ import React, { useEffect, useState } from "react";
 export default function ThemeToggle({ mounted = true }) {
   const [darkMode, setDarkMode] = useState(() => {
     try {
-      if (typeof window === "undefined") return true; // ✅ force dark on SSR
+      if (typeof window === "undefined") return true;
+
+      // Check localStorage first
       const stored = localStorage.getItem("theme");
       if (stored) return stored === "dark";
-      return true; // ✅ default dark if nothing stored
+
+      // If no stored preference, use system preference
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return systemPrefersDark;
     } catch (e) {
-      return true; // ✅ fallback dark
+      return true; // fallback dark
     }
   });
 
@@ -25,6 +30,30 @@ export default function ThemeToggle({ mounted = true }) {
       // ignore storage errors
     }
   }, [darkMode]);
+
+  // Listen for system theme changes
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const handleChange = (e) => {
+      // Only update if user hasn't manually set a preference
+      const stored = localStorage.getItem("theme");
+      if (!stored) {
+        setDarkMode(e.matches);
+      }
+    };
+
+    // Modern browsers
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', handleChange);
+      return () => mediaQuery.removeEventListener('change', handleChange);
+    }
+    // Older browsers
+    else if (mediaQuery.addListener) {
+      mediaQuery.addListener(handleChange);
+      return () => mediaQuery.removeListener(handleChange);
+    }
+  }, []);
 
   const toggle = () => setDarkMode((s) => !s);
 
