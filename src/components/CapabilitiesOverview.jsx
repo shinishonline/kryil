@@ -78,7 +78,7 @@ export default function CapabilitiesOverview() {
                 Deep technical knowledge across modern technology stacks.
               </p>
 
-              <div className="mt-8 h-px bg-black/10 dark:bg-cyan-700" />
+              <div className="mt-8 h-px bg-black/10 dark:bg-cyan-400 dark:shadow-[0_0_10px_rgba(34,211,238,0.8),0_0_20px_rgba(34,211,238,0.4)]" />
 
               <nav aria-label="Capabilities list" className="mt-6">
                 <ul className="space-y-3 text-base font-Poppins font-medium">
