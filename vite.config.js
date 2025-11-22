@@ -5,14 +5,8 @@ export default defineConfig({
   plugins: [react()],
   base: './',
   build: {
-    // Performance optimizations
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true, // Remove console.logs in production
-        drop_debugger: true
-      }
-    },
+    // Performance optimizations - using default esbuild minifier
+    minify: 'esbuild',
     rollupOptions: {
       output: {
         manualChunks: {

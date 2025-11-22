@@ -33,6 +33,12 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Add CNAME
+        run: echo "kryil.com" > ./dist/CNAME
+
+      - name: Add .nojekyll
+        run: touch ./dist/.nojekyll
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

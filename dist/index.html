@@ -18,7 +18,7 @@
     <!-- ✅ Keywords (lightly weighted, still useful for niche engines) -->
     <meta
       name="keywords"
-      content="Kryil Infotech, AI solutions, cloud infrastructure, software development, cybersecurity, IT automation, DevOps, digital transformation, enterprise IT services"
+      content="Kryil Infotech, AI solutions, artificial intelligence development, cloud infrastructure services, cloud computing India, software development company Bangalore, custom software development, cybersecurity services, IT security solutions, DevOps automation, digital transformation consulting, enterprise IT services, machine learning solutions, cloud migration services, IT consulting India, technology solutions provider, software engineering services, AI-powered business solutions, enterprise cloud solutions, managed IT services Bangalore"
     />
 
     <!-- ✅ Author -->
@@ -30,7 +30,12 @@
     <meta name="bingbot" content="index, follow" />
 
     <!-- ✅ Canonical URL -->
-    <link rel="canonical" href="https://www.kryil.com/" />
+    <link rel="canonical" href="https://kryil.com/" />
+
+    <!-- ✅ Alternate for international SEO -->
+    <link rel="alternate" hreflang="en" href="https://kryil.com/" />
+    <link rel="alternate" hreflang="en-in" href="https://kryil.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://kryil.com/" />
 
     <!-- ✅ Favicon -->
     <link rel="icon" href="./favicon.png" type="image/png" />
@@ -87,14 +92,14 @@
     }
     </script>
 
-    <!-- ✅ Local Business Schema (optional for service visibility) -->
+    <!-- ✅ Local Business Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Kryil Infotech Pvt Ltd",
-      "image": "https://www.kryil.com/logo.png",
-      "url": "https://www.kryil.com/",
+      "image": "https://kryil.com/logo.png",
+      "url": "https://kryil.com/",
       "telephone": "+91-8089090365",
       "priceRange": "$$",
       "address": {
@@ -104,7 +109,136 @@
         "addressRegion": "Karnataka",
         "postalCode": "560016",
         "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 12.9976,
+        "longitude": 77.6690
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
       }
+    }
+    </script>
+
+    <!-- ✅ Professional Service Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Kryil Infotech Pvt Ltd",
+      "url": "https://kryil.com",
+      "logo": "https://kryil.com/logo.png",
+      "description": "Leading provider of AI solutions, cloud infrastructure, software development, cybersecurity, and IT automation services for enterprises worldwide.",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Workflow Ranka Junction, 3rd Floor, 224 KR Puram",
+        "addressLocality": "Bangalore",
+        "addressRegion": "Karnataka",
+        "postalCode": "560016",
+        "addressCountry": "IN"
+      },
+      "telephone": "+91-8089090365",
+      "email": "info@kryil.com",
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 12.9976,
+          "longitude": 77.6690
+        },
+        "geoRadius": "100000"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "IT Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Software Development",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Custom Software Development",
+                  "description": "Tailored software solutions for enterprise needs"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AI & Machine Learning Solutions",
+                  "description": "AI-powered business intelligence and automation"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Cloud Infrastructure",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Cloud Migration",
+                  "description": "Seamless migration to cloud platforms"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Cloud Management",
+                  "description": "Managed cloud services and optimization"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Cybersecurity",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Security Audits",
+                  "description": "Comprehensive security assessment and testing"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Threat Protection",
+                  "description": "Advanced threat detection and response"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- ✅ Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kryil.com/"
+      }]
     }
     </script>
 
@@ -127,7 +261,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
 
@@ -145,8 +279,11 @@
         }
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-4IIbwzrQ.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-NWkVw9Wq.css">
+    <script type="module" crossorigin src="./assets/index-yuWbVO08.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/react-vendor-DdXWdMVC.js">
+    <link rel="modulepreload" crossorigin href="./assets/framer-motion-NcEVPCmJ.js">
+    <link rel="modulepreload" crossorigin href="./assets/router-u6VI3M67.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-CkK2tDkx.css">
   </head>
 
   <body>
