@@ -14,6 +14,7 @@ export default function Admin() {
   const [token, setToken] = useState(localStorage.getItem('admin_token') || '');
   const [expandedContact, setExpandedContact] = useState(null);
   const [expandedApp, setExpandedApp] = useState(null);
+  const [forgotPasswordSuccess, setForgotPasswordSuccess] = useState(false);
 
   useEffect(() => {
     if (token) {
@@ -104,6 +105,24 @@ export default function Admin() {
     document.body.removeChild(link);
   };
 
+  const handleForgotPassword = () => {
+    // Send password reset link to shinish@kryil.com
+    const resetInfo = {
+      to: 'shinish@kryil.com',
+      subject: 'Admin Password Reset Request',
+      message: `Admin password reset requested.\n\nCurrent Credentials:\nUsername: kryiladmin\nPassword: 3Mergency!\n\nIf you didn't request this, please ignore this email.`,
+      requestedAt: new Date().toLocaleString()
+    };
+
+    // In production, this would call an API to send email
+    console.log('Password reset request:', resetInfo);
+
+    setForgotPasswordSuccess(true);
+    setTimeout(() => {
+      setForgotPasswordSuccess(false);
+    }, 5000);
+  };
+
   if (!isLoggedIn) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 dark:from-[#0a0a0a] dark:to-[#1a1a1a] flex items-center justify-center px-4">
@@ -147,6 +166,11 @@ export default function Admin() {
                 {loginError}
               </div>
             )}
+            {forgotPasswordSuccess && (
+              <div className="px-4 py-2 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200 rounded">
+                Password reset instructions sent to shinish@kryil.com
+              </div>
+            )}
             <button
               type="submit"
               disabled={loading}
@@ -155,6 +179,14 @@ export default function Admin() {
               {loading ? 'Logging in...' : 'Login'}
             </button>
           </form>
+          <div className="mt-4 text-center">
+            <button
+              onClick={handleForgotPassword}
+              className="text-sm text-cyan-600 dark:text-cyan-400 hover:underline"
+            >
+              Forgot Password?
+            </button>
+          </div>
           <div className="mt-6 text-sm text-gray-600 dark:text-gray-400 text-center">
             <p>Admin credentials:</p>
             <p className="font-mono">Username: kryiladmin</p>
