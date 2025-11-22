@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ChevronDownIcon, ChevronUpIcon, DocumentArrowDownIcon } from "@heroicons/react/24/outline";
+import { useNavigate } from "react-router-dom";
+import { ChevronDownIcon, ChevronUpIcon, DocumentArrowDownIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 export default function Admin() {
+  const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -126,6 +128,15 @@ export default function Admin() {
   if (!isLoggedIn) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 dark:from-[#0a0a0a] dark:to-[#1a1a1a] flex items-center justify-center px-4">
+        {/* Close button - top right */}
+        <button
+          onClick={() => navigate('/')}
+          className="fixed top-6 right-6 z-50 w-10 h-10 bg-white dark:bg-slate-800 rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+          aria-label="Go to home"
+        >
+          <XMarkIcon className="w-6 h-6" />
+        </button>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -194,9 +205,18 @@ export default function Admin() {
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-[#0a0a0a]">
+      {/* Close button - top right */}
+      <button
+        onClick={() => navigate('/')}
+        className="fixed top-6 right-6 z-50 w-10 h-10 bg-white dark:bg-slate-800 rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+        aria-label="Go to home"
+      >
+        <XMarkIcon className="w-6 h-6" />
+      </button>
+
       {/* Header */}
       <div className="bg-white dark:bg-slate-800 shadow">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center pr-16">
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
             Admin Dashboard
           </h1>
