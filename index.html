@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+    <!-- ✅ Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
     <!-- ✅ Page Title -->
     <title>Kryil Infotech Pvt Ltd | AI, Cloud & Software Development Solutions</title>
 
@@ -261,6 +265,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+
+    <!-- ✅ Preload critical assets -->
+    <link rel="preload" href="/src/main.jsx" as="script" />
+    <link rel="preload" as="image" href="/assets/logo_white.png" />
 
     <!-- Load all required font weights for proper display -->
     <link

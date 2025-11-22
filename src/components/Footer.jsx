@@ -109,48 +109,12 @@ export default function Footer() {
             <li>
               <Link to="/careers" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors">Careers</Link>
             </li>
-            <li>
-              <a href="#about" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="#about" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors">Terms of Service</a>
-            </li>
           </ul>
         </div>
 
-        {/* Social Links & Newsletter */}
+        {/* Business Hours & Contact */}
         <div className="flex flex-col">
-          <h3 className="font-Poppins text-lg font-semibold text-white mb-3">Connect With Us</h3>
-          <div className="flex flex-wrap gap-3 mb-4">
-            <a
-              href="#"
-              aria-label="Facebook"
-              className="p-3 bg-white/20 dark:bg-gray-700 rounded-full hover:bg-white/30 dark:hover:bg-gray-600 transition hover:scale-110"
-            >
-              <FaFacebookF className="w-4 h-4" />
-            </a>
-            <a
-              href="#"
-              aria-label="X"
-              className="p-3 bg-white/20 dark:bg-gray-700 rounded-full hover:bg-white/30 dark:hover:bg-gray-600 transition hover:scale-110"
-            >
-              <FaXTwitter className="w-4 h-4" />
-            </a>
-            <a
-              href="#"
-              aria-label="Instagram"
-              className="p-3 bg-white/20 dark:bg-gray-700 rounded-full hover:bg-white/30 dark:hover:bg-gray-600 transition hover:scale-110"
-            >
-              <FaInstagram className="w-4 h-4" />
-            </a>
-            <a
-              href="#"
-              aria-label="LinkedIn"
-              className="p-3 bg-white/20 dark:bg-gray-700 rounded-full hover:bg-white/30 dark:hover:bg-gray-600 transition hover:scale-110"
-            >
-              <FaLinkedinIn className="w-4 h-4" />
-            </a>
-          </div>
+          <h3 className="font-Poppins text-lg font-semibold text-white mb-3">Get In Touch</h3>
 
           <div className="mt-4">
             <h4 className="font-Poppins text-sm font-semibold text-white mb-2">Business Hours</h4>
