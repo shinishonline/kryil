@@ -108,17 +108,16 @@ export default function Hero() {
         }`}
       />
 
-      {/* 🔹 Navbar */}
+      {/* 🔹 Top bar with Logo and Navbar */}
       <div
-        className={`transition-all duration-700 fixed top-0 left-0 right-0 z-30 flex justify-center
+        className={`transition-all duration-700 fixed top-0 left-0 right-0 z-30 flex items-center justify-between px-6 md:px-12 h-16
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"}`}
       >
-        <div className="w-full max-w-4xl px-6">
+        <LogoBanner />
+        <div className="flex-1 flex justify-center">
           <NavbarTop inline={false} />
         </div>
       </div>
-
-      <LogoBanner />
 
       {/* 🔹 MAIN LEFT CONTENT */}
       <div className="flex flex-col items-start justify-center flex-grow relative pt-16 px-8 md:px-16 lg:px-32 text-left">

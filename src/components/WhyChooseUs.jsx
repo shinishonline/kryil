@@ -58,7 +58,7 @@ export default function WhyPartner() {
         <div className="relative">
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-700 -translate-x-1/2"></div>
 
-          <div className="space-y-16">
+          <div className="space-y-8">
             {features.map((f, idx) => {
               const Icon = f.icon;
               const isEven = idx % 2 === 0;

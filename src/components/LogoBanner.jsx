@@ -9,11 +9,10 @@ const LogoBanner = () => {
 
   return (
     <motion.div
-      style={{ opacity, y }}
       initial={{ x: -80, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 1, ease: "easeOut" }}
-      className="absolute top-4 left-24 z-50 hidden sm:block"
+      className="flex-shrink-0"
     >
       {/* Simple glass shadow effect CSS */}
       <style>{`
@@ -37,7 +36,7 @@ const LogoBanner = () => {
 
       <div>
         <h1
-          className="text-7xl md:text-8xl font-bold tracking-tight font-Poppins glass-shadow-text"
+          className="text-4xl md:text-5xl font-bold tracking-tight font-Poppins glass-shadow-text"
         >
           KRYIL
         </h1>
