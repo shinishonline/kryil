@@ -9,6 +9,8 @@ import About from "../components/About";
 import Mission from "../components/Mission";
 import WhyChooseUs from "../components/WhyChooseUs";
 import Services from "../components/Services";
+import ServicesOverview from "../components/ServicesOverview";
+import Industries from "../components/Industries";
 import Contact from "../components/Contact";
 
 import useInView from "../hooks/useInView";
@@ -20,6 +22,8 @@ const sections = [
   { id: "mission", label: "Mission" },
   { id: "why", label: "Why Us" },
   { id: "services", label: "Services" },
+  { id: "capabilities", label: "Capabilities" },
+  { id: "industries", label: "Industries" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -242,7 +246,6 @@ export default function Home() {
         </section>
 
         {/* Services */}
-{/* Services */}
 <section
   id="services"
   className="relative bg-bg dark:bg-darkBg transition-colors duration-500"
@@ -258,7 +261,37 @@ export default function Home() {
   </motion.div>
 </section>
 
+        {/* Capabilities Overview */}
+<section
+  id="capabilities"
+  className="relative bg-gray-100 dark:bg-[#272727] transition-colors duration-500"
+>
+  <motion.div
+    className="ml-0 md:ml-[200px] w-full md:w-[calc(100%-200px-150px)] my-0 px-6 py-20"
+    variants={sectionVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.3 }}
+  >
+    <ServicesOverview />
+  </motion.div>
+</section>
 
+        {/* Industries */}
+<section
+  id="industries"
+  className="relative bg-bg dark:bg-darkBg transition-colors duration-500"
+>
+  <motion.div
+    className="ml-0 md:ml-[200px] w-full md:w-[calc(100%-200px-150px)] my-0 px-6 py-20"
+    variants={sectionVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.3 }}
+  >
+    <Industries />
+  </motion.div>
+</section>
 
         {/* Contact */}
      <section
