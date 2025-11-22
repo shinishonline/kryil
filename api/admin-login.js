@@ -3,9 +3,9 @@ const bcrypt = require('bcryptjs');
 
 // In production, store these in environment variables
 const ADMIN_CREDENTIALS = {
-  username: process.env.ADMIN_USERNAME || 'admin@kryil.com',
-  // Password: kryil@admin123 (hashed)
-  passwordHash: process.env.ADMIN_PASSWORD_HASH || '$2a$10$8ZqDQjxQHFX6rGJXr6MJOuCxPVB5dZZZdmW7YO3xQxQxQxQxQxQxQ'
+  username: process.env.ADMIN_USERNAME || 'kryiladmin',
+  // Password: 3Mergency! (hashed)
+  passwordHash: process.env.ADMIN_PASSWORD_HASH || '$2b$10$2UxyMIOIcfiM/lwP/cX1kuWLcy29/Rzl1.Lt6cWjeF4grVSo/HZP.'
 };
 
 module.exports = async (req, res) => {

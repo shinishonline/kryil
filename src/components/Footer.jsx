@@ -184,8 +184,11 @@ export default function Footer() {
             <h4 className="font-Poppins text-sm font-semibold text-white mb-2">Business Hours</h4>
             <p className="text-xs text-white/80 dark:text-gray-300 leading-relaxed">
               Monday - Friday: 9:00 AM - 6:00 PM<br />
-              Saturday: 10:00 AM - 4:00 PM<br />
-              Sunday: Closed
+              Saturday & Sunday: Closed
+            </p>
+            <p className="text-xs text-white/80 dark:text-gray-300 leading-relaxed mt-3">
+              <span className="font-semibold text-white">Support Services:</span><br />
+              Available 24/7
             </p>
           </div>
 
