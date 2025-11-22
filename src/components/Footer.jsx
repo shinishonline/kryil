@@ -2,11 +2,19 @@ import React from "react";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6"; // ✅ X (Twitter) icon
 import logo from '../assets/logo_white.png'
+import footerBg from '../assets/b3.jpg' // Background image for footer
+
 export default function Footer() {
   return (
-    <footer className="relative z-40 bg-[#181818] text-gray-300 w-full">
+    <footer className="relative z-40 text-gray-300 w-full overflow-hidden">
+      {/* Background Image with Dark Overlay */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${footerBg})` }}
+      />
+      <div className="absolute inset-0 bg-black/85" />
       {/* Container */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Company Logo + Info */}
         <div className="flex flex-col">
           <img
@@ -36,12 +44,18 @@ export default function Footer() {
             <li>
               <a href="#contact" className="font-Poppins hover:text-white transition-colors">Contact</a>
             </li>
+            <li>
+              <a href="/privacy-policy.html" className="font-Poppins hover:text-white transition-colors">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="/terms-of-service.html" className="font-Poppins hover:text-white transition-colors">Terms of Service</a>
+            </li>
           </ul>
         </div>
 
         {/* Social Links */}
         <div className="flex flex-col">
-          <h3 className="text-lg font-semibold text-white">Follow Us</h3>
+          <h3 className="font-Poppins text-lg font-semibold text-white">Follow Us</h3>
           <div className="flex flex-wrap mt-4 gap-3">
             <a
               href="#"
@@ -76,7 +90,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t font-Poppins border-gray-700 py-6 text-center text-sm bg-[#131313] text-gray-400">
+      <div className="relative border-t font-Poppins border-gray-700 py-6 text-center text-sm bg-black/50 text-gray-400">
         © {new Date().getFullYear()} Kryil Infotech Pvt Ltd — All rights reserved.
       </div>
     </footer>
