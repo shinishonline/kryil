@@ -15,56 +15,71 @@ const LogoBanner = () => {
       transition={{ duration: 1, ease: "easeOut" }}
       className="absolute top-4 left-24 z-50 hidden sm:block"
     >
-      {/* Liquid animation CSS */}
+      {/* Glass Beach Wave animation CSS */}
       <style>{`
-        @keyframes liquidFlow {
-          0%, 100% {
-            background-position: 0% 50%;
+        @keyframes beachWave {
+          0% {
+            background-position: 0% 100%;
           }
           50% {
-            background-position: 100% 50%;
+            background-position: 0% 0%;
+          }
+          100% {
+            background-position: 0% 100%;
           }
         }
 
-        .liquid-text {
+        .glass-wave-text {
           background: linear-gradient(
-            90deg,
-            #000000 0%,
-            #1a1a1a 25%,
-            #0d9488 50%,
-            #14b8a6 75%,
-            #000000 100%
+            180deg,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 82, 204, 0.8) 25%,
+            rgba(0, 153, 255, 0.7) 50%,
+            rgba(0, 82, 204, 0.8) 75%,
+            rgba(0, 0, 0, 0.9) 100%
           );
-          background-size: 200% 100%;
+          background-size: 100% 300%;
           background-clip: text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
-          animation: liquidFlow 4s ease-in-out infinite;
-          filter: drop-shadow(0 0 2px rgba(20, 184, 166, 0.3));
-        }
-
-        .liquid-text-glow {
+          animation: beachWave 4s ease-in-out infinite;
+          filter: drop-shadow(0 0 4px rgba(0, 153, 255, 0.4));
           position: relative;
         }
 
-        .liquid-text-glow::after {
+        .glass-wave-text::before {
+          content: '';
+          position: absolute;
+          inset: -2px;
+          background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0.05) 50%,
+            rgba(255, 255, 255, 0) 100%
+          );
+          border-radius: 4px;
+          z-index: -1;
+          backdrop-filter: blur(10px);
+        }
+
+        .glass-wave-text::after {
           content: attr(data-text);
           position: absolute;
           left: 0;
           top: 0;
-          z-index: -1;
+          z-index: -2;
           background: linear-gradient(
-            90deg,
-            rgba(0,0,0,0.5) 0%,
-            rgba(13,148,136,0.3) 50%,
-            rgba(0,0,0,0.5) 100%
+            180deg,
+            rgba(0, 82, 204, 0.4) 0%,
+            rgba(0, 153, 255, 0.3) 50%,
+            rgba(0, 82, 204, 0.2) 100%
           );
-          background-size: 200% 100%;
+          background-size: 100% 300%;
           background-clip: text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
-          animation: liquidFlow 4s ease-in-out infinite;
-          filter: blur(8px);
+          animation: beachWave 4s ease-in-out infinite reverse;
+          filter: blur(12px);
         }
       `}</style>
 
@@ -75,7 +90,7 @@ const LogoBanner = () => {
         style={{ willChange: "transform" }}
       >
         <h1
-          className="text-4xl md:text-5xl font-bold tracking-tight font-Poppins liquid-text liquid-text-glow"
+          className="text-6xl md:text-7xl font-extrabold tracking-tight font-Poppins glass-wave-text"
           data-text="KRYIL"
         >
           KRYIL

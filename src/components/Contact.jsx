@@ -69,10 +69,10 @@ export default function Contact() {
       </div>
       {/* Left Side */}
       <div className="relative px-6 md:px-3 py-16 border-r md:border-gray-300 dark:border-slate-700 w-full md:w-1/2">
-        <h2 className="text-3xl font-bold mb-4 text-emerald-600 ">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-emerald-600 ">
           Contacts
         </h2>
-        <p className="text-gray-600 dark:text-slate-300 mb-6 font-Poppins text-sm font-[400]">
+        <p className="text-gray-600 dark:text-slate-300 mb-6 font-Poppins text-base font-normal">
           Connect with us to explore new opportunities, share your ideas, or get
           the support you need to bring your vision to life.
         </p>

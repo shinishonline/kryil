@@ -22,7 +22,7 @@ export default function Footer() {
             alt="Kryil Infotech Logo"
             className="w-32 h-auto mb-4"
           />
-          <p className="font-Poppins mt-2 text-sm sm:text-[14px] text-gray-200 leading-relaxed">
+          <p className="font-Poppins mt-2 text-base text-gray-200 leading-relaxed">
             Empowering businesses with modern software solutions, cloud infrastructure,
             and innovative digital strategies.
           </p>
@@ -30,7 +30,7 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div className="flex flex-col">
-          <h3 className="font-Poppins text-lg font-semibold text-white">Quick Links</h3>
+          <h3 className="font-Poppins text-xl font-semibold text-white">Quick Links</h3>
           <ul className="mt-4 space-y-2">
             <li>
               <a href="/" className="font-Poppins hover:text-white transition-colors">Home</a>
@@ -55,7 +55,7 @@ export default function Footer() {
 
         {/* Social Links */}
         <div className="flex flex-col">
-          <h3 className="font-Poppins text-lg font-semibold text-white">Follow Us</h3>
+          <h3 className="font-Poppins text-xl font-semibold text-white">Follow Us</h3>
           <div className="flex flex-wrap mt-4 gap-3">
             <a
               href="#"

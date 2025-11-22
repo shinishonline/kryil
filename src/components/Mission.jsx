@@ -39,11 +39,11 @@ export default function Mission() {
       >
         <h2
           id="mission-heading"
-          className="font-Poppins text-4xl md:text-5xl font-bold mb-4 text-emerald-600"
+          className="font-Poppins text-5xl md:text-6xl font-bold mb-4 text-emerald-600"
         >
           Our Mission
         </h2>
-        <p className="font-Poppins tracking-wider font-[400] text-sm text-justify text-slate-700 dark:text-slate-300 m-7 max-w-3xl mx-auto leading-relaxed">
+        <p className="font-Poppins tracking-wider font-normal text-base text-justify text-slate-700 dark:text-slate-300 m-7 max-w-3xl mx-auto leading-relaxed">
           We build transformative technology that turns your pioneering vision into reality. Through innovative yet practical solutions, we help you navigate digital complexity and
           unlock unprecedented growth opportunities. We focus on creating lasting impact, ensuring your business succeeds today and leads tomorrow.
         </p>

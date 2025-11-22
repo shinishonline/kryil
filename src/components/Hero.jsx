@@ -110,9 +110,8 @@ export default function Hero() {
 
       {/* 🔹 Navbar */}
       <div
-        className={`transition-all duration-700 absolute top-1 z-30 w-full
-        ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"}
-        flex justify-center`}
+        className={`transition-all duration-700 fixed top-0 right-0 z-30 pr-12
+        ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"}`}
       >
         <NavbarTop inline={false} />
       </div>

@@ -55,7 +55,7 @@ export default function Services() {
                 Services
               </h2>
 
-              <p className="mt-4 text-black/70 dark:text-slate-300 leading-relaxed font-Poppins font-[500]">
+              <p className="mt-4 text-base text-black/70 dark:text-slate-300 leading-relaxed font-Poppins font-normal">
                 High-impact capabilities, thoughtfully engineered. Everything is
                 built on a foundation of clarity, rigor, and craft — helping
                 your business evolve confidently in the digital era.
@@ -64,7 +64,7 @@ export default function Services() {
               <div className="mt-8 h-px bg-black/10 dark:bg-emerald-700" />
 
               <nav aria-label="Services list" className="mt-6">
-                <ul className="space-y-3 text-sm font-Poppins font-[500]">
+                <ul className="space-y-3 text-base font-Poppins font-medium">
                   {items.map((it, i) => (
                     <li
                       key={it.title}
@@ -100,7 +100,7 @@ export default function Services() {
                   className="relative pl-4 border-l border-black/10 dark:border-slate-700 transition-all duration-300 hover:border-black dark:hover:border-emerald-700"
                 >
                   {/* Title */}
-                  <h3 className="text-xl font-extrabold font-Poppins mb-3 text-emerald-600 ">
+                  <h3 className="text-2xl md:text-3xl font-bold font-Poppins mb-3 text-emerald-600 ">
                     {it.title}
                   </h3>
                   <br />

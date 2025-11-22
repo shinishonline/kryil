@@ -38,7 +38,7 @@ export default function About() {
       >
         <motion.h2
         // text-slate-900 dark:text-slate-100
-          className="font-Poppins text-4xl md:text-5xl font-extrabold text-emerald-600 text-center"
+          className="font-Poppins text-5xl md:text-6xl font-extrabold text-emerald-600 text-center"
           variants={fadeUp}
         >
           About Us
@@ -48,7 +48,7 @@ export default function About() {
           className="antialiased mx-auto max-w-3xl space-y-6 text-darkBg dark:text-slate-300 text-lg leading-relaxed"
           variants={fadeUp}
         >
-          <p className="font-Poppins font-[400] text-justify text-sm">
+          <p className="font-Poppins font-normal text-justify text-base">
             <span className="font-semibold text- dark:text-slate-100">
               Kryil
             </span>{" "}
