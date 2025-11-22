@@ -105,7 +105,7 @@ export default function WhyPartner() {
                       custom={idx}
                       initial="hidden"
                       whileInView="visible"
-                      viewport={{ once: true, amount: 0.5 }}
+                      viewport={{ once: false, amount: 0.5 }}
                       variants={circleVariant}
                     >
                       <Icon className="w-6 h-6" />
@@ -115,7 +115,7 @@ export default function WhyPartner() {
                       custom={idx}
                       initial="hidden"
                       whileInView="visible"
-                      viewport={{ once: true, amount: 0.5 }}
+                      viewport={{ once: false, amount: 0.5 }}
                       variants={textFromLeft}
                     >
                       <h3 className="text-2xl font-extralight mb-1 dark:text-slate-100">{f.title}</h3>
@@ -135,7 +135,7 @@ export default function WhyPartner() {
                           custom={idx}
                           initial="hidden"
                           whileInView="visible"
-                          viewport={{ once: true, amount: 0.5 }}
+                          viewport={{ once: false, amount: 0.5 }}
                           variants={textFromLeft}
                         >
                           <h3 className="text-2xl md:text-3xl font-extralight mb-2 dark:text-slate-100">{f.title}</h3>
@@ -153,7 +153,7 @@ export default function WhyPartner() {
                         custom={idx}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true, amount: 0.5 }}
+                        viewport={{ once: false, amount: 0.5 }}
                         variants={circleVariant}
                       >
                         <Icon className="w-7 h-7" />
@@ -168,7 +168,7 @@ export default function WhyPartner() {
                           custom={idx}
                           initial="hidden"
                           whileInView="visible"
-                          viewport={{ once: true, amount: 0.5 }}
+                          viewport={{ once: false, amount: 0.5 }}
                           variants={textFromRight}
                         >
                           <h3 className="text-2xl md:text-3xl font-extralight mb-2 dark:text-slate-100">{f.title}</h3>

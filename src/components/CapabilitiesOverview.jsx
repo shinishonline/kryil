@@ -112,7 +112,7 @@ export default function CapabilitiesOverview() {
                   custom={idx}
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ once: true, amount: 0.2 }}
+                  viewport={{ once: false, amount: 0.2 }}
                   variants={fadeUp}
                   className="relative pl-4 border-l border-black/10 dark:border-slate-700 transition-all duration-300 hover:border-black dark:hover:border-cyan-700"
                 >

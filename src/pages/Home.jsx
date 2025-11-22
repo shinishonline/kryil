@@ -204,7 +204,7 @@ export default function Home() {
               variants={sectionVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.3 }}
             >
               <About />
             </motion.div>
@@ -221,7 +221,7 @@ export default function Home() {
             variants={sectionVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
           >
             <Mission />
           </motion.div>
@@ -237,7 +237,7 @@ export default function Home() {
             variants={sectionVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
           >
             <WhyChooseUs />
           </motion.div>
@@ -253,7 +253,7 @@ export default function Home() {
     variants={sectionVariants}
     initial="hidden"
     whileInView="visible"
-    viewport={{ once: true, amount: 0.3 }}
+    viewport={{ once: false, amount: 0.3 }}
   >
     <Services />
   </motion.div>
@@ -269,7 +269,7 @@ export default function Home() {
     variants={sectionVariants}
     initial="hidden"
     whileInView="visible"
-    viewport={{ once: true, amount: 0.3 }}
+    viewport={{ once: false, amount: 0.3 }}
   >
     <Industries />
   </motion.div>
@@ -285,7 +285,7 @@ export default function Home() {
     variants={sectionVariants}
     initial="hidden"
     whileInView="visible"
-    viewport={{ once: true, amount: 0.3 }}
+    viewport={{ once: false, amount: 0.3 }}
   >
     <Contact />
   </motion.div>
