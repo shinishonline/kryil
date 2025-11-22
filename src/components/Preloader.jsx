@@ -1,6 +1,7 @@
 // src/components/Preloader.jsx
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
+import logo from '../assets/logo_white.png';
 
 export default function Preloader({ onFinish }) {
   const [showCompany, setShowCompany] = useState(false);
@@ -66,13 +67,17 @@ export default function Preloader({ onFinish }) {
         Innovation Secured
       </motion.div>
 
-      {/* Company name */}
+      {/* Company logo */}
       {showCompany && (
         <motion.div
           animate={companyControls}
-          className="absolute text-3xl md:text-5xl font-extrabold text-white tracking-widest"
+          className="absolute"
         >
-          KRYIL
+          <img
+            src={logo}
+            alt="Kryil Logo"
+            className="w-48 md:w-64 h-auto"
+          />
         </motion.div>
       )}
     </motion.div>
