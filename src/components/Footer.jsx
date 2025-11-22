@@ -8,35 +8,41 @@ import footerBg from '../assets/b3.jpg' // Background image for footer
 export default function Footer() {
   return (
     <footer className="relative z-40 w-full overflow-hidden bg-cyan-600 dark:bg-[#0a0a0a] text-white dark:text-gray-300 transition-colors duration-500">
-      {/* Decorative Background Patterns */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none overflow-hidden">
-        {/* Top Left Triangle */}
-        <svg className="absolute top-10 left-10 w-24 h-24 text-white" viewBox="0 0 100 100">
-          <polygon points="50,10 90,90 10,90" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5,5" />
-        </svg>
+      {/* World Map Background */}
+      <div className="absolute inset-0 opacity-10 dark:opacity-20 pointer-events-none overflow-hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 2000 1000"
+          className="w-full h-full"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          {/* Continents in grey - water areas are transparent */}
 
-        {/* Top Right Triangle */}
-        <svg className="absolute top-20 right-20 w-32 h-32 text-white rotate-45" viewBox="0 0 100 100">
-          <polygon points="50,10 90,90 10,90" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5,5" />
-        </svg>
+          {/* North America */}
+          <path d="M 150 150 Q 200 100 300 120 L 350 150 L 400 180 L 420 250 L 380 320 L 350 350 L 300 380 L 250 360 L 200 330 L 150 280 Z" fill="currentColor" className="text-gray-400 dark:text-gray-600" />
+          <path d="M 280 200 L 320 220 L 340 260 L 320 300 L 280 280 Z" fill="currentColor" className="text-gray-400 dark:text-gray-600" />
 
-        {/* Bottom Left Triangle */}
-        <svg className="absolute bottom-16 left-32 w-28 h-28 text-white rotate-180" viewBox="0 0 100 100">
-          <polygon points="50,10 90,90 10,90" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5,5" />
-        </svg>
+          {/* South America */}
+          <path d="M 320 420 L 360 400 L 380 430 L 400 500 L 390 600 L 360 650 L 330 630 L 310 580 L 300 520 Z" fill="currentColor" className="text-gray-400 dark:text-gray-600" />
 
-        {/* Bottom Right Small Triangle */}
-        <svg className="absolute bottom-32 right-16 w-20 h-20 text-white rotate-90" viewBox="0 0 100 100">
-          <polygon points="50,10 90,90 10,90" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5,5" />
-        </svg>
+          {/* Europe */}
+          <path d="M 900 150 L 950 140 L 1000 160 L 1020 200 L 1000 240 L 960 250 L 920 230 L 900 200 Z" fill="currentColor" className="text-gray-400 dark:text-gray-600" />
+          <path d="M 920 180 L 940 170 L 960 180 L 970 200 L 950 210 L 930 200 Z" fill="currentColor" className="text-gray-400 dark:text-gray-600" />
 
-        {/* Middle Triangles */}
-        <svg className="absolute top-1/2 left-1/4 w-16 h-16 text-white" viewBox="0 0 100 100">
-          <polygon points="50,10 90,90 10,90" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5,5" />
-        </svg>
+          {/* Africa */}
+          <path d="M 950 280 L 1000 270 L 1050 290 L 1080 350 L 1100 450 L 1080 550 L 1040 600 L 980 620 L 940 590 L 920 520 L 910 420 L 930 340 Z" fill="currentColor" className="text-gray-400 dark:text-gray-600" />
 
-        <svg className="absolute top-1/3 right-1/3 w-20 h-20 text-white rotate-[135deg]" viewBox="0 0 100 100">
-          <polygon points="50,10 90,90 10,90" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5,5" />
+          {/* Asia */}
+          <path d="M 1100 100 L 1200 90 L 1350 120 L 1500 150 L 1600 200 L 1650 280 L 1620 350 L 1550 380 L 1450 360 L 1350 330 L 1250 300 L 1150 270 L 1100 220 L 1080 160 Z" fill="currentColor" className="text-gray-400 dark:text-gray-600" />
+
+          {/* Australia */}
+          <path d="M 1450 600 L 1550 590 L 1620 620 L 1640 680 L 1600 720 L 1520 730 L 1450 710 L 1420 660 Z" fill="currentColor" className="text-gray-400 dark:text-gray-600" />
+
+          {/* Antarctica (bottom) */}
+          <path d="M 200 900 L 1800 900 L 1750 850 L 1600 830 L 1400 840 L 1200 850 L 1000 860 L 800 850 L 600 840 L 400 850 L 250 860 Z" fill="currentColor" className="text-gray-400 dark:text-gray-600" />
+
+          {/* Greenland */}
+          <path d="M 550 80 L 620 70 L 680 90 L 700 130 L 680 170 L 640 180 L 590 160 L 560 120 Z" fill="currentColor" className="text-gray-400 dark:text-gray-600" />
         </svg>
       </div>
 
