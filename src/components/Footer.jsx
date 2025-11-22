@@ -7,6 +7,38 @@ import footerBg from '../assets/b3.jpg' // Background image for footer
 export default function Footer() {
   return (
     <footer className="relative z-40 w-full overflow-hidden bg-cyan-600 dark:bg-[#0a0a0a] text-white dark:text-gray-300 transition-colors duration-500">
+      {/* Decorative Background Patterns */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none overflow-hidden">
+        {/* Top Left Triangle */}
+        <svg className="absolute top-10 left-10 w-24 h-24 text-white" viewBox="0 0 100 100">
+          <polygon points="50,10 90,90 10,90" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5,5" />
+        </svg>
+
+        {/* Top Right Triangle */}
+        <svg className="absolute top-20 right-20 w-32 h-32 text-white rotate-45" viewBox="0 0 100 100">
+          <polygon points="50,10 90,90 10,90" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5,5" />
+        </svg>
+
+        {/* Bottom Left Triangle */}
+        <svg className="absolute bottom-16 left-32 w-28 h-28 text-white rotate-180" viewBox="0 0 100 100">
+          <polygon points="50,10 90,90 10,90" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5,5" />
+        </svg>
+
+        {/* Bottom Right Small Triangle */}
+        <svg className="absolute bottom-32 right-16 w-20 h-20 text-white rotate-90" viewBox="0 0 100 100">
+          <polygon points="50,10 90,90 10,90" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5,5" />
+        </svg>
+
+        {/* Middle Triangles */}
+        <svg className="absolute top-1/2 left-1/4 w-16 h-16 text-white" viewBox="0 0 100 100">
+          <polygon points="50,10 90,90 10,90" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5,5" />
+        </svg>
+
+        <svg className="absolute top-1/3 right-1/3 w-20 h-20 text-white rotate-[135deg]" viewBox="0 0 100 100">
+          <polygon points="50,10 90,90 10,90" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5,5" />
+        </svg>
+      </div>
+
       {/* Container */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Company Logo + Info */}
