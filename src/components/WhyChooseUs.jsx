@@ -34,43 +34,46 @@ export default function WhyPartner() {
   // Circle animation - appears first
   const circleVariant = {
     hidden: { opacity: 0, scale: 0 },
-    visible: (i = 1) => ({
+    visible: (i = 0) => ({
       opacity: 1,
       scale: 1,
       transition: {
-        delay: i * 0.8,
+        delay: i * 0.2,
         duration: 0.5,
         ease: [0.16, 1, 0.3, 1]
       },
     }),
+    exit: { opacity: 0, scale: 0 },
   };
 
   // Text animation from left
   const textFromLeft = {
     hidden: { opacity: 0, x: -60 },
-    visible: (i = 1) => ({
+    visible: (i = 0) => ({
       opacity: 1,
       x: 0,
       transition: {
-        delay: i * 0.8 + 0.3, // Starts after circle
+        delay: i * 0.2 + 0.2, // Starts after circle
         duration: 0.7,
         ease: [0.16, 1, 0.3, 1]
       },
     }),
+    exit: { opacity: 0, x: -60 },
   };
 
   // Text animation from right
   const textFromRight = {
     hidden: { opacity: 0, x: 60 },
-    visible: (i = 1) => ({
+    visible: (i = 0) => ({
       opacity: 1,
       x: 0,
       transition: {
-        delay: i * 0.8 + 0.3, // Starts after circle
+        delay: i * 0.2 + 0.2, // Starts after circle
         duration: 0.7,
         ease: [0.16, 1, 0.3, 1]
       },
     }),
+    exit: { opacity: 0, x: 60 },
   };
 
   return (
@@ -105,7 +108,7 @@ export default function WhyPartner() {
                       custom={idx}
                       initial="hidden"
                       whileInView="visible"
-                      viewport={{ once: false, amount: 0.5 }}
+                      viewport={{ once: false, amount: 0.3, margin: "0px 0px -50px 0px" }}
                       variants={circleVariant}
                     >
                       <Icon className="w-6 h-6" />
@@ -115,7 +118,7 @@ export default function WhyPartner() {
                       custom={idx}
                       initial="hidden"
                       whileInView="visible"
-                      viewport={{ once: false, amount: 0.5 }}
+                      viewport={{ once: false, amount: 0.3, margin: "0px 0px -50px 0px" }}
                       variants={textFromLeft}
                     >
                       <h3 className="text-2xl font-extralight mb-1 dark:text-slate-100">{f.title}</h3>
@@ -135,7 +138,7 @@ export default function WhyPartner() {
                           custom={idx}
                           initial="hidden"
                           whileInView="visible"
-                          viewport={{ once: false, amount: 0.5 }}
+                          viewport={{ once: false, amount: 0.3, margin: "0px 0px -50px 0px" }}
                           variants={textFromLeft}
                         >
                           <h3 className="text-2xl md:text-3xl font-extralight mb-2 dark:text-slate-100">{f.title}</h3>
@@ -153,7 +156,7 @@ export default function WhyPartner() {
                         custom={idx}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: false, amount: 0.5 }}
+                        viewport={{ once: false, amount: 0.3, margin: "0px 0px -50px 0px" }}
                         variants={circleVariant}
                       >
                         <Icon className="w-7 h-7" />
@@ -168,7 +171,7 @@ export default function WhyPartner() {
                           custom={idx}
                           initial="hidden"
                           whileInView="visible"
-                          viewport={{ once: false, amount: 0.5 }}
+                          viewport={{ once: false, amount: 0.3, margin: "0px 0px -50px 0px" }}
                           variants={textFromRight}
                         >
                           <h3 className="text-2xl md:text-3xl font-extralight mb-2 dark:text-slate-100">{f.title}</h3>
