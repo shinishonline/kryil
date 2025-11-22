@@ -87,32 +87,32 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li>
               <a href="/software" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors flex items-center gap-2">
-                <span className="text-cyan-200">→</span> Software Development
+                <span className="text-cyan-200">▸</span> Software Development
               </a>
             </li>
             <li>
               <a href="/cyber-security" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors flex items-center gap-2">
-                <span className="text-cyan-200">→</span> Cybersecurity Solutions
+                <span className="text-cyan-200">▸</span> Cybersecurity Solutions
               </a>
             </li>
             <li>
               <a href="/infrastructure-services" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors flex items-center gap-2">
-                <span className="text-cyan-200">→</span> Infrastructure Services
+                <span className="text-cyan-200">▸</span> Infrastructure Services
               </a>
             </li>
             <li>
               <a href="/automation" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors flex items-center gap-2">
-                <span className="text-cyan-200">→</span> Automation & IoT
+                <span className="text-cyan-200">▸</span> Automation & IoT
               </a>
             </li>
             <li>
               <a href="#services" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors flex items-center gap-2">
-                <span className="text-cyan-200">→</span> Cloud Solutions
+                <span className="text-cyan-200">▸</span> Cloud Solutions
               </a>
             </li>
             <li>
               <a href="#services" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors flex items-center gap-2">
-                <span className="text-cyan-200">→</span> Mobile Development
+                <span className="text-cyan-200">▸</span> Mobile Development
               </a>
             </li>
           </ul>
