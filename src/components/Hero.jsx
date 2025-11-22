@@ -141,11 +141,11 @@ export default function Hero() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 0.7, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="writing-mode-vertical text-8xl md:text-9xl font-bold tracking-wider"
+          className="writing-mode-vertical text-[12rem] md:text-[16rem] font-extrabold tracking-widest"
           style={{ writingMode: 'vertical-rl' }}
         >
-          <span className={`transition-colors duration-700 ${
-            isDark ? "text-white" : "text-black"
+          <span className={`bg-gradient-to-b from-cyan-400 via-cyan-600 to-cyan-400 bg-clip-text text-transparent transition-all duration-700 ${
+            isDark ? "from-cyan-300 via-cyan-500 to-cyan-300" : "from-cyan-500 via-cyan-700 to-cyan-500"
           }`}>
             KRYIL
           </span>
