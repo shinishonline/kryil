@@ -20,17 +20,17 @@ export default function Hero() {
 
   const images = [b1, b2, b3];
   const headings = [
-    "Futuristic infrastructure for today's enterprises",
-    "Secure, scalable cloud solutions built for growth",
-    "Automated workflows that accelerate your business",
+    "Cybersecurity solutions protecting your digital assets",
+    "Custom software development tailored to your needs",
+    "Mobile application development for iOS and Android",
   ];
 
   const features = [
-    { title: "Cloud Security", desc: "Advanced cloud infrastructure with end-to-end encryption." },
-    { title: "Automation", desc: "Streamlined operations powered by intelligent workflows." },
-    { title: "Innovation", desc: "Cutting-edge technology solutions for scalability." },
-    { title: "Data Protection", desc: "Secure data with compliance and modern encryption standards." },
-    { title: "Performance", desc: "High-performance infrastructure optimized for speed." },
+    { title: "Cybersecurity", desc: "Advanced threat protection and security audits for your business." },
+    { title: "Custom Software", desc: "Tailored enterprise solutions built for your specific needs." },
+    { title: "Mobile Apps", desc: "Cross-platform mobile applications for iOS and Android." },
+    { title: "Web Development", desc: "Scalable web applications using modern technologies." },
+    { title: "Cloud Solutions", desc: "Cloud migration and infrastructure management services." },
   ];
 
   // ✅ Detect Tailwind dark mode dynamically
