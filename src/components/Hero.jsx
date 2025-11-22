@@ -136,20 +136,20 @@ export default function Hero() {
       </div>
 
       {/* 🔹 Vertical KRYIL Text */}
-      <div className="fixed right-8 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
-        <motion.div
+      <div className="fixed right-4 top-20 z-10 pointer-events-none">
+        <motion.h1
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 0.7, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="writing-mode-vertical text-[12rem] md:text-[16rem] font-extrabold tracking-widest"
+          className="text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-widest"
           style={{ writingMode: 'vertical-rl' }}
         >
-          <span className={`bg-gradient-to-b from-cyan-400 via-cyan-600 to-cyan-400 bg-clip-text text-transparent transition-all duration-700 ${
-            isDark ? "from-cyan-300 via-cyan-500 to-cyan-300" : "from-cyan-500 via-cyan-700 to-cyan-500"
+          <span className={`bg-gradient-to-b from-cyan-300 via-cyan-500 to-cyan-700 bg-clip-text text-transparent transition-all duration-700 ${
+            isDark ? "from-cyan-200 via-cyan-400 to-cyan-600" : "from-cyan-400 via-cyan-600 to-cyan-800"
           }`}>
             KRYIL
           </span>
-        </motion.div>
+        </motion.h1>
       </div>
 
       {/* 🔹 MAIN LEFT CONTENT */}
