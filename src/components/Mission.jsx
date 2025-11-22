@@ -27,15 +27,24 @@ export default function Mission() {
   return (
     <section
       ref={ref}
-      className="relative max-w-[1200px] mx-auto px-6 py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-2xl shadow-sm"
+      className="relative w-full px-6 py-20 overflow-hidden"
       aria-labelledby="mission-heading"
-      style={{
-        backgroundImage: `
-          repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,.02) 10px, rgba(0,0,0,.02) 20px),
-          repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(0,0,0,.02) 10px, rgba(0,0,0,.02) 20px)
-        `
-      }}
     >
+      {/* Granite/Rock Texture Background - Full Width */}
+      <div
+        className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900"
+        style={{
+          backgroundImage: `
+            url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E"),
+            radial-gradient(circle at 20% 50%, rgba(156, 163, 175, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(209, 213, 219, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 40% 90%, rgba(156, 163, 175, 0.08) 0%, transparent 40%)
+          `,
+          backgroundBlendMode: 'overlay, normal, normal, normal'
+        }}
+      />
+
+      <div className="relative max-w-[1200px] mx-auto">
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: 18 }}
@@ -56,7 +65,7 @@ export default function Mission() {
       </motion.div>
 
       {/* Hover-style tiles (Tailwind) */}
-     
+      </div>
     </section>
   );
 }
