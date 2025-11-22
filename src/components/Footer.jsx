@@ -45,6 +45,9 @@ export default function Footer() {
               <a href="#contact" className="font-Poppins hover:text-white transition-colors">Contact</a>
             </li>
             <li>
+              <a href="/careers" className="font-Poppins hover:text-white transition-colors">Careers</a>
+            </li>
+            <li>
               <a href="/privacy-policy.html" className="font-Poppins hover:text-white transition-colors">Privacy Policy</a>
             </li>
             <li>
