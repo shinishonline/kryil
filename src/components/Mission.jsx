@@ -27,8 +27,14 @@ export default function Mission() {
   return (
     <section
       ref={ref}
-      className="relative max-w-[1200px] mx-auto px-6 py-20"
+      className="relative max-w-[1200px] mx-auto px-6 py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-2xl shadow-sm"
       aria-labelledby="mission-heading"
+      style={{
+        backgroundImage: `
+          repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,.02) 10px, rgba(0,0,0,.02) 20px),
+          repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(0,0,0,.02) 10px, rgba(0,0,0,.02) 20px)
+        `
+      }}
     >
       {/* Heading */}
       <motion.div
