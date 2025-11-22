@@ -1,15 +1,30 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   BriefcaseIcon,
   MapPinIcon,
   ClockIcon,
   CurrencyDollarIcon,
+  XMarkIcon,
+  PaperClipIcon,
 } from "@heroicons/react/24/outline";
 
 export default function Careers() {
   const [selectedDepartment, setSelectedDepartment] = useState("All");
   const [selectedTab, setSelectedTab] = useState("jobs"); // "jobs" or "internships"
+  const [showApplicationModal, setShowApplicationModal] = useState(false);
+  const [selectedPosition, setSelectedPosition] = useState(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    linkedIn: "",
+    coverLetter: "",
+    resume: null,
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const jobOpenings = [
     {
@@ -284,6 +299,93 @@ export default function Careers() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
 
+  const handleApplyClick = (position) => {
+    setSelectedPosition(position);
+    setShowApplicationModal(true);
+    setSubmitSuccess(false);
+    setSubmitError("");
+  };
+
+  const handleFormChange = (e) => {
+    const { name, value, files } = e.target;
+    if (name === "resume") {
+      setFormData({ ...formData, resume: files[0] });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
+  };
+
+  const handleSubmitApplication = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    try {
+      // Create email body with application details
+      const emailBody = `
+New Job Application - ${selectedPosition.title}
+
+Candidate Information:
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+LinkedIn: ${formData.linkedIn || "Not provided"}
+
+Position Details:
+Title: ${selectedPosition.title}
+Department: ${selectedPosition.department}
+Location: ${selectedPosition.location}
+Type: ${selectedPosition.type}
+
+Cover Letter:
+${formData.coverLetter}
+
+Note: Resume file "${formData.resume?.name}" attached. Please check your email for the full application.
+      `.trim();
+
+      // For now, we'll use mailto as a simple solution
+      // In production, you'd use EmailJS, SendGrid, or your own backend
+      const subject = encodeURIComponent(`Job Application: ${selectedPosition.title} - ${formData.name}`);
+      const body = encodeURIComponent(emailBody);
+
+      // Open mailto link
+      window.open(`mailto:info@kryil.com?subject=${subject}&body=${body}`, '_blank');
+
+      // Show success message
+      setSubmitSuccess(true);
+      setTimeout(() => {
+        setShowApplicationModal(false);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          linkedIn: "",
+          coverLetter: "",
+          resume: null,
+        });
+      }, 2000);
+
+    } catch (error) {
+      setSubmitError("Failed to submit application. Please try again or email us directly at info@kryil.com");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const closeModal = () => {
+    setShowApplicationModal(false);
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      linkedIn: "",
+      coverLetter: "",
+      resume: null,
+    });
+    setSubmitSuccess(false);
+    setSubmitError("");
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-darkBg transition-colors duration-500">
       {/* Hero Section */}
@@ -415,7 +517,10 @@ export default function Careers() {
                       {job.description}
                     </p>
                   </div>
-                  <button className="px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-500 transition-colors whitespace-nowrap">
+                  <button
+                    onClick={() => handleApplyClick(job)}
+                    className="px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-500 transition-colors whitespace-nowrap"
+                  >
                     Apply Now
                   </button>
                 </div>
@@ -475,7 +580,10 @@ export default function Careers() {
                       {internship.description}
                     </p>
                   </div>
-                  <button className="px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-500 transition-colors whitespace-nowrap">
+                  <button
+                    onClick={() => handleApplyClick(internship)}
+                    className="px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-500 transition-colors whitespace-nowrap"
+                  >
                     Apply Now
                   </button>
                 </div>
@@ -565,6 +673,185 @@ export default function Careers() {
           </a>
         </div>
       </section>
+
+      {/* Application Modal */}
+      <AnimatePresence>
+        {showApplicationModal && selectedPosition && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+            onClick={closeModal}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white dark:bg-slate-800 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 shadow-2xl"
+            >
+              {/* Modal header */}
+              <div className="flex justify-between items-start mb-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                    Apply for {selectedPosition.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-slate-400 mt-1">
+                    {selectedPosition.department} • {selectedPosition.location}
+                  </p>
+                </div>
+                <button
+                  onClick={closeModal}
+                  className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                >
+                  <XMarkIcon className="w-6 h-6" />
+                </button>
+              </div>
+
+              {/* Application form */}
+              <form onSubmit={handleSubmitApplication} className="space-y-4">
+                {/* Name field */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleFormChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+                    placeholder="John Doe"
+                  />
+                </div>
+
+                {/* Email and Phone in grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleFormChange}
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-emerald-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+                      placeholder="john@example.com"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">
+                      Phone *
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleFormChange}
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-emerald-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+                      placeholder="+91 1234567890"
+                    />
+                  </div>
+                </div>
+
+                {/* LinkedIn */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">
+                    LinkedIn Profile (Optional)
+                  </label>
+                  <input
+                    type="url"
+                    name="linkedIn"
+                    value={formData.linkedIn}
+                    onChange={handleFormChange}
+                    placeholder="https://linkedin.com/in/yourprofile"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-emerald-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+                  />
+                </div>
+
+                {/* Resume upload */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">
+                    Resume *
+                  </label>
+                  <div className="flex items-center gap-2">
+                    <label className="flex-1 flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-700 bg-white dark:bg-slate-700 transition-colors">
+                      <PaperClipIcon className="w-5 h-5 text-gray-500 dark:text-slate-400" />
+                      <span className="text-sm text-gray-700 dark:text-slate-300 truncate">
+                        {formData.resume ? formData.resume.name : "Choose file (PDF, DOC, DOCX)"}
+                      </span>
+                      <input
+                        type="file"
+                        name="resume"
+                        onChange={handleFormChange}
+                        accept=".pdf,.doc,.docx"
+                        required
+                        className="hidden"
+                      />
+                    </label>
+                  </div>
+                  <p className="text-xs text-gray-500 dark:text-slate-400 mt-1">
+                    Max file size: 5MB
+                  </p>
+                </div>
+
+                {/* Cover Letter */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">
+                    Cover Letter *
+                  </label>
+                  <textarea
+                    name="coverLetter"
+                    value={formData.coverLetter}
+                    onChange={handleFormChange}
+                    required
+                    rows="6"
+                    placeholder="Tell us why you're a great fit for this position..."
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-emerald-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white resize-none"
+                  />
+                </div>
+
+                {/* Error message */}
+                {submitError && (
+                  <div className="p-3 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 rounded-lg text-sm">
+                    {submitError}
+                  </div>
+                )}
+
+                {/* Success message */}
+                {submitSuccess && (
+                  <div className="p-3 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-lg text-sm">
+                    Application submitted successfully! We'll be in touch soon.
+                  </div>
+                )}
+
+                {/* Submit buttons */}
+                <div className="flex gap-3 pt-4">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting || submitSuccess}
+                    className="flex-1 px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-500 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors font-medium"
+                  >
+                    {isSubmitting ? "Submitting..." : "Submit Application"}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={closeModal}
+                    className="px-6 py-3 bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-slate-300 rounded-lg hover:bg-gray-300 dark:hover:bg-slate-600 transition-colors font-medium"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

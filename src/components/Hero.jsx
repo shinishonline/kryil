@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import LogoBanner from "./LogoBanner";
 import NavbarTop from "./NavbarTop";
 
 import b1 from "../assets/b1.jpg";
@@ -108,15 +107,12 @@ export default function Hero() {
         }`}
       />
 
-      {/* 🔹 Top bar with Logo and Navbar */}
+      {/* 🔹 Top bar with Navbar */}
       <div
-        className={`transition-all duration-700 fixed top-0 left-0 right-0 z-30 flex items-center justify-between px-6 md:px-12 h-16
+        className={`transition-all duration-700 fixed top-0 left-0 right-0 z-30 flex items-center justify-end px-6 md:px-12 h-16
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"}`}
       >
-        <LogoBanner />
-        <div className="flex-1 flex justify-center">
-          <NavbarTop inline={false} />
-        </div>
+        <NavbarTop inline={false} />
       </div>
 
       {/* 🔹 MAIN LEFT CONTENT */}
@@ -134,12 +130,12 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className={`text-6xl sm:text-7xl lg:text-8xl font-extralight leading-[1.2] tracking-tight transition-colors duration-700 ${
+              className={`text-4xl sm:text-5xl lg:text-6xl font-extralight leading-[1.3] tracking-tight transition-colors duration-700 ${
                 isDark ? "text-gray-50" : "text-gray-900"
               }`}
             >
               <motion.span
-                className={`text-6xl sm:text-7xl lg:text-8xl font-extralight inline-block ${
+                className={`text-4xl sm:text-5xl lg:text-6xl font-extralight inline-block ${
                   isDark ? "text-emerald-400" : "text-emerald-600"
                 }`}
                 animate={{ y: [0, -6, 0] }}

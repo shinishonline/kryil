@@ -262,7 +262,7 @@ export default function Home() {
         {/* Industries */}
 <section
   id="industries"
-  className="relative bg-bg dark:bg-darkBg transition-colors duration-500"
+  className="relative bg-gray-100 dark:bg-[#272727] transition-colors duration-500"
 >
   <motion.div
     className="ml-0 md:ml-[200px] w-full md:w-[calc(100%-200px-150px)] my-0 px-6 py-20"
@@ -278,7 +278,7 @@ export default function Home() {
         {/* Contact */}
      <section
   id="contact"
-  className="relative flex items-start bg-gray-100 dark:bg-[#272727] transition-colors duration-500"
+  className="relative flex items-start bg-white dark:bg-slate-900 transition-colors duration-500"
 >
   <motion.div
     className="ml-0 md:ml-[190px] w-full md:w-[calc(100%-200px-150px)] px-[20px] py-24"
