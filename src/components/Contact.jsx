@@ -227,8 +227,14 @@ export default function Contact() {
           )}
 
           {submitError && (
-            <div className="px-4 py-3 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 rounded">
-              {submitError}
+            <div className="px-4 py-3 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 rounded space-y-2">
+              <p>{submitError}</p>
+              <a
+                href={`mailto:info@kryil.com?subject=Contact Inquiry from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`}
+                className="inline-block mt-2 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition text-sm"
+              >
+                Send via Email Instead
+              </a>
             </div>
           )}
 

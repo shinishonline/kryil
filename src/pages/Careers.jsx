@@ -14,6 +14,12 @@ export default function Careers() {
   const [selectedTab, setSelectedTab] = useState("jobs"); // "jobs" or "internships"
   const [showApplicationModal, setShowApplicationModal] = useState(false);
   const [selectedPosition, setSelectedPosition] = useState(null);
+  const [showInitialPopup, setShowInitialPopup] = useState(true);
+  const [visitorInfo, setVisitorInfo] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -315,6 +321,65 @@ export default function Careers() {
     }
   };
 
+  const handleInitialSubmit = async (e) => {
+    e.preventDefault();
+
+    // Validate inputs
+    if (!visitorInfo.name || !visitorInfo.email || !visitorInfo.phone) {
+      setSubmitError("Please fill in all fields");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    try {
+      // Save visitor info to database
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
+      const response = await fetch(`${apiUrl}/api/submit-contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: visitorInfo.name,
+          email: visitorInfo.email,
+          phone: visitorInfo.phone,
+          message: `Career interest - ${selectedTab === 'internships' ? 'Internship' : 'Job'} inquiry`,
+          source: 'careers_visitor'
+        })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Determine email recipient based on tab
+        const emailRecipient = selectedTab === 'internships' ? 'connect@kryil.com' : 'info@kryil.com';
+
+        // Log email that should be sent (in production, trigger actual email service)
+        console.log(`Resume request email to be sent to ${emailRecipient}:`, {
+          to: visitorInfo.email,
+          cc: emailRecipient,
+          subject: `Resume Submission Request - Kryil ${selectedTab === 'internships' ? 'Internship' : 'Career'} Opportunities`,
+          body: `Dear ${visitorInfo.name},\n\nThank you for your interest in ${selectedTab === 'internships' ? 'internship' : 'career'} opportunities at Kryil Infotech!\n\nPlease submit your resume by emailing it to ${emailRecipient}.\n\nWe look forward to reviewing your application.\n\nBest regards,\nKryil Infotech Team`
+        });
+
+        // Close popup and show success message
+        setShowInitialPopup(false);
+        setSubmitSuccess(true);
+        setTimeout(() => setSubmitSuccess(false), 5000);
+      } else {
+        setSubmitError("Failed to save information. Please try again.");
+      }
+    } catch (error) {
+      console.error('Error saving visitor info:', error);
+      setSubmitError("Failed to save information. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const handleSubmitApplication = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -399,6 +464,135 @@ export default function Careers() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-darkBg transition-colors duration-500">
+      {/* Initial Visitor Info Popup */}
+      <AnimatePresence>
+        {showInitialPopup && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4"
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-md w-full p-8 relative"
+            >
+              <div className="text-center mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-cyan-100 dark:bg-cyan-900/30 rounded-full mb-4">
+                  <BriefcaseIcon className="w-8 h-8 text-cyan-600 dark:text-cyan-400" />
+                </div>
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                  Welcome to Kryil Careers
+                </h2>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Please share your details to explore opportunities
+                </p>
+              </div>
+
+              <form onSubmit={handleInitialSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={visitorInfo.name}
+                    onChange={(e) => setVisitorInfo({ ...visitorInfo, name: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                    placeholder="Enter your full name"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    value={visitorInfo.email}
+                    onChange={(e) => setVisitorInfo({ ...visitorInfo, email: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Phone Number *
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    value={visitorInfo.phone}
+                    onChange={(e) => setVisitorInfo({ ...visitorInfo, phone: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                    placeholder="+91 XXXXX XXXXX"
+                  />
+                </div>
+
+                {submitError && (
+                  <div className="bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 px-4 py-3 rounded-lg text-sm space-y-2">
+                    <p>{submitError}</p>
+                    <a
+                      href={`mailto:${selectedTab === 'internships' ? 'connect@kryil.com' : 'info@kryil.com'}?subject=Career Interest from ${encodeURIComponent(visitorInfo.name)}&body=${encodeURIComponent(`Name: ${visitorInfo.name}\nEmail: ${visitorInfo.email}\nPhone: ${visitorInfo.phone}\n\nInterested in: ${selectedTab === 'internships' ? 'Internship' : 'Job'} opportunities`)}`}
+                      className="inline-block mt-2 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition text-sm"
+                    >
+                      📧 Send via Email Instead
+                    </a>
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? (
+                    <span className="flex items-center justify-center gap-2">
+                      <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                      </svg>
+                      Submitting...
+                    </span>
+                  ) : (
+                    "Continue to Careers"
+                  )}
+                </button>
+
+                <p className="text-xs text-center text-gray-500 dark:text-gray-400 mt-4">
+                  We'll send you an email with instructions to submit your resume
+                </p>
+              </form>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Success Message Toast */}
+      <AnimatePresence>
+        {submitSuccess && (
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            className="fixed top-6 right-6 z-50 bg-green-500 text-white px-6 py-4 rounded-lg shadow-2xl flex items-center gap-3"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <div>
+              <p className="font-semibold">Success!</p>
+              <p className="text-sm">Check your email for resume submission instructions</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Hero Section */}
       <section className="bg-cyan-600 dark:bg-cyan-700 text-white py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
@@ -829,8 +1023,14 @@ export default function Careers() {
 
                 {/* Error message */}
                 {submitError && (
-                  <div className="p-3 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 rounded-lg text-sm">
-                    {submitError}
+                  <div className="p-3 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 rounded-lg text-sm space-y-2">
+                    <p>{submitError}</p>
+                    <a
+                      href={`mailto:${selectedPosition?.department === 'Internship' ? 'connect@kryil.com' : 'info@kryil.com'}?subject=Application for ${encodeURIComponent(selectedPosition?.title || 'Position')}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nLinkedIn: ${formData.linkedIn}\n\nPosition: ${selectedPosition?.title}\n\nCover Letter:\n${formData.coverLetter}\n\nPlease find my resume attached separately.`)}`}
+                      className="inline-block mt-2 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition text-sm"
+                    >
+                      📧 Send Application via Email Instead
+                    </a>
                   </div>
                 )}
 

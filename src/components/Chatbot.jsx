@@ -177,9 +177,9 @@ export default function Chatbot() {
           setTimeout(() => {
             addMessage(
               "bot",
-              "Sorry, there was an error submitting your message. Please try again or email us at info@kryil.com"
+              "Sorry, there was an error submitting your message. Please click the button below to email us instead."
             );
-            setStep("success");
+            setStep("error");
           }, 500);
         }
       })
@@ -188,9 +188,9 @@ export default function Chatbot() {
         setTimeout(() => {
           addMessage(
             "bot",
-            "Sorry, there was an error submitting your message. Please try again or email us at info@kryil.com"
+            "Sorry, there was an error submitting your message. Please click the button below to email us instead."
           );
-          setStep("success");
+          setStep("error");
         }, 500);
       });
     }
@@ -359,6 +359,21 @@ export default function Chatbot() {
                 >
                   Start New Chat
                 </button>
+              ) : step === "error" ? (
+                <div className="space-y-2">
+                  <a
+                    href={`mailto:info@kryil.com?subject=Contact from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`)}`}
+                    className="block w-full px-4 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium text-center"
+                  >
+                    📧 Send via Email Instead
+                  </a>
+                  <button
+                    onClick={resetChat}
+                    className="w-full px-4 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors font-medium"
+                  >
+                    Start New Chat
+                  </button>
+                </div>
               ) : (
                 <div className="flex gap-2">
                   <input
