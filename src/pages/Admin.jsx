@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { ChevronDownIcon, ChevronUpIcon, DocumentArrowDownIcon } from "@heroicons/react/24/outline";
 
 export default function Admin() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -11,6 +12,8 @@ export default function Admin() {
   const [applications, setApplications] = useState([]);
   const [loading, setLoading] = useState(false);
   const [token, setToken] = useState(localStorage.getItem('admin_token') || '');
+  const [expandedContact, setExpandedContact] = useState(null);
+  const [expandedApp, setExpandedApp] = useState(null);
 
   useEffect(() => {
     if (token) {
@@ -86,6 +89,21 @@ export default function Admin() {
     setApplications([]);
   };
 
+  const downloadResume = (resumeData, applicantName) => {
+    if (!resumeData || !resumeData.data) {
+      alert('No resume available');
+      return;
+    }
+
+    // Create a link and trigger download
+    const link = document.createElement('a');
+    link.href = resumeData.data;
+    link.download = `${applicantName.replace(/\s+/g, '_')}_Resume${resumeData.name ? resumeData.name.substring(resumeData.name.lastIndexOf('.')) : '.pdf'}`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   if (!isLoggedIn) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 dark:from-[#0a0a0a] dark:to-[#1a1a1a] flex items-center justify-center px-4">
@@ -138,9 +156,9 @@ export default function Admin() {
             </button>
           </form>
           <div className="mt-6 text-sm text-gray-600 dark:text-gray-400 text-center">
-            <p>Default credentials:</p>
-            <p className="font-mono">Username: admin@kryil.com</p>
-            <p className="font-mono">Password: kryil@admin123</p>
+            <p>Admin credentials:</p>
+            <p className="font-mono">Username: kryiladmin</p>
+            <p className="font-mono">Password: 3Mergency!</p>
           </div>
         </motion.div>
       </div>
@@ -196,57 +214,77 @@ export default function Admin() {
         ) : (
           <>
             {activeTab === "contacts" && (
-              <div className="bg-white dark:bg-slate-800 rounded-lg shadow overflow-hidden">
-                <table className="min-w-full divide-y divide-gray-200 dark:divide-slate-700">
-                  <thead className="bg-gray-50 dark:bg-slate-900">
-                    <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                        Name
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                        Email
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                        Phone
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                        Message
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                        Source
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                        Date
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white dark:bg-slate-800 divide-y divide-gray-200 dark:divide-slate-700">
-                    {contacts.map((contact) => (
-                      <tr key={contact._id}>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">
-                          {contact.name}
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">
-                          {contact.email}
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">
-                          {contact.phone || '-'}
-                        </td>
-                        <td className="px-6 py-4 text-sm text-gray-900 dark:text-white max-w-md truncate">
-                          {contact.message}
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">
-                          {contact.source}
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">
-                          {new Date(contact.createdAt).toLocaleDateString()}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              <div className="space-y-4">
+                {contacts.map((contact) => (
+                  <div
+                    key={contact._id}
+                    className="bg-white dark:bg-slate-800 rounded-lg shadow overflow-hidden"
+                  >
+                    <div
+                      className="p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors"
+                      onClick={() => setExpandedContact(expandedContact === contact._id ? null : contact._id)}
+                    >
+                      <div className="flex justify-between items-start">
+                        <div className="flex-1 grid grid-cols-1 md:grid-cols-4 gap-4">
+                          <div>
+                            <p className="text-xs text-gray-500 dark:text-gray-400">Name</p>
+                            <p className="text-sm font-semibold text-gray-900 dark:text-white">{contact.name}</p>
+                          </div>
+                          <div>
+                            <p className="text-xs text-gray-500 dark:text-gray-400">Email</p>
+                            <p className="text-sm text-gray-900 dark:text-white">{contact.email}</p>
+                          </div>
+                          <div>
+                            <p className="text-xs text-gray-500 dark:text-gray-400">Source</p>
+                            <span className={`inline-block px-2 py-1 text-xs rounded ${
+                              contact.source === 'chatbot'
+                                ? 'bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-200'
+                                : 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200'
+                            }`}>
+                              {contact.source === 'chatbot' ? 'Chat Bot' : 'Contact Form'}
+                            </span>
+                          </div>
+                          <div>
+                            <p className="text-xs text-gray-500 dark:text-gray-400">Date</p>
+                            <p className="text-sm text-gray-900 dark:text-white">
+                              {new Date(contact.createdAt).toLocaleDateString()}
+                            </p>
+                          </div>
+                        </div>
+                        <button className="ml-4 text-gray-500 dark:text-gray-400">
+                          {expandedContact === contact._id ? (
+                            <ChevronUpIcon className="w-5 h-5" />
+                          ) : (
+                            <ChevronDownIcon className="w-5 h-5" />
+                          )}
+                        </button>
+                      </div>
+                    </div>
+
+                    {expandedContact === contact._id && (
+                      <div className="px-4 pb-4 border-t border-gray-200 dark:border-slate-700">
+                        <div className="mt-4 space-y-3">
+                          {contact.phone && (
+                            <div>
+                              <p className="text-xs text-gray-500 dark:text-gray-400">Phone</p>
+                              <p className="text-sm text-gray-900 dark:text-white">{contact.phone}</p>
+                            </div>
+                          )}
+                          <div>
+                            <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">Message</p>
+                            <div className="bg-gray-50 dark:bg-slate-900 p-4 rounded-lg">
+                              <p className="text-sm text-gray-900 dark:text-white whitespace-pre-wrap">
+                                {contact.message}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
                 {contacts.length === 0 && (
-                  <div className="text-center py-12 text-gray-500 dark:text-gray-400">
+                  <div className="text-center py-12 text-gray-500 dark:text-gray-400 bg-white dark:bg-slate-800 rounded-lg">
                     No contacts yet
                   </div>
                 )}
@@ -254,60 +292,104 @@ export default function Admin() {
             )}
 
             {activeTab === "applications" && (
-              <div className="bg-white dark:bg-slate-800 rounded-lg shadow overflow-hidden">
-                <table className="min-w-full divide-y divide-gray-200 dark:divide-slate-700">
-                  <thead className="bg-gray-50 dark:bg-slate-900">
-                    <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                        Name
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                        Email
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                        Position
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                        LinkedIn
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                        Date
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white dark:bg-slate-800 divide-y divide-gray-200 dark:divide-slate-700">
-                    {applications.map((app) => (
-                      <tr key={app._id}>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">
-                          {app.name}
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">
-                          {app.email}
-                        </td>
-                        <td className="px-6 py-4 text-sm text-gray-900 dark:text-white">
-                          {app.position}
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm">
-                          {app.linkedIn ? (
-                            <a
-                              href={app.linkedIn}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-blue-600 hover:underline"
-                            >
-                              View Profile
-                            </a>
-                          ) : '-'}
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">
-                          {new Date(app.createdAt).toLocaleDateString()}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              <div className="space-y-4">
+                {applications.map((app) => (
+                  <div
+                    key={app._id}
+                    className="bg-white dark:bg-slate-800 rounded-lg shadow overflow-hidden"
+                  >
+                    <div
+                      className="p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors"
+                      onClick={() => setExpandedApp(expandedApp === app._id ? null : app._id)}
+                    >
+                      <div className="flex justify-between items-start">
+                        <div className="flex-1 grid grid-cols-1 md:grid-cols-4 gap-4">
+                          <div>
+                            <p className="text-xs text-gray-500 dark:text-gray-400">Name</p>
+                            <p className="text-sm font-semibold text-gray-900 dark:text-white">{app.name}</p>
+                          </div>
+                          <div>
+                            <p className="text-xs text-gray-500 dark:text-gray-400">Email</p>
+                            <p className="text-sm text-gray-900 dark:text-white">{app.email}</p>
+                          </div>
+                          <div>
+                            <p className="text-xs text-gray-500 dark:text-gray-400">Position</p>
+                            <p className="text-sm text-gray-900 dark:text-white">{app.position}</p>
+                          </div>
+                          <div>
+                            <p className="text-xs text-gray-500 dark:text-gray-400">Date</p>
+                            <p className="text-sm text-gray-900 dark:text-white">
+                              {new Date(app.createdAt).toLocaleDateString()}
+                            </p>
+                          </div>
+                        </div>
+                        <button className="ml-4 text-gray-500 dark:text-gray-400">
+                          {expandedApp === app._id ? (
+                            <ChevronUpIcon className="w-5 h-5" />
+                          ) : (
+                            <ChevronDownIcon className="w-5 h-5" />
+                          )}
+                        </button>
+                      </div>
+                    </div>
+
+                    {expandedApp === app._id && (
+                      <div className="px-4 pb-4 border-t border-gray-200 dark:border-slate-700">
+                        <div className="mt-4 space-y-4">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {app.phone && (
+                              <div>
+                                <p className="text-xs text-gray-500 dark:text-gray-400">Phone</p>
+                                <p className="text-sm text-gray-900 dark:text-white">{app.phone}</p>
+                              </div>
+                            )}
+                            {app.linkedIn && (
+                              <div>
+                                <p className="text-xs text-gray-500 dark:text-gray-400">LinkedIn</p>
+                                <a
+                                  href={app.linkedIn}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+                                >
+                                  View Profile →
+                                </a>
+                              </div>
+                            )}
+                          </div>
+
+                          {app.coverLetter && (
+                            <div>
+                              <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">Cover Letter</p>
+                              <div className="bg-gray-50 dark:bg-slate-900 p-4 rounded-lg">
+                                <p className="text-sm text-gray-900 dark:text-white whitespace-pre-wrap">
+                                  {app.coverLetter}
+                                </p>
+                              </div>
+                            </div>
+                          )}
+
+                          {app.resumeData && (
+                            <div>
+                              <button
+                                onClick={() => downloadResume(app.resumeData, app.name)}
+                                className="flex items-center gap-2 px-4 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-500 transition-colors"
+                              >
+                                <DocumentArrowDownIcon className="w-5 h-5" />
+                                Download Resume
+                              </button>
+                              <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+                                {app.resumeData.name} ({(app.resumeData.size / 1024).toFixed(2)} KB)
+                              </p>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
                 {applications.length === 0 && (
-                  <div className="text-center py-12 text-gray-500 dark:text-gray-400">
+                  <div className="text-center py-12 text-gray-500 dark:text-gray-400 bg-white dark:bg-slate-800 rounded-lg">
                     No applications yet
                   </div>
                 )}

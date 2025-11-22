@@ -36,6 +36,7 @@ export default function NavbarTop({ inline = false }) {
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
     { id: "services", label: "Services" },
+    { id: "careers", label: "Careers", isPage: true },
     { id: "contact", label: "Contact" },
   ];
 
@@ -52,7 +53,7 @@ export default function NavbarTop({ inline = false }) {
       {links.map((link, i) => (
         <a
           key={link.id}
-          href={`#${link.id}`}
+          href={link.isPage ? `/${link.id}` : `#${link.id}`}
           style={{ transitionDelay: `${i * 120}ms` }}
           className={`
             font-Poppins relative pb-1 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]
@@ -60,7 +61,7 @@ export default function NavbarTop({ inline = false }) {
             ${mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}
 
             ${
-              activeSection === link.id
+              activeSection === link.id || (link.isPage && window.location.pathname === `/${link.id}`)
                 ? "text-black dark:text-white after:w-full after:bg-cyan-400 dark:after:bg-cyan-400 after:shadow-[0_0_10px_rgba(34,211,238,0.8),0_0_20px_rgba(34,211,238,0.4)]"
                 : "text-black dark:text-white/90 hover:text-black dark:hover:text-white after:w-0 hover:after:w-full after:bg-cyan-400 dark:after:bg-cyan-400 hover:after:shadow-[0_0_10px_rgba(34,211,238,0.8),0_0_20px_rgba(34,211,238,0.4)]"
             }
