@@ -181,7 +181,7 @@ export default function Home() {
         {/* Hero */}
         <section
           id="hero"
-          className="relative min-h-screen flex items-center bg-cover bg-[#fbfbfb] bg-center dark:bg-darkBg"
+          className="relative min-h-screen flex items-center bg-cover "
         >
           <motion.div
             className="ml-0 w-full md:w-[calc(100%)] pt-4"

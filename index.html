@@ -1,36 +1,67 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- ✅ Basic Setup -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Title -->
-    <title>Kryil Infotech Pvt Ltd - Software Solutions & Cloud Infrastructure</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- Meta Description -->
-    <meta name="description" content="Kryil Infotech Pvt Ltd empowers businesses with software development, cloud infrastructure, and modern IT solutions to accelerate digital growth." />
+    <!-- ✅ Page Title -->
+    <title>Kryil Infotech Pvt Ltd | AI, Cloud & Software Development Solutions</title>
 
-    <!-- Keywords (optional, not heavily used by Google but good for others) -->
-    <meta name="keywords" content="Kryil Infotech, Kryil, software solutions, IT services, cloud infrastructure, digital strategy, enterprise technology" />
+    <!-- ✅ Primary Meta Description -->
+    <meta
+      name="description"
+      content="Kryil Infotech Pvt Ltd empowers enterprises through AI-driven software development, cloud infrastructure, cybersecurity, and automation solutions — accelerating digital transformation worldwide."
+    />
 
-    <!-- Author -->
+    <!-- ✅ Keywords (lightly weighted, still useful for niche engines) -->
+    <meta
+      name="keywords"
+      content="Kryil Infotech, AI solutions, cloud infrastructure, software development, cybersecurity, IT automation, DevOps, digital transformation, enterprise IT services"
+    />
+
+    <!-- ✅ Author -->
     <meta name="author" content="Kryil Infotech Pvt Ltd" />
 
-    <!-- Canonical URL -->
+    <!-- ✅ Robots & Crawling -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow" />
+
+    <!-- ✅ Canonical URL -->
     <link rel="canonical" href="https://www.kryil.com/" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="./public/favicon.png" type="image/x-icon" />
-  
-    <!-- Open Graph (SEO + Social Preview) -->
+    <!-- ✅ Favicon -->
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0f766e" />
+
+    <!-- ✅ Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Kryil Infotech Pvt Ltd - Software Solutions & Cloud Infrastructure" />
-    <meta property="og:description" content="Empowering businesses with software development, cloud infrastructure, and innovative IT solutions." />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:title" content="Kryil Infotech Pvt Ltd - Transforming Businesses with AI, Cloud & Automation" />
+    <meta
+      property="og:description"
+      content="Partner with Kryil Infotech for world-class AI, cloud, software development, and automation solutions tailored to accelerate enterprise growth."
+    />
     <meta property="og:image" content="https://www.kryil.com/og-image.jpg" />
+    <meta property="og:image:alt" content="Kryil Infotech Pvt Ltd" />
     <meta property="og:url" content="https://www.kryil.com/" />
     <meta property="og:site_name" content="Kryil Infotech Pvt Ltd" />
 
-    <!-- Structured Data (Schema.org for Organization) -->
+    <!-- ✅ Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kryil Infotech Pvt Ltd - AI, Cloud & Software Solutions" />
+    <meta
+      name="twitter:description"
+      content="Empowering enterprises through advanced AI, ML, and cloud solutions. Kryil Infotech delivers future-ready digital transformation."
+    />
+    <meta name="twitter:image" content="https://www.kryil.com/og-image.jpg" />
+    <meta name="twitter:site" content="@kryilinfotech" />
+    <meta name="twitter:creator" content="@kryilinfotech" />
+
+    <!-- ✅ Schema.org Structured Data (Organization) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -38,25 +69,69 @@
       "name": "Kryil Infotech Pvt Ltd",
       "url": "https://www.kryil.com",
       "logo": "https://www.kryil.com/logo.png",
-      "contactPoint": {
+      "description": "Kryil Infotech provides AI-driven software solutions, cloud infrastructure, and cybersecurity services for modern enterprises.",
+      "sameAs": [
+        "https://www.linkedin.com/company/kryil",
+        "https://twitter.com/kryilinfotech",
+        "https://www.facebook.com/kryilinfotech",
+        "https://www.instagram.com/kryilinfotech"
+      ],
+      "contactPoint": [{
         "@type": "ContactPoint",
         "contactType": "Customer Support",
         "email": "info@kryil.com",
-        "telephone": "+91-XXXXXXXXXX",
+        "telephone": "+91-8089090365",
         "areaServed": "Worldwide",
-        "availableLanguage": "English"
+        "availableLanguage": ["English", "Hindi"]
+      }]
+    }
+    </script>
+
+    <!-- ✅ Local Business Schema (optional for service visibility) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Kryil Infotech Pvt Ltd",
+      "image": "https://www.kryil.com/logo.png",
+      "url": "https://www.kryil.com/",
+      "telephone": "+91-8089090365",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Workflow Ranka Junction, 3rd Floor, 224 KR Puram",
+        "addressLocality": "Bangalore",
+        "addressRegion": "Karnataka",
+        "postalCode": "560016",
+        "addressCountry": "IN"
       }
     }
     </script>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
+    <!-- ✅ Web App & Performance -->
+    <meta name="application-name" content="Kryil Infotech Pvt Ltd" />
+    <meta name="apple-mobile-web-app-title" content="Kryil Infotech" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="/manifest.json" />
 
-    <!-- Theme initialization script -->
+    <!-- ✅ Language & Geo Targeting -->
+    <meta name="language" content="English" />
+    <meta name="geo.region" content="IN-KA" />
+    <meta name="geo.placename" content="Bangalore" />
+    <meta name="geo.position" content="12.9976;77.6690" />
+    <meta name="ICBM" content="12.9976, 77.6690" />
+
+    <!-- ✅ Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ✅ Theme initialization -->
     <script>
       (function() {
         const storedTheme = localStorage.getItem("theme");
@@ -71,6 +146,7 @@
       })();
     </script>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>

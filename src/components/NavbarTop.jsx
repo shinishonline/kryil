@@ -1,3 +1,4 @@
+// src/components/NavbarTop.jsx
 import React, { useEffect, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 
@@ -40,40 +41,41 @@ export default function NavbarTop({ inline = false }) {
 
   return (
     <nav
-      className={`antialiased uppercase font-[500] text-[12px] flex items-center gap-8
+      className={`antialiased uppercase font-[500] text-[12px] flex items-center gap-8 transition-colors duration-500
         ${
           inline
             ? "relative items-center"
-            : "fixed top-0 left-0 right-0 h-14 z-50 items-center justify-center bg-emerald-50/80 backdrop-blur-md shadow-sm"
+            : "fixed top-0 left-0 right-0 h-14 z-50 items-center justify-center bg-transparent backdrop-blur-md"
         }`}
     >
       {links.map((link, i) => (
         <a
           key={link.id}
           href={`#${link.id}`}
-          style={{ transitionDelay: `${i * 180}ms` }}
+          style={{ transitionDelay: `${i * 120}ms` }}
           className={`
-            font-Poppins relative pb-1 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
+            font-Poppins relative pb-1 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]
             transform
-            ${mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"}
+            ${mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}
+
             ${
               activeSection === link.id
-                ? "text-emerald-700 after:w-full"
-                : "text-emerald-600 hover:text-emerald-700 after:w-0 hover:after:w-full"
+                ? "text-black dark:text-white after:w-full after:bg-black dark:after:bg-white"
+                : "text-black dark:text-white/90 hover:text-black dark:hover:text-white after:w-0 hover:after:w-full after:bg-black dark:after:bg-white"
             }
+
             after:content-[''] after:absolute after:left-0 after:-bottom-[2px] after:h-[2px]
-            after:bg-emerald-700 after:transition-all after:duration-300
+            after:transition-all after:duration-300
           `}
         >
           {link.label}
         </a>
       ))}
 
-      {/* Theme toggle: icon button (no underline, no border) */}
+      {/* Theme toggle button */}
       <div
-        // matches links' mounting animation but does NOT use the after:underline
-        className={`relative transition-all duration-700 transform
-          ${mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"}
+        className={`relative transition-all duration-500 transform ml-auto
+          ${mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}
         `}
       >
         <ThemeToggle mounted={mounted} />

@@ -10,28 +10,28 @@ export default function Services() {
       link: "/infrastructure-services",
       blurb:
         "Design, deploy and operate resilient, scalable platforms that keep you fast and future-proof.",
-      note: "Enabling future-proof IT foundations with performance and reliability.",
+      note: "Enabling future-proof IT foundations with performance and reliability. We ensure high availability, seamless integration, and long-term scalability for modern enterprises.",
     },
     {
       title: "Cybersecurity Services",
       link: "/cyber-security",
       blurb:
         "From governance to red-teaming — continuous protection, detection and response you can trust.",
-      note: "Safeguarding your digital landscape with 24/7 protection.",
+      note: "Safeguarding your digital landscape with 24/7 protection. Our experts help identify vulnerabilities, implement strong defenses, and respond rapidly to emerging threats.",
     },
     {
       title: "Software Development Solutions",
       link: "/software",
       blurb:
         "Custom systems engineered for performance, maintainability and elegant user experience.",
-      note: "Building scalable, user-centric applications for modern businesses.",
+      note: "Building scalable, user-centric applications for modern businesses. Our development process blends design, performance, and technology for impactful digital products.",
     },
     {
       title: "Infrastructure Automation Solutions",
       link: "/automation",
       blurb:
         "Eliminate toil with workflow, CI/CD and ops automation to unlock deep efficiency.",
-      note: "Transforming operations with intelligent automation and efficiency.",
+      note: "Transforming operations with intelligent automation and efficiency. We help organizations simplify workflows and achieve faster, more reliable deployments.",
     },
   ];
 
@@ -45,7 +45,7 @@ export default function Services() {
   };
 
   return (
-    <section className="text-black dark:text-slate-100 py-7">
+    <section className="text-black dark:text-slate-100 py-10">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Sidebar */}
@@ -57,7 +57,8 @@ export default function Services() {
 
               <p className="mt-4 text-black/70 dark:text-slate-300 leading-relaxed font-Poppins font-[500]">
                 High-impact capabilities, thoughtfully engineered. Everything is
-                built on a foundation of clarity, rigor and craft.
+                built on a foundation of clarity, rigor, and craft — helping
+                your business evolve confidently in the digital era.
               </p>
 
               <div className="mt-8 h-px bg-black/10 dark:bg-emerald-700" />
@@ -65,11 +66,13 @@ export default function Services() {
               <nav aria-label="Services list" className="mt-6">
                 <ul className="space-y-3 text-sm font-Poppins font-[500]">
                   {items.map((it, i) => (
-                    <li key={it.title} className="flex items-center gap-3 transition">
+                    <li
+                      key={it.title}
+                      className="flex items-center gap-3 transition"
+                    >
                       <span className="inline-flex h-6 w-6 items-center justify-center bg-emerald-500 rounded-full border border-black/10 dark:border-slate-600 text-[11px] text-white dark:text-slate-100">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      {/* ✅ Make the title clickable */}
                       <Link
                         to={it.link}
                         className="truncate text-black dark:text-slate-100 transition-colors hover:text-emerald-500 dark:hover:text-emerald-500"
@@ -85,7 +88,7 @@ export default function Services() {
 
           {/* Right: Service details */}
           <div className="lg:col-span-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20">
               {items.map((it, idx) => (
                 <motion.div
                   key={it.title}
@@ -100,6 +103,7 @@ export default function Services() {
                   <h3 className="text-xl font-extrabold font-Poppins mb-3 text-emerald-600 ">
                     {it.title}
                   </h3>
+                  <br />
 
                   {/* Description */}
                   <p className="text-black/70 dark:text-slate-300 font-Poppins font-[400] leading-relaxed mb-3">
@@ -107,7 +111,7 @@ export default function Services() {
                   </p>
 
                   {/* Custom Note */}
-                  <p className="text-sm font-Poppins text-black/60 dark:text-slate-400 mb-4">
+                  <p className="text-sm font-Poppins text-black/60 dark:text-slate-400 mb-4 leading-relaxed">
                     {it.note}
                   </p>
 
