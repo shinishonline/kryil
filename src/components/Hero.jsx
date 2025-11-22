@@ -126,25 +126,11 @@ export default function Hero() {
         }`}
       />
 
-      {/* 🔹 Top bar with Logo and Navbar */}
+      {/* 🔹 Top bar with Navbar */}
       <div
-        className={`transition-all duration-700 fixed top-0 left-0 right-0 z-30 flex items-center justify-between px-8 md:px-16 lg:px-32 h-16 bg-white dark:bg-black
+        className={`transition-all duration-700 fixed top-0 left-0 right-0 z-30 flex items-center justify-end px-8 md:px-16 lg:px-32 h-16 bg-white dark:bg-black
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"}`}
       >
-        {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex-shrink-0"
-        >
-          <img
-            src={logo}
-            alt="Kryil Infotech"
-            className="h-16 md:h-20 w-auto"
-          />
-        </motion.div>
-
         {/* Navbar on the right */}
         <NavbarTop inline={false} />
       </div>
