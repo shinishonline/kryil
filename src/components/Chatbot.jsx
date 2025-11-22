@@ -154,7 +154,7 @@ export default function Chatbot() {
             exit={{ scale: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-24 z-50 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full shadow-2xl hover:from-cyan-600 hover:to-cyan-700 transition-all hover:scale-110 flex items-center justify-center"
+            className="fixed bottom-24 z-50 right-6 w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full shadow-2xl hover:from-cyan-600 hover:to-cyan-700 transition-all hover:scale-110 flex items-center justify-center"
             aria-label="Open chat"
           >
             <ChatBubbleLeftRightIcon className="w-8 h-8" />
@@ -170,7 +170,7 @@ export default function Chatbot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.8 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-24 z-50 left-1/2 transform -translate-x-1/2 w-[380px] max-w-[calc(100vw-3rem)] h-[600px] max-h-[calc(100vh-9rem)] bg-white dark:bg-slate-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+            className="fixed bottom-24 z-50 right-6 w-[380px] max-w-[calc(100vw-3rem)] h-[600px] max-h-[calc(100vh-9rem)] bg-white dark:bg-slate-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-6 py-4 flex items-center justify-between">

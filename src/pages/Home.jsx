@@ -297,7 +297,7 @@ export default function Home() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 z-50 left-1/2 transform -translate-x-1/2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-3 rounded-full shadow-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+          className="fixed bottom-6 z-50 right-6 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-3 rounded-full shadow-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition"
         >
           <ArrowUpIcon className="h-6 w-6" />
         </button>
