@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6"; // ✅ X (Twitter) icon
 import logo from '../assets/logo_white.png'
@@ -86,24 +87,24 @@ export default function Footer() {
           <h3 className="font-Poppins text-lg font-semibold text-white mb-3">Our Services</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="/software" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors flex items-center gap-2">
+              <Link to="/software" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors flex items-center gap-2">
                 <span className="text-cyan-200">▸</span> Software Development
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/cyber-security" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors flex items-center gap-2">
+              <Link to="/cyber-security" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors flex items-center gap-2">
                 <span className="text-cyan-200">▸</span> Cybersecurity Solutions
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/infrastructure-services" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors flex items-center gap-2">
+              <Link to="/infrastructure-services" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors flex items-center gap-2">
                 <span className="text-cyan-200">▸</span> Infrastructure Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/automation" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors flex items-center gap-2">
+              <Link to="/automation" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors flex items-center gap-2">
                 <span className="text-cyan-200">▸</span> Automation & IoT
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#services" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors flex items-center gap-2">
@@ -123,7 +124,7 @@ export default function Footer() {
           <h3 className="font-Poppins text-lg font-semibold text-white mb-3">Quick Links</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="/" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors">Home</a>
+              <Link to="/" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors">Home</Link>
             </li>
             <li>
               <a href="#about" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors">About Us</a>
@@ -135,7 +136,7 @@ export default function Footer() {
               <a href="#contact" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors">Contact</a>
             </li>
             <li>
-              <a href="/careers" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors">Careers</a>
+              <Link to="/careers" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors">Careers</Link>
             </li>
             <li>
               <a href="#about" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors">Privacy Policy</a>
@@ -192,9 +193,9 @@ export default function Footer() {
             </p>
           </div>
 
-          <a href="/admin" className="mt-4 text-xs text-white/60 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors">
+          <Link to="/admin" className="mt-4 text-xs text-white/60 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors">
             Admin Portal
-          </a>
+          </Link>
         </div>
       </div>
 
