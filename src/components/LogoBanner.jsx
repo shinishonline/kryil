@@ -15,47 +15,29 @@ const LogoBanner = () => {
       transition={{ duration: 1, ease: "easeOut" }}
       className="absolute top-4 left-24 z-50 hidden sm:block"
     >
-      {/* Glass effect CSS */}
+      {/* Simple glass shadow effect CSS */}
       <style>{`
-        .glass-text {
+        .glass-shadow-text {
           color: #000000;
-          position: relative;
-          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          text-shadow:
+            0 2px 8px rgba(255, 255, 255, 0.5),
+            0 4px 16px rgba(255, 255, 255, 0.3),
+            0 1px 2px rgba(0, 0, 0, 0.1);
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
         }
 
-        .glass-text::before {
-          content: '';
-          position: absolute;
-          inset: -4px;
-          background: linear-gradient(
-            135deg,
-            rgba(255, 255, 255, 0.3) 0%,
-            rgba(255, 255, 255, 0.1) 50%,
-            rgba(255, 255, 255, 0.2) 100%
-          );
-          border-radius: 8px;
-          z-index: -1;
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-        }
-
-        .glass-text::after {
-          content: '';
-          position: absolute;
-          inset: -4px;
-          background: linear-gradient(
-            135deg,
-            rgba(255, 255, 255, 0.4) 0%,
-            transparent 50%
-          );
-          border-radius: 8px;
-          z-index: -2;
+        .dark .glass-shadow-text {
+          color: #ffffff;
+          text-shadow:
+            0 2px 8px rgba(255, 255, 255, 0.3),
+            0 4px 16px rgba(255, 255, 255, 0.2),
+            0 1px 2px rgba(0, 0, 0, 0.3);
         }
       `}</style>
 
       <div>
         <h1
-          className="text-7xl md:text-8xl font-bold tracking-tight font-Poppins glass-text dark:text-white"
+          className="text-7xl md:text-8xl font-bold tracking-tight font-Poppins glass-shadow-text"
         >
           KRYIL
         </h1>
