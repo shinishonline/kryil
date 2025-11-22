@@ -96,10 +96,9 @@ export default function Hero() {
         loop
         muted
         playsInline
-        key={isDark ? "dark" : "light"}
         className="fixed top-0 left-0 w-full h-full object-cover z-[-2] transition-opacity duration-700"
       >
-        <source src={isDark ? bgVideoDark : bgVideoLight} type="video/mp4" />
+        <source src={bgVideoDark} type="video/mp4" />
       </video>
 
       {/* 🔹 Overlay (for readability) */}
