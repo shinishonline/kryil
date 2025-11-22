@@ -187,11 +187,6 @@ export default function Admin() {
               Forgot Password?
             </button>
           </div>
-          <div className="mt-6 text-sm text-gray-600 dark:text-gray-400 text-center">
-            <p>Admin credentials:</p>
-            <p className="font-mono">Username: kryiladmin</p>
-            <p className="font-mono">Password: 3Mergency!</p>
-          </div>
         </motion.div>
       </div>
     );
