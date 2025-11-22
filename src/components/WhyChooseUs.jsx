@@ -32,11 +32,11 @@ export default function WhyPartner() {
   ];
 
   const itemVariant = {
-    hidden: { opacity: 0, y: 18 },
+    hidden: { opacity: 0, y: 40 },
     visible: (i = 1) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.12, duration: 0.6, ease: "easeOut" },
+      transition: { delay: i * 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] },
     }),
   };
 
@@ -58,7 +58,7 @@ export default function WhyPartner() {
         <div className="relative">
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-700 -translate-x-1/2"></div>
 
-          <div className="space-y-0">
+          <div className="space-y-16">
             {features.map((f, idx) => {
               const Icon = f.icon;
               const isEven = idx % 2 === 0;
@@ -70,7 +70,7 @@ export default function WhyPartner() {
                   custom={idx}
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ once: true, amount: 0.2 }}
+                  viewport={{ once: true, amount: 0.5 }}
                   variants={itemVariant}
                 >
                   {/* MOBILE / SMALL: simple stacked row */}
