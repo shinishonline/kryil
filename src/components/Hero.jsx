@@ -128,7 +128,7 @@ export default function Hero() {
 
       {/* 🔹 Top bar with Logo and Navbar */}
       <div
-        className={`transition-all duration-700 fixed top-0 left-0 right-0 z-30 flex items-center justify-between px-8 md:px-16 lg:px-32 h-16
+        className={`transition-all duration-700 fixed top-0 left-0 right-0 z-30 flex items-center justify-between px-8 md:px-16 lg:px-32 h-16 bg-white dark:bg-black
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"}`}
       >
         {/* Logo */}
@@ -141,7 +141,7 @@ export default function Hero() {
           <img
             src={logo}
             alt="Kryil Infotech"
-            className="h-8 md:h-10 w-auto"
+            className="h-16 md:h-20 w-auto"
           />
         </motion.div>
 
@@ -170,7 +170,7 @@ export default function Hero() {
             >
               <motion.span
                 className={`text-4xl sm:text-5xl lg:text-6xl font-extralight inline-block ${
-                  isDark ? "text-emerald-400" : "text-emerald-600"
+                  isDark ? "text-cyan-400" : "text-cyan-600"
                 }`}
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
@@ -255,8 +255,8 @@ export default function Hero() {
           {/* <motion.button
             className={`mt-12 px-8 py-4 font-semibold shadow-lg transition-all duration-300 hover:scale-[1.03] ${
               isDark
-                ? "bg-emerald-600 hover:bg-emerald-500 text-white"
-                : "bg-emerald-500 hover:bg-emerald-400 text-white"
+                ? "bg-cyan-600 hover:bg-cyan-500 text-white"
+                : "bg-cyan-500 hover:bg-cyan-400 text-white"
             }`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
@@ -283,7 +283,7 @@ export default function Hero() {
               <div key={i} className="antialiased px-4">
                 <h3
                   className={`text-xl font-extrabold mb-2 transition-colors duration-700 ${
-                    isDark ? "text-emerald-400" : "text-emerald-600"
+                    isDark ? "text-cyan-400" : "text-cyan-600"
                   }`}
                 >
                   {feature.title}

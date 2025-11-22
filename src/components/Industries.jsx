@@ -65,7 +65,7 @@ export default function Industries() {
           {/* Right Sidebar (Mirrored from Services) */}
           <aside className="lg:col-span-4 lg:order-2">
             <div className="lg:sticky lg:top-24">
-              <h2 className="font-Poppins text-5xl md:text-6xl font-thin tracking-tight text-emerald-600 text-right">
+              <h2 className="font-Poppins text-5xl md:text-6xl font-thin tracking-tight text-cyan-600 text-right">
                 Industries We Serve
               </h2>
 
@@ -73,7 +73,7 @@ export default function Industries() {
                 Delivering specialized technology solutions across critical industries, combining deep domain expertise with innovative digital capabilities.
               </p>
 
-              <div className="mt-8 h-px bg-black/10 dark:bg-emerald-700" />
+              <div className="mt-8 h-px bg-black/10 dark:bg-cyan-400 dark:shadow-[0_0_10px_rgba(34,211,238,0.8),0_0_20px_rgba(34,211,238,0.4)]" />
 
               <nav aria-label="Industries list" className="mt-6">
                 <ul className="space-y-3 text-base font-Poppins font-medium">
@@ -82,10 +82,10 @@ export default function Industries() {
                       key={industry.name}
                       className="flex items-center gap-3 transition justify-end"
                     >
-                      <span className="truncate text-black dark:text-slate-100 transition-colors hover:text-emerald-500 dark:hover:text-emerald-500 text-right">
+                      <span className="truncate text-black dark:text-slate-100 transition-colors hover:text-cyan-500 dark:hover:text-cyan-500 text-right">
                         {industry.name}
                       </span>
-                      <span className="inline-flex h-6 w-6 items-center justify-center bg-emerald-500 rounded-full border border-black/10 dark:border-slate-600 text-[11px] text-white dark:text-slate-100 flex-shrink-0">
+                      <span className="inline-flex h-6 w-6 items-center justify-center bg-cyan-500 rounded-full border border-black/10 dark:border-slate-600 text-[11px] text-white dark:text-slate-100 flex-shrink-0">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                     </li>
@@ -108,17 +108,17 @@ export default function Industries() {
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.2 }}
                     variants={fadeUp}
-                    className="relative pr-4 border-r border-black/10 dark:border-slate-700 transition-all duration-300 hover:border-black dark:hover:border-emerald-700"
+                    className="relative pr-4 border-r border-black/10 dark:border-slate-700 transition-all duration-300 hover:border-black dark:hover:border-cyan-700"
                   >
                     {/* Icon */}
                     <div className="flex justify-end mb-4">
-                      <div className="w-12 h-12 rounded-lg bg-emerald-600 text-white flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-lg bg-cyan-600 text-white flex items-center justify-center">
                         <Icon className="w-6 h-6" />
                       </div>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-3xl md:text-4xl font-extralight font-Poppins mb-3 text-emerald-600 text-right">
+                    <h3 className="text-3xl md:text-4xl font-extralight font-Poppins mb-3 text-cyan-600 text-right">
                       {industry.name}
                     </h3>
                     <br />

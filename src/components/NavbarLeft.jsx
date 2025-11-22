@@ -54,12 +54,12 @@ export default function NavbarLeft({ sections, active }) {
             className={`font-Poppins tracking-[1.5px] uppercase text-[12px] font-[400] relative pl-6 p-0
                        transition-all duration-500 ease-in-out ${
                          active === s.id
-                           ? "text-emerald-700 scale-105"
-                           : "text-emerald-500 hover:text-emerald-700 hover:scale-105"
+                           ? "text-cyan-700 scale-105"
+                           : "text-cyan-500 hover:text-cyan-700 hover:scale-105"
                        }`}
           >
             <span
-              className={`absolute -left-3 top-1/2 -translate-y-1/2 h-[2px] bg-emerald-600
+              className={`absolute -left-3 top-1/2 -translate-y-1/2 h-[2px] bg-cyan-600
                          transition-all duration-500 ease-in-out ${
                            active === s.id ? "w-6 opacity-100" : "w-0 opacity-0"
                          }`}

@@ -15,6 +15,7 @@ import Preloader from "./components/Preloader";
 import Footer from "./components/Footer";
 import InfrastructureAutomation from "./pages/Automation";
 import Careers from "./pages/Careers";
+import Admin from "./pages/Admin";
 import CookieConsent from "./components/CookieConsent";
 import Chatbot from "./components/Chatbot";
   /* import a5 from '../public/a5.jpg';
@@ -74,6 +75,7 @@ export default function App() {
         <Route path="/software" element={<SoftwareDevelopment />} />
         <Route path="/automation" element={<InfrastructureAutomation />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
 
       <Footer />

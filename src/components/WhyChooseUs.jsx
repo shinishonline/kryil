@@ -77,7 +77,7 @@ export default function WhyPartner() {
     <section
       id="why-partner"
       aria-labelledby="why-partner-heading"
-      className="text-emerald-600 "
+      className="text-cyan-600 "
     >
       <div className="max-w-6xl mx-auto px-6 py-1">
         <h2
@@ -101,7 +101,7 @@ export default function WhyPartner() {
                   {/* MOBILE / SMALL: simple stacked row */}
                   <div className="lg:hidden flex items-start gap-4">
                     <motion.div
-                      className="flex-shrink-0 w-12 h-12 rounded-full bg-tortoise bg-emerald-600 text-white flex items-center justify-center shadow-sm"
+                      className="flex-shrink-0 w-12 h-12 rounded-full bg-tortoise bg-cyan-600 text-white flex items-center justify-center shadow-sm"
                       custom={idx}
                       initial="hidden"
                       whileInView="visible"
@@ -149,7 +149,7 @@ export default function WhyPartner() {
                     {/* Center column: icon over the vertical line */}
                     <div className="col-span-1 flex justify-center">
                       <motion.div
-                        className="w-16 h-16 rounded-full bg-tortoise bg-emerald-600 text-white flex items-center justify-center shadow-md z-10"
+                        className="w-16 h-16 rounded-full bg-tortoise bg-cyan-600 text-white flex items-center justify-center shadow-md z-10"
                         custom={idx}
                         initial="hidden"
                         whileInView="visible"

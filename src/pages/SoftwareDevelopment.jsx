@@ -159,7 +159,7 @@ export default function SoftwareDevelopmentSolutions() {
                 <div className="mb-6">
                   <Link
                     to="/"
-                    className="inline-block px-3 py-1.5 rounded-md bg-black dark:bg-emerald-600 text-white text-sm font-Poppins font-medium dark:hover:bg-emerald-700 transition"
+                    className="inline-block px-3 py-1.5 rounded-md bg-black dark:bg-cyan-600 text-white text-sm font-Poppins font-medium dark:hover:bg-cyan-700 transition"
                   >
                     ← Back to Home
                   </Link>
@@ -174,15 +174,15 @@ export default function SoftwareDevelopmentSolutions() {
                   engineered for scalability, security, and innovation.
                 </p>
 
-                <div className="mt-8 h-px bg-black/10 dark:bg-emerald-700" />
+                <div className="mt-8 h-px bg-black/10 dark:bg-cyan-700" />
 
                 <ul className="mt-8 space-y-3 text-sm font-Poppins font-[500]">
                   {services.map((s, i) => (
                     <li key={s.id} className="flex items-center gap-3">
-                      <span className="inline-flex h-6 w-6 items-center justify-center bg-emerald-500 rounded-full text-[11px] text-white">
+                      <span className="inline-flex h-6 w-6 items-center justify-center bg-cyan-500 rounded-full text-[11px] text-white">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="truncate text-black dark:text-slate-100 hover:text-black dark:hover:text-emerald-500 transition-colors">
+                      <span className="truncate text-black dark:text-slate-100 hover:text-black dark:hover:text-cyan-500 transition-colors">
                         {s.title}
                       </span>
                     </li>
@@ -192,7 +192,7 @@ export default function SoftwareDevelopmentSolutions() {
                 {/* Contact Us button */}
                 <button
                   onClick={handleContactClick}
-                  className="mt-7 w-full px-5 py-3 bg-black dark:bg-emerald-700 text-white font-semibold rounded-md hover:bg-gray-800 dark:hover:bg-emerald-500 transition"
+                  className="mt-7 w-full px-5 py-3 bg-black dark:bg-cyan-700 text-white font-semibold rounded-md hover:bg-gray-800 dark:hover:bg-cyan-500 transition"
                 >
                   Contact Us
                 </button>
@@ -212,7 +212,7 @@ export default function SoftwareDevelopmentSolutions() {
                       whileInView="visible"
                       viewport={{ once: true, amount: 0.2 }}
                       variants={fadeUp}
-                      className="relative pl-4 border-l border-black/10 dark:border-slate-700 transition-all duration-300 hover:border-black dark:hover:border-emerald-700"
+                      className="relative pl-4 border-l border-black/10 dark:border-slate-700 transition-all duration-300 hover:border-black dark:hover:border-cyan-700"
                     >
                       {/* Title */}
                       <h3 className="text-xl font-extrabold font-Poppins mb-3 text-black dark:text-slate-100 flex items-center gap-2">
@@ -230,10 +230,10 @@ export default function SoftwareDevelopmentSolutions() {
                       {/* Expand/Collapse button */}
                       <button
                         onClick={() => toggleAcc(s.id)}
-                        className="group inline-block text-sm font-medium text-black dark:text-emerald-700 relative
-                               after:block after:w-0 after:h-[1px] after:bg-black dark:after:bg-emerald-700
+                        className="group inline-block text-sm font-medium text-black dark:text-cyan-700 relative
+                               after:block after:w-0 after:h-[1px] after:bg-black dark:after:bg-cyan-700
                                after:transition-all after:duration-300 hover:after:w-full 
-                               hover:text-black dark:hover:text-emerald-500"
+                               hover:text-black dark:hover:text-cyan-500"
                       >
                         {openAcc[s.id] ? "Hide details" : "Explore more"}
                       </button>

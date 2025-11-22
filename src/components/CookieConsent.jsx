@@ -49,9 +49,9 @@ export default function CookieConsent() {
 
             {/* Cookie icon */}
             <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 bg-cyan-100 dark:bg-cyan-900/30 rounded-full flex items-center justify-center">
                 <svg
-                  className="w-6 h-6 text-emerald-600 dark:text-emerald-400"
+                  className="w-6 h-6 text-cyan-600 dark:text-cyan-400"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -79,7 +79,7 @@ export default function CookieConsent() {
                 <div className="flex flex-col sm:flex-row gap-2">
                   <button
                     onClick={acceptCookies}
-                    className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-500 transition-colors font-medium text-sm"
+                    className="px-4 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-500 transition-colors font-medium text-sm"
                   >
                     Accept All
                   </button>
@@ -91,7 +91,7 @@ export default function CookieConsent() {
                   </button>
                   <a
                     href="/privacy-policy.html"
-                    className="px-4 py-2 text-emerald-600 dark:text-emerald-400 hover:underline transition-colors font-medium text-sm text-center"
+                    className="px-4 py-2 text-cyan-600 dark:text-cyan-400 hover:underline transition-colors font-medium text-sm text-center"
                   >
                     Learn More
                   </a>

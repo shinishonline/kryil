@@ -40,8 +40,8 @@ export default function ThemeToggle({ mounted = true }) {
         transform hover:scale-110
         ${mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"}
         text-black dark:text-white
-        hover:text-emerald-600 dark:hover:text-emerald-400
-        focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2
+        hover:text-cyan-600 dark:hover:text-cyan-400
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2
       `}
     >
       {darkMode ? (

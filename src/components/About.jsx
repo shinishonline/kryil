@@ -38,7 +38,7 @@ export default function About() {
       >
         <motion.h2
         // text-slate-900 dark:text-slate-100
-          className="font-Poppins text-6xl md:text-7xl font-thin text-emerald-600 text-center"
+          className="font-Poppins text-6xl md:text-7xl font-thin text-cyan-600 text-center"
           variants={fadeUp}
         >
           About Us
@@ -91,7 +91,7 @@ export default function About() {
                 <UserGroupIcon className="w-9 h-9 text-slate-900 dark:text-slate-100" />
               </div>
               <div className="text-right">
-                <h4 className="text-2xl md:text-3xl font-thin text-emerald-600  -mt-1">
+                <h4 className="text-2xl md:text-3xl font-thin text-cyan-600  -mt-1">
                   Who We Are
                 </h4>
                 <p className="text-slate-700 dark:text-slate-300">
@@ -120,7 +120,7 @@ export default function About() {
                 <UserGroupIcon className="w-9 h-9 text-slate-900 dark:text-slate-100" />
               </div>
               <div>
-                <h4 className="text-2xl md:text-3xl font-thin text-emerald-600  -mt-1">
+                <h4 className="text-2xl md:text-3xl font-thin text-cyan-600  -mt-1">
                   What We Do
                 </h4>
                 <p className="text-slate-700 dark:text-slate-300">

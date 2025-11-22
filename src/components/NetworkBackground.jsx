@@ -6,7 +6,7 @@ import { createPortal } from "react-dom";
  * Robust NetworkBackground
  * - Prioritizes explicit app theme signals (class, attribute, CSS var, localStorage) over OS preference.
  * - Draws white background in light mode; uses computed `bg-darkBg` (or --bg-darkBg) in dark mode.
- * - Uses the project's emerald colors (reads computed styles for emerald-500/700) when in dark mode.
+ * - Uses the project's emerald colors (reads computed styles for cyan-500/700) when in dark mode.
  * - Listens to class changes, prefers-color-scheme changes, storage events, and a custom `themechange` event.
  */
 
@@ -158,8 +158,8 @@ export default function NetworkBackground() {
         const bgFromVar = getCssVar("--bg-darkBg");
         bgFill = bgFromClass || bgFromVar || "#071322";
 
-        const e500 = createEphemeralElementAndRead("text-emerald-500") || createEphemeralElementAndRead("bg-emerald-500", true) || "#10B981";
-        const e700 = createEphemeralElementAndRead("text-emerald-700") || createEphemeralElementAndRead("bg-emerald-700", true) || "#047857";
+        const e500 = createEphemeralElementAndRead("text-cyan-500") || createEphemeralElementAndRead("bg-cyan-500", true) || "#10B981";
+        const e700 = createEphemeralElementAndRead("text-cyan-700") || createEphemeralElementAndRead("bg-cyan-700", true) || "#047857";
 
         lineColorRgba = parseRgbOrHexToRgba(e500, 0.12) || "rgba(0,0,0,0.12)";
         nodeColorRgba = parseRgbOrHexToRgba(e700, 0.9) || "rgba(0,0,0,0.38)";

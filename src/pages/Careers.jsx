@@ -321,51 +321,62 @@ export default function Careers() {
     setSubmitError("");
 
     try {
-      // Create email body with application details
-      const emailBody = `
-New Job Application - ${selectedPosition.title}
-
-Candidate Information:
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-LinkedIn: ${formData.linkedIn || "Not provided"}
-
-Position Details:
-Title: ${selectedPosition.title}
-Department: ${selectedPosition.department}
-Location: ${selectedPosition.location}
-Type: ${selectedPosition.type}
-
-Cover Letter:
-${formData.coverLetter}
-
-Note: Resume file "${formData.resume?.name}" attached. Please check your email for the full application.
-      `.trim();
-
-      // For now, we'll use mailto as a simple solution
-      // In production, you'd use EmailJS, SendGrid, or your own backend
-      const subject = encodeURIComponent(`Job Application: ${selectedPosition.title} - ${formData.name}`);
-      const body = encodeURIComponent(emailBody);
-
-      // Open mailto link
-      window.open(`mailto:info@kryil.com?subject=${subject}&body=${body}`, '_blank');
-
-      // Show success message
-      setSubmitSuccess(true);
-      setTimeout(() => {
-        setShowApplicationModal(false);
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          linkedIn: "",
-          coverLetter: "",
-          resume: null,
+      // Convert resume to base64 if provided
+      let resumeData = null;
+      if (formData.resume) {
+        const reader = new FileReader();
+        resumeData = await new Promise((resolve, reject) => {
+          reader.onload = () => resolve({
+            name: formData.resume.name,
+            type: formData.resume.type,
+            size: formData.resume.size,
+            data: reader.result
+          });
+          reader.onerror = reject;
+          reader.readAsDataURL(formData.resume);
         });
-      }, 2000);
+      }
+
+      // Submit to MongoDB API
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
+      const response = await fetch(`${apiUrl}/api/submit-application`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          linkedIn: formData.linkedIn,
+          coverLetter: formData.coverLetter,
+          position: `${selectedPosition.title} - ${selectedPosition.department}`,
+          resumeData: resumeData
+        })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitSuccess(true);
+        setTimeout(() => {
+          setShowApplicationModal(false);
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            linkedIn: "",
+            coverLetter: "",
+            resume: null,
+          });
+        }, 2000);
+      } else {
+        setSubmitError("Failed to submit application. Please try again or email us directly at info@kryil.com");
+      }
 
     } catch (error) {
+      console.error('Error submitting application:', error);
       setSubmitError("Failed to submit application. Please try again or email us directly at info@kryil.com");
     } finally {
       setIsSubmitting(false);
@@ -389,7 +400,7 @@ Note: Resume file "${formData.resume?.name}" attached. Please check your email f
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-darkBg transition-colors duration-500">
       {/* Hero Section */}
-      <section className="bg-emerald-600 dark:bg-emerald-700 text-white py-20 px-6">
+      <section className="bg-cyan-600 dark:bg-cyan-700 text-white py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -414,7 +425,7 @@ Note: Resume file "${formData.resume?.name}" attached. Please check your email f
       {/* Why Join Us Section */}
       <section className="py-16 px-6 bg-white dark:bg-[#272727]">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-semibold text-emerald-600 text-center mb-12">
+          <h2 className="text-5xl md:text-6xl font-semibold text-cyan-600 text-center mb-12">
             Why Kryil?
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -433,7 +444,7 @@ Note: Resume file "${formData.resume?.name}" attached. Please check your email f
                 viewport={{ once: true, amount: 0.3 }}
                 variants={fadeIn}
                 custom={idx}
-                className="bg-gray-50 dark:bg-slate-800 p-6 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-emerald-500 transition-all"
+                className="bg-gray-50 dark:bg-slate-800 p-6 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-cyan-500 transition-all"
               >
                 <h3 className="text-2xl font-extralight mb-3 text-gray-900 dark:text-white">
                   {item.title}
@@ -450,7 +461,7 @@ Note: Resume file "${formData.resume?.name}" attached. Please check your email f
       {/* Job Openings Section */}
       <section className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-semibold text-emerald-600 text-center mb-8">
+          <h2 className="text-5xl md:text-6xl font-semibold text-cyan-600 text-center mb-8">
             Open Positions
           </h2>
 
@@ -460,7 +471,7 @@ Note: Resume file "${formData.resume?.name}" attached. Please check your email f
               onClick={() => setSelectedTab("jobs")}
               className={`px-8 py-3 rounded-lg text-lg font-semibold transition-all ${
                 selectedTab === "jobs"
-                  ? "bg-emerald-600 text-white shadow-lg"
+                  ? "bg-cyan-600 text-white shadow-lg"
                   : "bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-slate-300 hover:bg-gray-300 dark:hover:bg-slate-600"
               }`}
             >
@@ -470,7 +481,7 @@ Note: Resume file "${formData.resume?.name}" attached. Please check your email f
               onClick={() => setSelectedTab("internships")}
               className={`px-8 py-3 rounded-lg text-lg font-semibold transition-all ${
                 selectedTab === "internships"
-                  ? "bg-emerald-600 text-white shadow-lg"
+                  ? "bg-cyan-600 text-white shadow-lg"
                   : "bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-slate-300 hover:bg-gray-300 dark:hover:bg-slate-600"
               }`}
             >
@@ -486,8 +497,8 @@ Note: Resume file "${formData.resume?.name}" attached. Please check your email f
                 onClick={() => setSelectedDepartment(dept)}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
                   selectedDepartment === dept
-                    ? "bg-emerald-600 text-white"
-                    : "bg-white dark:bg-slate-800 text-gray-700 dark:text-slate-300 border border-gray-300 dark:border-slate-600 hover:border-emerald-500"
+                    ? "bg-cyan-600 text-white"
+                    : "bg-white dark:bg-slate-800 text-gray-700 dark:text-slate-300 border border-gray-300 dark:border-slate-600 hover:border-cyan-500"
                 }`}
               >
                 {dept}
@@ -506,7 +517,7 @@ Note: Resume file "${formData.resume?.name}" attached. Please check your email f
                 viewport={{ once: true, amount: 0.2 }}
                 variants={fadeIn}
                 custom={idx}
-                className="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 hover:border-emerald-500 transition-all hover:shadow-lg"
+                className="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 hover:border-cyan-500 transition-all hover:shadow-lg"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                   <div>
@@ -519,7 +530,7 @@ Note: Resume file "${formData.resume?.name}" attached. Please check your email f
                   </div>
                   <button
                     onClick={() => handleApplyClick(job)}
-                    className="px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-500 transition-colors whitespace-nowrap"
+                    className="px-6 py-3 bg-cyan-600 text-white rounded-lg hover:bg-cyan-500 transition-colors whitespace-nowrap"
                   >
                     Apply Now
                   </button>
@@ -566,11 +577,11 @@ Note: Resume file "${formData.resume?.name}" attached. Please check your email f
                 viewport={{ once: true, amount: 0.2 }}
                 variants={fadeIn}
                 custom={idx}
-                className="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 hover:border-emerald-500 transition-all hover:shadow-lg"
+                className="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 hover:border-cyan-500 transition-all hover:shadow-lg"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                   <div>
-                    <div className="inline-block px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 rounded-full text-xs font-semibold mb-2">
+                    <div className="inline-block px-3 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-400 rounded-full text-xs font-semibold mb-2">
                       INTERNSHIP
                     </div>
                     <h3 className="text-3xl font-extralight text-gray-900 dark:text-white mb-2">
@@ -582,7 +593,7 @@ Note: Resume file "${formData.resume?.name}" attached. Please check your email f
                   </div>
                   <button
                     onClick={() => handleApplyClick(internship)}
-                    className="px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-500 transition-colors whitespace-nowrap"
+                    className="px-6 py-3 bg-cyan-600 text-white rounded-lg hover:bg-cyan-500 transition-colors whitespace-nowrap"
                   >
                     Apply Now
                   </button>
@@ -657,7 +668,7 @@ Note: Resume file "${formData.resume?.name}" attached. Please check your email f
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-6 bg-emerald-600 dark:bg-emerald-700 text-white">
+      <section className="py-16 px-6 bg-cyan-600 dark:bg-cyan-700 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-semibold mb-6">
             Don't See Your Role?
@@ -667,7 +678,7 @@ Note: Resume file "${formData.resume?.name}" attached. Please check your email f
           </p>
           <a
             href="mailto:careers@kryil.com"
-            className="inline-block px-8 py-4 bg-white text-emerald-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            className="inline-block px-8 py-4 bg-white text-cyan-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
           >
             Send Your Resume
           </a>
@@ -722,7 +733,7 @@ Note: Resume file "${formData.resume?.name}" attached. Please check your email f
                     value={formData.name}
                     onChange={handleFormChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
                     placeholder="John Doe"
                   />
                 </div>
@@ -739,7 +750,7 @@ Note: Resume file "${formData.resume?.name}" attached. Please check your email f
                       value={formData.email}
                       onChange={handleFormChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-emerald-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+                      className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -753,7 +764,7 @@ Note: Resume file "${formData.resume?.name}" attached. Please check your email f
                       value={formData.phone}
                       onChange={handleFormChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-emerald-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+                      className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
                       placeholder="+91 1234567890"
                     />
                   </div>
@@ -770,7 +781,7 @@ Note: Resume file "${formData.resume?.name}" attached. Please check your email f
                     value={formData.linkedIn}
                     onChange={handleFormChange}
                     placeholder="https://linkedin.com/in/yourprofile"
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-emerald-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
                   />
                 </div>
 
@@ -812,7 +823,7 @@ Note: Resume file "${formData.resume?.name}" attached. Please check your email f
                     required
                     rows="6"
                     placeholder="Tell us why you're a great fit for this position..."
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-emerald-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white resize-none"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white resize-none"
                   />
                 </div>
 
@@ -835,7 +846,7 @@ Note: Resume file "${formData.resume?.name}" attached. Please check your email f
                   <button
                     type="submit"
                     disabled={isSubmitting || submitSuccess}
-                    className="flex-1 px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-500 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors font-medium"
+                    className="flex-1 px-6 py-3 bg-cyan-600 text-white rounded-lg hover:bg-cyan-500 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors font-medium"
                   >
                     {isSubmitting ? "Submitting..." : "Submit Application"}
                   </button>

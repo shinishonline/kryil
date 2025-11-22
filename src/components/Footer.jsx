@@ -6,7 +6,7 @@ import footerBg from '../assets/b3.jpg' // Background image for footer
 
 export default function Footer() {
   return (
-    <footer className="relative z-40 w-full overflow-hidden bg-teal-600 dark:bg-[#0a0a0a] text-white dark:text-gray-300 transition-colors duration-500">
+    <footer className="relative z-40 w-full overflow-hidden bg-cyan-600 dark:bg-[#0a0a0a] text-white dark:text-gray-300 transition-colors duration-500">
       {/* Container */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-8 grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Company Logo + Info */}
@@ -14,7 +14,7 @@ export default function Footer() {
           <img
             src={logo}
             alt="Kryil Infotech Logo"
-            className="w-24 h-auto mb-2"
+            className="w-48 h-auto mb-4"
           />
           <p className="font-Poppins text-sm text-white dark:text-gray-200 leading-relaxed">
             Empowering businesses with modern software solutions and innovative digital strategies.
@@ -26,19 +26,22 @@ export default function Footer() {
           <h3 className="font-Poppins text-lg font-semibold text-white mb-2">Quick Links</h3>
           <ul className="space-y-1 text-sm">
             <li>
-              <a href="/" className="font-Poppins hover:text-teal-200 dark:hover:text-white transition-colors">Home</a>
+              <a href="/" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors">Home</a>
             </li>
             <li>
-              <a href="#about" className="font-Poppins hover:text-teal-200 dark:hover:text-white transition-colors">About Us</a>
+              <a href="#about" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors">About Us</a>
             </li>
             <li>
-              <a href="#services" className="font-Poppins hover:text-teal-200 dark:hover:text-white transition-colors">Services</a>
+              <a href="#services" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors">Services</a>
             </li>
             <li>
-              <a href="#contact" className="font-Poppins hover:text-teal-200 dark:hover:text-white transition-colors">Contact</a>
+              <a href="#contact" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors">Contact</a>
             </li>
             <li>
-              <a href="/careers" className="font-Poppins hover:text-teal-200 dark:hover:text-white transition-colors">Careers</a>
+              <a href="/careers" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors">Careers</a>
+            </li>
+            <li>
+              <a href="/admin" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors">Admin Login</a>
             </li>
           </ul>
         </div>

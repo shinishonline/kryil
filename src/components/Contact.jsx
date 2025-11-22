@@ -8,6 +8,9 @@ export default function Contact() {
     message: "",
   });
   const [isMapOpen, setIsMapOpen] = useState(false); // modal state
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (e) => {
     setFormData({
@@ -16,18 +19,46 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitError("");
+    setSubmitSuccess(false);
 
-    const subject = `New message from ${formData.name}`;
-    const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+    try {
+      // Submit to MongoDB API
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
-    window.open(
-      `https://mail.google.com/mail/?view=cm&fs=1&to=info@kryil.com&su=${encodeURIComponent(
-        subject
-      )}&body=${encodeURIComponent(body)}`,
-      "_blank"
-    );
+      const response = await fetch(`${apiUrl}/api/submit-contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: '',
+          message: formData.message,
+          source: 'contact_form'
+        })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitSuccess(true);
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setSubmitSuccess(false), 5000);
+      } else {
+        setSubmitError("Failed to submit message. Please try again or email us directly at info@kryil.com");
+      }
+
+    } catch (error) {
+      console.error('Error submitting contact:', error);
+      setSubmitError("Failed to submit message. Please try again or email us directly at info@kryil.com");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -43,7 +74,7 @@ export default function Contact() {
           {/* Generate dotted pattern for world map effect */}
           <defs>
             <pattern id="worldDots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="1.5" fill="currentColor" className="text-emerald-600" />
+              <circle cx="2" cy="2" r="1.5" fill="currentColor" className="text-cyan-600" />
             </pattern>
           </defs>
 
@@ -69,7 +100,7 @@ export default function Contact() {
       </div>
       {/* Left Side */}
       <div className="relative px-6 md:px-3 py-16 border-r md:border-gray-300 dark:border-slate-700 w-full md:w-1/2">
-        <h2 className="text-5xl md:text-6xl font-thin mb-4 text-emerald-600 ">
+        <h2 className="text-5xl md:text-6xl font-thin mb-4 text-cyan-600 ">
           Contacts
         </h2>
         <p className="text-gray-600 dark:text-slate-300 mb-6 font-Poppins text-base font-normal">
@@ -94,14 +125,14 @@ export default function Contact() {
               <span className="font-semibold text-black dark:text-slate-100">Email:</span>
               <a
                 href="mailto:info@kryil.com"
-                className="text-slate-700 dark:text-emerald-700 hover:underline"
+                className="text-slate-700 dark:text-cyan-700 hover:underline"
               >
                 info@kryil.com
               </a>
             </li>
             <li className="flex items-center justify-between">
               <span className="font-semibold text-black dark:text-slate-100">Phone:</span>
-              <a href="tel:12345678910" className="text-slate-700 dark:text-emerald-700 hover:underline">
+              <a href="tel:12345678910" className="text-slate-700 dark:text-cyan-700 hover:underline">
                 +91 8089090365
               </a>
             </li>
@@ -109,7 +140,7 @@ export default function Contact() {
               <span className="font-semibold text-black dark:text-slate-100">Website:</span>
               <a
                 href="https://www.kryil.com"
-                className="text-slate-700 dark:text-emerald-700 hover:underline"
+                className="text-slate-700 dark:text-cyan-700 hover:underline"
               >
                 www.kryil.com
               </a>
@@ -138,7 +169,7 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full border-b border-gray-400 dark:border-slate-600 focus:outline-none focus:border-black dark:focus:border-emerald-700 px-1 py-2 bg-gray-100 dark:bg-[#272727] text-gray-800 dark:text-slate-100"
+                className="w-full border-b border-gray-400 dark:border-slate-600 focus:outline-none focus:border-black dark:focus:border-cyan-700 px-1 py-2 bg-gray-100 dark:bg-[#272727] text-gray-800 dark:text-slate-100"
               />
             </div>
             <div>
@@ -149,7 +180,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full border-b border-gray-400 dark:border-slate-600 focus:outline-none focus:border-black dark:focus:border-emerald-700 px-1 py-2 bg-gray-100 dark:bg-[#272727] text-gray-800 dark:text-slate-100"
+                className="w-full border-b border-gray-400 dark:border-slate-600 focus:outline-none focus:border-black dark:focus:border-cyan-700 px-1 py-2 bg-gray-100 dark:bg-[#272727] text-gray-800 dark:text-slate-100"
               />
             </div>
           </div>
@@ -161,15 +192,28 @@ export default function Contact() {
               value={formData.message}
               onChange={handleChange}
               rows="4"
-              className="w-full border-b border-gray-400 dark:border-slate-600 focus:outline-none focus:border-black dark:focus:border-emerald-700 px-1 py-2 bg-gray-100 dark:bg-[#272727] text-gray-800 dark:text-slate-100"
+              className="w-full border-b border-gray-400 dark:border-slate-600 focus:outline-none focus:border-black dark:focus:border-cyan-700 px-1 py-2 bg-gray-100 dark:bg-[#272727] text-gray-800 dark:text-slate-100"
             ></textarea>
           </div>
 
+          {submitSuccess && (
+            <div className="px-4 py-3 bg-cyan-100 dark:bg-cyan-900 text-cyan-700 dark:text-cyan-200 rounded">
+              Thank you! Your message has been submitted successfully. We'll get back to you soon.
+            </div>
+          )}
+
+          {submitError && (
+            <div className="px-4 py-3 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 rounded">
+              {submitError}
+            </div>
+          )}
+
           <button
             type="submit"
-            className="px-6 py-3 bg-black text-white font-semibold hover:bg-gray-800 dark:bg-emerald-700 dark:hover:bg-emerald-500 transition"
+            disabled={isSubmitting}
+            className="px-6 py-3 bg-black text-white font-semibold hover:bg-gray-800 dark:bg-cyan-700 dark:hover:bg-cyan-500 transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Send message
+            {isSubmitting ? 'Sending...' : 'Send message'}
           </button>
         </form>
       </div>
