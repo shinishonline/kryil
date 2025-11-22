@@ -45,9 +45,10 @@ export default function NavbarTop({ inline = false }) {
         ${
           inline
             ? "relative items-center"
-            : "fixed top-0 left-0 right-0 h-14 z-50 items-center justify-center bg-transparent backdrop-blur-md"
+            : "h-14 w-full items-center justify-between bg-transparent"
         }`}
     >
+      <div className="flex items-center gap-8">
       {links.map((link, i) => (
         <a
           key={link.id}
@@ -71,10 +72,11 @@ export default function NavbarTop({ inline = false }) {
           {link.label}
         </a>
       ))}
+      </div>
 
       {/* Theme toggle button */}
       <div
-        className={`relative transition-all duration-500 transform ml-auto
+        className={`relative transition-all duration-500 transform
           ${mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}
         `}
       >

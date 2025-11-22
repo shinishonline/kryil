@@ -11,7 +11,7 @@ export default function Automation(){
   ]
   return (
     <div className="max-w-[1100px] mx-auto">
-      <h2 className="text-4xl md:text-5xl font-thin mb-2">Infrastructure Automation</h2>
+      <h2 className="text-4xl md:text-5xl font-semibold mb-2">Infrastructure Automation</h2>
       <p className="text-base text-gray-600 dark:text-slate-300 mb-6 font-Poppins font-normal max-w-3xl">
         Streamline operations with intelligent automation that reduces manual work, accelerates deployments, and ensures consistency across your infrastructure.
       </p>

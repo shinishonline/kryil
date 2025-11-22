@@ -110,16 +110,18 @@ export default function Hero() {
 
       {/* 🔹 Navbar */}
       <div
-        className={`transition-all duration-700 fixed top-0 right-0 z-30 pr-12
+        className={`transition-all duration-700 fixed top-0 left-0 right-0 z-30 flex justify-center
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"}`}
       >
-        <NavbarTop inline={false} />
+        <div className="w-full max-w-4xl px-6">
+          <NavbarTop inline={false} />
+        </div>
       </div>
 
       <LogoBanner />
 
       {/* 🔹 MAIN LEFT CONTENT */}
-      <div className="flex flex-col items-start justify-center flex-grow relative pt-16 px-8 md:px-16 lg:px-24 text-left">
+      <div className="flex flex-col items-start justify-center flex-grow relative pt-16 px-8 md:px-16 lg:px-32 text-left">
         <motion.div
           className="w-full space-y-10 max-w-3xl"
           initial={{ opacity: 0, x: -60 }}
