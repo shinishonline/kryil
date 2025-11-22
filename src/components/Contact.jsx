@@ -31,9 +31,44 @@ export default function Contact() {
   };
 
   return (
-    <div className="relative flex flex-col md:flex-row border-t border-gray-300 dark:border-slate-700 w-full">
+    <div className="relative flex flex-col md:flex-row border-t border-gray-300 dark:border-slate-700 w-full overflow-hidden">
+      {/* Dotted World Map Background */}
+      <div className="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 600"
+          className="w-full h-full"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          {/* Generate dotted pattern for world map effect */}
+          <defs>
+            <pattern id="worldDots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="1.5" fill="currentColor" className="text-emerald-600" />
+            </pattern>
+          </defs>
+
+          {/* Continents represented by dotted shapes */}
+          {/* North America */}
+          <ellipse cx="200" cy="150" rx="120" ry="100" fill="url(#worldDots)" />
+
+          {/* South America */}
+          <ellipse cx="280" cy="350" rx="70" ry="120" fill="url(#worldDots)" />
+
+          {/* Europe */}
+          <ellipse cx="550" cy="120" rx="80" ry="60" fill="url(#worldDots)" />
+
+          {/* Africa */}
+          <ellipse cx="570" cy="280" rx="90" ry="130" fill="url(#worldDots)" />
+
+          {/* Asia */}
+          <ellipse cx="800" cy="180" rx="180" ry="120" fill="url(#worldDots)" />
+
+          {/* Australia */}
+          <ellipse cx="920" cy="400" rx="70" ry="50" fill="url(#worldDots)" />
+        </svg>
+      </div>
       {/* Left Side */}
-      <div className="px-6 md:px-3 py-16 border-r md:border-gray-300 dark:border-slate-700 w-full md:w-1/2">
+      <div className="relative px-6 md:px-3 py-16 border-r md:border-gray-300 dark:border-slate-700 w-full md:w-1/2">
         <h2 className="text-3xl font-bold mb-4 text-emerald-600 ">
           Contacts
         </h2>
@@ -92,7 +127,7 @@ export default function Contact() {
       </div>
 
       {/* Right Side (Form) */}
-      <div className="px-6 md:px-8 py-16 w-full md:w-1/2">
+      <div className="relative px-6 md:px-8 py-16 w-full md:w-1/2">
         <form className="space-y-6" onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
