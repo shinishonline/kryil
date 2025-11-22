@@ -15,6 +15,7 @@ import Preloader from "./components/Preloader";
 import Footer from "./components/Footer";
 import InfrastructureAutomation from "./pages/Automation";
 import Careers from "./pages/Careers";
+import CookieConsent from "./components/CookieConsent";
   /* import a5 from '../public/a5.jpg';
   import a6 from '../public/a6.jpg' */
 // import ThemeToggle from "./components/ThemeToggle";
@@ -75,6 +76,7 @@ export default function App() {
       </Routes>
 
       <Footer />
+      <CookieConsent />
     </>
   );
 }
