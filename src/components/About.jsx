@@ -28,7 +28,11 @@ export default function About() {
   };
 
   return (
-    <section ref={ref} className="max-w-[1200px] mx-auto px-6 py-1 relative">
+    <section
+      ref={ref}
+      className="max-w-[1200px] mx-auto px-6 py-1 relative"
+      aria-labelledby="about-heading"
+    >
       {/* Heading + 3 full-width paragraphs */}
       <motion.div
         className="space-y-8"
@@ -37,7 +41,7 @@ export default function About() {
         variants={container}
       >
         <motion.h2
-        // text-slate-900 dark:text-slate-100
+          id="about-heading"
           className="font-Poppins text-6xl md:text-7xl font-thin text-cyan-600 text-center"
           variants={fadeUp}
         >

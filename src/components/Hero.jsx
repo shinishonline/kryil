@@ -115,8 +115,11 @@ export default function Hero() {
         muted
         playsInline
         className="fixed top-0 left-0 w-full h-full object-cover z-[-2] transition-opacity duration-700"
+        aria-label="Background video showcasing technology and innovation"
+        title="Kryil Infotech background video"
       >
         <source src={bgVideoDark} type="video/mp4" />
+        <track kind="captions" />
       </video>
 
       {/* 🔹 Overlay (for readability) */}
