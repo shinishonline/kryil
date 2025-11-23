@@ -10,7 +10,7 @@ import {
   LockClosedIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
-import NetworkBackground from "../components/NetworkBackground";
+// Background removed as per user request
 
 const services = [
   {
@@ -121,9 +121,7 @@ export default function CyberSecurityServices() {
   };
 
   return (
-    <main className="relative min-h-screen bg-transparent text-black dark:text-slate-100">
-      <NetworkBackground />
-
+    <main className="relative min-h-screen bg-white dark:bg-slate-900 text-black dark:text-slate-100 transition-colors duration-500">
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
