@@ -425,15 +425,46 @@
     <meta name="geo.position" content="12.9976;77.6690" />
     <meta name="ICBM" content="12.9976, 77.6690" />
 
-    <!-- ✅ Self-hosted Fonts - No external requests -->
+    <!-- ✅ Self-hosted Fonts - Inlined for performance -->
+    <style>
+      @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url(/fonts/pxiByp8kv8JHgFVrLDz8V1s.ttf) format('truetype');
+      }
+      @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(/fonts/pxiEyp8kv8JHgFVrFJA.ttf) format('truetype');
+      }
+      @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(/fonts/pxiByp8kv8JHgFVrLEj6V1s.ttf) format('truetype');
+      }
+      @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(/fonts/pxiByp8kv8JHgFVrLCz7V1s.ttf) format('truetype');
+      }
+    </style>
     <link rel="preload" href="/fonts/pxiEyp8kv8JHgFVrFJA.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/fonts/pxiByp8kv8JHgFVrLEj6V1s.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="stylesheet" href="/fonts.css" />
 
     <!-- ✅ Preload critical assets for faster FCP/LCP -->
     <link rel="preload" href="/src/main.jsx" as="script" />
-    <link rel="preload" as="image" href="/assets/images/logo_white-BtGUBk2W.png" fetchpriority="high" />
-    <link rel="preload" as="image" href="/assets/images/b1-BLZW-7it.jpg" fetchpriority="high" />
+    <!-- Preload optimized logo for LCP improvement -->
+    <link rel="preload" as="image" href="/assets/images/logo_white_optimized-o1vHYI3j.png" fetchpriority="high" />
+    <!-- Preload background image -->
+    <link rel="preload" as="image" href="/assets/images/b1_optimized-BC5JKC3V.jpg" />
 
     <!-- ✅ Theme initialization - Force dark mode by default -->
     <script>
