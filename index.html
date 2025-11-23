@@ -425,53 +425,15 @@
     <meta name="geo.position" content="12.9976;77.6690" />
     <meta name="ICBM" content="12.9976, 77.6690" />
 
-    <!-- ✅ Fonts - Optimized for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <!-- ✅ Self-hosted Fonts - No external requests -->
+    <link rel="preload" href="/fonts/pxiEyp8kv8JHgFVrFJA.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/pxiByp8kv8JHgFVrLEj6V1s.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="stylesheet" href="/fonts.css" />
 
     <!-- ✅ Preload critical assets for faster FCP/LCP -->
     <link rel="preload" href="/src/main.jsx" as="script" />
     <link rel="preload" as="image" href="/assets/images/logo_white-BtGUBk2W.png" fetchpriority="high" />
     <link rel="preload" as="image" href="/assets/images/b1-BLZW-7it.jpg" fetchpriority="high" />
-
-    <!-- DNS prefetch for external resources -->
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-
-    <!-- Preload critical font for FCP improvement -->
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-    />
-
-    <!-- Load critical font weights asynchronously to avoid render blocking -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-        rel="stylesheet"
-      />
-    </noscript>
-
-    <!-- Load additional font weights asynchronously -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;500;800&display=swap"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;500;800&display=swap"
-        rel="stylesheet"
-      />
-    </noscript>
 
     <!-- ✅ Theme initialization - Force dark mode by default -->
     <script>
