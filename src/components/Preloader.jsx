@@ -12,39 +12,39 @@ export default function Preloader({ onFinish }) {
 
   useEffect(() => {
     async function run() {
-      // 1) Show "Technology Simplified"
+      // 1) Show "Innovation Secured" faster
       await textControls.start({
         opacity: 1,
-        transition: { duration: 0.6 },
+        transition: { duration: 0.4 },
       });
 
-      // Hold
-      await new Promise((r) => setTimeout(r, 1000));
+      // Shorter hold
+      await new Promise((r) => setTimeout(r, 600));
 
-      // 2) Fade out "Technology Simplified"
+      // 2) Fade out faster
       await textControls.start({
         opacity: 0,
-        transition: { duration: 0.5 },
+        transition: { duration: 0.3 },
       });
 
-      // 3) Show "WHITE MATRIX"
+      // 3) Show company logo
       setShowCompany(true);
       await companyControls.start({
         opacity: 1,
         scale: 1,
-        transition: { duration: 0.8, ease: "easeOut" },
+        transition: { duration: 0.5, ease: "easeOut" },
       });
 
-      // Hold
-      await new Promise((r) => setTimeout(r, 1000));
+      // Shorter hold
+      await new Promise((r) => setTimeout(r, 600));
 
-      // 4) Fade out preloader
+      // 4) Fade out preloader faster
       await container.start({
         opacity: 0,
-        transition: { duration: 0.6, ease: "easeInOut" },
+        transition: { duration: 0.4, ease: "easeInOut" },
       });
 
-      setTimeout(() => onFinish && onFinish(), 200);
+      setTimeout(() => onFinish && onFinish(), 100);
     }
 
     container.set({ opacity: 1 });
