@@ -84,7 +84,7 @@ export default function NavbarTop({ inline = false }) {
       });
 
       if (response.status === 404 || !response.ok) {
-        setSubmitError("Server not available. Please email connect@kryil.com");
+        setSubmitError("Server not available. Please email info@kryil.com");
         return;
       }
 
@@ -98,11 +98,11 @@ export default function NavbarTop({ inline = false }) {
           setSubmitSuccess(false);
         }, 2000);
       } else {
-        setSubmitError("Failed to submit. Please email connect@kryil.com");
+        setSubmitError("Failed to submit. Please email info@kryil.com");
       }
     } catch (error) {
       console.error('Error submitting career form:', error);
-      setSubmitError("Unable to connect. Please email connect@kryil.com");
+      setSubmitError("Unable to connect. Please email info@kryil.com");
     } finally {
       setIsSubmitting(false);
     }
@@ -273,10 +273,10 @@ export default function NavbarTop({ inline = false }) {
                       <p>{submitError}</p>
                       {submitError.includes("email") && (
                         <a
-                          href={`mailto:connect@kryil.com?subject=Career Inquiry - ${encodeURIComponent(careerForm.technology)}&body=${encodeURIComponent(`Name: ${careerForm.name}\nEmail: ${careerForm.email}\nPhone: ${careerForm.phone}\nTechnology/Role: ${careerForm.technology}`)}`}
+                          href={`mailto:info@kryil.com?subject=Career Inquiry - ${encodeURIComponent(careerForm.technology)}&body=${encodeURIComponent(`Name: ${careerForm.name}\nEmail: ${careerForm.email}\nPhone: ${careerForm.phone}\nTechnology/Role: ${careerForm.technology}`)}`}
                           className="inline-block mt-2 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition text-sm"
                         >
-                          📧 Email connect@kryil.com Instead
+                          📧 Email info@kryil.com Instead
                         </a>
                       )}
                     </div>
@@ -284,8 +284,8 @@ export default function NavbarTop({ inline = false }) {
 
                   <div className="text-center text-sm text-gray-600 dark:text-gray-400">
                     Or email us directly at{" "}
-                    <a href="mailto:connect@kryil.com" className="text-cyan-600 dark:text-cyan-400 hover:underline">
-                      connect@kryil.com
+                    <a href="mailto:info@kryil.com" className="text-cyan-600 dark:text-cyan-400 hover:underline">
+                      info@kryil.com
                     </a>
                   </div>
 

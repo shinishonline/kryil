@@ -42,6 +42,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Digital Marketing -->
+  <url>
+    <loc>https://kryil.com/digital-marketing</loc>
+    <lastmod>2025-01-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Careers -->
   <url>
     <loc>https://kryil.com/careers</loc>

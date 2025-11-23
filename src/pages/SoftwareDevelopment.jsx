@@ -139,7 +139,7 @@ export default function SoftwareDevelopmentSolutions() {
     const body =
       "Hello Kryil Team,%0D%0A%0D%0AI would like to know more about your software development solutions.%0D%0A%0D%0ABest regards,";
     window.open(
-      `https://mail.google.com/mail/?view=cm&fs=1&to=business@kryil.com&su=${encodeURIComponent(
+      `https://mail.google.com/mail/?view=cm&fs=1&to=info@kryil.com&su=${encodeURIComponent(
         subject
       )}&body=${body}`,
       "_blank"

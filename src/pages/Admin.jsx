@@ -108,9 +108,9 @@ export default function Admin() {
   };
 
   const handleForgotPassword = () => {
-    // Send password reset link to shinish@kryil.com
+    // Send password reset link to info@kryil.com
     const resetInfo = {
-      to: 'shinish@kryil.com',
+      to: 'info@kryil.com',
       subject: 'Admin Password Reset Request',
       message: `Admin password reset requested.\n\nCurrent Credentials:\nUsername: kryiladmin\nPassword: 3Mergency!\n\nIf you didn't request this, please ignore this email.`,
       requestedAt: new Date().toLocaleString()
@@ -156,7 +156,7 @@ export default function Admin() {
                 onChange={(e) => setUsername(e.target.value)}
                 required
                 className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
-                placeholder="admin@kryil.com"
+                placeholder="info@kryil.com"
               />
             </div>
             <div>
@@ -179,7 +179,7 @@ export default function Admin() {
             )}
             {forgotPasswordSuccess && (
               <div className="px-4 py-2 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200 rounded">
-                Password reset instructions sent to shinish@kryil.com
+                Password reset instructions sent to info@kryil.com
               </div>
             )}
             <button

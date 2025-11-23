@@ -216,7 +216,7 @@ export default function Careers() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               <span className="font-Poppins font-light">
-                For job inquiries: <a href="mailto:shinish@kryil.com" className="text-cyan-600 hover:text-cyan-700 font-medium">shinish@kryil.com</a>
+                For job inquiries: <a href="mailto:info@kryil.com" className="text-cyan-600 hover:text-cyan-700 font-medium">info@kryil.com</a>
               </span>
             </div>
           </div>
