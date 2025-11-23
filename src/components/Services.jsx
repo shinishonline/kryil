@@ -33,6 +33,13 @@ export default function Services() {
         "Eliminate toil with workflow, CI/CD and ops automation to unlock deep efficiency.",
       note: "Transforming operations with intelligent automation and efficiency. We help organizations simplify workflows and achieve faster, more reliable deployments.",
     },
+    {
+      title: "Digital Marketing Solutions",
+      link: "/digital-marketing",
+      blurb:
+        "Data-driven marketing strategies that amplify your brand and accelerate business growth.",
+      note: "Driving measurable results with SEO, social media, content marketing, and paid campaigns. We help businesses reach their target audience and maximize ROI through strategic digital presence.",
+    },
   ];
 
   const fadeUp = {

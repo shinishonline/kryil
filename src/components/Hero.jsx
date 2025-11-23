@@ -27,6 +27,7 @@ export default function Hero() {
     "Infrastructure automation that accelerates your operations",
     "Cloud-native solutions built for scale and resilience",
     "AI-powered systems that transform your business",
+    "Digital marketing strategies that amplify your brand presence",
   ];
 
   const subtitles = [
@@ -38,6 +39,7 @@ export default function Hero() {
     "Implementing robust security frameworks that protect your critical assets.",
     "Designing cloud architectures that ensure reliability and performance at scale.",
     "Leveraging artificial intelligence to unlock new possibilities and efficiencies.",
+    "Driving measurable growth with data-driven SEO, PPC, and social media marketing.",
   ];
 
   const features = [
@@ -46,6 +48,7 @@ export default function Hero() {
     { title: "Mobile Apps", desc: "Cross-platform mobile applications for iOS and Android." },
     { title: "Web Development", desc: "Scalable web applications using modern technologies." },
     { title: "Cloud Solutions", desc: "Cloud migration and infrastructure management services." },
+    { title: "Digital Marketing", desc: "SEO, PPC, and social media strategies that drive growth." },
   ];
 
   // ✅ Detect Tailwind dark mode dynamically

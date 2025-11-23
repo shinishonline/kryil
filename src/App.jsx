@@ -15,6 +15,7 @@ import SoftwareDevelopment from "./pages/SoftwareDevelopment";
 import Preloader from "./components/Preloader";
 import Footer from "./components/Footer";
 import InfrastructureAutomation from "./pages/Automation";
+import DigitalMarketing from "./pages/DigitalMarketing";
 import Careers from "./pages/Careers";
 import Admin from "./pages/Admin";
 import CookieConsent from "./components/CookieConsent";
@@ -83,6 +84,7 @@ export default function App() {
         <Route path="/cyber-security" element={<CybersecurityServices />} />
         <Route path="/software" element={<SoftwareDevelopment />} />
         <Route path="/automation" element={<InfrastructureAutomation />} />
+        <Route path="/digital-marketing" element={<DigitalMarketing />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/admin" element={<Admin />} />
         {/* 404 Catch-all - Redirect to home */}

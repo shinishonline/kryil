@@ -78,13 +78,13 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <a href="#services" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors flex items-center gap-2">
-                <span className="text-cyan-200">▸</span> Cloud Solutions
-              </a>
+              <Link to="/digital-marketing" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors flex items-center gap-2">
+                <span className="text-cyan-200">▸</span> Digital Marketing
+              </Link>
             </li>
             <li>
               <a href="#services" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors flex items-center gap-2">
-                <span className="text-cyan-200">▸</span> Mobile Development
+                <span className="text-cyan-200">▸</span> Cloud Solutions
               </a>
             </li>
           </ul>
