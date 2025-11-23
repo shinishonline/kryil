@@ -22,6 +22,7 @@ const sections = [
   { id: "why", label: "Why Us" },
   { id: "services", label: "Services" },
   { id: "industries", label: "Industries" },
+  { id: "careers", label: "Careers", isRoute: true },
   { id: "contact", label: "Contact" },
 ];
 

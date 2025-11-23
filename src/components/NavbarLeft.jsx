@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function NavbarLeft({ sections, active }) {
   const [showContent, setShowContent] = useState(false);
@@ -46,27 +47,49 @@ export default function NavbarLeft({ sections, active }) {
         className={`flex flex-col gap-2 flex-1 justify-center transform transition-all duration-700 ease-out
                     ${showContent ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"}`}
       >
-        {sections.map((s, i) => (
-          <a
-            key={s.id}
-            href={`#${s.id}`}
-            style={{ transitionDelay: `${i * 100}ms` }}
-            className={`font-Poppins tracking-[1.5px] uppercase text-[12px] font-[400] relative pl-6 p-0
+        {sections.map((s, i) => {
+          const baseClasses = `font-Poppins tracking-[1.5px] uppercase text-[12px] font-[400] relative pl-6 p-0
                        transition-all duration-500 ease-in-out ${
                          active === s.id
                            ? "text-cyan-700 scale-105"
                            : "text-cyan-500 hover:text-cyan-700 hover:scale-105"
-                       }`}
-          >
+                       }`;
+
+          const indicator = (
             <span
               className={`absolute -left-3 top-1/2 -translate-y-1/2 h-[2px] bg-cyan-600
                          transition-all duration-500 ease-in-out ${
                            active === s.id ? "w-6 opacity-100" : "w-0 opacity-0"
                          }`}
             ></span>
-            {s.label}
-          </a>
-        ))}
+          );
+
+          if (s.isRoute) {
+            return (
+              <Link
+                key={s.id}
+                to={`/${s.id}`}
+                style={{ transitionDelay: `${i * 100}ms` }}
+                className={baseClasses}
+              >
+                {indicator}
+                {s.label}
+              </Link>
+            );
+          }
+
+          return (
+            <a
+              key={s.id}
+              href={`#${s.id}`}
+              style={{ transitionDelay: `${i * 100}ms` }}
+              className={baseClasses}
+            >
+              {indicator}
+              {s.label}
+            </a>
+          );
+        })}
       </nav>
     </aside>
   );
