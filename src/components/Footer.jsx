@@ -20,10 +20,10 @@ export default function Footer() {
             alt="Kryil Infotech Logo"
             className="w-48 h-auto mb-4"
           />
-          <p className="font-Poppins text-sm text-white dark:text-gray-200 leading-relaxed mb-4">
+          <p className="font-Poppins text-base text-white dark:text-gray-200 leading-relaxed mb-4">
             Empowering businesses with modern software solutions and innovative digital strategies.
           </p>
-          <div className="space-y-2 text-sm">
+          <div className="space-y-2 text-base">
             <p className="flex items-center gap-2">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -55,8 +55,8 @@ export default function Footer() {
 
         {/* Services */}
         <div className="flex flex-col">
-          <h3 className="font-Poppins text-lg font-semibold text-white mb-3">Our Services</h3>
-          <ul className="space-y-2 text-sm">
+          <h3 className="font-Poppins text-xl font-semibold text-white mb-3">Our Services</h3>
+          <ul className="space-y-2 text-base">
             <li>
               <Link to="/software" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors flex items-center gap-2">
                 <span className="text-cyan-200">▸</span> Software Development
@@ -92,8 +92,8 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div className="flex flex-col">
-          <h3 className="font-Poppins text-lg font-semibold text-white mb-3">Quick Links</h3>
-          <ul className="space-y-2 text-sm">
+          <h3 className="font-Poppins text-xl font-semibold text-white mb-3">Quick Links</h3>
+          <ul className="space-y-2 text-base">
             <li>
               <Link to="/" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors">Home</Link>
             </li>
@@ -114,28 +114,28 @@ export default function Footer() {
 
         {/* Business Hours & Contact */}
         <div className="flex flex-col">
-          <h3 className="font-Poppins text-lg font-semibold text-white mb-3">Get In Touch</h3>
+          <h3 className="font-Poppins text-xl font-semibold text-white mb-3">Get In Touch</h3>
 
           <div className="mt-4">
-            <h4 className="font-Poppins text-sm font-semibold text-white mb-2">Business Hours</h4>
-            <p className="text-xs text-white/80 dark:text-gray-300 leading-relaxed">
+            <h4 className="font-Poppins text-base font-semibold text-white mb-2">Business Hours</h4>
+            <p className="text-sm text-white/80 dark:text-gray-300 leading-relaxed">
               Monday - Friday: 9:00 AM - 6:00 PM<br />
               Saturday & Sunday: Closed
             </p>
-            <p className="text-xs text-white/80 dark:text-gray-300 leading-relaxed mt-3">
+            <p className="text-sm text-white/80 dark:text-gray-300 leading-relaxed mt-3">
               <span className="font-semibold text-white">Support Services:</span><br />
               Available 24/7
             </p>
           </div>
 
-          <Link to="/admin" className="mt-4 text-xs text-white/60 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors">
+          <Link to="/admin" className="mt-4 text-sm text-white/60 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors">
             Admin Portal
           </Link>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="relative border-t font-Poppins border-white/20 dark:border-gray-700 py-3 text-center text-xs text-white dark:text-gray-400">
+      <div className="relative border-t font-Poppins border-white/20 dark:border-gray-700 py-3 text-center text-sm text-white dark:text-gray-400">
         © {new Date().getFullYear()} Kryil Infotech Pvt Ltd — All rights reserved.
       </div>
     </footer>

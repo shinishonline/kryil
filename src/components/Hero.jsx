@@ -179,12 +179,12 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className={`text-4xl sm:text-5xl lg:text-6xl font-extralight leading-[1.3] tracking-tight transition-colors duration-700 ${
+              className={`text-5xl sm:text-6xl lg:text-7xl font-extralight leading-[1.3] tracking-tight transition-colors duration-700 ${
                 isDark ? "text-gray-50" : "text-gray-900"
               }`}
             >
               <motion.span
-                className={`text-4xl sm:text-5xl lg:text-6xl font-extralight inline-block ${
+                className={`text-5xl sm:text-6xl lg:text-7xl font-extralight inline-block ${
                   isDark ? "text-cyan-400" : "text-cyan-600"
                 }`}
                 animate={{ y: [0, -6, 0] }}
@@ -199,7 +199,7 @@ export default function Hero() {
           <AnimatePresence mode="wait">
             <motion.p
               key={currentSubtitle}
-              className={`text-lg max-w-2xl leading-relaxed mt-6 mb-12 transition-colors duration-700 ${
+              className={`text-xl max-w-2xl leading-relaxed mt-6 mb-12 transition-colors duration-700 ${
                 isDark ? "text-gray-100" : "text-gray-700"
               }`}
               initial={{ opacity: 0, y: 20 }}
@@ -219,49 +219,49 @@ export default function Hero() {
           >
             <div>
               <h3
-                className={`text-4xl md:text-5xl font-bold transition-colors duration-700 ${
+                className={`text-5xl md:text-6xl font-bold transition-colors duration-700 ${
                   isDark ? "text-cyan-400" : "text-cyan-600"
                 }`}
               >
                 500+
               </h3>
-              <p className={`text-sm mt-1 ${isDark ? "text-gray-300" : "text-gray-600"}`}>
+              <p className={`text-base mt-1 ${isDark ? "text-gray-300" : "text-gray-600"}`}>
                 Projects Delivered
               </p>
             </div>
             <div>
               <h3
-                className={`text-4xl md:text-5xl font-bold transition-colors duration-700 ${
+                className={`text-5xl md:text-6xl font-bold transition-colors duration-700 ${
                   isDark ? "text-cyan-400" : "text-cyan-600"
                 }`}
               >
                 98%
               </h3>
-              <p className={`text-sm mt-1 ${isDark ? "text-gray-300" : "text-gray-600"}`}>
+              <p className={`text-base mt-1 ${isDark ? "text-gray-300" : "text-gray-600"}`}>
                 Client Satisfaction
               </p>
             </div>
             <div>
               <h3
-                className={`text-4xl md:text-5xl font-bold transition-colors duration-700 ${
+                className={`text-5xl md:text-6xl font-bold transition-colors duration-700 ${
                   isDark ? "text-cyan-400" : "text-cyan-600"
                 }`}
               >
                 15+
               </h3>
-              <p className={`text-sm mt-1 ${isDark ? "text-gray-300" : "text-gray-600"}`}>
+              <p className={`text-base mt-1 ${isDark ? "text-gray-300" : "text-gray-600"}`}>
                 Years Experience
               </p>
             </div>
             <div>
               <h3
-                className={`text-4xl md:text-5xl font-bold transition-colors duration-700 ${
+                className={`text-5xl md:text-6xl font-bold transition-colors duration-700 ${
                   isDark ? "text-cyan-400" : "text-cyan-600"
                 }`}
               >
                 24/7
               </h3>
-              <p className={`text-sm mt-1 ${isDark ? "text-gray-300" : "text-gray-600"}`}>
+              <p className={`text-base mt-1 ${isDark ? "text-gray-300" : "text-gray-600"}`}>
                 Support Available
               </p>
             </div>
