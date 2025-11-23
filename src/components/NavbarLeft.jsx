@@ -48,7 +48,7 @@ export default function NavbarLeft({ sections, active }) {
                     ${showContent ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"}`}
       >
         {sections.map((s, i) => {
-          const baseClasses = `font-Poppins tracking-[1.5px] uppercase text-[12px] font-[400] relative pl-6 p-0
+          const baseClasses = `font-Poppins tracking-[1.5px] uppercase text-[13px] font-[400] relative pl-6 p-0
                        transition-all duration-500 ease-in-out ${
                          active === s.id
                            ? "text-cyan-700 scale-105"

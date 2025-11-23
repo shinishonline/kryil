@@ -110,7 +110,7 @@ export default function NavbarTop({ inline = false }) {
 
   return (
     <nav
-      className={`antialiased uppercase font-[300] text-[12px] flex items-center gap-8 transition-colors duration-500
+      className={`antialiased uppercase font-[300] text-[13px] flex items-center gap-8 transition-colors duration-500
         ${
           inline
             ? "relative items-center"
