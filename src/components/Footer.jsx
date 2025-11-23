@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6"; // ✅ X (Twitter) icon
-import logo from '../assets/logo_white.png'
+import logo from '../assets/logo_white_optimized.png'
 import footerBg from '../assets/b3.jpg' // Background image for footer
 
 export default function Footer() {

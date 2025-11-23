@@ -1,7 +1,7 @@
 // src/components/Preloader.jsx
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-import logo from '../assets/logo_white.png';
+import logo from '../assets/logo_white_optimized.png';
 
 export default function Preloader({ onFinish }) {
   const [showCompany, setShowCompany] = useState(false);
