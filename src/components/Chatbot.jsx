@@ -177,18 +177,20 @@ export default function Chatbot() {
     }
   }, [isOpen]);
 
-  // Auto-open chatbot - DISABLED per user request
-  // useEffect(() => {
-  //   const hasVisited = sessionStorage.getItem('chatbotAutoOpened');
-  //   if (!hasVisited && !hasAutoOpened) {
-  //     const timer = setTimeout(() => {
-  //       setIsOpen(true);
-  //       setHasAutoOpened(true);
-  //       sessionStorage.setItem('chatbotAutoOpened', 'true');
-  //     }, 3000);
-  //     return () => clearTimeout(timer);
-  //   }
-  // }, [hasAutoOpened]);
+  // Auto-open chatbot after 3 minutes on first visit
+  useEffect(() => {
+    const hasVisited = sessionStorage.getItem('chatbotAutoOpened');
+
+    if (!hasVisited && !hasAutoOpened) {
+      const timer = setTimeout(() => {
+        setIsOpen(true);
+        setHasAutoOpened(true);
+        sessionStorage.setItem('chatbotAutoOpened', 'true');
+      }, 180000); // 3 minutes = 180,000 milliseconds
+
+      return () => clearTimeout(timer);
+    }
+  }, [hasAutoOpened]);
 
   const addMessage = (type, text) => {
     const newMessage = {
