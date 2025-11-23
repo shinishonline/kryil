@@ -476,16 +476,13 @@
     <!-- ✅ Theme initialization - Force dark mode by default -->
     <script>
       (function() {
-        // Force dark mode unless explicitly set to light
-        const storedTheme = localStorage.getItem("theme");
-        if (storedTheme === "light") {
-          document.documentElement.classList.remove("dark");
-        } else {
-          // Ensure dark class is added
-          document.documentElement.classList.add("dark");
-          // Always store dark as preference
-          localStorage.setItem("theme", "dark");
-        }
+        // ALWAYS force dark mode - ignore any stored preferences
+        // Remove any light theme settings
+        localStorage.removeItem("theme");
+        // Set dark mode
+        document.documentElement.classList.add("dark");
+        // Store dark as the only preference
+        localStorage.setItem("theme", "dark");
       })();
     </script>
   </head>
