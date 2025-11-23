@@ -4,9 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import NavbarTop from "./NavbarTop";
 import logo from "../assets/logo_white.png";
 
-import b1 from "../assets/b1.jpg";
-import b2 from "../assets/b2.jpg";
-import b3 from "../assets/b3.jpg";
+import b1 from "../assets/b1_optimized.jpg";
+import b2 from "../assets/b2_optimized.jpg";
+import b3 from "../assets/b3_optimized.jpg";
 
 // 🎥 Light and Dark videos
 import bgVideoLight from "../assets/bgvideo6.mp4";

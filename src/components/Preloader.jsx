@@ -76,6 +76,9 @@ export default function Preloader({ onFinish }) {
           <img
             src={logo}
             alt="Kryil Logo"
+            fetchpriority="high"
+            width="256"
+            height="83"
             className="w-48 md:w-64 h-auto"
           />
         </motion.div>
