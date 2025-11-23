@@ -412,17 +412,20 @@
       />
     </noscript>
 
-    <!-- ✅ Theme initialization -->
+    <!-- ✅ Theme initialization - Default to dark mode -->
     <script>
       (function() {
         const storedTheme = localStorage.getItem("theme");
-        if (
-          storedTheme === "dark" ||
-          (!storedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)
-        ) {
-          document.documentElement.classList.add("dark");
-        } else {
+        // Default to dark mode if no preference is stored
+        if (storedTheme === "light") {
           document.documentElement.classList.remove("dark");
+        } else {
+          // Always use dark mode by default
+          document.documentElement.classList.add("dark");
+          // Store dark as default if nothing is set
+          if (!storedTheme) {
+            localStorage.setItem("theme", "dark");
+          }
         }
       })();
     </script>
