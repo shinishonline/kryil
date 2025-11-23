@@ -1,9 +1,23 @@
+# Kryil Infotech Pvt Ltd - Robots.txt
+# https://kryil.com
+
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /api/
+
+# Sitemap
 Sitemap: https://kryil.com/sitemap.xml
 
-# Optimize crawling
+# Crawl delay (be gentle with our servers)
 Crawl-delay: 1
 
-# Block admin area
-Disallow: /admin
+# Specific bot instructions
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

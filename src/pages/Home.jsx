@@ -11,6 +11,7 @@ import WhyChooseUs from "../components/WhyChooseUs";
 import Services from "../components/Services";
 import Industries from "../components/Industries";
 import Contact from "../components/Contact";
+import SEO from "../components/SEO";
 
 import useInView from "../hooks/useInView";
 // import ParallaxSection from "../components/ParallaxSection";
@@ -135,8 +136,10 @@ export default function Home() {
   };
 
   return (
-    <div className="flex min-h-screen relative bg-bg text-text dark:bg-darkBg dark:text-darkText transition-colors duration-500">
-      {/* Sidebar Navbar (slide in from left) */}
+    <>
+      <SEO />
+      <div className="flex min-h-screen relative bg-bg text-text dark:bg-darkBg dark:text-darkText transition-colors duration-500">
+        {/* Sidebar Navbar (slide in from left) */}
       <AnimatePresence>
         {showSidebar && (
           <motion.div
@@ -303,6 +306,7 @@ export default function Home() {
           <ArrowUpIcon className="h-6 w-6" />
         </button>
       )}
-    </div>
+      </div>
+    </>
   );
 }
