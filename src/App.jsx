@@ -20,9 +20,6 @@ import Careers from "./pages/Careers";
 import Admin from "./pages/Admin";
 import CookieConsent from "./components/CookieConsent";
 import Chatbot from "./components/Chatbot";
-  /* import a5 from '../public/a5.jpg';
-  import a6 from '../public/a6.jpg' */
-// import ThemeToggle from "./components/ThemeToggle";
 
 // ✅ Inline scroll reset using useLocation
 function ScrollToTopOnRouteChange() {
@@ -65,8 +62,6 @@ export default function App() {
   if (showPreloader) {
     return (
       <Preloader
-        assets={["/a5.jpg", "/a6.jpg"]}
-        minDuration={900}
         onFinish={handlePreloaderFinish}
       />
     );
@@ -76,7 +71,6 @@ export default function App() {
     <HelmetProvider>
       {/* ✅ Always reset scroll on route change */}
       <ScrollToTopOnRouteChange />
-      {/* <ThemeToggle /> */}
 
       <Routes>
         <Route path="/" element={<Home />} />
