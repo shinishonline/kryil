@@ -159,6 +159,7 @@ export default function Chatbot() {
   const [inputValue, setInputValue] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [suggestions, setSuggestions] = useState(quickSuggestions.initial);
+  const [hasAutoOpened, setHasAutoOpened] = useState(false);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
 
@@ -175,6 +176,21 @@ export default function Chatbot() {
       inputRef.current.focus();
     }
   }, [isOpen]);
+
+  // Auto-open chatbot after 3 seconds on first visit
+  useEffect(() => {
+    const hasVisited = sessionStorage.getItem('chatbotAutoOpened');
+
+    if (!hasVisited && !hasAutoOpened) {
+      const timer = setTimeout(() => {
+        setIsOpen(true);
+        setHasAutoOpened(true);
+        sessionStorage.setItem('chatbotAutoOpened', 'true');
+      }, 3000); // Open after 3 seconds
+
+      return () => clearTimeout(timer);
+    }
+  }, [hasAutoOpened]);
 
   const addMessage = (type, text) => {
     const newMessage = {
