@@ -12,6 +12,7 @@ import {
   ChartBarIcon,
   CubeTransparentIcon,
 } from "@heroicons/react/24/outline";
+import SEO from "../components/SEO";
 
 // Background removed as per user request
 
@@ -146,8 +147,15 @@ export default function SoftwareDevelopmentSolutions() {
   };
 
   return (
-    <main className="relative min-h-screen bg-white dark:bg-slate-900 text-black dark:text-slate-100 transition-colors duration-500">
-      {/* Close Button - Top Right */}
+    <>
+      <SEO
+        title="Software Development Services | Custom Web, Mobile & Cloud Applications — Kryil Infotech"
+        description="Expert software development services including custom applications, mobile apps (iOS/Android), web development, SaaS, AI/ML solutions, cloud-native apps, and enterprise software. Build your vision with Kryil."
+        keywords="software development, custom software, web development, mobile app development, iOS, Android, React, Node.js, SaaS development, AI ML applications, cloud native apps, enterprise software, Bangalore software company"
+        path="/software"
+      />
+      <main className="relative min-h-screen bg-white dark:bg-slate-900 text-black dark:text-slate-100 transition-colors duration-500">
+        {/* Close Button - Top Right */}
       <Link
         to="/"
         className="fixed top-6 right-6 z-50 p-2 rounded-full bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-all duration-300 group"
@@ -264,5 +272,6 @@ export default function SoftwareDevelopmentSolutions() {
         </div>
       </section>
     </main>
+    </>
   );
 }

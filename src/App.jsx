@@ -6,6 +6,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
+import { HelmetProvider } from 'react-helmet-async';
 
 import Home from "./pages/Home";
 import InfrastructureServices from "./pages/Infrastructure";
@@ -71,7 +72,7 @@ export default function App() {
   }
 
   return (
-    <>
+    <HelmetProvider>
       {/* ✅ Always reset scroll on route change */}
       <ScrollToTopOnRouteChange />
       {/* <ThemeToggle /> */}
@@ -91,6 +92,6 @@ export default function App() {
       <ConditionalFooter />
       <CookieConsent />
       <Chatbot />
-    </>
+    </HelmetProvider>
   );
 }

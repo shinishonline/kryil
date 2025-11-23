@@ -11,6 +11,7 @@ import {
   Cog6ToothIcon,
   ArrowPathIcon,
 } from "@heroicons/react/24/outline";
+import SEO from "../components/SEO";
 // Background removed as per user request
 
 const sections = [
@@ -147,8 +148,15 @@ export default function InfrastructureServices() {
   };
 
   return (
-    <main className="relative min-h-screen bg-white dark:bg-slate-900 text-black dark:text-slate-100 transition-colors duration-500">
-      {/* Close Button - Top Right */}
+    <>
+      <SEO
+        title="Infrastructure Services | Cloud, Data Center & Network Solutions — Kryil Infotech"
+        description="Comprehensive IT infrastructure services including cloud solutions, data center management, networking, virtualization, security, and DevOps automation. Transform your infrastructure with Kryil."
+        keywords="cloud infrastructure, AWS, Azure, GCP, data center management, networking services, server virtualization, infrastructure security, DevOps, IaaS, Kubernetes, Bangalore infrastructure services"
+        path="/infrastructure-services"
+      />
+      <main className="relative min-h-screen bg-white dark:bg-slate-900 text-black dark:text-slate-100 transition-colors duration-500">
+        {/* Close Button - Top Right */}
       <Link
         to="/"
         className="fixed top-6 right-6 z-50 p-2 rounded-full bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-all duration-300 group"
@@ -258,5 +266,6 @@ export default function InfrastructureServices() {
         </div>
       </section>
     </main>
+    </>
   );
 }

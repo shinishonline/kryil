@@ -10,6 +10,7 @@ import {
   CodeBracketSquareIcon,
   ChartPieIcon,
 } from "@heroicons/react/24/outline";
+import SEO from "../components/SEO";
 // Background removed as per user request
 
 const services = [
@@ -125,8 +126,15 @@ export default function InfrastructureAutomation() {
   };
 
   return (
-    <main className="relative min-h-screen bg-white dark:bg-slate-900 text-black dark:text-slate-100 transition-colors duration-500">
-      {/* Close Button - Top Right */}
+    <>
+      <SEO
+        title="Infrastructure Automation & IoT Solutions — Kryil Infotech"
+        description="Advanced infrastructure automation services including configuration management, CI/CD pipelines, orchestration, monitoring, IaC (Terraform, Ansible), and IoT solutions. Accelerate your operations with Kryil."
+        keywords="infrastructure automation, DevOps automation, CI CD, configuration management, Terraform, Ansible, Kubernetes orchestration, infrastructure as code, monitoring automation, IoT solutions, Bangalore automation services"
+        path="/automation"
+      />
+      <main className="relative min-h-screen bg-white dark:bg-slate-900 text-black dark:text-slate-100 transition-colors duration-500">
+        {/* Close Button - Top Right */}
       <Link
         to="/"
         className="fixed top-6 right-6 z-50 p-2 rounded-full bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-all duration-300 group"
@@ -239,5 +247,6 @@ export default function InfrastructureAutomation() {
         </div>
       </section>
     </main>
+    </>
   );
 }

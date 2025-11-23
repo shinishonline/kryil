@@ -10,6 +10,7 @@ import {
   LockClosedIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
+import SEO from "../components/SEO";
 // Background removed as per user request
 
 const services = [
@@ -121,8 +122,15 @@ export default function CyberSecurityServices() {
   };
 
   return (
-    <main className="relative min-h-screen bg-white dark:bg-slate-900 text-black dark:text-slate-100 transition-colors duration-500">
-      {/* Close Button - Top Right */}
+    <>
+      <SEO
+        title="Cybersecurity Services | Advanced Threat Protection & Security Solutions — Kryil Infotech"
+        description="Comprehensive cybersecurity services including threat detection, incident response, penetration testing, compliance, cloud security, and security training. Protect your business with Kryil."
+        keywords="cybersecurity, threat detection, SOC, incident response, penetration testing, vulnerability assessment, SIEM, cloud security, compliance, GDPR, ISO 27001, security training, Bangalore cybersecurity"
+        path="/cyber-security"
+      />
+      <main className="relative min-h-screen bg-white dark:bg-slate-900 text-black dark:text-slate-100 transition-colors duration-500">
+        {/* Close Button - Top Right */}
       <Link
         to="/"
         className="fixed top-6 right-6 z-50 p-2 rounded-full bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-all duration-300 group"
@@ -240,5 +248,6 @@ export default function CyberSecurityServices() {
         </div>
       </section>
     </main>
+    </>
   );
 }

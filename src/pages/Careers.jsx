@@ -5,6 +5,7 @@ import {
   BriefcaseIcon,
   AcademicCapIcon,
 } from "@heroicons/react/24/outline";
+import SEO from "../components/SEO";
 
 const jobOpenings = [
   {
@@ -180,8 +181,15 @@ export default function Careers() {
   const currentList = activeTab === "jobs" ? jobOpenings : internships;
 
   return (
-    <main className="relative min-h-screen bg-white dark:bg-slate-900 text-black dark:text-slate-100 transition-colors duration-500">
-      {/* Close Button - Top Right */}
+    <>
+      <SEO
+        title="Careers at Kryil Infotech | Join Our Team"
+        description="Explore exciting career opportunities at Kryil Infotech. We're hiring full-stack developers, cybersecurity analysts, DevOps engineers, AI/ML engineers, and offering internships. Apply now!"
+        keywords="careers, jobs, internships, software engineer jobs, cybersecurity jobs, DevOps jobs, AI ML jobs, Bangalore tech jobs, Kryil careers"
+        path="/careers"
+      />
+      <main className="relative min-h-screen bg-white dark:bg-slate-900 text-black dark:text-slate-100 transition-colors duration-500">
+        {/* Close Button - Top Right */}
       <Link
         to="/"
         className="fixed top-6 right-6 z-50 p-2 rounded-full bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-all duration-300 group"
@@ -477,5 +485,6 @@ export default function Careers() {
         </div>
       </section>
     </main>
+    </>
   );
 }
