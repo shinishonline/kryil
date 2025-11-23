@@ -1,26 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { ViteImageOptimizer } from '@vheemstra/vite-plugin-imagemin'
 
 export default defineConfig({
-  plugins: [
-    react(),
-    ViteImageOptimizer({
-      // Image optimization settings
-      png: {
-        quality: 80,
-      },
-      jpeg: {
-        quality: 80,
-      },
-      jpg: {
-        quality: 80,
-      },
-      webp: {
-        quality: 80,
-      },
-    }),
-  ],
+  plugins: [react()],
   base: './',
   build: {
     // Performance optimizations - using default esbuild minifier
