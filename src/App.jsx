@@ -12,7 +12,6 @@ import Home from "./pages/Home";
 import InfrastructureServices from "./pages/Infrastructure";
 import CybersecurityServices from "./pages/CybersecurityServices";
 import SoftwareDevelopment from "./pages/SoftwareDevelopment";
-import Preloader from "./components/Preloader";
 import Footer from "./components/Footer";
 import InfrastructureAutomation from "./pages/Automation";
 import DigitalMarketing from "./pages/DigitalMarketing";
@@ -41,32 +40,6 @@ function ConditionalFooter() {
 }
 
 export default function App() {
-  // show preloader only if not shown this session
-  const [showPreloader, setShowPreloader] = useState(() => {
-    try {
-      return !sessionStorage.getItem("preloaderShown");
-    } catch (e) {
-      return true; // fallback if sessionStorage unavailable
-    }
-  });
-
-  function handlePreloaderFinish() {
-    try {
-      sessionStorage.setItem("preloaderShown", "true");
-    } catch (e) {
-      /* ignore storage errors */
-    }
-    setShowPreloader(false);
-  }
-
-  if (showPreloader) {
-    return (
-      <Preloader
-        onFinish={handlePreloaderFinish}
-      />
-    );
-  }
-
   return (
     <HelmetProvider>
       {/* ✅ Always reset scroll on route change */}
