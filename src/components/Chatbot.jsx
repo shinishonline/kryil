@@ -252,11 +252,25 @@ export default function Chatbot() {
             exit={{ scale: 0, opacity: 0 }}
             transition={{ duration: 0.3, type: "spring", stiffness: 200 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full shadow-2xl hover:from-cyan-600 hover:to-cyan-700 transition-all hover:scale-110 flex items-center justify-center group"
+            className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-gradient-to-br from-cyan-500 via-blue-500 to-cyan-600 text-white rounded-full shadow-2xl hover:shadow-cyan-500/50 transition-all hover:scale-110 flex items-center justify-center group cursor-pointer"
             aria-label="Open AI chat assistant"
+            whileHover={{ rotate: [0, -10, 10, -10, 0] }}
+            whileTap={{ scale: 0.95 }}
           >
-            <ChatBubbleLeftRightIcon className="w-8 h-8" />
-            <span className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white animate-pulse"></span>
+            {/* Pulse ring effect */}
+            <span className="absolute inset-0 rounded-full bg-cyan-400 animate-ping opacity-20"></span>
+            <span className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 opacity-75 group-hover:opacity-100 transition-opacity"></span>
+
+            {/* Icon */}
+            <ChatBubbleLeftRightIcon className="w-8 h-8 relative z-10 group-hover:scale-110 transition-transform" />
+
+            {/* Online status indicator */}
+            <span className="absolute -top-1 -right-1 z-20">
+              <span className="relative flex h-4 w-4">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-4 w-4 bg-green-400 border-2 border-white"></span>
+              </span>
+            </span>
           </motion.button>
         )}
       </AnimatePresence>
@@ -272,40 +286,66 @@ export default function Chatbot() {
             className="fixed bottom-6 right-6 z-50 w-[420px] max-w-[calc(100vw-3rem)] h-[650px] max-h-[calc(100vh-5rem)] bg-white dark:bg-slate-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-200 dark:border-slate-700"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-cyan-500 via-cyan-600 to-blue-600 text-white px-6 py-4 flex items-center justify-between">
-              <div className="flex items-center gap-3">
+            <div className="relative bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-600 text-white px-6 py-4 flex items-center justify-between overflow-hidden">
+              {/* Animated background pattern */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_50%)]"></div>
+              </div>
+
+              <div className="flex items-center gap-3 relative z-10">
                 <div className="relative">
-                  <div className="w-11 h-11 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-white/30">
-                    <SparklesIcon className="w-6 h-6" />
+                  {/* AI Avatar with glow effect */}
+                  <div className="w-11 h-11 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-white/30 shadow-lg relative">
+                    <span className="absolute inset-0 rounded-full bg-white/20 animate-pulse"></span>
+                    <SparklesIcon className="w-6 h-6 relative z-10 animate-pulse" />
                   </div>
-                  <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full border-2 border-white"></span>
+                  {/* Online status with ping */}
+                  <span className="absolute bottom-0 right-0">
+                    <span className="relative flex h-3 w-3">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-300 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-green-400 border-2 border-white"></span>
+                    </span>
+                  </span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg flex items-center gap-2">
+                  <h3 className="font-bold text-lg flex items-center gap-2">
                     Kryil AI Assistant
+                    <motion.span
+                      animate={{ rotate: [0, 10, 0, -10, 0] }}
+                      transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                    >
+                      ✨
+                    </motion.span>
                   </h3>
-                  <p className="text-xs text-white/90 flex items-center gap-1">
-                    <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                    Online • Always here to help
+                  <p className="text-xs text-white/90 flex items-center gap-1.5 font-medium">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-300 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-green-300"></span>
+                    </span>
+                    Online • Instant responses
                   </p>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
-                <button
+              <div className="flex items-center gap-1 relative z-10">
+                <motion.button
+                  whileHover={{ scale: 1.1, rotate: 180 }}
+                  whileTap={{ scale: 0.9 }}
                   onClick={resetChat}
-                  className="text-white/80 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-lg"
+                  className="text-white/90 hover:text-white transition-colors p-2 hover:bg-white/20 rounded-lg backdrop-blur-sm"
                   aria-label="Reset chat"
                   title="Start new conversation"
                 >
                   <ArrowPathIcon className="w-5 h-5" />
-                </button>
-                <button
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                   onClick={() => setIsOpen(false)}
-                  className="text-white/80 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-lg"
+                  className="text-white/90 hover:text-white transition-colors p-2 hover:bg-white/20 rounded-lg backdrop-blur-sm"
                   aria-label="Close chat"
                 >
-                  <XMarkIcon className="w-6 h-6" />
-                </button>
+                  <XMarkIcon className="w-5 h-5" />
+                </motion.button>
               </div>
             </div>
 
