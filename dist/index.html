@@ -445,11 +445,19 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
     />
 
-    <!-- Load critical font weights first for faster FCP -->
+    <!-- Load critical font weights asynchronously to avoid render blocking -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
     <!-- Load additional font weights asynchronously -->
     <link

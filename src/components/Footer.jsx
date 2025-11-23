@@ -18,6 +18,8 @@ export default function Footer() {
           <img
             src={logo}
             alt="Kryil Infotech Logo"
+            width="192"
+            height="48"
             className="w-48 h-auto mb-4"
           />
           <p className="font-Poppins text-base text-white dark:text-gray-200 leading-relaxed mb-4">

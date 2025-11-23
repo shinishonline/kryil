@@ -451,13 +451,16 @@ export default function Chatbot() {
             <div className="p-4 bg-white dark:bg-slate-800 border-t border-gray-200 dark:border-slate-700">
               <div className="flex gap-2 items-end">
                 <div className="flex-1 relative">
+                  <label htmlFor="chatbot-input" className="sr-only">Type your message to chat with AI assistant</label>
                   <textarea
+                    id="chatbot-input"
                     ref={inputRef}
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                     onKeyPress={handleKeyPress}
                     placeholder="Type your message... (Shift+Enter for new line)"
                     rows="1"
+                    aria-label="Chat message input"
                     className="w-full px-4 py-3 pr-12 rounded-xl border-2 border-gray-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-700 text-gray-900 dark:text-white focus:border-cyan-500 dark:focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all resize-none max-h-32 placeholder-gray-400 dark:placeholder-gray-500"
                     style={{ minHeight: "48px" }}
                   />
