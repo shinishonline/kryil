@@ -126,27 +126,28 @@ export default function InfrastructureAutomation() {
 
   return (
     <main className="relative min-h-screen bg-white dark:bg-slate-900 text-black dark:text-slate-100 transition-colors duration-500">
+      {/* Close Button - Top Right */}
+      <Link
+        to="/"
+        className="fixed top-6 right-6 z-50 p-2 rounded-full bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-all duration-300 group"
+        aria-label="Close and return to home"
+      >
+        <svg className="w-6 h-6 text-black dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </Link>
+
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Sidebar */}
             <aside className="lg:col-span-4">
               <div className="lg:sticky lg:top-24">
-                {/* Back Button */}
-                <div className="mb-6">
-                  <Link
-                    to="/"
-                    className="inline-block px-3 py-1.5 rounded-md bg-black dark:bg-cyan-600 text-white text-sm font-Poppins font-medium dark:hover:bg-cyan-700 transition"
-                  >
-                    ← Back to Home
-                  </Link>
-                </div>
-
-                <h2 className="font-Poppins text-4xl md:text-5xl font-extrabold tracking-tight dark:text-slate-100">
+                <h2 className="font-Poppins text-4xl md:text-5xl font-extralight tracking-tight dark:text-slate-100">
                   Infrastructure Automation
                 </h2>
 
-                <p className="mt-4 text-black/70 dark:text-slate-300 leading-relaxed font-Poppins font-[500]">
+                <p className="mt-4 text-lg text-black/70 dark:text-slate-300 leading-relaxed font-Poppins font-light">
                   End-to-end automation solutions — from configuration
                   management and CI/CD to monitoring and version control, we
                   streamline infrastructure for speed and reliability.
@@ -170,7 +171,7 @@ export default function InfrastructureAutomation() {
                 {/* ✅ Contact button (opens Gmail in new tab) */}
                 <button
                   onClick={handleContactClick}
-                  className="mt-7 w-full px-5 py-3 bg-black dark:bg-cyan-700 text-white font-semibold rounded-md hover:bg-gray-800 dark:hover:bg-cyan-500 transition"
+                  className="mt-7 w-full px-5 py-3 bg-cyan-600 hover:bg-cyan-700 text-white font-semibold rounded-md transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   Contact Us
                 </button>
@@ -191,13 +192,13 @@ export default function InfrastructureAutomation() {
                     className="relative pl-4 border-l border-black/10 dark:border-slate-700 transition-all duration-300 hover:border-black dark:hover:border-cyan-700"
                   >
                     {/* Title */}
-                    <h3 className="text-xl font-extrabold font-Poppins mb-3 text-black dark:text-slate-100 flex items-center gap-2">
+                    <h3 className="text-xl font-semibold font-Poppins mb-3 text-black dark:text-slate-100 flex items-center gap-2">
                       {s.icon}
                       {s.title}
                     </h3>
 
                     {/* Blurb */}
-                    <p className="text-black/70 dark:text-slate-300 font-Poppins font-[400] leading-relaxed mb-3">
+                    <p className="text-base md:text-lg text-black/70 dark:text-slate-300 font-Poppins font-light leading-relaxed mb-3">
                       {s.blurb}
                     </p>
 

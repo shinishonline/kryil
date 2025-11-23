@@ -38,12 +38,12 @@ export default function NavbarLeft({ sections, active }) {
 
   return (
     <aside
-      className="antialiased fixed left-0 top-0 bottom-0 w-[170px] px-5 py-7  flex-col
-                 border-r border-gray-300   dark:border-gray-600 z-40 hidden md:flex" // hidden on mobile
+      className="antialiased fixed left-0 top-0 bottom-0 w-[170px] px-5 py-7 flex-col
+                 border-r border-gray-300 dark:border-gray-600 z-40 hidden md:flex" // hidden on mobile
     >
       {/* Smooth slide-in nav links */}
       <nav
-        className={`flex flex-col gap-4 flex-1 justify-center transform  transition-all duration-700 ease-out
+        className={`flex flex-col gap-2 flex-1 justify-center transform transition-all duration-700 ease-out
                     ${showContent ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"}`}
       >
         {sections.map((s, i) => (

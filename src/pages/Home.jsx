@@ -200,7 +200,7 @@ export default function Home() {
 
             <div className="absolute inset-0 bg-gradient-to-br from-transparent via-black/5 to-transparent hidden dark:block" />
             <motion.div
-              className="ml-0 md:ml-[190px] w-full md:w-[calc(100%-200px-150px)]"
+              className="ml-0 md:ml-[200px] w-full md:w-[calc(100%-200px-150px)]"
               variants={sectionVariants}
               initial="hidden"
               whileInView="visible"
@@ -281,7 +281,7 @@ export default function Home() {
   className="relative flex items-start bg-gradient-to-br from-white via-gray-50 to-white dark:bg-gradient-to-br dark:from-[#0a0a0a] dark:via-slate-900 dark:to-[#0a0a0a] transition-all duration-500"
 >
   <motion.div
-    className="ml-0 md:ml-[190px] w-full md:w-[calc(100%-200px-150px)] px-[20px] py-24"
+    className="ml-0 md:ml-[200px] w-full md:w-[calc(100%-200px-150px)] px-[20px] py-24"
     variants={sectionVariants}
     initial="hidden"
     whileInView="visible"
@@ -297,7 +297,7 @@ export default function Home() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 z-50 right-6 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-3 rounded-full shadow-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+          className="fixed bottom-24 z-50 right-6 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-3 rounded-full shadow-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition"
         >
           <ArrowUpIcon className="h-6 w-6" />
         </button>

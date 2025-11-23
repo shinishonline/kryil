@@ -13,9 +13,9 @@ const knowledgeBase = {
   greeting: {
     keywords: ["hi", "hello", "hey", "good morning", "good afternoon", "good evening", "greetings"],
     responses: [
-      "Hello! 👋 I'm Kryil's AI assistant. I can help you with our services, pricing, careers, or answer any questions. What would you like to know?",
+      "Hello! 👋 I'm Kryil's AI assistant. I can help you with our services, pricing, or answer any questions. What would you like to know?",
       "Hi there! 🌟 Welcome to Kryil Infotech. I'm here to assist you with information about our IT solutions, answer questions, or connect you with our team. How can I help you today?",
-      "Hey! 😊 I'm your AI guide at Kryil. Ask me about our services, get pricing info, explore careers, or let me know what you're looking for!"
+      "Hey! 😊 I'm your AI guide at Kryil. Ask me about our services, get pricing info, or let me know what you're looking for!"
     ]
   },
   services: {
@@ -52,7 +52,7 @@ const knowledgeBase = {
   },
   careers: {
     keywords: ["career", "job", "hiring", "position", "opening", "work", "join", "opportunity", "vacancy", "recruit"],
-    response: "💼 **Join Team Kryil!**\n\nWe're hiring talented professionals in:\n\n👨‍💻 **Engineering**\n• Full Stack Developers\n• DevOps Engineers\n• ML/AI Engineers\n• Mobile Developers\n\n🔒 **Cybersecurity**\n• Security Analysts\n• Penetration Testers\n• SOC Engineers\n\n☁️ **Cloud & Infrastructure**\n• Cloud Architects\n• Site Reliability Engineers\n• Kubernetes Specialists\n\n📊 **Data & AI**\n• Data Scientists\n• Data Engineers\n• AI/ML Researchers\n\n🎯 **What We Offer:**\n• Competitive salaries\n• Remote work options\n• Learning & development\n• Cutting-edge projects\n\nClick 'Careers' in the navigation or email connect@kryil.com with your resume. What role interests you?"
+    response: "💼 **Join Team Kryil!**\n\nWe're hiring talented professionals in:\n\n👨‍💻 **Engineering**\n• Full Stack Developers\n• DevOps Engineers\n• ML/AI Engineers\n• Mobile Developers\n\n🔒 **Cybersecurity**\n• Security Analysts\n• Penetration Testers\n• SOC Engineers\n\n☁️ **Cloud & Infrastructure**\n• Cloud Architects\n• Site Reliability Engineers\n• Kubernetes Specialists\n\n📊 **Data & AI**\n• Data Scientists\n• Data Engineers\n• AI/ML Researchers\n\n🎯 **What We Offer:**\n• Competitive salaries\n• Remote work options\n• Learning & development\n• Cutting-edge projects\n\nEmail careers@kryil.com with your resume. What role interests you?"
   },
   industries: {
     keywords: ["industry", "industries", "sector", "domain", "banking", "finance", "maritime", "oil", "gas", "manufacturing", "retail", "healthcare"],

@@ -107,7 +107,7 @@ export default function Services() {
                   <br />
 
                   {/* Description */}
-                  <p className="text-black/70 dark:text-slate-300 font-Poppins font-[400] leading-relaxed mb-3">
+                  <p className="text-lg md:text-xl text-black/70 dark:text-slate-300 font-Poppins font-[400] leading-relaxed mb-3">
                     {it.blurb}
                   </p>
 

@@ -53,9 +53,22 @@ export default function About() {
           variants={fadeUp}
         >
           <p className="font-Poppins font-normal text-justify text-base">
-            <span className="font-semibold text- dark:text-slate-100">
+            <motion.span
+              className="font-bold text-lg md:text-xl bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-600 dark:from-cyan-400 dark:via-blue-400 dark:to-cyan-500 bg-clip-text text-transparent inline-block"
+              initial={{ opacity: 0, scale: 0.8, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{
+                duration: 0.8,
+                ease: [0.16, 1, 0.3, 1],
+                delay: 0.3
+              }}
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.3 }
+              }}
+            >
               Kryil
-            </span>{" "}
+            </motion.span>{" "}
             transforms visionary ideas into technological realities. We design
             and build solutions that are reliable, future-proof, and crafted to
             scale — so businesses can focus on growth, not friction.
@@ -91,8 +104,8 @@ export default function About() {
             variants={slideLeft}
           >
             <div className="flex items-center gap-4 mb-4">
-              <div className="rounded-full ring-1 ring-slate-400 dark:ring-slate-600 p-2 bg-white/0">
-                <UserGroupIcon className="w-9 h-9 text-slate-900 dark:text-slate-100" />
+              <div className="rounded-full ring-1 ring-cyan-400 dark:ring-cyan-600 p-2 bg-white/0">
+                <UserGroupIcon className="w-9 h-9 text-cyan-600 dark:text-cyan-400" />
               </div>
               <div className="text-right">
                 <h4 className="text-2xl md:text-3xl font-thin text-cyan-600  -mt-1">
@@ -120,8 +133,8 @@ export default function About() {
             variants={slideRight}
           >
             <div className="flex items-center gap-4 mb-4">
-              <div className="rounded-full ring-1 ring-slate-200 dark:ring-slate-600 p-2 bg-white/0">
-                <UserGroupIcon className="w-9 h-9 text-slate-900 dark:text-slate-100" />
+              <div className="rounded-full ring-1 ring-cyan-400 dark:ring-cyan-600 p-2 bg-white/0">
+                <UserGroupIcon className="w-9 h-9 text-cyan-600 dark:text-cyan-400" />
               </div>
               <div>
                 <h4 className="text-2xl md:text-3xl font-thin text-cyan-600  -mt-1">

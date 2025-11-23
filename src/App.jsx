@@ -33,6 +33,14 @@ function ScrollToTopOnRouteChange() {
   return null;
 }
 
+// ✅ Conditional Footer - only show on home page
+function ConditionalFooter() {
+  const { pathname } = useLocation();
+  const showFooter = pathname === "/";
+
+  return showFooter ? <Footer /> : null;
+}
+
 export default function App() {
   // show preloader only if not shown this session
   const [showPreloader, setShowPreloader] = useState(() => {
@@ -80,7 +88,7 @@ export default function App() {
         <Route path="*" element={<Home />} />
       </Routes>
 
-      <Footer />
+      <ConditionalFooter />
       <CookieConsent />
       <Chatbot />
     </>

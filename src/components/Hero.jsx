@@ -24,6 +24,9 @@ export default function Hero() {
     "Cybersecurity solutions protecting your digital assets",
     "Custom software development tailored to your needs",
     "Mobile application development for iOS and Android",
+    "Infrastructure automation that accelerates your operations",
+    "Cloud-native solutions built for scale and resilience",
+    "AI-powered systems that transform your business",
   ];
 
   const subtitles = [
@@ -31,6 +34,10 @@ export default function Hero() {
     "Transforming ideas into scalable, secure, and high-performance applications.",
     "Delivering enterprise-grade solutions that drive digital transformation.",
     "Engineering the future with cutting-edge technology and innovation.",
+    "Streamlining IT operations with intelligent automation and DevOps excellence.",
+    "Implementing robust security frameworks that protect your critical assets.",
+    "Designing cloud architectures that ensure reliability and performance at scale.",
+    "Leveraging artificial intelligence to unlock new possibilities and efficiencies.",
   ];
 
   const features = [
@@ -192,7 +199,7 @@ export default function Hero() {
           <AnimatePresence mode="wait">
             <motion.p
               key={currentSubtitle}
-              className={`text-lg max-w-xl leading-relaxed mt-6 mb-12 transition-colors duration-700 ${
+              className={`text-lg max-w-2xl leading-relaxed mt-6 mb-12 transition-colors duration-700 ${
                 isDark ? "text-gray-100" : "text-gray-700"
               }`}
               initial={{ opacity: 0, y: 20 }}

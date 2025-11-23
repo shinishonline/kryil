@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 
 export default function NavbarTop({ inline = false }) {
@@ -48,7 +49,7 @@ export default function NavbarTop({ inline = false }) {
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
     { id: "services", label: "Services" },
-    { id: "careers", label: "Careers", isModal: true },
+    { id: "careers", label: "Careers", isRoute: true },
     { id: "contact", label: "Contact" },
   ];
 
@@ -117,30 +118,52 @@ export default function NavbarTop({ inline = false }) {
         }`}
     >
       <div className="flex items-center gap-8">
-      {links.map((link, i) => (
-        <a
-          key={link.id}
-          href={link.isModal ? "#" : `#${link.id}`}
-          onClick={link.isModal ? handleCareerClick : undefined}
-          style={{ transitionDelay: `${i * 120}ms` }}
-          className={`
-            font-Poppins relative pb-1 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]
-            transform cursor-pointer
-            ${mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}
+      {links.map((link, i) => {
+        if (link.isRoute) {
+          return (
+            <Link
+              key={link.id}
+              to={`/${link.id}`}
+              style={{ transitionDelay: `${i * 120}ms` }}
+              className={`
+                font-Poppins relative pb-1 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]
+                transform cursor-pointer
+                ${mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}
+                text-black dark:text-white/90 hover:text-black dark:hover:text-white after:w-0 hover:after:w-full after:bg-cyan-400 dark:after:bg-cyan-400 hover:after:shadow-[0_0_10px_rgba(34,211,238,0.8),0_0_20px_rgba(34,211,238,0.4)]
+                after:content-[''] after:absolute after:left-0 after:-bottom-[2px] after:h-[2px]
+                after:transition-all after:duration-300
+              `}
+            >
+              {link.label}
+            </Link>
+          );
+        }
 
-            ${
-              activeSection === link.id
-                ? "text-black dark:text-white after:w-full after:bg-cyan-400 dark:after:bg-cyan-400 after:shadow-[0_0_10px_rgba(34,211,238,0.8),0_0_20px_rgba(34,211,238,0.4)]"
-                : "text-black dark:text-white/90 hover:text-black dark:hover:text-white after:w-0 hover:after:w-full after:bg-cyan-400 dark:after:bg-cyan-400 hover:after:shadow-[0_0_10px_rgba(34,211,238,0.8),0_0_20px_rgba(34,211,238,0.4)]"
-            }
+        return (
+          <a
+            key={link.id}
+            href={link.isModal ? "#" : `#${link.id}`}
+            onClick={link.isModal ? handleCareerClick : undefined}
+            style={{ transitionDelay: `${i * 120}ms` }}
+            className={`
+              font-Poppins relative pb-1 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]
+              transform cursor-pointer
+              ${mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}
 
-            after:content-[''] after:absolute after:left-0 after:-bottom-[2px] after:h-[2px]
-            after:transition-all after:duration-300
-          `}
-        >
-          {link.label}
-        </a>
-      ))}
+              ${
+                activeSection === link.id
+                  ? "text-black dark:text-white after:w-full after:bg-cyan-400 dark:after:bg-cyan-400 after:shadow-[0_0_10px_rgba(34,211,238,0.8),0_0_20px_rgba(34,211,238,0.4)]"
+                  : "text-black dark:text-white/90 hover:text-black dark:hover:text-white after:w-0 hover:after:w-full after:bg-cyan-400 dark:after:bg-cyan-400 hover:after:shadow-[0_0_10px_rgba(34,211,238,0.8),0_0_20px_rgba(34,211,238,0.4)]"
+              }
+
+              after:content-[''] after:absolute after:left-0 after:-bottom-[2px] after:h-[2px]
+              after:transition-all after:duration-300
+            `}
+          >
+            {link.label}
+          </a>
+        );
+      })}
       </div>
 
       {/* Career Modal */}
