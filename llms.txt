@@ -1,0 +1,84 @@
+# Kryil Infotech Pvt Ltd - AI, Cloud & Software Development Solutions
+
+## About Us
+Kryil Infotech transforms visionary ideas into technological results. We design and build solutions that are reliable, future-proof, and crafted to scale—so businesses can focus on growth, not friction.
+
+## Core Services
+
+### Software Development
+- Custom Software Development
+- AI & Machine Learning Solutions
+- Mobile App Development (iOS & Android)
+- Web Application Development
+- Full Stack Development
+
+### Cloud Infrastructure
+- Cloud Migration (AWS, Azure, GCP)
+- Cloud Architecture & Management
+- Hybrid Cloud Solutions
+- Multi-Cloud Strategy
+- DevOps Automation
+
+### Cybersecurity
+- Security Audits & Penetration Testing
+- Threat Detection & Response
+- Vulnerability Assessment
+- Compliance Services (ISO 27001, SOC 2)
+- Security Operations Center
+
+### Digital Marketing
+- SEO & PPC Marketing
+- Social Media Marketing
+- Content Marketing
+- Email Marketing
+- E-commerce Marketing
+
+### Automation & IoT
+- Business Process Automation
+- RPA (Robotic Process Automation)
+- IoT Solutions
+- Edge Computing
+- Workflow Automation
+
+## Technology Stack
+- Programming: Python, JavaScript, Java, Node.js, React, .NET
+- Cloud: AWS, Azure, Google Cloud Platform
+- DevOps: Docker, Kubernetes, CI/CD
+- AI/ML: TensorFlow, PyTorch, NLP, Computer Vision
+- Security: SIEM, IDS/IPS, Encryption
+
+## Contact Information
+- Email: info@kryil.com
+- Phone: +91 8089090365
+- Address: Workflow Ranka Junction, 3rd Floor 224, KR Puram, Bangalore 560016, Karnataka, India
+- Website: https://kryil.com
+
+## Social Media
+- LinkedIn: https://linkedin.com/company/kryil
+- Twitter: https://x.com/kryilinfotech
+- Facebook: https://facebook.com/kryilinfotech
+- Instagram: https://instagram.com/kryilinfotech
+
+## Industries Served
+- Enterprise Technology
+- Financial Services
+- Healthcare
+- E-commerce
+- Manufacturing
+- Education
+- Startups
+
+## Key Differentiators
+- 500+ Projects Delivered
+- 98% Client Satisfaction
+- 15+ Years Experience
+- 24/7 Support Available
+- Expertise across AI, Cloud, and Security
+- Global service delivery
+
+## Additional Resources
+- Careers: https://kryil.com/careers
+- Services: https://kryil.com/infrastructure-services
+- Cybersecurity: https://kryil.com/cyber-security
+- Software Development: https://kryil.com/software
+- Digital Marketing: https://kryil.com/digital-marketing
