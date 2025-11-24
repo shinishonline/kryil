@@ -112,7 +112,7 @@ export default function Industries() {
                   >
                     {/* Icon */}
                     <div className="flex justify-end mb-4">
-                      <div className="w-12 h-12 rounded-lg bg-cyan-600 text-white flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-lg bg-cyan-700 text-white flex items-center justify-center">
                         <Icon className="w-6 h-6" />
                       </div>
                     </div>

@@ -113,7 +113,7 @@ export default function WhyPartner() {
                   {/* MOBILE / SMALL: simple stacked row */}
                   <div className="lg:hidden flex items-start gap-2">
                     <motion.div
-                      className="flex-shrink-0 w-10 h-10 rounded-full bg-tortoise bg-cyan-600 text-white flex items-center justify-center shadow-sm mt-1"
+                      className="flex-shrink-0 w-10 h-10 rounded-full bg-tortoise bg-cyan-700 text-white flex items-center justify-center shadow-sm mt-1"
                       custom={idx}
                       initial="hidden"
                       whileInView="visible"
@@ -199,7 +199,7 @@ export default function WhyPartner() {
                     {/* Center column: icon over the vertical line */}
                     <div className="col-span-1 flex justify-center pt-1">
                       <motion.div
-                        className="w-14 h-14 rounded-full bg-tortoise bg-cyan-600 text-white flex items-center justify-center shadow-md z-10 flex-shrink-0"
+                        className="w-14 h-14 rounded-full bg-tortoise bg-cyan-700 text-white flex items-center justify-center shadow-md z-10 flex-shrink-0"
                         custom={idx}
                         initial="hidden"
                         whileInView="visible"

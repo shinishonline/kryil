@@ -476,7 +476,7 @@ export default function Careers() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full md:w-auto px-8 py-4 bg-cyan-600 hover:bg-cyan-700 text-white font-semibold rounded-md transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full md:w-auto px-8 py-4 bg-cyan-700 hover:bg-cyan-800 text-white font-semibold rounded-md transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Submitting...' : 'Submit Application'}
               </button>

@@ -199,7 +199,7 @@ export default function SoftwareDevelopmentSolutions() {
                 {/* Contact Us button */}
                 <button
                   onClick={handleContactClick}
-                  className="mt-7 w-full px-5 py-3 bg-cyan-600 hover:bg-cyan-700 text-white font-semibold rounded-md transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="mt-7 w-full px-5 py-3 bg-cyan-700 hover:bg-cyan-800 text-white font-semibold rounded-md transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   Contact Us
                 </button>

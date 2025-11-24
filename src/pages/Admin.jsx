@@ -185,7 +185,7 @@ export default function Admin() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full px-4 py-3 bg-cyan-600 text-white rounded-lg hover:bg-cyan-500 transition-colors disabled:opacity-50 font-semibold"
+              className="w-full px-4 py-3 bg-cyan-700 text-white rounded-lg hover:bg-cyan-500 transition-colors disabled:opacity-50 font-semibold"
             >
               {loading ? 'Logging in...' : 'Login'}
             </button>
@@ -236,7 +236,7 @@ export default function Admin() {
             onClick={() => setActiveTab("contacts")}
             className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
               activeTab === "contacts"
-                ? "bg-cyan-600 text-white"
+                ? "bg-cyan-700 text-white"
                 : "bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700"
             }`}
           >
@@ -246,7 +246,7 @@ export default function Admin() {
             onClick={() => setActiveTab("applications")}
             className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
               activeTab === "applications"
-                ? "bg-cyan-600 text-white"
+                ? "bg-cyan-700 text-white"
                 : "bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700"
             }`}
           >
@@ -420,7 +420,7 @@ export default function Admin() {
                             <div>
                               <button
                                 onClick={() => downloadResume(app.resumeData, app.name)}
-                                className="flex items-center gap-2 px-4 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-500 transition-colors"
+                                className="flex items-center gap-2 px-4 py-2 bg-cyan-700 text-white rounded-lg hover:bg-cyan-500 transition-colors"
                               >
                                 <DocumentArrowDownIcon className="w-5 h-5" />
                                 Download Resume
