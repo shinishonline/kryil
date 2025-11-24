@@ -35,11 +35,13 @@ const LogoBanner = () => {
       `}</style>
 
       <div>
-        <h1
+        <div
           className="text-4xl md:text-5xl font-bold tracking-tight font-Poppins glass-shadow-text"
+          role="banner"
+          aria-label="Kryil Logo"
         >
           KRYIL
-        </h1>
+        </div>
       </div>
     </motion.div>
   );

@@ -142,9 +142,9 @@ export default function Admin() {
           animate={{ opacity: 1, y: 0 }}
           className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-2xl w-full max-w-md"
         >
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
             Admin Login
-          </h1>
+          </h2>
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -217,9 +217,9 @@ export default function Admin() {
       {/* Header */}
       <div className="bg-white dark:bg-slate-800 shadow">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center pr-16">
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
             Admin Dashboard
-          </h1>
+          </h2>
           <button
             onClick={handleLogout}
             className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-500 transition-colors"
