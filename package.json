@@ -2,7 +2,7 @@
   "name": "react-bw-futuristic-tailwind",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://kryil.com/",
+  "homepage": "https://www.kryil.com/",
   "type": "module",
   "scripts": {
     "dev": "vite --open",
