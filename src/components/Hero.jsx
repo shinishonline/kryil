@@ -265,10 +265,10 @@ export default function Hero() {
                   isDark ? "text-cyan-400" : "text-cyan-600"
                 }`}
               >
-                50+
+                99.9%
               </h3>
               <p className={`text-base mt-1 ${isDark ? "text-gray-300" : "text-gray-600"}`}>
-                Expert Team Members
+                Uptime Guaranteed
               </p>
             </div>
             <div>
