@@ -265,10 +265,10 @@ export default function Hero() {
                   isDark ? "text-cyan-400" : "text-cyan-600"
                 }`}
               >
-                15+
+                50+
               </h3>
               <p className={`text-base mt-1 ${isDark ? "text-gray-300" : "text-gray-600"}`}>
-                Years Experience
+                Expert Team Members
               </p>
             </div>
             <div>
