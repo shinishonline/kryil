@@ -5,9 +5,9 @@ export default function SEO({
   description = "Leading provider of custom software development, cybersecurity, cloud solutions, and infrastructure services. Transform your business with cutting-edge technology.",
   keywords = "software development, cybersecurity, cloud solutions, IT infrastructure, automation, IoT, AI/ML, DevOps, Bangalore",
   path = "/",
-  image = "https://kryil.com/og-image.jpg"
+  image = "https://www.kryil.com/og-image.jpg"
 }) {
-  const url = `https://kryil.com${path}`;
+  const url = `https://www.kryil.com${path}`;
 
   return (
     <Helmet>

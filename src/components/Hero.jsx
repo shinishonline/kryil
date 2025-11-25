@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import NavbarTop from "./NavbarTop";
 
-import b1 from "../assets/b1_optimized.jpg";
-import b2 from "../assets/b2_optimized.jpg";
-import b3 from "../assets/b3_optimized.jpg";
+import b1 from "../assets/b1_optimized.webp";
+import b2 from "../assets/b2_optimized.webp";
+import b3 from "../assets/b3_optimized.webp";
 
 // 🎥 Light and Dark videos
 import bgVideoLight from "../assets/bgvideo6.mp4";
@@ -80,20 +80,36 @@ export default function Hero() {
 
   // Navbar auto-hide after hero section
   useEffect(() => {
+    const heroSection = document.getElementById("hero");
+    let heroHeight = 0;
+
+    // Cache the height to avoid forced reflow on every scroll
+    if (heroSection) {
+      heroHeight = heroSection.offsetHeight;
+    }
+
     const handleScroll = () => {
-      const heroSection = document.getElementById("hero");
-      if (heroSection) {
-        const heroHeight = heroSection.offsetHeight;
-        // Hide navbar once user scrolls past the hero section
-        if (window.scrollY > heroHeight - 100) {
-          setVisible(false);
-        } else {
-          setVisible(true);
-        }
+      // Use cached height instead of querying offsetHeight on every scroll
+      if (window.scrollY > heroHeight - 100) {
+        setVisible(false);
+      } else {
+        setVisible(true);
       }
     };
+
+    // Recalculate height on window resize
+    const handleResize = () => {
+      if (heroSection) {
+        heroHeight = heroSection.offsetHeight;
+      }
+    };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const slide = {
