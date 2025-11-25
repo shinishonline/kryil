@@ -111,6 +111,9 @@ export default function Footer() {
             <li>
               <Link to="/careers" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors">Careers</Link>
             </li>
+            <li>
+              <a href="/privacy-policy.html" className="font-Poppins hover:text-cyan-200 dark:hover:text-white transition-colors">Privacy Policy</a>
+            </li>
           </ul>
         </div>
 
