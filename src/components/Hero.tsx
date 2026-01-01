@@ -180,7 +180,7 @@ export default function Hero() {
               >
                 <Link
                   to={slide.link}
-                  className="group inline-flex items-center gap-3 bg-black text-white font-['Lato'] text-[0.85rem] font-semibold uppercase tracking-[0.1em] px-8 py-4 hover:bg-[#dff140] hover:text-black transition-all duration-300"
+                  className="group inline-flex items-center gap-3 bg-orange-500 text-white font-['Lato'] text-[0.85rem] font-semibold uppercase tracking-[0.1em] px-8 py-4 hover:bg-orange-600 transition-all duration-300"
                 >
                   <span>{slide.linkText}</span>
                   <svg
@@ -188,7 +188,7 @@ export default function Hero() {
                     height="14"
                     viewBox="0 0 12 12"
                     fill="none"
-                    className="transform -rotate-45 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                    className="text-white transform -rotate-45 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
                   >
                     <path
                       d="M1 11L11 1M11 1H3M11 1V9"
