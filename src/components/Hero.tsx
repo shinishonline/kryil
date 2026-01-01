@@ -14,12 +14,12 @@ const slides = [
   },
   {
     id: 2,
-    label: "Cloud Infrastructure",
-    title: "Scale Without",
-    highlight: "Limits",
-    description: "Enterprise-grade cloud solutions across AWS, Azure, and GCP. Build resilient, scalable architectures that power your digital transformation.",
-    link: "/services/infrastructure",
-    linkText: "View Infrastructure",
+    label: "Enterprise Software",
+    title: "Build What",
+    highlight: "Matters",
+    description: "Custom enterprise applications, web platforms, and mobile solutions. Transform your business with scalable, secure software built for growth.",
+    link: "/services/software-development",
+    linkText: "View Solutions",
   },
   {
     id: 3,
@@ -339,63 +339,77 @@ export default function Hero() {
                   <div className="absolute top-[5%] right-[18%]"><span className="font-['Lato'] text-[0.55rem] text-gray-600 uppercase tracking-widest font-semibold bg-white/90 px-2 py-0.5 rounded shadow-sm">Turbine</span></div>
                   </div>
 
-                {/* Slide 2: Cloud Infrastructure */}
+                {/* Slide 2: Enterprise Software Development */}
                 <div className={`absolute inset-0 transition-all duration-700 ${currentSlide === 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-[70%] h-[70%] bg-gray-400/8 rounded-full blur-3xl" />
                   </div>
                   <svg className="absolute inset-0 w-full h-full" viewBox="0 0 500 400" fill="none">
                     <defs>
-                      <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stopColor="#6a6a6a"/>
-                        <stop offset="100%" stopColor="#4a4a4a"/>
+                      <linearGradient id="screenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stopColor="#5a5a5a"/>
+                        <stop offset="100%" stopColor="#3a3a3a"/>
+                      </linearGradient>
+                      <linearGradient id="codeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#dff140"/>
+                        <stop offset="100%" stopColor="#9ae600"/>
                       </linearGradient>
                     </defs>
-                    {/* Main Cloud */}
-                    <g>
-                      <ellipse cx="250" cy="160" rx="100" ry="50" fill="url(#cloudGrad)" stroke="#777" strokeWidth="2"/>
-                      <ellipse cx="180" cy="180" rx="60" ry="40" fill="url(#cloudGrad)" stroke="#777" strokeWidth="2"/>
-                      <ellipse cx="320" cy="180" rx="60" ry="40" fill="url(#cloudGrad)" stroke="#777" strokeWidth="2"/>
-                      <ellipse cx="250" cy="190" rx="120" ry="45" fill="url(#cloudGrad)" stroke="#777" strokeWidth="2"/>
-                      {/* Cloud highlight */}
-                      <ellipse cx="250" cy="155" rx="80" ry="35" fill="none" stroke="#999" strokeWidth="1" opacity="0.5"/>
-                      <ellipse cx="220" cy="145" rx="40" ry="20" fill="none" stroke="#aaa" strokeWidth="0.5" opacity="0.3"/>
-                    </g>
-                    {/* Server racks */}
-                    {[0, 1, 2].map((i) => (
-                      <g key={`server${i}`} transform={`translate(${130 + i * 80}, 270)`}>
-                        <rect x="0" y="0" width="60" height="80" fill="#5a5a5a" stroke="#777" strokeWidth="1.5" rx="3"/>
-                        <rect x="0" y="0" width="60" height="8" fill="#666" stroke="#777" strokeWidth="0.5" rx="3"/>
-                        {[0, 1, 2, 3, 4].map((j) => (
-                          <g key={`slot${i}${j}`}>
-                            <rect x="8" y={12 + j * 14} width="44" height="10" fill="#4a4a4a" stroke="#666" strokeWidth="0.5" rx="1"/>
-                            <circle cx="46" cy={17 + j * 14} r="2" fill={j % 2 === 0 ? "#dff140" : "#22c55e"} className="animate-pulse"/>
-                            <rect x="10" y={14 + j * 14} width="20" height="2" fill="#777" rx="1"/>
-                          </g>
-                        ))}
+                    {/* Main Monitor */}
+                    <rect x="100" y="60" width="300" height="200" rx="8" fill="url(#screenGrad)" stroke="#666" strokeWidth="2"/>
+                    <rect x="110" y="70" width="280" height="170" rx="4" fill="#2a2a2a"/>
+                    {/* Code Editor UI */}
+                    <rect x="110" y="70" width="280" height="20" fill="#3a3a3a"/>
+                    <circle cx="125" cy="80" r="4" fill="#ff5f56"/>
+                    <circle cx="140" cy="80" r="4" fill="#ffbd2e"/>
+                    <circle cx="155" cy="80" r="4" fill="#27ca40"/>
+                    {/* Sidebar */}
+                    <rect x="110" y="90" width="50" height="150" fill="#333"/>
+                    {[0,1,2,3,4,5].map((i) => (
+                      <rect key={`file${i}`} x="118" y={100 + i * 20} width="34" height="12" rx="2" fill={i === 1 ? "#dff140" : "#4a4a4a"} opacity={i === 1 ? 1 : 0.5}/>
+                    ))}
+                    {/* Code Lines */}
+                    {[0,1,2,3,4,5,6,7].map((i) => (
+                      <g key={`codeline${i}`}>
+                        <rect x="170" y={100 + i * 16} width={[60,80,45,90,70,55,85,40][i]} height="8" rx="2" fill={i === 2 || i === 5 ? "#dff140" : i % 2 === 0 ? "#666" : "#555"} opacity={0.8}>
+                          <animate attributeName="opacity" values="0.8;0.5;0.8" dur={`${2 + i * 0.3}s`} repeatCount="indefinite"/>
+                        </rect>
                       </g>
                     ))}
-                    {/* Connection lines */}
-                    <g stroke="#888" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.7">
-                      <line x1="160" y1="235" x2="160" y2="270"><animate attributeName="stroke-dashoffset" from="0" to="16" dur="1s" repeatCount="indefinite"/></line>
-                      <line x1="250" y1="235" x2="250" y2="270"><animate attributeName="stroke-dashoffset" from="0" to="16" dur="1s" repeatCount="indefinite"/></line>
-                      <line x1="340" y1="235" x2="340" y2="270"><animate attributeName="stroke-dashoffset" from="0" to="16" dur="1s" repeatCount="indefinite"/></line>
-                    </g>
-                    {/* Data particles */}
-                    {[0, 1, 2, 3, 4].map((i) => (
-                      <circle key={`particle${i}`} cx={160 + i * 45} cy="250" r="3" fill="#888">
-                        <animate attributeName="cy" values="250;235;250" dur={`${1 + i * 0.2}s`} repeatCount="indefinite"/>
-                        <animate attributeName="opacity" values="1;0.4;1" dur={`${1 + i * 0.2}s`} repeatCount="indefinite"/>
-                      </circle>
-                    ))}
-                    {/* Provider logos placeholder */}
-                    <text x="130" y="375" className="font-['Lato']" fill="#888" fontSize="10" fontWeight="bold">AWS</text>
-                    <text x="220" y="375" className="font-['Lato']" fill="#888" fontSize="10" fontWeight="bold">AZURE</text>
-                    <text x="310" y="375" className="font-['Lato']" fill="#888" fontSize="10" fontWeight="bold">GCP</text>
+                    {/* Monitor Stand */}
+                    <rect x="220" y="260" width="60" height="15" fill="#4a4a4a"/>
+                    <rect x="200" y="275" width="100" height="8" rx="2" fill="#5a5a5a"/>
+                    {/* Mobile Phone */}
+                    <rect x="60" y="180" width="50" height="90" rx="6" fill="#4a4a4a" stroke="#666" strokeWidth="1.5"/>
+                    <rect x="65" y="190" width="40" height="70" rx="2" fill="#2a2a2a"/>
+                    <rect x="70" y="195" width="30" height="8" fill="#dff140" rx="1"/>
+                    <rect x="70" y="208" width="25" height="6" fill="#555" rx="1"/>
+                    <rect x="70" y="220" width="30" height="6" fill="#555" rx="1"/>
+                    <rect x="70" y="232" width="20" height="6" fill="#555" rx="1"/>
+                    <circle cx="85" cy="252" r="5" fill="#555"/>
+                    {/* Tablet */}
+                    <rect x="390" y="140" width="70" height="100" rx="6" fill="#4a4a4a" stroke="#666" strokeWidth="1.5"/>
+                    <rect x="396" y="148" width="58" height="84" rx="2" fill="#2a2a2a"/>
+                    <rect x="402" y="155" width="46" height="25" fill="#555" rx="2"/>
+                    <rect x="402" y="185" width="30" height="6" fill="#dff140" rx="1"/>
+                    <rect x="402" y="196" width="40" height="6" fill="#666" rx="1"/>
+                    <rect x="402" y="207" width="35" height="6" fill="#666" rx="1"/>
+                    {/* Connection Lines */}
+                    <path d="M110 200 Q80 200 80 220" stroke="#888" strokeWidth="1.5" strokeDasharray="4 4" fill="none">
+                      <animate attributeName="stroke-dashoffset" from="0" to="16" dur="1s" repeatCount="indefinite"/>
+                    </path>
+                    <path d="M390 200 Q420 200 420 190" stroke="#888" strokeWidth="1.5" strokeDasharray="4 4" fill="none">
+                      <animate attributeName="stroke-dashoffset" from="0" to="16" dur="1s" repeatCount="indefinite"/>
+                    </path>
+                    {/* Tech Stack Labels */}
+                    <text x="130" y="320" className="font-['Lato']" fill="#888" fontSize="9" fontWeight="bold">REACT</text>
+                    <text x="200" y="320" className="font-['Lato']" fill="#888" fontSize="9" fontWeight="bold">NODE.JS</text>
+                    <text x="280" y="320" className="font-['Lato']" fill="#888" fontSize="9" fontWeight="bold">PYTHON</text>
+                    <text x="350" y="320" className="font-['Lato']" fill="#888" fontSize="9" fontWeight="bold">CLOUD</text>
                   </svg>
                   {/* Labels */}
-                  <div className="absolute top-[15%] left-[15%]"><span className="font-['Lato'] text-[0.6rem] text-gray-600 uppercase tracking-widest font-semibold bg-white/90 px-2 py-0.5 rounded shadow-sm">Multi-Cloud</span></div>
-                  <div className="absolute top-[20%] right-[15%]"><span className="font-['Lato'] text-[0.6rem] text-gray-600 uppercase tracking-widest font-semibold bg-white/90 px-2 py-0.5 rounded shadow-sm">Scalable</span></div>
+                  <div className="absolute top-[10%] left-[15%]"><span className="font-['Lato'] text-[0.6rem] text-gray-600 uppercase tracking-widest font-semibold bg-white/90 px-2 py-0.5 rounded shadow-sm">Full Stack</span></div>
+                  <div className="absolute top-[15%] right-[12%]"><span className="font-['Lato'] text-[0.6rem] text-gray-600 uppercase tracking-widest font-semibold bg-white/90 px-2 py-0.5 rounded shadow-sm">Cross-Platform</span></div>
                 </div>
 
                 {/* Slide 3: Cybersecurity */}

@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-20">
 
           {/* LEFT – LOGO */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 mt-4 ml-4">
             <Link to="/" className="inline-flex items-center">
               <img
                 src="/logo_white.png"

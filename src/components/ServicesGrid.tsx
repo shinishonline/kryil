@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const services = [
   {
     index: '01',
-    title: 'Infrastructure',
-    subtitle: 'Services',
-    description: 'Cloud migration, management & optimization',
-    link: '/services/infrastructure',
+    title: 'Enterprise',
+    subtitle: 'Software Development',
+    description: 'Custom enterprise solutions & applications',
+    link: '/services/software-development',
   },
   {
     index: '02',
