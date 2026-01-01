@@ -344,9 +344,10 @@ export default function Defense() {
                   alt={products[activeProduct].name}
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                 />
-                {/* Black overlay */}
-                <div className="absolute inset-0 bg-black/40 pointer-events-none" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent pointer-events-none" />
+                {/* Smoke/Atmospheric overlay */}
+                <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/30 to-[#0a0a0a]/20 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/40 via-transparent to-[#0a0a0a]/40 pointer-events-none" />
 
                 {/* Specs Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
