@@ -207,7 +207,7 @@ export default function Hero() {
                 <div className="flex items-center gap-3">
                   <button
                     onClick={prevSlide}
-                    className="w-10 h-10 border border-orange-500 text-orange-500 flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300"
+                    className="w-10 h-10 border border-red-500 text-red-500 flex items-center justify-center hover:bg-black hover:border-black hover:text-white transition-all duration-300"
                     aria-label="Previous slide"
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -216,7 +216,7 @@ export default function Hero() {
                   </button>
                   <button
                     onClick={nextSlide}
-                    className="w-10 h-10 border border-orange-500 text-orange-500 flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300"
+                    className="w-10 h-10 border border-red-500 text-red-500 flex items-center justify-center hover:bg-black hover:border-black hover:text-white transition-all duration-300"
                     aria-label="Next slide"
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
