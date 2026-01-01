@@ -104,11 +104,11 @@ export default function Hero() {
   const slide = slides[currentSlide];
 
   return (
-    <section className="relative min-h-screen bg-white overflow-hidden">
+    <section className="relative min-h-screen bg-[#0a0a0a] overflow-hidden">
       {/* Background Grid Pattern */}
-      <div className="absolute inset-0 opacity-30" style={{
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px)',
-        backgroundSize: '60px 60px',
+      <div className="absolute inset-0 opacity-20" style={{
+        backgroundImage: 'linear-gradient(rgba(223, 241, 64, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(223, 241, 64, 0.1) 1px, transparent 1px)',
+        backgroundSize: '80px 80px',
       }} />
 
       {/* Main Content */}
@@ -135,7 +135,7 @@ export default function Hero() {
                   <span className="w-3 h-3 bg-[#dff140] group-hover:bg-orange-500 transition-colors duration-300" />
                   <span
                     key={slide.label}
-                    className="font-['Lato'] text-[0.7rem] uppercase tracking-[0.3em] text-black/40 transition-all duration-500"
+                    className="font-['Lato'] text-[0.7rem] uppercase tracking-[0.3em] text-[#dff140] transition-all duration-500"
                   >
                     {slide.label}
                   </span>
@@ -144,7 +144,7 @@ export default function Hero() {
 
               {/* Main Title */}
               <h1
-                className={`font-['Lato'] text-[clamp(2.5rem,7vw,5.5rem)] font-bold leading-[1] tracking-[-0.04em] text-black transition-all duration-1000 delay-100 ${
+                className={`font-['Lato'] text-[clamp(2.5rem,7vw,5.5rem)] font-bold leading-[1] tracking-[-0.04em] text-white transition-all duration-1000 delay-100 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
@@ -156,7 +156,7 @@ export default function Hero() {
                 </span>
                 <span
                   key={`highlight-${slide.id}`}
-                  className="bg-[#dff140] text-black font-['Lato'] px-4 inline-block mt-2 transition-all duration-500"
+                  className="bg-[#dff140] text-[#0a0a0a] font-['Lato'] px-4 inline-block mt-2 transition-all duration-500"
                 >
                   {slide.highlight}
                 </span>
@@ -165,7 +165,7 @@ export default function Hero() {
               {/* Description */}
               <p
                 key={`desc-${slide.id}`}
-                className={`font-['Lato'] text-[1rem] md:text-[1.1rem] leading-[1.8] text-black/50 max-w-lg transition-all duration-700 delay-200 ${
+                className={`font-['Lato'] text-[1rem] md:text-[1.1rem] leading-[1.8] text-white/50 max-w-lg transition-all duration-700 delay-200 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                 }`}
               >
@@ -207,7 +207,7 @@ export default function Hero() {
                 <div className="flex items-center gap-3">
                   <button
                     onClick={prevSlide}
-                    className="w-10 h-10 border border-red-500 text-red-500 flex items-center justify-center hover:bg-black hover:border-black hover:text-white transition-all duration-300"
+                    className="w-10 h-10 border border-[#dff140] text-[#dff140] flex items-center justify-center hover:bg-[#dff140] hover:text-black transition-all duration-300"
                     aria-label="Previous slide"
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -216,7 +216,7 @@ export default function Hero() {
                   </button>
                   <button
                     onClick={nextSlide}
-                    className="w-10 h-10 border border-red-500 text-red-500 flex items-center justify-center hover:bg-black hover:border-black hover:text-white transition-all duration-300"
+                    className="w-10 h-10 border border-[#dff140] text-[#dff140] flex items-center justify-center hover:bg-[#dff140] hover:text-black transition-all duration-300"
                     aria-label="Next slide"
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -232,7 +232,7 @@ export default function Hero() {
                       key={index}
                       onClick={() => goToSlide(index)}
                       className={`relative h-1 transition-all duration-500 ${
-                        index === currentSlide ? 'w-12 bg-[#dff140]' : 'w-6 bg-black/20 hover:bg-black/40'
+                        index === currentSlide ? 'w-12 bg-[#dff140]' : 'w-6 bg-white/20 hover:bg-white/40'
                       }`}
                       aria-label={`Go to slide ${index + 1}`}
                     >
@@ -244,7 +244,7 @@ export default function Hero() {
                 </div>
 
                 {/* Slide Counter */}
-                <span className="font-['Lato'] text-[0.75rem] text-black/40 tracking-wider">
+                <span className="font-['Lato'] text-[0.75rem] text-white/40 tracking-wider">
                   {String(currentSlide + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
                 </span>
               </div>
@@ -266,95 +266,123 @@ export default function Hero() {
                 <div className={`absolute inset-0 transition-all duration-700 ${currentSlide === 0 ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
                   {/* Ambient glow */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-[80%] h-[40%] bg-gray-400/10 rounded-full blur-3xl" />
+                    <div className="w-[80%] h-[40%] bg-[#dff140]/10 rounded-full blur-3xl" />
                   </div>
                   <svg className="absolute inset-0 w-full h-full" viewBox="0 0 500 400" fill="none">
                     <defs>
                       <linearGradient id="engineBody" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#4a4a4a" />
-                        <stop offset="50%" stopColor="#6a6a6a" />
-                        <stop offset="100%" stopColor="#4a4a4a" />
+                        <stop offset="0%" stopColor="#888" />
+                        <stop offset="50%" stopColor="#bbb" />
+                        <stop offset="100%" stopColor="#888" />
                       </linearGradient>
                       <linearGradient id="engineBodyDark" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stopColor="#5a5a5a" />
-                        <stop offset="100%" stopColor="#3a3a3a" />
+                        <stop offset="0%" stopColor="#aaa" />
+                        <stop offset="100%" stopColor="#666" />
                       </linearGradient>
                       <linearGradient id="heatGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#dff140" />
-                        <stop offset="30%" stopColor="#ff6b35" />
-                        <stop offset="60%" stopColor="#f7931e" />
+                        <stop offset="0%" stopColor="#22c55e" />
+                        <stop offset="30%" stopColor="#dff140" />
+                        <stop offset="60%" stopColor="#22c55e" />
                         <stop offset="100%" stopColor="#dff140" stopOpacity="0.3" />
                       </linearGradient>
                       <linearGradient id="bladeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#888" stopOpacity="0.9" />
-                        <stop offset="100%" stopColor="#aaa" stopOpacity="0.6" />
+                        <stop offset="0%" stopColor="#fff" stopOpacity="0.9" />
+                        <stop offset="100%" stopColor="#ccc" stopOpacity="0.6" />
                       </linearGradient>
                       <filter id="glow">
-                        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                        <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                      </filter>
+                      <filter id="greenGlow">
+                        <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
                         <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
                       </filter>
                     </defs>
-                    {/* Engine Casing */}
-                    <path d="M40 160 Q60 140 100 135 L400 135 Q440 140 460 160 L460 165 Q440 145 400 140 L100 140 Q60 145 40 165 Z" fill="url(#engineBody)" stroke="#555" strokeWidth="1.5"/>
-                    <path d="M40 240 Q60 260 100 265 L400 265 Q440 260 460 240 L460 235 Q440 255 400 260 L100 260 Q60 255 40 235 Z" fill="url(#engineBody)" stroke="#555" strokeWidth="1.5"/>
+                    {/* Engine Casing - outer shell */}
+                    <path d="M40 160 Q60 140 100 135 L400 135 Q440 140 460 160 L460 165 Q440 145 400 140 L100 140 Q60 145 40 165 Z" fill="url(#engineBody)" stroke="#999" strokeWidth="1.5"/>
+                    <path d="M40 240 Q60 260 100 265 L400 265 Q440 260 460 240 L460 235 Q440 255 400 260 L100 260 Q60 255 40 235 Z" fill="url(#engineBody)" stroke="#999" strokeWidth="1.5"/>
+                    {/* Rivets and details */}
+                    {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+                      <circle key={`rivet${i}`} cx={80 + i * 45} cy="138" r="2" fill="#666"/>
+                    ))}
+                    {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+                      <circle key={`rivetb${i}`} cx={80 + i * 45} cy="262" r="2" fill="#666"/>
+                    ))}
                     {/* Intake */}
-                    <ellipse cx="55" cy="200" rx="18" ry="45" fill="#4a4a4a" stroke="#666" strokeWidth="1.5"/>
-                    <ellipse cx="55" cy="200" rx="12" ry="30" fill="none" stroke="#777" strokeWidth="0.5"/>
-                    <circle cx="55" cy="200" r="6" fill="#dff140" filter="url(#glow)"/>
-                    {/* Fan Blades */}
+                    <ellipse cx="55" cy="200" rx="20" ry="50" fill="#555" stroke="#888" strokeWidth="2"/>
+                    <ellipse cx="55" cy="200" rx="15" ry="38" fill="none" stroke="#999" strokeWidth="1"/>
+                    <ellipse cx="55" cy="200" rx="10" ry="25" fill="none" stroke="#aaa" strokeWidth="0.5"/>
+                    <circle cx="55" cy="200" r="8" fill="#22c55e" filter="url(#greenGlow)"/>
+                    <circle cx="55" cy="200" r="4" fill="#dff140"/>
+                    {/* Fan Blades - more detailed */}
                     <g>
                       {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((angle, i) => (
                         <g key={`fan${i}`} transform={`rotate(${angle} 85 200)`}>
-                          <path d="M85 200 L85 148 Q90 145 95 150 L95 200" fill="url(#bladeGradient)" stroke="#999" strokeWidth="0.5"/>
+                          <path d="M85 200 L83 145 Q88 140 93 145 L95 200" fill="url(#bladeGradient)" stroke="#ddd" strokeWidth="0.5"/>
+                          <path d="M85 200 L84 150" stroke="#fff" strokeWidth="0.3" opacity="0.5"/>
                         </g>
                       ))}
-                      <circle cx="85" cy="200" r="12" fill="#5a5a5a" stroke="#777" strokeWidth="1"/>
-                      <circle cx="85" cy="200" r="6" fill="#888"/>
+                      <circle cx="85" cy="200" r="14" fill="#777" stroke="#aaa" strokeWidth="1.5"/>
+                      <circle cx="85" cy="200" r="8" fill="#999"/>
+                      <circle cx="85" cy="200" r="3" fill="#22c55e"/>
                     </g>
-                    {/* Compressor stages */}
-                    {[0, 1, 2].map((stage) => (
+                    {/* Compressor stages - more blades */}
+                    {[0, 1, 2, 3].map((stage) => (
                       <g key={`lpc${stage}`}>
-                        <rect x={115 + stage * 20} y="145" width="3" height="110" fill="#5a5a5a" stroke="#777" strokeWidth="0.5"/>
-                        {[0, 1, 2, 3, 4, 5, 6, 7].map((blade) => (
-                          <line key={`lpcb${stage}${blade}`} x1={125 + stage * 20} y1={150 + blade * 13} x2={130 + stage * 20} y2={150 + blade * 13} stroke="#999" strokeWidth="1.5" opacity={0.9 - stage * 0.1}/>
+                        <rect x={110 + stage * 18} y="143" width="4" height="114" fill="#888" stroke="#aaa" strokeWidth="0.5"/>
+                        {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((blade) => (
+                          <line key={`lpcb${stage}${blade}`} x1={118 + stage * 18} y1={148 + blade * 12} x2={125 + stage * 18} y2={148 + blade * 12} stroke="#ccc" strokeWidth="2" opacity={0.9 - stage * 0.1}/>
                         ))}
                       </g>
                     ))}
                     {/* High pressure compressor */}
-                    {[0, 1, 2, 3, 4].map((stage) => (
+                    {[0, 1, 2, 3, 4, 5].map((stage) => (
                       <g key={`hpc${stage}`}>
-                        <rect x={180 + stage * 15} y={155 + stage * 3} width="2" height={90 - stage * 6} fill="#666" stroke="#888" strokeWidth="0.3"/>
+                        <rect x={185 + stage * 12} y={153 + stage * 3} width="3" height={94 - stage * 6} fill="#999" stroke="#bbb" strokeWidth="0.3"/>
                       </g>
                     ))}
-                    {/* Combustion chamber */}
-                    <path d="M260 155 Q270 150 290 150 L320 150 Q340 150 350 160 L350 240 Q340 250 320 250 L290 250 Q270 250 260 245 Z" fill="#4a4a4a" stroke="#666" strokeWidth="1"/>
-                    <ellipse cx="305" cy="200" rx="25" ry="20" fill="url(#heatGradient)" opacity="0.7">
-                      <animate attributeName="rx" values="25;28;25" dur="0.5s" repeatCount="indefinite"/>
+                    {/* Combustion chamber - detailed */}
+                    <path d="M255 152 Q265 145 290 145 L325 145 Q350 145 360 158 L360 242 Q350 255 325 255 L290 255 Q265 255 255 248 Z" fill="#666" stroke="#888" strokeWidth="1.5"/>
+                    <path d="M260 158 Q268 152 290 152 L320 152 Q340 152 348 162 L348 238 Q340 248 320 248 L290 248 Q268 248 260 242 Z" fill="none" stroke="#777" strokeWidth="0.5"/>
+                    {/* Flame/combustion */}
+                    <ellipse cx="308" cy="200" rx="30" ry="25" fill="url(#heatGradient)" opacity="0.8" filter="url(#greenGlow)">
+                      <animate attributeName="rx" values="28;32;28" dur="0.4s" repeatCount="indefinite"/>
+                      <animate attributeName="opacity" values="0.8;0.6;0.8" dur="0.3s" repeatCount="indefinite"/>
                     </ellipse>
-                    {/* Turbines */}
-                    {[0, 1].map((stage) => (
+                    <ellipse cx="308" cy="200" rx="15" ry="12" fill="#fff" opacity="0.4"/>
+                    {/* Turbines - with glow */}
+                    {[0, 1, 2].map((stage) => (
                       <g key={`hpt${stage}`}>
-                        <rect x={360 + stage * 18} y="160" width="2" height="80" fill="#666"/>
-                        {[...Array(5)].map((_, blade) => (
-                          <path key={`hptb${stage}${blade}`} d={`M${368 + stage * 18} ${168 + blade * 15} L${375 + stage * 18} ${165 + blade * 15} L${375 + stage * 18} ${175 + blade * 15} Z`} fill="#ff6b35" stroke="#f7931e" strokeWidth="0.5"/>
+                        <rect x={370 + stage * 16} y="158" width="3" height="84" fill="#888"/>
+                        {[...Array(6)].map((_, blade) => (
+                          <path key={`hptb${stage}${blade}`} d={`M${378 + stage * 16} ${165 + blade * 13} L${386 + stage * 16} ${162 + blade * 13} L${386 + stage * 16} ${172 + blade * 13} Z`} fill="#22c55e" stroke="#dff140" strokeWidth="0.5" opacity="0.9"/>
                         ))}
                       </g>
                     ))}
-                    {/* Exhaust */}
-                    <path d="M450 155 L480 170 L480 230 L450 245" fill="none" stroke="#666" strokeWidth="2"/>
-                    <path d="M475 185 Q490 190 495 200 Q490 210 475 215" stroke="url(#heatGradient)" strokeWidth="3" fill="none" opacity="0.6">
-                      <animate attributeName="stroke-width" values="3;5;3" dur="0.3s" repeatCount="indefinite"/>
+                    {/* Exhaust nozzle */}
+                    <path d="M420 152 L455 165 L455 235 L420 248" fill="#777" stroke="#999" strokeWidth="1.5"/>
+                    <path d="M455 165 L475 175 L475 225 L455 235" fill="#666" stroke="#888" strokeWidth="1"/>
+                    {/* Exhaust flame */}
+                    <path d="M475 185 Q495 192 500 200 Q495 208 475 215" stroke="url(#heatGradient)" strokeWidth="4" fill="none" opacity="0.8" filter="url(#greenGlow)">
+                      <animate attributeName="stroke-width" values="4;7;4" dur="0.25s" repeatCount="indefinite"/>
                     </path>
-                    {/* Center shaft */}
-                    <line x1="55" y1="200" x2="450" y2="200" stroke="#4a4a4a" strokeWidth="8"/>
-                    <line x1="55" y1="200" x2="450" y2="200" stroke="#666" strokeWidth="4"/>
-                    <line x1="55" y1="198" x2="450" y2="198" stroke="#888" strokeWidth="1" opacity="0.3"/>
+                    <path d="M478 190 Q492 195 495 200 Q492 205 478 210" stroke="#fff" strokeWidth="2" fill="none" opacity="0.3"/>
+                    {/* Center shaft with highlights */}
+                    <line x1="55" y1="200" x2="420" y2="200" stroke="#555" strokeWidth="10"/>
+                    <line x1="55" y1="200" x2="420" y2="200" stroke="#888" strokeWidth="6"/>
+                    <line x1="55" y1="197" x2="420" y2="197" stroke="#bbb" strokeWidth="1.5" opacity="0.4"/>
+                    {/* Air flow indicators */}
+                    {[0, 1, 2].map((i) => (
+                      <path key={`airflow${i}`} d={`M${30 + i * 5} ${185 + i * 5} Q${45 + i * 5} ${195} ${55} ${200}`} stroke="#22c55e" strokeWidth="1" fill="none" opacity="0.4">
+                        <animate attributeName="opacity" values="0.4;0.1;0.4" dur={`${1 + i * 0.3}s`} repeatCount="indefinite"/>
+                      </path>
+                    ))}
                   </svg>
                   {/* Labels */}
-                  <div className="absolute top-[8%] left-[8%]"><span className="font-['Lato'] text-[0.6rem] text-gray-600 uppercase tracking-widest font-semibold bg-white/90 px-2 py-0.5 rounded shadow-sm">Fan</span></div>
-                  <div className="absolute top-[5%] left-[28%]"><span className="font-['Lato'] text-[0.55rem] text-gray-600 uppercase tracking-widest font-semibold bg-white/90 px-2 py-0.5 rounded shadow-sm">Compressor</span></div>
-                  <div className="absolute top-[8%] left-[52%]"><span className="font-['Lato'] text-[0.55rem] text-white uppercase tracking-widest font-semibold bg-gradient-to-r from-orange-500 to-yellow-500 px-2 py-0.5 rounded shadow-sm">Combustor</span></div>
-                  <div className="absolute top-[5%] right-[18%]"><span className="font-['Lato'] text-[0.55rem] text-gray-600 uppercase tracking-widest font-semibold bg-white/90 px-2 py-0.5 rounded shadow-sm">Turbine</span></div>
+                  <div className="absolute top-[8%] left-[8%]"><span className="font-['Lato'] text-[0.6rem] text-white uppercase tracking-widest font-semibold bg-[#22c55e]/80 px-2 py-0.5 rounded">Fan</span></div>
+                  <div className="absolute top-[5%] left-[28%]"><span className="font-['Lato'] text-[0.55rem] text-white uppercase tracking-widest font-semibold bg-white/20 px-2 py-0.5 rounded">Compressor</span></div>
+                  <div className="absolute top-[8%] left-[52%]"><span className="font-['Lato'] text-[0.55rem] text-white uppercase tracking-widest font-semibold bg-[#dff140]/80 px-2 py-0.5 rounded">Combustor</span></div>
+                  <div className="absolute top-[5%] right-[18%]"><span className="font-['Lato'] text-[0.55rem] text-white uppercase tracking-widest font-semibold bg-[#22c55e]/80 px-2 py-0.5 rounded">Turbine</span></div>
                   </div>
 
                 {/* Slide 2: Enterprise Software Development */}

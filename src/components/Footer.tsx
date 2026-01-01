@@ -80,7 +80,7 @@ export default function Footer() {
         {/* LEFT – COPYRIGHT + LEGAL */}
         <div className="text-xs text-white/40 space-y-3">
           <p className="uppercase tracking-wider">
-            Copyright © {new Date().getFullYear()} Kryil Industries
+            Copyright © {new Date().getFullYear()} Kryil Infotech Private Limited
           </p>
           <ul className="space-y-2">
             <li><a href="#" className="hover:text-white">Privacy Policy</a></li>

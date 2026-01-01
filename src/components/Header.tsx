@@ -241,11 +241,11 @@ export default function Header() {
           }}
           onMouseEnter={handleServicesEnter}
         >
-          <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-20 py-10">
+          <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-20 py-10 ml-8">
             <div className="flex gap-16">
               {/* Left side - Description */}
               <div
-                className="w-80 flex-shrink-0"
+                className="w-80 flex-shrink-0 ml-4"
                 style={{
                   opacity: isServicesOpen ? 1 : 0,
                   transform: isServicesOpen ? 'translateY(0)' : 'translateY(-10px)',
