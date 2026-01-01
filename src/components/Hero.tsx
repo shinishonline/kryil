@@ -30,6 +30,24 @@ const slides = [
     link: "/services/cybersecurity",
     linkText: "Explore Security",
   },
+  {
+    id: 4,
+    label: "Artificial Intelligence",
+    title: "Intelligence That",
+    highlight: "Transforms",
+    description: "Harness the power of AI and machine learning to automate processes, gain insights, and create intelligent solutions that drive innovation.",
+    link: "/services/ai-ml",
+    linkText: "Explore AI",
+  },
+  {
+    id: 5,
+    label: "IoT Solutions",
+    title: "Connect",
+    highlight: "Everything",
+    description: "End-to-end IoT solutions connecting devices, sensors, and systems. Build smart infrastructure with real-time monitoring and automation.",
+    link: "/services/automation",
+    linkText: "Explore IoT",
+  },
 ];
 
 export default function Hero() {
@@ -475,6 +493,151 @@ export default function Hero() {
                   {/* Labels */}
                   <div className="absolute top-[12%] left-[20%]"><span className="font-['Lato'] text-[0.6rem] text-gray-600 uppercase tracking-widest font-semibold bg-white/90 px-2 py-0.5 rounded shadow-sm">Threat Detection</span></div>
                   <div className="absolute top-[12%] right-[20%]"><span className="font-['Lato'] text-[0.6rem] text-gray-600 uppercase tracking-widest font-semibold bg-white/90 px-2 py-0.5 rounded shadow-sm">24/7 Monitoring</span></div>
+                </div>
+
+                {/* Slide 4: Artificial Intelligence */}
+                <div className={`absolute inset-0 transition-all duration-700 ${currentSlide === 3 ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-[70%] h-[70%] bg-gray-400/8 rounded-full blur-3xl" />
+                  </div>
+                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 500 400" fill="none">
+                    <defs>
+                      <linearGradient id="brainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stopColor="#6a6a6a"/>
+                        <stop offset="100%" stopColor="#4a4a4a"/>
+                      </linearGradient>
+                      <linearGradient id="neuronGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#dff140"/>
+                        <stop offset="100%" stopColor="#9ae600"/>
+                      </linearGradient>
+                    </defs>
+                    {/* Brain outline */}
+                    <ellipse cx="250" cy="180" rx="120" ry="100" fill="url(#brainGrad)" stroke="#777" strokeWidth="2"/>
+                    <path d="M180 120 Q200 100 250 100 Q300 100 320 120" fill="none" stroke="#888" strokeWidth="1.5"/>
+                    <path d="M150 180 Q140 150 160 120" fill="none" stroke="#888" strokeWidth="1.5"/>
+                    <path d="M350 180 Q360 150 340 120" fill="none" stroke="#888" strokeWidth="1.5"/>
+                    {/* Neural network nodes */}
+                    {[[180, 140], [250, 120], [320, 140], [160, 200], [220, 180], [280, 180], [340, 200], [190, 250], [250, 240], [310, 250]].map(([x, y], i) => (
+                      <g key={`node${i}`}>
+                        <circle cx={x} cy={y} r="12" fill="#5a5a5a" stroke="#888" strokeWidth="1.5"/>
+                        <circle cx={x} cy={y} r="6" fill="#dff140">
+                          <animate attributeName="r" values="6;8;6" dur={`${1 + i * 0.2}s`} repeatCount="indefinite"/>
+                          <animate attributeName="opacity" values="1;0.6;1" dur={`${1 + i * 0.2}s`} repeatCount="indefinite"/>
+                        </circle>
+                      </g>
+                    ))}
+                    {/* Connections */}
+                    {[[180, 140, 220, 180], [250, 120, 220, 180], [250, 120, 280, 180], [320, 140, 280, 180], [160, 200, 190, 250], [220, 180, 250, 240], [280, 180, 250, 240], [340, 200, 310, 250]].map(([x1, y1, x2, y2], i) => (
+                      <line key={`conn${i}`} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#888" strokeWidth="1.5" opacity="0.6">
+                        <animate attributeName="opacity" values="0.6;0.3;0.6" dur={`${1.5 + i * 0.1}s`} repeatCount="indefinite"/>
+                      </line>
+                    ))}
+                    {/* Data flow particles */}
+                    {[0, 1, 2, 3].map((i) => (
+                      <circle key={`aiparticle${i}`} r="4" fill="#dff140">
+                        <animateMotion dur={`${2 + i * 0.5}s`} repeatCount="indefinite" path={`M${180 + i * 40},140 Q${200 + i * 30},${180 + i * 10} ${220 + i * 20},${220 + i * 10}`}/>
+                      </circle>
+                    ))}
+                    {/* Binary data stream */}
+                    <text x="120" y="320" fill="#666" fontSize="10" fontFamily="monospace" opacity="0.6">
+                      <tspan>01001010 10110101</tspan>
+                      <animate attributeName="opacity" values="0.6;0.3;0.6" dur="2s" repeatCount="indefinite"/>
+                    </text>
+                    <text x="280" y="320" fill="#666" fontSize="10" fontFamily="monospace" opacity="0.6">
+                      <tspan>11010010 01101101</tspan>
+                      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
+                    </text>
+                    {/* Tech labels */}
+                    <text x="140" y="360" className="font-['Lato']" fill="#888" fontSize="9" fontWeight="bold">ML</text>
+                    <text x="200" y="360" className="font-['Lato']" fill="#888" fontSize="9" fontWeight="bold">DEEP LEARNING</text>
+                    <text x="310" y="360" className="font-['Lato']" fill="#888" fontSize="9" fontWeight="bold">NLP</text>
+                  </svg>
+                  {/* Labels */}
+                  <div className="absolute top-[8%] left-[18%]"><span className="font-['Lato'] text-[0.6rem] text-gray-600 uppercase tracking-widest font-semibold bg-white/90 px-2 py-0.5 rounded shadow-sm">Neural Networks</span></div>
+                  <div className="absolute top-[12%] right-[18%]"><span className="font-['Lato'] text-[0.6rem] text-gray-600 uppercase tracking-widest font-semibold bg-white/90 px-2 py-0.5 rounded shadow-sm">Machine Learning</span></div>
+                </div>
+
+                {/* Slide 5: IoT Solutions */}
+                <div className={`absolute inset-0 transition-all duration-700 ${currentSlide === 4 ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-[70%] h-[70%] bg-gray-400/8 rounded-full blur-3xl" />
+                  </div>
+                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 500 400" fill="none">
+                    <defs>
+                      <linearGradient id="hubGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stopColor="#6a6a6a"/>
+                        <stop offset="100%" stopColor="#4a4a4a"/>
+                      </linearGradient>
+                    </defs>
+                    {/* Central Hub */}
+                    <circle cx="250" cy="200" r="50" fill="url(#hubGrad)" stroke="#888" strokeWidth="2"/>
+                    <circle cx="250" cy="200" r="35" fill="#5a5a5a" stroke="#777" strokeWidth="1"/>
+                    <circle cx="250" cy="200" r="15" fill="#dff140">
+                      <animate attributeName="r" values="15;18;15" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    {/* Orbiting rings */}
+                    <circle cx="250" cy="200" r="80" fill="none" stroke="#666" strokeWidth="1" strokeDasharray="4 4">
+                      <animateTransform attributeName="transform" type="rotate" from="0 250 200" to="360 250 200" dur="20s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="250" cy="200" r="120" fill="none" stroke="#666" strokeWidth="1" strokeDasharray="4 4">
+                      <animateTransform attributeName="transform" type="rotate" from="360 250 200" to="0 250 200" dur="25s" repeatCount="indefinite"/>
+                    </circle>
+                    {/* IoT Devices */}
+                    {/* Sensor */}
+                    <g transform="translate(120, 100)">
+                      <rect x="0" y="0" width="40" height="50" rx="4" fill="#5a5a5a" stroke="#777" strokeWidth="1.5"/>
+                      <circle cx="20" cy="18" r="8" fill="#4a4a4a" stroke="#888" strokeWidth="1"/>
+                      <circle cx="20" cy="18" r="4" fill="#dff140" className="animate-pulse"/>
+                      <rect x="8" y="32" width="24" height="4" fill="#666" rx="1"/>
+                      <rect x="8" y="40" width="16" height="4" fill="#666" rx="1"/>
+                    </g>
+                    {/* Smart Device */}
+                    <g transform="translate(340, 100)">
+                      <rect x="0" y="0" width="45" height="55" rx="5" fill="#5a5a5a" stroke="#777" strokeWidth="1.5"/>
+                      <rect x="5" y="8" width="35" height="30" rx="2" fill="#3a3a3a"/>
+                      <circle cx="22" cy="48" r="4" fill="#666"/>
+                      <rect x="10" y="14" width="25" height="3" fill="#dff140"/>
+                      <rect x="10" y="20" width="18" height="3" fill="#888"/>
+                      <rect x="10" y="26" width="22" height="3" fill="#888"/>
+                    </g>
+                    {/* Camera */}
+                    <g transform="translate(80, 220)">
+                      <rect x="0" y="0" width="50" height="35" rx="4" fill="#5a5a5a" stroke="#777" strokeWidth="1.5"/>
+                      <circle cx="25" cy="17" r="12" fill="#4a4a4a" stroke="#888" strokeWidth="1"/>
+                      <circle cx="25" cy="17" r="8" fill="#3a3a3a"/>
+                      <circle cx="25" cy="17" r="4" fill="#dff140">
+                        <animate attributeName="opacity" values="1;0.5;1" dur="1.5s" repeatCount="indefinite"/>
+                      </circle>
+                      <circle cx="42" cy="8" r="3" fill="#22c55e" className="animate-pulse"/>
+                    </g>
+                    {/* Thermostat */}
+                    <g transform="translate(370, 220)">
+                      <circle cx="25" cy="25" r="25" fill="#5a5a5a" stroke="#777" strokeWidth="1.5"/>
+                      <circle cx="25" cy="25" r="18" fill="#4a4a4a"/>
+                      <text x="25" y="28" textAnchor="middle" fill="#dff140" fontSize="12" fontWeight="bold">24°</text>
+                    </g>
+                    {/* Connection lines to hub */}
+                    <g stroke="#888" strokeWidth="1.5" strokeDasharray="4 4">
+                      <line x1="160" y1="125" x2="210" y2="175"><animate attributeName="stroke-dashoffset" from="0" to="16" dur="1s" repeatCount="indefinite"/></line>
+                      <line x1="340" y1="130" x2="290" y2="175"><animate attributeName="stroke-dashoffset" from="0" to="16" dur="1s" repeatCount="indefinite"/></line>
+                      <line x1="130" y1="237" x2="200" y2="210"><animate attributeName="stroke-dashoffset" from="0" to="16" dur="1s" repeatCount="indefinite"/></line>
+                      <line x1="370" y1="245" x2="300" y2="215"><animate attributeName="stroke-dashoffset" from="0" to="16" dur="1s" repeatCount="indefinite"/></line>
+                    </g>
+                    {/* Data flow dots */}
+                    {[0, 1, 2, 3].map((i) => (
+                      <circle key={`iotdot${i}`} r="3" fill="#dff140">
+                        <animate attributeName="opacity" values="1;0.3;1" dur={`${1 + i * 0.3}s`} repeatCount="indefinite"/>
+                        <animateMotion dur={`${1.5 + i * 0.2}s`} repeatCount="indefinite" path={i < 2 ? `M${160 + i * 180},${125 + i * 5} L${210 + i * 80},${175 + i * 5}` : `M${130 + (i-2) * 240},${237 + (i-2) * 8} L${200 + (i-2) * 100},${210 + (i-2) * 5}`}/>
+                      </circle>
+                    ))}
+                    {/* Labels at bottom */}
+                    <text x="100" y="330" className="font-['Lato']" fill="#888" fontSize="9" fontWeight="bold">SENSORS</text>
+                    <text x="200" y="330" className="font-['Lato']" fill="#888" fontSize="9" fontWeight="bold">AUTOMATION</text>
+                    <text x="320" y="330" className="font-['Lato']" fill="#888" fontSize="9" fontWeight="bold">SMART HOME</text>
+                  </svg>
+                  {/* Labels */}
+                  <div className="absolute top-[8%] left-[15%]"><span className="font-['Lato'] text-[0.6rem] text-gray-600 uppercase tracking-widest font-semibold bg-white/90 px-2 py-0.5 rounded shadow-sm">Smart Sensors</span></div>
+                  <div className="absolute top-[12%] right-[15%]"><span className="font-['Lato'] text-[0.6rem] text-gray-600 uppercase tracking-widest font-semibold bg-white/90 px-2 py-0.5 rounded shadow-sm">Connected Devices</span></div>
                 </div>
               </div>
             </div>
