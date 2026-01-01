@@ -38,7 +38,7 @@ const projects = [
 export default function Projects() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [activeProject, setActiveProject] = useState(0);
+  const [_activeProject, setActiveProject] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

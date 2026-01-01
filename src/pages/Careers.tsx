@@ -48,7 +48,7 @@ const openPositions = [
 
 export default function Careers() {
   const [isVisible, setIsVisible] = useState(false);
-  const [hoveredJob, setHoveredJob] = useState<number | null>(null);
+  const [_hoveredJob, setHoveredJob] = useState<number | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {

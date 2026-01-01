@@ -118,13 +118,6 @@ const capabilities = [
   },
 ];
 
-// Stats Data
-const stats = [
-  { value: '500+', label: 'Units Deployed', suffix: '' },
-  { value: '99.9', label: 'Mission Success', suffix: '%' },
-  { value: '24/7', label: 'Operational Ready', suffix: '' },
-  { value: '15+', label: 'Defense Partners', suffix: '' },
-];
 
 // Mission Section Component with wave effect
 function MissionSection() {

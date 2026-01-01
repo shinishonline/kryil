@@ -7,6 +7,11 @@ interface Feature {
 }
 
 
+interface Stat {
+  value: string;
+  label: string;
+}
+
 interface ServicePageLayoutProps {
   title: string;
   subtitle: string;
@@ -18,6 +23,7 @@ interface ServicePageLayoutProps {
   ctaText?: string;
   galleryImages?: string[];
   benefitsImage?: string;
+  stats?: Stat[];
 }
 
 // Default gallery images for the showcase section
@@ -73,10 +79,11 @@ export default function ServicePageLayout({
   image,
   features,
   benefits,
-  technologies,
-  ctaText = 'Get Started',
+  technologies: _technologies,
+  ctaText: _ctaText = 'Get Started',
   galleryImages = defaultGalleryImages,
   benefitsImage = defaultBenefitsImage,
+  stats: _stats,
 }: ServicePageLayoutProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [scrollY, setScrollY] = useState(0);
