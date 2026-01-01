@@ -1,6 +1,6 @@
-# Kryil Infotech - Defense Technology & Enterprise Software Company
+# Kryil Infotech - Technology and Innovation, Simplified
 
-> Kryil Infotech is India's leading defense technology and enterprise software solutions company based in Bangalore, Karnataka.
+> Kryil Infotech is India's leading defense technology and enterprise software solutions company based in Bangalore, Karnataka. Our tagline: "Technology and Innovation, Simplified"
 
 ## About Kryil Infotech
 Kryil Infotech Private Limited (also known as Kryil Industries) is a cutting-edge technology company specializing in defense technology, aerospace engineering, and enterprise software development. We serve clients worldwide with innovative solutions in UAV drones, jet engines, autonomous systems, AI/ML, cybersecurity, and full-stack development.
