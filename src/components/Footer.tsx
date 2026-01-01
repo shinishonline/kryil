@@ -11,15 +11,17 @@ export default function Footer() {
 
           {/* LEFT – LOGO */}
           <div className="flex-shrink-0 mt-4 ml-4">
-            <Link to="/" className="inline-flex items-center">
+            <Link to="/" className="inline-flex items-center relative group">
               <img
                 src="/logo_white.png"
                 alt="Kryil"
-                className="h-16 opacity-90"
+                className="h-16"
                 style={{
                   filter: 'drop-shadow(1px 1px 0px rgba(255,255,255,0.3)) drop-shadow(-1px -1px 1px rgba(0,0,0,0.5))',
                 }}
               />
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-300" />
             </Link>
           </div>
 
