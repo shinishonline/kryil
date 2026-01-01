@@ -344,6 +344,8 @@ export default function Defense() {
                   alt={products[activeProduct].name}
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                 />
+                {/* Black overlay */}
+                <div className="absolute inset-0 bg-black/40 pointer-events-none" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent pointer-events-none" />
 
                 {/* Specs Overlay */}
