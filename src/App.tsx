@@ -23,11 +23,41 @@ import News from './pages/News';
 import NewsArticle from './pages/NewsArticle';
 import ChatBot from './components/ChatBot';
 
-// Component to handle hash scroll navigation
+// Page titles for SEO
+const pageTitles: Record<string, string> = {
+  '/': 'Kryil Infotech | UAV Drone Manufacturer | Robotics & IoT Solutions | Bangalore India',
+  '/defense': 'Defense & Aerospace Technology | UAV Drones | Kryil Infotech',
+  '/careers': 'Careers | Join Our Team | Kryil Infotech',
+  '/blog': 'Blog | Expert Insights on UAV, Aerospace & Technology | Kryil Infotech',
+  '/news': 'News & Updates | Kryil Infotech',
+  '/services/infrastructure': 'Infrastructure Services | Cloud & Network Solutions | Kryil Infotech',
+  '/services/cybersecurity': 'Cybersecurity Services | Threat Protection | Kryil Infotech',
+  '/services/software-development': 'Software Development | Custom Solutions | Kryil Infotech',
+  '/services/automation': 'Infrastructure Automation | DevOps & CI/CD | Kryil Infotech',
+  '/services/digital-marketing': 'Digital Marketing | SEO & Growth | Kryil Infotech',
+  '/services/database': 'Database Administration | SQL, Oracle, MongoDB | Kryil Infotech',
+  '/services/robotics': 'Robotics & Automation Solutions | Kryil Infotech',
+  '/privacy-policy': 'Privacy Policy | Kryil Infotech',
+  '/terms-of-use': 'Terms of Use | Kryil Infotech',
+  '/anti-slavery-policy': 'Anti-Slavery Policy | Kryil Infotech',
+  '/investor-relations': 'Investor Relations | Kryil Infotech',
+  '/carbon-reduction-plan': 'Carbon Reduction Plan | Kryil Infotech',
+};
+
+// Component to handle hash scroll navigation and page titles
 function ScrollToHash() {
   const location = useLocation();
 
   useEffect(() => {
+    // Set document title based on route
+    const basePath = location.pathname.split('/').slice(0, 3).join('/');
+    const title = pageTitles[location.pathname] || pageTitles[basePath] || 'Kryil Infotech';
+    document.title = title;
+
+    // Scroll to top on route change
+    window.scrollTo(0, 0);
+
+    // Handle hash navigation
     if (location.hash) {
       const element = document.querySelector(location.hash);
       if (element) {
@@ -45,9 +75,16 @@ function App() {
   return (
     <Router>
       <ScrollToHash />
+      {/* Skip to main content link for accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[#dff140] focus:text-black focus:rounded-lg focus:font-semibold"
+      >
+        Skip to main content
+      </a>
       <div className="min-h-screen bg-[#f1f0ea]">
         <Header />
-        <main>
+        <main id="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/careers" element={<Careers />} />

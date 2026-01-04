@@ -154,7 +154,7 @@ export default function ServicePageLayout({
         </div>
 
         {/* Content */}
-        <div className="relative z-10 w-full pb-24 md:pb-32" style={{ marginLeft: '40px', marginRight: '40px' }}>
+        <div className="relative z-10 w-full pb-24 md:pb-32 px-6 md:px-10 lg:px-10" style={{ marginLeft: 'clamp(16px, 4vw, 40px)', marginRight: 'clamp(16px, 4vw, 40px)' }}>
           {/* Subtitle */}
           <div
             className={`flex items-center gap-4 mb-8 transition-all duration-1000 ${
@@ -197,7 +197,7 @@ export default function ServicePageLayout({
 
 {/* Image Showcase Section */}
       <section ref={galleryRef} className="py-32 md:py-48 bg-black overflow-hidden">
-        <div style={{ marginLeft: '40px', marginRight: '40px' }}>
+        <div className="px-4 md:px-6" style={{ marginLeft: 'clamp(16px, 4vw, 40px)', marginRight: 'clamp(16px, 4vw, 40px)' }}>
           {/* Section Header */}
           <div className="mb-16 md:mb-24 max-w-3xl">
             <div className="flex items-center gap-4 mb-8">
@@ -273,7 +273,7 @@ export default function ServicePageLayout({
 
       {/* Trusted Partner Section - Light Theme */}
       <section className="min-h-[60vh] md:min-h-[70vh] flex items-center justify-center bg-[#f1f0ea]">
-        <div style={{ marginLeft: '40px', marginRight: '40px', paddingTop: '80px', paddingBottom: '80px' }}>
+        <div className="py-16 md:py-20 px-4 md:px-6" style={{ marginLeft: 'clamp(16px, 4vw, 40px)', marginRight: 'clamp(16px, 4vw, 40px)' }}>
           <div className="flex flex-col items-center justify-center text-center">
             <span className="inline-block px-6 py-2.5 bg-black text-white font-['Lato'] text-[0.7rem] uppercase tracking-[0.15em] font-medium mb-8">
               Trusted Partner
@@ -291,7 +291,7 @@ export default function ServicePageLayout({
 
       {/* What We Deliver Section */}
       <section ref={featuresRef} className="pt-32 md:pt-48 pb-40 md:pb-56 bg-[#0a0a0a]">
-        <div style={{ marginLeft: '40px', marginRight: '40px', marginBottom: '40px' }}>
+        <div className="px-4 md:px-6 mb-8 md:mb-10" style={{ marginLeft: 'clamp(16px, 4vw, 40px)', marginRight: 'clamp(16px, 4vw, 40px)' }}>
           {/* Section Header */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24" style={{ marginBottom: '40px' }}>
             <div className="lg:col-span-7">
@@ -375,7 +375,7 @@ export default function ServicePageLayout({
 
       {/* Benefits Section - Light Theme */}
       <section ref={benefitsRef} className="py-32 md:py-48 bg-[#f1f0ea]">
-        <div style={{ marginLeft: '40px', marginRight: '40px' }}>
+        <div className="px-4 md:px-6" style={{ marginLeft: 'clamp(16px, 4vw, 40px)', marginRight: 'clamp(16px, 4vw, 40px)' }}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32">
             {/* Left Column - Header */}
             <div className="lg:sticky lg:top-32 lg:h-fit">
@@ -455,7 +455,7 @@ export default function ServicePageLayout({
           </span>
         </div>
 
-        <div className="relative z-10 text-center" style={{ marginLeft: '40px', marginRight: '40px' }}>
+        <div className="relative z-10 text-center px-4 md:px-6" style={{ marginLeft: 'clamp(16px, 4vw, 40px)', marginRight: 'clamp(16px, 4vw, 40px)' }}>
           <span className="inline-block px-5 py-2 bg-[#dff140] text-black font-['Lato'] text-[0.7rem] uppercase tracking-[0.15em] font-medium mb-10">
             Get Started Today
           </span>
