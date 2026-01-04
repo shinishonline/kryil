@@ -106,7 +106,8 @@ export default function Header() {
 
   const navItems = [
     { label: 'Defense', href: '/defense' },
-    { label: 'About', href: '/#about' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'News', href: '/news' },
     { label: 'Careers', href: '/careers' },
     { label: 'Contact', href: '/#contact' },
   ];

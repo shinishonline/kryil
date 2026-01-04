@@ -37,8 +37,9 @@ export default function Footer() {
                 <li><Link to="/" className="hover:text-white">Home</Link></li>
                 <li><Link to="/#services" className="hover:text-white">Services</Link></li>
                 <li><Link to="/defense" className="hover:text-white">Defense</Link></li>
+                <li><Link to="/blog" className="hover:text-white">Blog</Link></li>
+                <li><Link to="/news" className="hover:text-white">News</Link></li>
                 <li><Link to="/careers" className="hover:text-white">Careers</Link></li>
-                <li><Link to="/#contact" className="hover:text-white">Contact</Link></li>
               </ul>
             </div>
 
@@ -63,11 +64,11 @@ export default function Footer() {
                 Social
               </p>
               <ul className="space-y-4 text-white/80 text-sm">
-                <li><a href="#" className="hover:text-white">X</a></li>
-                <li><a href="#" className="hover:text-white">YouTube</a></li>
-                <li><a href="#" className="hover:text-white">Instagram</a></li>
-                <li><a href="#" className="hover:text-white">Facebook</a></li>
-                <li><a href="#" className="hover:text-white">LinkedIn</a></li>
+                <li><a href="https://twitter.com/kryilinfotech" target="_blank" rel="noopener noreferrer" className="hover:text-white">X (Twitter)</a></li>
+                <li><a href="https://youtube.com/@kryilinfotech" target="_blank" rel="noopener noreferrer" className="hover:text-white">YouTube</a></li>
+                <li><a href="https://instagram.com/kryilinfotech" target="_blank" rel="noopener noreferrer" className="hover:text-white">Instagram</a></li>
+                <li><a href="https://facebook.com/kryilinfotech" target="_blank" rel="noopener noreferrer" className="hover:text-white">Facebook</a></li>
+                <li><a href="https://linkedin.com/company/kryil-infotech" target="_blank" rel="noopener noreferrer" className="hover:text-white">LinkedIn</a></li>
               </ul>
             </div>
 

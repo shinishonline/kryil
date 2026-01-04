@@ -17,6 +17,10 @@ import TermsOfUse from './pages/legal/TermsOfUse';
 import AntiSlaveryPolicy from './pages/legal/AntiSlaveryPolicy';
 import InvestorRelations from './pages/legal/InvestorRelations';
 import CarbonReductionPlan from './pages/legal/CarbonReductionPlan';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
+import News from './pages/News';
+import NewsArticle from './pages/NewsArticle';
 import ChatBot from './components/ChatBot';
 
 // Component to handle hash scroll navigation
@@ -55,6 +59,11 @@ function App() {
             <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
             <Route path="/services/database" element={<DatabaseServices />} />
             <Route path="/services/robotics" element={<Robotics />} />
+            {/* Blog & News */}
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/news/:slug" element={<NewsArticle />} />
             {/* Legal Pages */}
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-use" element={<TermsOfUse />} />
