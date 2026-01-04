@@ -283,18 +283,6 @@ export default function Header() {
                   End-to-end technology solutions that transform businesses and drive growth.
                 </p>
 
-                {/* Quick Stats */}
-                <div className="grid grid-cols-2 gap-3 mb-6">
-                  <div className="bg-black/[0.02] rounded-lg p-3">
-                    <div className="font-['Lato'] text-[1.25rem] font-bold text-black">15+</div>
-                    <div className="font-['Lato'] text-[0.7rem] text-black/50 uppercase tracking-wider">Years Exp</div>
-                  </div>
-                  <div className="bg-black/[0.02] rounded-lg p-3">
-                    <div className="font-['Lato'] text-[1.25rem] font-bold text-black">500+</div>
-                    <div className="font-['Lato'] text-[0.7rem] text-black/50 uppercase tracking-wider">Clients</div>
-                  </div>
-                </div>
-
                 {/* CTA */}
                 <Link
                   to="/#contact"
