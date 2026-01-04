@@ -67,15 +67,15 @@ export default function Blog() {
             backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
           }}
         />
-        <div className="relative max-w-7xl mx-auto px-6 md:px-12 lg:px-16 pt-36 pb-20">
+        <div className="relative max-w-7xl mx-auto px-8 md:px-16 lg:px-20 pt-40 pb-24">
           <div className="max-w-3xl">
-            <span className="inline-block px-4 py-2 bg-[#dff140]/10 border border-[#dff140]/30 rounded-full text-[#dff140] text-xs uppercase tracking-[0.2em] mb-6 font-['Lato']">
+            <span className="inline-block px-5 py-2.5 bg-[#dff140]/10 border border-[#dff140]/30 rounded-full text-[#dff140] text-xs uppercase tracking-[0.2em] mb-8 font-['Lato']">
               Insights & Research
             </span>
-            <h1 className="font-['Lato'] text-5xl md:text-6xl font-black tracking-tight mb-6 leading-[1.1]">
+            <h1 className="font-['Lato'] text-5xl md:text-6xl font-black tracking-tight mb-8 leading-[1.1]">
               The Kryil Journal
             </h1>
-            <p className="text-white/50 text-lg md:text-xl font-['Lato'] leading-relaxed max-w-2xl">
+            <p className="text-white/50 text-lg md:text-xl font-['Lato'] leading-relaxed max-w-2xl pr-4">
               Expert insights on UAV technology, aerospace engineering, robotics, and defense innovation.
             </p>
           </div>
@@ -127,22 +127,22 @@ export default function Blog() {
                           loading="lazy"
                         />
                       </div>
-                      <div className="p-6 lg:p-8">
-                        <div className="flex items-center gap-3 mb-4">
-                          <span className="px-3 py-1.5 bg-[#dff140] text-black text-xs font-bold uppercase tracking-wider rounded-full font-['Lato']">
+                      <div className="p-8">
+                        <div className="flex items-center gap-4 mb-5">
+                          <span className="px-4 py-2 bg-[#dff140] text-black text-xs font-bold uppercase tracking-wider rounded-full font-['Lato']">
                             {topStories[0].category}
                           </span>
                           <span className="text-black/40 text-xs font-['Lato']">
                             {topStories[0].readTime}
                           </span>
                         </div>
-                        <h3 className="font-['Lato'] text-xl lg:text-2xl font-bold text-black mb-4 leading-tight group-hover:text-black/70 transition-colors">
+                        <h3 className="font-['Lato'] text-xl lg:text-2xl font-bold text-black mb-5 leading-tight group-hover:text-black/70 transition-colors">
                           {topStories[0].title}
                         </h3>
-                        <p className="text-black/50 text-sm font-['Lato'] leading-relaxed mb-5 line-clamp-3">
+                        <p className="text-black/50 text-sm font-['Lato'] leading-relaxed mb-6 line-clamp-3">
                           {topStories[0].excerpt}
                         </p>
-                        <div className="flex items-center justify-between pt-4 border-t border-black/5">
+                        <div className="flex items-center justify-between pt-5 border-t border-black/10">
                           <span className="text-xs text-black/40 font-['Lato']">
                             {new Date(topStories[0].date).toLocaleDateString('en-US', {
                               month: 'long',
@@ -167,9 +167,9 @@ export default function Blog() {
                       <Link
                         key={post.id}
                         to={`/blog/${post.slug}`}
-                        className="group flex gap-5 bg-white rounded-xl p-4 shadow-sm hover:shadow-lg transition-all duration-300"
+                        className="group flex gap-5 bg-white rounded-xl p-5 shadow-sm hover:shadow-lg transition-all duration-300"
                       >
-                        <div className="w-28 h-28 flex-shrink-0 rounded-lg overflow-hidden">
+                        <div className="w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden">
                           <img
                             src={post.image}
                             alt={post.title}
@@ -177,16 +177,16 @@ export default function Blog() {
                             loading="lazy"
                           />
                         </div>
-                        <div className="flex-1 min-w-0 py-1">
-                          <div className="flex items-center gap-2 mb-2">
-                            <span className="px-2 py-1 bg-black/5 text-black/60 text-[10px] font-bold uppercase tracking-wider rounded font-['Lato']">
+                        <div className="flex-1 min-w-0 py-2">
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="px-3 py-1.5 bg-black/5 text-black/60 text-[10px] font-bold uppercase tracking-wider rounded font-['Lato']">
                               {post.category}
                             </span>
                           </div>
-                          <h4 className="font-['Lato'] text-sm font-bold text-black leading-snug group-hover:text-black/70 transition-colors line-clamp-2 mb-2">
+                          <h4 className="font-['Lato'] text-base font-bold text-black leading-snug group-hover:text-black/70 transition-colors line-clamp-2 mb-3">
                             {post.title}
                           </h4>
-                          <span className="text-[11px] text-black/40 font-['Lato']">
+                          <span className="text-xs text-black/40 font-['Lato']">
                             {new Date(post.date).toLocaleDateString('en-US', {
                               month: 'short',
                               day: 'numeric',
@@ -377,25 +377,25 @@ function MagazineCard({ post }: { post: BlogPost }) {
           loading="lazy"
         />
       </div>
-      <div className="p-6 lg:p-7">
-        <div className="flex items-center gap-3 mb-4">
-          <span className="px-3 py-1.5 bg-black/5 text-black/70 text-xs font-bold uppercase tracking-wider rounded-full font-['Lato']">
+      <div className="p-8">
+        <div className="flex items-center gap-3 mb-5">
+          <span className="px-4 py-2 bg-black/5 text-black/70 text-xs font-bold uppercase tracking-wider rounded-full font-['Lato']">
             {post.category}
           </span>
           <span className="text-black/30 text-xs font-['Lato']">
             {post.readTime}
           </span>
         </div>
-        <h3 className="font-['Lato'] text-lg font-bold text-black mb-3 leading-snug group-hover:text-black/70 transition-colors line-clamp-2">
+        <h3 className="font-['Lato'] text-xl font-bold text-black mb-4 leading-snug group-hover:text-black/70 transition-colors line-clamp-2">
           {post.title}
         </h3>
-        <p className="text-black/50 text-sm font-['Lato'] leading-relaxed line-clamp-2 mb-5">
+        <p className="text-black/50 text-sm font-['Lato'] leading-relaxed line-clamp-3 mb-6">
           {post.excerpt}
         </p>
-        <div className="flex items-center justify-between pt-4 border-t border-black/5">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 bg-black/10 rounded-full flex items-center justify-center">
-              <span className="text-[10px] font-bold text-black/50">{post.author.charAt(0)}</span>
+        <div className="flex items-center justify-between pt-5 border-t border-black/10">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-black/10 rounded-full flex items-center justify-center">
+              <span className="text-xs font-bold text-black/50">{post.author.charAt(0)}</span>
             </div>
             <span className="text-xs text-black/40 font-['Lato']">
               {new Date(post.date).toLocaleDateString('en-US', {
