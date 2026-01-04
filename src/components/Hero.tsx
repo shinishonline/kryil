@@ -111,79 +111,106 @@ export default function Hero() {
         backgroundSize: '80px 80px',
       }} />
 
-      {/* Huge Smoke Flowing Right to Left */}
+      {/* Turbo Jet Blue Smoke Effect - Flowing Right to Left */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Main Smoke Wave 1 - Large */}
+        {/* Main Jet Exhaust Stream - Intense Blue */}
         <div
-          className="absolute w-[200%] h-[120%] top-[-10%]"
+          className="absolute w-[300%] h-[40%] top-[30%]"
           style={{
-            background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 20%, rgba(255,255,255,0.15) 40%, rgba(255,255,255,0.08) 60%, transparent 80%)',
-            filter: 'blur(80px)',
-            animation: 'smokeFlowMain 15s linear infinite',
-          }}
-        />
-        {/* Main Smoke Wave 2 - Offset */}
-        <div
-          className="absolute w-[200%] h-[100%] top-[0%]"
-          style={{
-            background: 'linear-gradient(90deg, transparent 0%, rgba(200,200,200,0.06) 25%, rgba(255,255,255,0.12) 50%, rgba(200,200,200,0.06) 75%, transparent 100%)',
-            filter: 'blur(100px)',
-            animation: 'smokeFlowMain 20s linear infinite',
-            animationDelay: '-5s',
-          }}
-        />
-        {/* Smoke Layer - Top flowing */}
-        <div
-          className="absolute w-[250%] h-[50%] top-0"
-          style={{
-            background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 30%, rgba(223,241,64,0.05) 50%, rgba(255,255,255,0.1) 70%, transparent 100%)',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(0,150,255,0.15) 15%, rgba(0,200,255,0.3) 30%, rgba(100,180,255,0.4) 45%, rgba(0,150,255,0.3) 60%, rgba(0,100,200,0.15) 80%, transparent 100%)',
             filter: 'blur(60px)',
-            animation: 'smokeFlowTop 12s linear infinite',
+            animation: 'smokeFlowMain 12s linear infinite',
           }}
         />
-        {/* Smoke Layer - Middle flowing */}
+        {/* Secondary Exhaust - Lighter Blue */}
         <div
-          className="absolute w-[300%] h-[60%] top-[20%]"
+          className="absolute w-[250%] h-[50%] top-[25%]"
           style={{
-            background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.12) 20%, rgba(255,255,255,0.2) 40%, rgba(255,255,255,0.12) 60%, transparent 80%)',
-            filter: 'blur(120px)',
-            animation: 'smokeFlowMiddle 18s linear infinite',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(100,200,255,0.1) 20%, rgba(150,220,255,0.25) 40%, rgba(100,200,255,0.2) 60%, transparent 85%)',
+            filter: 'blur(80px)',
+            animation: 'smokeFlowMain 16s linear infinite',
+            animationDelay: '-4s',
           }}
         />
-        {/* Smoke Layer - Bottom flowing */}
+        {/* Top Smoke Layer - Blue Mist */}
         <div
-          className="absolute w-[250%] h-[50%] bottom-0"
+          className="absolute w-[280%] h-[45%] top-0"
           style={{
-            background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 25%, rgba(223,241,64,0.06) 50%, rgba(255,255,255,0.08) 75%, transparent 100%)',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(50,150,220,0.12) 25%, rgba(100,180,255,0.2) 45%, rgba(50,150,220,0.12) 70%, transparent 100%)',
             filter: 'blur(70px)',
-            animation: 'smokeFlowBottom 14s linear infinite',
+            animation: 'smokeFlowTop 14s linear infinite',
           }}
         />
-        {/* Dense Smoke Puffs */}
+        {/* Middle Dense Smoke - Core Blue */}
         <div
-          className="absolute w-[800px] h-[800px] top-[10%]"
+          className="absolute w-[350%] h-[35%] top-[32%]"
           style={{
-            background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 30%, transparent 60%)',
-            filter: 'blur(80px)',
-            animation: 'smokePuff1 10s linear infinite',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(0,120,255,0.2) 15%, rgba(50,180,255,0.45) 35%, rgba(100,200,255,0.5) 50%, rgba(50,180,255,0.35) 65%, rgba(0,120,255,0.15) 85%, transparent 100%)',
+            filter: 'blur(50px)',
+            animation: 'smokeFlowMiddle 10s linear infinite',
           }}
         />
+        {/* Bottom Smoke Layer */}
         <div
-          className="absolute w-[600px] h-[600px] top-[30%]"
+          className="absolute w-[280%] h-[45%] bottom-0"
           style={{
-            background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 40%, transparent 65%)',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(50,150,220,0.1) 20%, rgba(100,180,255,0.18) 50%, rgba(50,150,220,0.1) 80%, transparent 100%)',
+            filter: 'blur(70px)',
+            animation: 'smokeFlowBottom 15s linear infinite',
+          }}
+        />
+        {/* Turbulence Smoke Puffs - Large */}
+        <div
+          className="absolute w-[900px] h-[600px] top-[20%]"
+          style={{
+            background: 'radial-gradient(ellipse at center, rgba(80,180,255,0.35) 0%, rgba(50,150,220,0.2) 30%, rgba(0,120,200,0.1) 50%, transparent 70%)',
             filter: 'blur(60px)',
-            animation: 'smokePuff2 8s linear infinite',
+            animation: 'smokePuff1 8s linear infinite',
+          }}
+        />
+        <div
+          className="absolute w-[700px] h-[500px] top-[35%]"
+          style={{
+            background: 'radial-gradient(ellipse at center, rgba(100,200,255,0.4) 0%, rgba(50,170,240,0.25) 35%, transparent 65%)',
+            filter: 'blur(50px)',
+            animation: 'smokePuff2 6s linear infinite',
+            animationDelay: '-2s',
+          }}
+        />
+        <div
+          className="absolute w-[800px] h-[550px] top-[25%]"
+          style={{
+            background: 'radial-gradient(ellipse at center, rgba(70,170,255,0.35) 0%, rgba(40,140,220,0.2) 40%, transparent 65%)',
+            filter: 'blur(55px)',
+            animation: 'smokePuff3 9s linear infinite',
+            animationDelay: '-4s',
+          }}
+        />
+        {/* Extra Turbulence Puffs */}
+        <div
+          className="absolute w-[600px] h-[400px] top-[40%]"
+          style={{
+            background: 'radial-gradient(ellipse at center, rgba(120,210,255,0.3) 0%, rgba(80,180,240,0.15) 45%, transparent 70%)',
+            filter: 'blur(45px)',
+            animation: 'smokePuff4 7s linear infinite',
+            animationDelay: '-1s',
+          }}
+        />
+        <div
+          className="absolute w-[500px] h-[350px] top-[30%]"
+          style={{
+            background: 'radial-gradient(ellipse at center, rgba(150,220,255,0.35) 0%, rgba(100,190,250,0.2) 40%, transparent 65%)',
+            filter: 'blur(40px)',
+            animation: 'smokePuff5 5s linear infinite',
             animationDelay: '-3s',
           }}
         />
+        {/* Ambient Glow Around */}
         <div
-          className="absolute w-[700px] h-[500px] top-[50%]"
+          className="absolute w-full h-full"
           style={{
-            background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.18) 0%, rgba(223,241,64,0.05) 35%, transparent 60%)',
-            filter: 'blur(70px)',
-            animation: 'smokePuff3 12s linear infinite',
-            animationDelay: '-6s',
+            background: 'radial-gradient(ellipse at 70% 50%, rgba(50,150,255,0.15) 0%, rgba(30,100,200,0.08) 30%, transparent 60%)',
+            filter: 'blur(100px)',
           }}
         />
       </div>
@@ -765,7 +792,7 @@ export default function Hero() {
         }
         @keyframes smokeFlowTop {
           0% { transform: translateX(40%) translateY(0); }
-          100% { transform: translateX(-100%) translateY(10px); }
+          100% { transform: translateX(-100%) translateY(15px); }
         }
         @keyframes smokeFlowMiddle {
           0% { transform: translateX(60%); }
@@ -773,25 +800,37 @@ export default function Hero() {
         }
         @keyframes smokeFlowBottom {
           0% { transform: translateX(50%) translateY(0); }
-          100% { transform: translateX(-100%) translateY(-10px); }
+          100% { transform: translateX(-100%) translateY(-15px); }
         }
         @keyframes smokePuff1 {
           0% { transform: translateX(120vw) translateY(0) scale(1); opacity: 0; }
-          10% { opacity: 0.25; }
-          90% { opacity: 0.25; }
-          100% { transform: translateX(-100vw) translateY(-20px) scale(1.3); opacity: 0; }
+          5% { opacity: 0.35; }
+          95% { opacity: 0.35; }
+          100% { transform: translateX(-120vw) translateY(-30px) scale(1.4); opacity: 0; }
         }
         @keyframes smokePuff2 {
           0% { transform: translateX(120vw) translateY(0) scale(1); opacity: 0; }
-          10% { opacity: 0.2; }
-          90% { opacity: 0.2; }
-          100% { transform: translateX(-100vw) translateY(30px) scale(1.2); opacity: 0; }
+          5% { opacity: 0.4; }
+          95% { opacity: 0.4; }
+          100% { transform: translateX(-120vw) translateY(40px) scale(1.3); opacity: 0; }
         }
         @keyframes smokePuff3 {
           0% { transform: translateX(120vw) translateY(0) scale(1); opacity: 0; }
-          10% { opacity: 0.22; }
-          90% { opacity: 0.22; }
-          100% { transform: translateX(-100vw) translateY(-15px) scale(1.25); opacity: 0; }
+          5% { opacity: 0.35; }
+          95% { opacity: 0.35; }
+          100% { transform: translateX(-120vw) translateY(-25px) scale(1.35); opacity: 0; }
+        }
+        @keyframes smokePuff4 {
+          0% { transform: translateX(120vw) translateY(0) scale(1); opacity: 0; }
+          5% { opacity: 0.3; }
+          95% { opacity: 0.3; }
+          100% { transform: translateX(-120vw) translateY(35px) scale(1.25); opacity: 0; }
+        }
+        @keyframes smokePuff5 {
+          0% { transform: translateX(120vw) translateY(0) scale(1); opacity: 0; }
+          5% { opacity: 0.35; }
+          95% { opacity: 0.35; }
+          100% { transform: translateX(-120vw) translateY(-20px) scale(1.3); opacity: 0; }
         }
       `}</style>
     </section>
