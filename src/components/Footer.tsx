@@ -52,7 +52,7 @@ export default function Footer() {
                 <li><Link to="/services/cybersecurity" className="hover:text-white">Cybersecurity</Link></li>
                 <li><Link to="/services/software-development" className="hover:text-white">Software Development</Link></li>
                 <li><Link to="/services/automation" className="hover:text-white">Automation</Link></li>
-                <li><Link to="/services/digital-marketing" className="hover:text-white">Digital Marketing</Link></li>
+                <li><Link to="/services/robotics" className="hover:text-white">Robotics & Automation</Link></li>
                 <li><Link to="/services/database" className="hover:text-white">Database Services</Link></li>
               </ul>
             </div>

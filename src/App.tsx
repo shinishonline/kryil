@@ -10,6 +10,8 @@ import Cybersecurity from './pages/services/Cybersecurity';
 import SoftwareDevelopment from './pages/services/SoftwareDevelopment';
 import InfrastructureAutomation from './pages/services/InfrastructureAutomation';
 import DigitalMarketing from './pages/services/DigitalMarketing';
+import DatabaseServices from './pages/services/DatabaseServices';
+import Robotics from './pages/services/Robotics';
 import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 import TermsOfUse from './pages/legal/TermsOfUse';
 import AntiSlaveryPolicy from './pages/legal/AntiSlaveryPolicy';
@@ -51,6 +53,8 @@ function App() {
             <Route path="/services/software-development" element={<SoftwareDevelopment />} />
             <Route path="/services/automation" element={<InfrastructureAutomation />} />
             <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
+            <Route path="/services/database" element={<DatabaseServices />} />
+            <Route path="/services/robotics" element={<Robotics />} />
             {/* Legal Pages */}
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-use" element={<TermsOfUse />} />
