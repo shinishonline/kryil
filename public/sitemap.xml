@@ -82,36 +82,36 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Legal Pages -->
+  <!-- Legal Pages (Low Priority - Not for Sitelinks) -->
   <url>
     <loc>https://www.kryil.com/privacy-policy</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.2</priority>
   </url>
   <url>
     <loc>https://www.kryil.com/terms-of-use</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.2</priority>
   </url>
   <url>
     <loc>https://www.kryil.com/anti-slavery-policy</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.2</priority>
   </url>
   <url>
     <loc>https://www.kryil.com/investor-relations</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.kryil.com/carbon-reduction-plan</loc>
     <lastmod>2026-01-04</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.2</priority>
   </url>
 
   <!-- LLMs.txt for AI platforms -->
