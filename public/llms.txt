@@ -82,6 +82,26 @@ Kryil Infotech Private Limited (also known as Kryil Industries) is a cutting-edg
 - Email Marketing
 - Marketing Automation
 
+### Database Administration & Development
+- Database Administration (DBA Services)
+- Database Development & Design
+- Data Warehousing Solutions
+- MFBI (Microsoft Fabric Business Intelligence)
+- Power BI Development & Reporting
+- SQL Server Administration & Development
+- Oracle Database Administration
+- MySQL & PostgreSQL Administration
+- MongoDB & NoSQL Databases
+- Database Optimization & Tuning
+- ETL Development (SSIS, SSRS, SSAS)
+- Data Modeling & Schema Design
+- Database Migration Services
+- Database Security & Encryption
+- Enterprise Data Warehouse (EDW)
+- Real-time Analytics & OLAP
+- 24x7 Remote DBA Support
+- Cloud Database (Azure SQL, Amazon RDS, Google Cloud SQL)
+
 ## Contact Information
 - Website: https://www.kryil.com
 - Email: contact@kryil.com / info@kryil.com
