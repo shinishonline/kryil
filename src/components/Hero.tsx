@@ -111,51 +111,79 @@ export default function Hero() {
         backgroundSize: '80px 80px',
       }} />
 
-      {/* Smoke/Fog Background Effect */}
+      {/* Huge Smoke Flowing Right to Left */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Smoke Layer 1 - Bottom Left */}
+        {/* Main Smoke Wave 1 - Large */}
         <div
-          className="absolute w-[800px] h-[800px] -bottom-40 -left-40 opacity-30"
+          className="absolute w-[200%] h-[120%] top-[-10%]"
           style={{
-            background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 40%, transparent 70%)',
-            filter: 'blur(60px)',
-            animation: 'smokeFloat1 20s ease-in-out infinite',
-          }}
-        />
-        {/* Smoke Layer 2 - Top Right */}
-        <div
-          className="absolute w-[600px] h-[600px] -top-20 -right-20 opacity-20"
-          style={{
-            background: 'radial-gradient(ellipse at center, rgba(223,241,64,0.1) 0%, rgba(255,255,255,0.08) 30%, transparent 60%)',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 20%, rgba(255,255,255,0.15) 40%, rgba(255,255,255,0.08) 60%, transparent 80%)',
             filter: 'blur(80px)',
-            animation: 'smokeFloat2 25s ease-in-out infinite',
+            animation: 'smokeFlowMain 15s linear infinite',
           }}
         />
-        {/* Smoke Layer 3 - Center */}
+        {/* Main Smoke Wave 2 - Offset */}
         <div
-          className="absolute w-[1000px] h-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15"
+          className="absolute w-[200%] h-[100%] top-[0%]"
           style={{
-            background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.12) 0%, rgba(200,200,200,0.05) 50%, transparent 70%)',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(200,200,200,0.06) 25%, rgba(255,255,255,0.12) 50%, rgba(200,200,200,0.06) 75%, transparent 100%)',
             filter: 'blur(100px)',
-            animation: 'smokeFloat3 30s ease-in-out infinite',
+            animation: 'smokeFlowMain 20s linear infinite',
+            animationDelay: '-5s',
           }}
         />
-        {/* Smoke Layer 4 - Bottom Right */}
+        {/* Smoke Layer - Top flowing */}
         <div
-          className="absolute w-[700px] h-[700px] -bottom-60 -right-40 opacity-25"
+          className="absolute w-[250%] h-[50%] top-0"
           style={{
-            background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%, rgba(223,241,64,0.05) 40%, transparent 65%)',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 30%, rgba(223,241,64,0.05) 50%, rgba(255,255,255,0.1) 70%, transparent 100%)',
+            filter: 'blur(60px)',
+            animation: 'smokeFlowTop 12s linear infinite',
+          }}
+        />
+        {/* Smoke Layer - Middle flowing */}
+        <div
+          className="absolute w-[300%] h-[60%] top-[20%]"
+          style={{
+            background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.12) 20%, rgba(255,255,255,0.2) 40%, rgba(255,255,255,0.12) 60%, transparent 80%)',
+            filter: 'blur(120px)',
+            animation: 'smokeFlowMiddle 18s linear infinite',
+          }}
+        />
+        {/* Smoke Layer - Bottom flowing */}
+        <div
+          className="absolute w-[250%] h-[50%] bottom-0"
+          style={{
+            background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 25%, rgba(223,241,64,0.06) 50%, rgba(255,255,255,0.08) 75%, transparent 100%)',
             filter: 'blur(70px)',
-            animation: 'smokeFloat4 22s ease-in-out infinite',
+            animation: 'smokeFlowBottom 14s linear infinite',
           }}
         />
-        {/* Smoke Layer 5 - Top Left */}
+        {/* Dense Smoke Puffs */}
         <div
-          className="absolute w-[500px] h-[500px] -top-40 -left-20 opacity-20"
+          className="absolute w-[800px] h-[800px] top-[10%]"
           style={{
-            background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%, transparent 60%)',
-            filter: 'blur(50px)',
-            animation: 'smokeFloat5 18s ease-in-out infinite',
+            background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 30%, transparent 60%)',
+            filter: 'blur(80px)',
+            animation: 'smokePuff1 10s linear infinite',
+          }}
+        />
+        <div
+          className="absolute w-[600px] h-[600px] top-[30%]"
+          style={{
+            background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 40%, transparent 65%)',
+            filter: 'blur(60px)',
+            animation: 'smokePuff2 8s linear infinite',
+            animationDelay: '-3s',
+          }}
+        />
+        <div
+          className="absolute w-[700px] h-[500px] top-[50%]"
+          style={{
+            background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.18) 0%, rgba(223,241,64,0.05) 35%, transparent 60%)',
+            filter: 'blur(70px)',
+            animation: 'smokePuff3 12s linear infinite',
+            animationDelay: '-6s',
           }}
         />
       </div>
@@ -725,35 +753,45 @@ export default function Hero() {
       {/* Bottom Border */}
       <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-black/10" />
 
-      {/* Add keyframes for progress and smoke animations */}
+      {/* Add keyframes for progress and smoke flow animations */}
       <style>{`
         @keyframes slideProgress {
           from { transform: scaleX(1); }
           to { transform: scaleX(0); }
         }
-        @keyframes smokeFloat1 {
-          0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
-          25% { transform: translate(50px, -30px) scale(1.1); opacity: 0.25; }
-          50% { transform: translate(100px, 20px) scale(1.2); opacity: 0.35; }
-          75% { transform: translate(30px, 40px) scale(1.05); opacity: 0.28; }
+        @keyframes smokeFlowMain {
+          0% { transform: translateX(50%); }
+          100% { transform: translateX(-100%); }
         }
-        @keyframes smokeFloat2 {
-          0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.2; }
-          33% { transform: translate(-40px, 30px) scale(1.15); opacity: 0.25; }
-          66% { transform: translate(-80px, -20px) scale(1.1); opacity: 0.18; }
+        @keyframes smokeFlowTop {
+          0% { transform: translateX(40%) translateY(0); }
+          100% { transform: translateX(-100%) translateY(10px); }
         }
-        @keyframes smokeFloat3 {
-          0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.15; }
-          50% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.2; }
+        @keyframes smokeFlowMiddle {
+          0% { transform: translateX(60%); }
+          100% { transform: translateX(-120%); }
         }
-        @keyframes smokeFloat4 {
-          0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.25; }
-          40% { transform: translate(-60px, -40px) scale(1.2); opacity: 0.3; }
-          80% { transform: translate(-30px, 30px) scale(1.1); opacity: 0.22; }
+        @keyframes smokeFlowBottom {
+          0% { transform: translateX(50%) translateY(0); }
+          100% { transform: translateX(-100%) translateY(-10px); }
         }
-        @keyframes smokeFloat5 {
-          0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.2; }
-          50% { transform: translate(40px, 50px) scale(1.25); opacity: 0.25; }
+        @keyframes smokePuff1 {
+          0% { transform: translateX(120vw) translateY(0) scale(1); opacity: 0; }
+          10% { opacity: 0.25; }
+          90% { opacity: 0.25; }
+          100% { transform: translateX(-100vw) translateY(-20px) scale(1.3); opacity: 0; }
+        }
+        @keyframes smokePuff2 {
+          0% { transform: translateX(120vw) translateY(0) scale(1); opacity: 0; }
+          10% { opacity: 0.2; }
+          90% { opacity: 0.2; }
+          100% { transform: translateX(-100vw) translateY(30px) scale(1.2); opacity: 0; }
+        }
+        @keyframes smokePuff3 {
+          0% { transform: translateX(120vw) translateY(0) scale(1); opacity: 0; }
+          10% { opacity: 0.22; }
+          90% { opacity: 0.22; }
+          100% { transform: translateX(-100vw) translateY(-15px) scale(1.25); opacity: 0; }
         }
       `}</style>
     </section>
