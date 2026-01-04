@@ -4,7 +4,7 @@ export interface BlogPost {
   title: string;
   excerpt: string;
   content: string;
-  category: 'UAV' | 'Robotics' | 'IoT' | 'Defense' | 'AI' | 'Industry News';
+  category: 'UAV' | 'Robotics' | 'IoT' | 'Defense' | 'AI' | 'Aerospace';
   image: string;
   author: string;
   date: string;
@@ -13,31 +13,13 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  // UAV & Drone Posts
   {
     id: '1',
     slug: 'future-of-uav-drones-in-defense',
     title: 'The Future of UAV Drones in Modern Defense Systems',
     excerpt: 'Exploring how unmanned aerial vehicles are revolutionizing military operations, surveillance, and tactical warfare in the 21st century.',
-    content: `
-      <p>Unmanned Aerial Vehicles (UAVs) have fundamentally transformed modern defense systems, offering unprecedented capabilities in surveillance, reconnaissance, and tactical operations. As defense technology continues to evolve, UAV drones are becoming increasingly sophisticated, integrating artificial intelligence, advanced sensors, and autonomous navigation systems.</p>
-
-      <h2>The Evolution of Military Drones</h2>
-      <p>From the early days of remote-controlled aircraft to today's AI-powered autonomous systems, military drones have come a long way. Modern UAVs can operate in complex environments, make real-time decisions, and provide invaluable intelligence to ground forces.</p>
-
-      <h2>Key Capabilities</h2>
-      <ul>
-        <li><strong>Intelligence, Surveillance, and Reconnaissance (ISR):</strong> UAVs provide persistent surveillance capabilities, enabling military forces to monitor enemy movements and gather critical intelligence without risking human lives.</li>
-        <li><strong>Precision Strike:</strong> Armed drones can deliver precision strikes on high-value targets with minimal collateral damage.</li>
-        <li><strong>Electronic Warfare:</strong> Advanced UAVs can disrupt enemy communications and radar systems, providing tactical advantages in modern warfare.</li>
-        <li><strong>Logistics and Supply:</strong> Cargo drones are increasingly used for delivering supplies to remote or dangerous locations.</li>
-      </ul>
-
-      <h2>India's Growing UAV Industry</h2>
-      <p>India has emerged as a significant player in the global UAV market, with domestic companies developing advanced drone systems for both military and civilian applications. The government's push for 'Make in India' has accelerated indigenous drone development, reducing dependency on foreign imports.</p>
-
-      <h2>Future Trends</h2>
-      <p>The future of UAV technology in defense includes swarm intelligence, hypersonic drones, and fully autonomous combat systems. These advancements will continue to reshape how nations approach defense and security.</p>
-    `,
+    content: `<p>Unmanned Aerial Vehicles (UAVs) have fundamentally transformed modern defense systems, offering unprecedented capabilities in surveillance, reconnaissance, and tactical operations.</p><h2>The Evolution of Military Drones</h2><p>From early remote-controlled aircraft to today's AI-powered autonomous systems, military drones have evolved significantly. Modern UAVs can operate in complex environments, make real-time decisions, and provide invaluable intelligence to ground forces.</p><h2>Key Capabilities</h2><ul><li><strong>Intelligence, Surveillance, and Reconnaissance (ISR):</strong> UAVs provide persistent surveillance capabilities without risking human lives.</li><li><strong>Precision Strike:</strong> Armed drones deliver precision strikes with minimal collateral damage.</li><li><strong>Electronic Warfare:</strong> Advanced UAVs can disrupt enemy communications and radar systems.</li></ul><h2>Future Trends</h2><p>The future includes swarm intelligence, hypersonic drones, and fully autonomous combat systems that will reshape defense strategies globally.</p>`,
     category: 'UAV',
     image: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=1400&auto=format&fit=crop',
     author: 'Defense Technology Team',
@@ -47,216 +29,510 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: '2',
-    slug: 'industrial-robotics-manufacturing-revolution',
-    title: 'How Industrial Robotics is Revolutionizing Manufacturing in India',
-    excerpt: 'A deep dive into the adoption of industrial robots in Indian manufacturing and how automation is driving Industry 4.0 transformation.',
-    content: `
-      <p>Industrial robotics is at the heart of the manufacturing revolution, transforming production lines across India. From automotive to electronics, companies are embracing automation to improve efficiency, quality, and competitiveness.</p>
-
-      <h2>The Rise of Industry 4.0</h2>
-      <p>Industry 4.0 represents the fourth industrial revolution, characterized by smart factories, interconnected systems, and data-driven decision making. Industrial robots are a cornerstone of this transformation, enabling unprecedented levels of automation and precision.</p>
-
-      <h2>Types of Industrial Robots</h2>
-      <ul>
-        <li><strong>Articulated Robots:</strong> Most common in automotive manufacturing for welding, painting, and assembly operations.</li>
-        <li><strong>SCARA Robots:</strong> Ideal for high-speed pick-and-place operations in electronics manufacturing.</li>
-        <li><strong>Collaborative Robots (Cobots):</strong> Designed to work safely alongside humans, perfect for SMEs with limited floor space.</li>
-        <li><strong>Delta Robots:</strong> High-speed robots used in packaging and food processing industries.</li>
-      </ul>
-
-      <h2>Benefits for Indian Manufacturers</h2>
-      <p>Indian manufacturers adopting industrial robotics are seeing significant improvements:</p>
-      <ul>
-        <li>50-70% increase in production efficiency</li>
-        <li>Consistent product quality with reduced defects</li>
-        <li>24/7 operation capability</li>
-        <li>Improved worker safety</li>
-        <li>Long-term cost reduction</li>
-      </ul>
-
-      <h2>Implementation Challenges</h2>
-      <p>While the benefits are clear, implementing industrial robotics requires careful planning, skilled workforce development, and integration with existing systems. Companies like Kryil Infotech provide end-to-end solutions to help manufacturers navigate this transition successfully.</p>
-    `,
-    category: 'Robotics',
-    image: 'https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?q=80&w=1400&auto=format&fit=crop',
-    author: 'Automation Division',
-    date: '2025-12-28',
-    readTime: '6 min read',
-    tags: ['Robotics', 'Manufacturing', 'Industry 4.0', 'Automation', 'Industrial Robots'],
+    slug: 'vtol-aircraft-revolutionizing-aviation',
+    title: 'VTOL Aircraft: Revolutionizing Urban Air Mobility',
+    excerpt: 'How Vertical Take-Off and Landing technology is transforming transportation and creating new possibilities for urban aviation.',
+    content: `<p>Vertical Take-Off and Landing (VTOL) aircraft represent one of the most significant innovations in aviation history, combining the convenience of helicopters with the efficiency of fixed-wing aircraft.</p><h2>Understanding VTOL Technology</h2><p>VTOL aircraft can take off, hover, and land vertically, eliminating the need for runways. This capability opens up possibilities for urban air mobility, emergency response, and military applications.</p><h2>Types of VTOL Aircraft</h2><ul><li><strong>Tiltrotor:</strong> Aircraft like the V-22 Osprey that rotate their rotors for vertical and horizontal flight.</li><li><strong>eVTOL:</strong> Electric vertical take-off and landing aircraft designed for urban transportation.</li><li><strong>Lift+Cruise:</strong> Separate propulsion systems for vertical lift and forward flight.</li></ul><h2>Applications</h2><p>From air taxis to medical evacuation, VTOL technology is creating new paradigms in transportation and logistics.</p>`,
+    category: 'Aerospace',
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1400&auto=format&fit=crop',
+    author: 'Aerospace Division',
+    date: '2026-01-01',
+    readTime: '7 min read',
+    tags: ['VTOL', 'eVTOL', 'Urban Air Mobility', 'Aviation', 'Transportation'],
   },
   {
     id: '3',
-    slug: 'iot-smart-cities-bangalore',
-    title: 'IoT Solutions Powering Smart City Initiatives in Bangalore',
-    excerpt: 'How Internet of Things technology is transforming Bangalore into a smarter, more connected city with improved services and sustainability.',
-    content: `
-      <p>Bangalore, India's Silicon Valley, is leading the charge in smart city development through innovative IoT implementations. From traffic management to waste collection, IoT sensors and connected devices are making the city more efficient and livable.</p>
-
-      <h2>Smart Traffic Management</h2>
-      <p>IoT-enabled traffic signals and sensors are helping manage Bangalore's notorious traffic congestion. Real-time data collection allows for dynamic signal timing, reducing wait times and improving traffic flow across the city.</p>
-
-      <h2>Environmental Monitoring</h2>
-      <p>Air quality sensors deployed across the city provide real-time pollution data, enabling citizens to make informed decisions and authorities to take timely action. Water quality monitoring ensures safe drinking water supply throughout the city.</p>
-
-      <h2>Smart Waste Management</h2>
-      <ul>
-        <li>IoT sensors in garbage bins alert collection services when full</li>
-        <li>Optimized collection routes reduce fuel consumption and emissions</li>
-        <li>Real-time tracking ensures no area is missed</li>
-        <li>Data analytics help plan infrastructure improvements</li>
-      </ul>
-
-      <h2>Public Safety Enhancements</h2>
-      <p>Connected CCTV cameras with AI-powered analytics enhance public safety, while IoT-enabled street lights improve visibility and reduce energy consumption through smart dimming capabilities.</p>
-
-      <h2>The Role of Technology Partners</h2>
-      <p>Implementing smart city solutions requires expertise in IoT architecture, cloud computing, and data analytics. Technology companies in Bangalore are developing and deploying these solutions, contributing to the city's transformation while creating exportable expertise for other Indian cities.</p>
-    `,
-    category: 'IoT',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1400&auto=format&fit=crop',
-    author: 'IoT Solutions Team',
-    date: '2025-12-20',
-    readTime: '5 min read',
-    tags: ['IoT', 'Smart City', 'Bangalore', 'Connected Devices', 'Urban Technology'],
+    slug: 'jet-engine-technology-advancements',
+    title: 'Next-Generation Jet Engine Technology: Efficiency Meets Performance',
+    excerpt: 'Exploring the latest advancements in jet propulsion systems and how they are shaping the future of aviation.',
+    content: `<p>Jet engine technology continues to evolve at a remarkable pace, with manufacturers pushing the boundaries of efficiency, power, and environmental sustainability.</p><h2>Modern Turbofan Engines</h2><p>Today's high-bypass turbofan engines achieve fuel efficiency levels unimaginable just decades ago. These engines power most commercial aircraft and many military platforms.</p><h2>Key Innovations</h2><ul><li><strong>Ceramic Matrix Composites:</strong> Allowing higher operating temperatures and better efficiency.</li><li><strong>Geared Turbofan:</strong> Decoupling fan and turbine speeds for optimal performance.</li><li><strong>Open Rotor Designs:</strong> Promising up to 30% fuel savings over conventional engines.</li></ul><h2>Future Propulsion</h2><p>Hybrid-electric propulsion and sustainable aviation fuels are reshaping the industry's approach to environmental impact.</p>`,
+    category: 'Aerospace',
+    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1400&auto=format&fit=crop',
+    author: 'Propulsion Team',
+    date: '2025-12-30',
+    readTime: '9 min read',
+    tags: ['Jet Engines', 'Propulsion', 'Aviation', 'Aerospace Engineering', 'Turbofan'],
   },
   {
     id: '4',
-    slug: 'ai-powered-autonomous-systems',
-    title: 'AI-Powered Autonomous Systems: The Next Frontier in Defense',
-    excerpt: 'Exploring how artificial intelligence is enabling truly autonomous defense systems and the implications for modern warfare.',
-    content: `
-      <p>Artificial intelligence is transforming autonomous systems from remote-controlled devices to truly independent decision-makers. In defense applications, this represents both tremendous opportunity and significant responsibility.</p>
-
-      <h2>From Remote Control to Autonomy</h2>
-      <p>Traditional unmanned systems required constant human oversight. Modern AI enables these systems to navigate complex environments, identify targets, and make tactical decisions with minimal human intervention. This shift fundamentally changes how defense forces operate.</p>
-
-      <h2>Key AI Technologies</h2>
-      <ul>
-        <li><strong>Computer Vision:</strong> Enables systems to interpret visual data for navigation and target identification</li>
-        <li><strong>Machine Learning:</strong> Allows systems to improve performance through experience</li>
-        <li><strong>Natural Language Processing:</strong> Facilitates human-machine communication</li>
-        <li><strong>Reinforcement Learning:</strong> Enables adaptive behavior in dynamic environments</li>
-      </ul>
-
-      <h2>Applications in Defense</h2>
-      <p>AI-powered autonomous systems are being deployed across multiple defense domains:</p>
-      <ul>
-        <li>Autonomous UAVs for surveillance and reconnaissance</li>
-        <li>Unmanned ground vehicles for logistics and patrol</li>
-        <li>Autonomous naval vessels for maritime security</li>
-        <li>AI-enhanced cybersecurity systems</li>
-      </ul>
-
-      <h2>Ethical Considerations</h2>
-      <p>As autonomous systems become more capable, questions about accountability, decision-making authority, and the role of human oversight become increasingly important. Responsible development requires careful consideration of these ethical dimensions.</p>
-
-      <h2>India's Position</h2>
-      <p>India is actively developing AI capabilities for defense applications, with initiatives spanning research institutions, defense organizations, and private sector partnerships. This indigenous development ensures strategic autonomy while building world-class technological capabilities.</p>
-    `,
+    slug: 'ai-powered-autonomous-drones',
+    title: 'AI-Powered Autonomous Drones: The Next Frontier',
+    excerpt: 'How artificial intelligence is enabling truly autonomous drone operations for commercial and defense applications.',
+    content: `<p>Artificial intelligence is transforming drones from remote-controlled devices to truly autonomous systems capable of independent decision-making.</p><h2>AI Capabilities in Drones</h2><p>Modern AI enables drones to navigate complex environments, identify targets, and execute missions with minimal human intervention.</p><h2>Key Technologies</h2><ul><li><strong>Computer Vision:</strong> Enabling real-time object detection and tracking.</li><li><strong>Path Planning:</strong> AI algorithms for optimal route calculation.</li><li><strong>Swarm Intelligence:</strong> Coordinated behavior among multiple drones.</li></ul><h2>Applications</h2><p>From agricultural monitoring to search and rescue, AI-powered drones are expanding the possibilities of unmanned aviation.</p>`,
     category: 'AI',
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1400&auto=format&fit=crop',
     author: 'AI Research Division',
-    date: '2025-12-15',
-    readTime: '7 min read',
-    tags: ['AI', 'Autonomous Systems', 'Defense', 'Machine Learning', 'Military Technology'],
+    date: '2025-12-28',
+    readTime: '6 min read',
+    tags: ['AI', 'Autonomous Systems', 'Drones', 'Machine Learning', 'Computer Vision'],
   },
   {
     id: '5',
-    slug: 'robotic-process-automation-enterprise',
-    title: 'Implementing RPA: A Complete Guide for Enterprise',
-    excerpt: 'Step-by-step guide to implementing Robotic Process Automation in your organization for improved efficiency and reduced costs.',
-    content: `
-      <p>Robotic Process Automation (RPA) is transforming how businesses operate by automating repetitive, rule-based tasks. This comprehensive guide walks you through implementing RPA in your organization.</p>
-
-      <h2>What is RPA?</h2>
-      <p>RPA uses software robots or 'bots' to automate routine business processes. Unlike traditional automation, RPA works at the user interface level, mimicking human actions without requiring changes to existing systems.</p>
-
-      <h2>Ideal Processes for RPA</h2>
-      <ul>
-        <li>Data entry and migration</li>
-        <li>Invoice processing</li>
-        <li>Report generation</li>
-        <li>Customer onboarding</li>
-        <li>HR processes (leave management, payroll)</li>
-        <li>IT support tasks</li>
-      </ul>
-
-      <h2>Implementation Steps</h2>
-      <ol>
-        <li><strong>Process Assessment:</strong> Identify and prioritize processes suitable for automation</li>
-        <li><strong>Platform Selection:</strong> Choose the right RPA tool (UiPath, Blue Prism, Automation Anywhere)</li>
-        <li><strong>Pilot Project:</strong> Start with a small, well-defined process to demonstrate value</li>
-        <li><strong>Development:</strong> Build and test automation workflows</li>
-        <li><strong>Deployment:</strong> Roll out bots with proper monitoring and governance</li>
-        <li><strong>Scale:</strong> Expand automation across the organization</li>
-      </ol>
-
-      <h2>Expected ROI</h2>
-      <p>Organizations typically see:</p>
-      <ul>
-        <li>40-75% reduction in processing time</li>
-        <li>Elimination of human errors in automated tasks</li>
-        <li>24/7 operation capability</li>
-        <li>Employee satisfaction improvement as tedious tasks are automated</li>
-      </ul>
-
-      <h2>Common Challenges</h2>
-      <p>Successful RPA implementation requires addressing change management, process standardization, and ongoing maintenance. Partnering with experienced implementation providers can significantly accelerate success.</p>
-    `,
-    category: 'Robotics',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1400&auto=format&fit=crop',
-    author: 'Enterprise Solutions Team',
-    date: '2025-12-10',
-    readTime: '9 min read',
-    tags: ['RPA', 'Automation', 'Enterprise', 'Digital Transformation', 'Process Automation'],
+    slug: 'aircraft-design-principles-modern-era',
+    title: 'Modern Aircraft Design: Principles and Innovations',
+    excerpt: 'Understanding the fundamental principles of aircraft design and how computational tools are revolutionizing the field.',
+    content: `<p>Aircraft design has evolved from empirical approaches to sophisticated computational methods that optimize every aspect of flight performance.</p><h2>Design Fundamentals</h2><p>Modern aircraft design balances aerodynamics, structures, propulsion, and systems integration to achieve optimal performance.</p><h2>Computational Tools</h2><ul><li><strong>CFD Analysis:</strong> Computational Fluid Dynamics for aerodynamic optimization.</li><li><strong>FEA:</strong> Finite Element Analysis for structural integrity.</li><li><strong>MDO:</strong> Multi-disciplinary Design Optimization.</li></ul><h2>Future Trends</h2><p>Generative design, AI-assisted optimization, and additive manufacturing are reshaping how aircraft are conceived and built.</p>`,
+    category: 'Aerospace',
+    image: 'https://images.unsplash.com/photo-1559297434-fae8a1916a79?q=80&w=1400&auto=format&fit=crop',
+    author: 'Design Engineering Team',
+    date: '2025-12-26',
+    readTime: '10 min read',
+    tags: ['Aircraft Design', 'Aerodynamics', 'CFD', 'Engineering', 'Aviation'],
   },
   {
     id: '6',
+    slug: 'drone-swarm-technology-military',
+    title: 'Drone Swarm Technology: Transforming Military Operations',
+    excerpt: 'How coordinated drone swarms are changing the landscape of modern warfare and defense strategies.',
+    content: `<p>Drone swarms represent a paradigm shift in military capability, leveraging collective intelligence to overwhelm traditional defense systems.</p><h2>Swarm Concepts</h2><p>Unlike individual drones, swarms operate as a collective, sharing information and coordinating actions autonomously.</p><h2>Military Applications</h2><ul><li><strong>Area Denial:</strong> Creating zones inaccessible to enemy forces.</li><li><strong>Distributed Attack:</strong> Overwhelming defenses through sheer numbers.</li><li><strong>ISR Networks:</strong> Persistent surveillance across large areas.</li></ul><h2>Challenges</h2><p>Communication, coordination, and counter-swarm technologies remain active areas of research.</p>`,
+    category: 'Defense',
+    image: 'https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=1400&auto=format&fit=crop',
+    author: 'Defense Technology Team',
+    date: '2025-12-24',
+    readTime: '7 min read',
+    tags: ['Drone Swarms', 'Military Technology', 'Defense', 'Autonomous Systems', 'AI'],
+  },
+  {
+    id: '7',
+    slug: 'industrial-robotics-manufacturing-revolution',
+    title: 'How Industrial Robotics is Revolutionizing Manufacturing',
+    excerpt: 'A deep dive into the adoption of industrial robots in manufacturing and Industry 4.0 transformation.',
+    content: `<p>Industrial robotics is at the heart of the manufacturing revolution, transforming production lines with automation and precision.</p><h2>Industry 4.0</h2><p>The fourth industrial revolution combines smart factories, interconnected systems, and data-driven decision making.</p><h2>Robot Types</h2><ul><li><strong>Articulated Robots:</strong> For welding, painting, and assembly.</li><li><strong>SCARA Robots:</strong> For high-speed pick-and-place operations.</li><li><strong>Collaborative Robots:</strong> Safe human-robot collaboration.</li></ul><h2>Benefits</h2><p>Increased efficiency, consistent quality, and 24/7 operation capability drive adoption across industries.</p>`,
+    category: 'Robotics',
+    image: 'https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?q=80&w=1400&auto=format&fit=crop',
+    author: 'Automation Division',
+    date: '2025-12-22',
+    readTime: '6 min read',
+    tags: ['Robotics', 'Manufacturing', 'Industry 4.0', 'Automation'],
+  },
+  {
+    id: '8',
+    slug: 'evtol-air-taxi-future',
+    title: 'eVTOL Air Taxis: The Future of Urban Transportation',
+    excerpt: 'Electric vertical take-off aircraft are poised to transform how we navigate cities.',
+    content: `<p>Electric VTOL aircraft promise to revolutionize urban transportation, offering a new dimension of mobility above congested streets.</p><h2>Technology Overview</h2><p>eVTOLs combine electric propulsion with vertical flight capability, enabling quiet, emission-free urban aviation.</p><h2>Key Players</h2><ul><li><strong>Joby Aviation:</strong> Leading the air taxi certification race.</li><li><strong>Lilium:</strong> Developing a 7-seat regional air taxi.</li><li><strong>Archer:</strong> Partnering with airlines for urban networks.</li></ul><h2>Challenges</h2><p>Battery technology, certification, and infrastructure remain key hurdles to widespread adoption.</p>`,
+    category: 'Aerospace',
+    image: 'https://images.unsplash.com/photo-1569629743817-70d8db6c323b?q=80&w=1400&auto=format&fit=crop',
+    author: 'Urban Mobility Team',
+    date: '2025-12-20',
+    readTime: '5 min read',
+    tags: ['eVTOL', 'Air Taxi', 'Urban Mobility', 'Electric Aviation', 'Transportation'],
+  },
+  {
+    id: '9',
+    slug: 'iot-smart-cities-bangalore',
+    title: 'IoT Solutions Powering Smart City Initiatives',
+    excerpt: 'How Internet of Things technology is transforming cities into smarter, more connected environments.',
+    content: `<p>IoT is the backbone of smart city development, connecting sensors, devices, and systems to improve urban life.</p><h2>Applications</h2><ul><li><strong>Traffic Management:</strong> Real-time signal optimization.</li><li><strong>Environmental Monitoring:</strong> Air and water quality sensors.</li><li><strong>Waste Management:</strong> Smart bin monitoring.</li></ul><h2>Benefits</h2><p>Improved efficiency, sustainability, and quality of life for citizens.</p>`,
+    category: 'IoT',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1400&auto=format&fit=crop',
+    author: 'IoT Solutions Team',
+    date: '2025-12-18',
+    readTime: '5 min read',
+    tags: ['IoT', 'Smart City', 'Connected Devices', 'Urban Technology'],
+  },
+  {
+    id: '10',
+    slug: 'turboprop-vs-turbofan-comparison',
+    title: 'Turboprop vs Turbofan: Choosing the Right Propulsion',
+    excerpt: 'A technical comparison of turboprop and turbofan engines for different aviation applications.',
+    content: `<p>Understanding the differences between turboprop and turbofan engines is crucial for aircraft selection and mission planning.</p><h2>Turboprop Engines</h2><p>Turboprops excel at lower speeds and altitudes, offering excellent fuel efficiency for short-haul operations.</p><h2>Turbofan Engines</h2><p>High-bypass turbofans dominate commercial aviation, providing the best combination of speed, range, and efficiency at altitude.</p><h2>Selection Criteria</h2><ul><li><strong>Mission Profile:</strong> Range, speed, and altitude requirements.</li><li><strong>Operating Costs:</strong> Fuel consumption and maintenance.</li><li><strong>Infrastructure:</strong> Runway length and support facilities.</li></ul>`,
+    category: 'Aerospace',
+    image: 'https://images.unsplash.com/photo-1474302770737-173ee21bab63?q=80&w=1400&auto=format&fit=crop',
+    author: 'Propulsion Team',
+    date: '2025-12-16',
+    readTime: '8 min read',
+    tags: ['Turboprop', 'Turbofan', 'Propulsion', 'Aviation', 'Aircraft Engines'],
+  },
+  {
+    id: '11',
     slug: 'drone-regulations-india-2026',
     title: 'Understanding Drone Regulations in India: 2026 Update',
-    excerpt: 'A comprehensive guide to the latest drone regulations in India, including licensing requirements, operational restrictions, and compliance guidelines.',
-    content: `
-      <p>India's drone regulations have evolved significantly, creating a structured framework for both commercial and recreational drone operations. Understanding these regulations is essential for anyone involved in the UAV industry.</p>
-
-      <h2>Drone Categories</h2>
-      <p>The Directorate General of Civil Aviation (DGCA) classifies drones into five categories based on maximum take-off weight:</p>
-      <ul>
-        <li><strong>Nano:</strong> Up to 250g - Minimal restrictions</li>
-        <li><strong>Micro:</strong> 250g to 2kg - Requires registration</li>
-        <li><strong>Small:</strong> 2kg to 25kg - License required</li>
-        <li><strong>Medium:</strong> 25kg to 150kg - Strict licensing and operational requirements</li>
-        <li><strong>Large:</strong> Above 150kg - Full aviation compliance required</li>
-      </ul>
-
-      <h2>Registration and Licensing</h2>
-      <p>All drones above nano category must be registered on the Digital Sky Platform. Operators need appropriate licenses based on intended use:</p>
-      <ul>
-        <li>Remote Pilot License (RPL) for basic operations</li>
-        <li>Certified Training from DGCA-approved institutes</li>
-        <li>Operational approvals for specific missions</li>
-      </ul>
-
-      <h2>Operational Restrictions</h2>
-      <p>Key restrictions include:</p>
-      <ul>
-        <li>Maximum altitude of 400 feet in uncontrolled airspace</li>
-        <li>No-fly zones around airports, military installations, and sensitive areas</li>
-        <li>Daylight operations only (without special approval)</li>
-        <li>Visual line of sight requirements</li>
-      </ul>
-
-      <h2>Opportunities for Manufacturers</h2>
-      <p>The Production Linked Incentive (PLI) scheme offers significant benefits for domestic drone manufacturers, encouraging indigenous production and reducing import dependency. Companies meeting manufacturing criteria can avail incentives up to 20% of value addition.</p>
-
-      <h2>Future Outlook</h2>
-      <p>Regulations continue to evolve with advancements in technology. BVLOS (Beyond Visual Line of Sight) operations and autonomous flights are expected to receive clearer guidelines, opening new commercial opportunities.</p>
-    `,
+    excerpt: 'A comprehensive guide to the latest drone regulations in India, including licensing and operational requirements.',
+    content: `<p>India's drone regulations have evolved significantly, creating a structured framework for commercial and recreational operations.</p><h2>Drone Categories</h2><ul><li><strong>Nano:</strong> Up to 250g - Minimal restrictions.</li><li><strong>Micro:</strong> 250g to 2kg - Registration required.</li><li><strong>Small:</strong> 2kg to 25kg - License required.</li></ul><h2>Registration</h2><p>All drones above nano category must be registered on the Digital Sky Platform.</p>`,
     category: 'UAV',
-    image: 'https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=1400&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1579829366248-204fe8413f31?q=80&w=1400&auto=format&fit=crop',
     author: 'Regulatory Affairs Team',
-    date: '2026-01-01',
+    date: '2025-12-14',
     readTime: '6 min read',
     tags: ['Drone Regulations', 'UAV', 'DGCA', 'India', 'Compliance'],
+  },
+  {
+    id: '12',
+    slug: 'stealth-aircraft-technology',
+    title: 'Stealth Aircraft Technology: Engineering Invisibility',
+    excerpt: 'How stealth technology works and its impact on modern military aviation.',
+    content: `<p>Stealth technology represents one of the most significant advances in military aviation, enabling aircraft to evade detection.</p><h2>Principles</h2><ul><li><strong>Radar Cross Section:</strong> Minimizing radar reflection through shape design.</li><li><strong>Radar Absorbing Materials:</strong> Coating surfaces to absorb radar waves.</li><li><strong>Infrared Signature:</strong> Reducing heat emissions.</li></ul><h2>Applications</h2><p>From the F-117 to the F-35, stealth has redefined air combat capabilities.</p>`,
+    category: 'Defense',
+    image: 'https://images.unsplash.com/photo-1608236415053-3691791bbffe?q=80&w=1400&auto=format&fit=crop',
+    author: 'Defense Technology Team',
+    date: '2025-12-12',
+    readTime: '9 min read',
+    tags: ['Stealth', 'Military Aviation', 'Defense', 'Aircraft Design', 'Radar'],
+  },
+  {
+    id: '13',
+    slug: 'agricultural-drones-precision-farming',
+    title: 'Agricultural Drones: Transforming Precision Farming',
+    excerpt: 'How drones are revolutionizing agriculture through crop monitoring, spraying, and data analytics.',
+    content: `<p>Agricultural drones are transforming farming practices, enabling precision agriculture at scale.</p><h2>Applications</h2><ul><li><strong>Crop Monitoring:</strong> Multispectral imaging for health assessment.</li><li><strong>Precision Spraying:</strong> Targeted pesticide and fertilizer application.</li><li><strong>Field Mapping:</strong> Creating detailed terrain and drainage maps.</li></ul><h2>Benefits</h2><p>Reduced input costs, improved yields, and environmental sustainability.</p>`,
+    category: 'UAV',
+    image: 'https://images.unsplash.com/photo-1586771107445-d3ca888129ff?q=80&w=1400&auto=format&fit=crop',
+    author: 'Agriculture Solutions Team',
+    date: '2025-12-10',
+    readTime: '5 min read',
+    tags: ['Agricultural Drones', 'Precision Farming', 'UAV', 'Agriculture', 'Crop Monitoring'],
+  },
+  {
+    id: '14',
+    slug: 'composite-materials-aircraft',
+    title: 'Composite Materials in Aircraft Design: Lighter, Stronger, Better',
+    excerpt: 'How advanced composite materials are reshaping aircraft construction and performance.',
+    content: `<p>Composite materials have revolutionized aircraft design, offering superior strength-to-weight ratios compared to traditional metals.</p><h2>Types of Composites</h2><ul><li><strong>Carbon Fiber:</strong> High strength, low weight, used extensively in modern aircraft.</li><li><strong>Glass Fiber:</strong> Cost-effective for non-critical structures.</li><li><strong>Aramid:</strong> Impact resistance for leading edges.</li></ul><h2>Advantages</h2><p>Weight reduction, corrosion resistance, and design flexibility drive adoption across aviation.</p>`,
+    category: 'Aerospace',
+    image: 'https://images.unsplash.com/photo-1540962351504-03099e0a754b?q=80&w=1400&auto=format&fit=crop',
+    author: 'Materials Engineering Team',
+    date: '2025-12-08',
+    readTime: '7 min read',
+    tags: ['Composites', 'Carbon Fiber', 'Aircraft Materials', 'Aerospace Engineering'],
+  },
+  {
+    id: '15',
+    slug: 'machine-learning-predictive-maintenance',
+    title: 'Machine Learning for Predictive Maintenance in Aviation',
+    excerpt: 'How AI and ML algorithms are transforming aircraft maintenance practices.',
+    content: `<p>Machine learning is revolutionizing aviation maintenance, enabling prediction of failures before they occur.</p><h2>Approach</h2><ul><li><strong>Data Collection:</strong> Sensors monitoring critical systems.</li><li><strong>Pattern Recognition:</strong> ML models identifying degradation patterns.</li><li><strong>Predictive Analytics:</strong> Forecasting component life.</li></ul><h2>Benefits</h2><p>Reduced downtime, lower maintenance costs, and improved safety.</p>`,
+    category: 'AI',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1400&auto=format&fit=crop',
+    author: 'AI Research Division',
+    date: '2025-12-06',
+    readTime: '6 min read',
+    tags: ['Machine Learning', 'Predictive Maintenance', 'Aviation', 'AI', 'MRO'],
+  },
+  {
+    id: '16',
+    slug: 'hypersonic-flight-technology',
+    title: 'Hypersonic Flight: Breaking the Speed Barrier',
+    excerpt: 'Understanding hypersonic technology and its implications for defense and transportation.',
+    content: `<p>Hypersonic flight, at speeds exceeding Mach 5, represents the next frontier in aerospace technology.</p><h2>Challenges</h2><ul><li><strong>Thermal Management:</strong> Extreme heat from air friction.</li><li><strong>Propulsion:</strong> Scramjet engines for sustained hypersonic flight.</li><li><strong>Materials:</strong> Heat-resistant structures.</li></ul><h2>Applications</h2><p>Hypersonic missiles, reconnaissance aircraft, and rapid global transportation.</p>`,
+    category: 'Aerospace',
+    image: 'https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=1400&auto=format&fit=crop',
+    author: 'Advanced Systems Team',
+    date: '2025-12-04',
+    readTime: '8 min read',
+    tags: ['Hypersonic', 'Scramjet', 'Aerospace', 'Defense', 'High-Speed Flight'],
+  },
+  {
+    id: '17',
+    slug: 'fixed-wing-vs-multirotor-drones',
+    title: 'Fixed-Wing vs Multirotor Drones: Which is Right for You?',
+    excerpt: 'Comparing the advantages and applications of fixed-wing and multirotor drone platforms.',
+    content: `<p>Choosing between fixed-wing and multirotor drones depends on mission requirements and operational constraints.</p><h2>Fixed-Wing Drones</h2><ul><li>Longer flight times and range</li><li>Higher speeds for coverage</li><li>Requires runway or launcher</li></ul><h2>Multirotor Drones</h2><ul><li>Vertical take-off and landing</li><li>Hovering capability</li><li>Simpler operation</li></ul>`,
+    category: 'UAV',
+    image: 'https://images.unsplash.com/photo-1527977966376-1c8408f9f108?q=80&w=1400&auto=format&fit=crop',
+    author: 'UAV Systems Team',
+    date: '2025-12-02',
+    readTime: '5 min read',
+    tags: ['Fixed-Wing', 'Multirotor', 'Drones', 'UAV Platforms', 'Comparison'],
+  },
+  {
+    id: '18',
+    slug: 'neural-networks-autonomous-navigation',
+    title: 'Neural Networks for Autonomous Navigation in UAVs',
+    excerpt: 'How deep learning enables drones to navigate complex environments independently.',
+    content: `<p>Neural networks are enabling a new generation of autonomous UAVs capable of navigating without GPS.</p><h2>Key Technologies</h2><ul><li><strong>Visual SLAM:</strong> Simultaneous Localization and Mapping.</li><li><strong>Deep Reinforcement Learning:</strong> Learning optimal navigation policies.</li><li><strong>Obstacle Detection:</strong> Real-time collision avoidance.</li></ul>`,
+    category: 'AI',
+    image: 'https://images.unsplash.com/photo-1555255707-c07966088b7b?q=80&w=1400&auto=format&fit=crop',
+    author: 'AI Research Division',
+    date: '2025-11-30',
+    readTime: '7 min read',
+    tags: ['Neural Networks', 'Autonomous Navigation', 'Deep Learning', 'UAV', 'AI'],
+  },
+  {
+    id: '19',
+    slug: 'aerospace-3d-printing-revolution',
+    title: '3D Printing in Aerospace: Manufacturing Revolution',
+    excerpt: 'How additive manufacturing is transforming aerospace component production.',
+    content: `<p>Additive manufacturing is revolutionizing aerospace, enabling complex geometries and rapid prototyping.</p><h2>Applications</h2><ul><li><strong>Engine Components:</strong> Complex cooling channels in turbine blades.</li><li><strong>Structural Parts:</strong> Lightweight, optimized designs.</li><li><strong>Tooling:</strong> Custom jigs and fixtures.</li></ul><h2>Benefits</h2><p>Weight reduction, supply chain simplification, and design freedom.</p>`,
+    category: 'Aerospace',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1400&auto=format&fit=crop',
+    author: 'Manufacturing Team',
+    date: '2025-11-28',
+    readTime: '6 min read',
+    tags: ['3D Printing', 'Additive Manufacturing', 'Aerospace', 'Manufacturing', 'Innovation'],
+  },
+  {
+    id: '20',
+    slug: 'drone-delivery-logistics-future',
+    title: 'Drone Delivery: The Future of Logistics',
+    excerpt: 'How autonomous delivery drones are reshaping supply chain and last-mile logistics.',
+    content: `<p>Drone delivery is transforming logistics, offering faster and more efficient last-mile solutions.</p><h2>Current Deployments</h2><ul><li><strong>Medical Supplies:</strong> Blood and vaccine delivery in remote areas.</li><li><strong>E-commerce:</strong> Same-day parcel delivery.</li><li><strong>Food Delivery:</strong> Hot meals in minutes.</li></ul><h2>Challenges</h2><p>Regulatory approval, range limitations, and payload capacity.</p>`,
+    category: 'UAV',
+    image: 'https://images.unsplash.com/photo-1507582020474-9a35b7d455d9?q=80&w=1400&auto=format&fit=crop',
+    author: 'Logistics Solutions Team',
+    date: '2025-11-26',
+    readTime: '5 min read',
+    tags: ['Drone Delivery', 'Logistics', 'UAV', 'E-commerce', 'Last Mile'],
+  },
+  {
+    id: '21',
+    slug: 'fly-by-wire-systems-explained',
+    title: 'Fly-by-Wire Systems: Digital Flight Control Explained',
+    excerpt: 'Understanding how electronic flight control systems have transformed aviation.',
+    content: `<p>Fly-by-wire technology has replaced mechanical linkages with electronic signals, enabling new possibilities in aircraft design and control.</p><h2>How It Works</h2><p>Pilot inputs are converted to electrical signals processed by flight computers that command control surfaces.</p><h2>Advantages</h2><ul><li>Weight reduction</li><li>Envelope protection</li><li>Active control for stability</li></ul>`,
+    category: 'Aerospace',
+    image: 'https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?q=80&w=1400&auto=format&fit=crop',
+    author: 'Avionics Team',
+    date: '2025-11-24',
+    readTime: '7 min read',
+    tags: ['Fly-by-Wire', 'Flight Control', 'Avionics', 'Aviation Technology'],
+  },
+  {
+    id: '22',
+    slug: 'counter-drone-technology',
+    title: 'Counter-Drone Technology: Defending Against UAV Threats',
+    excerpt: 'Exploring technologies designed to detect, track, and neutralize unauthorized drones.',
+    content: `<p>As drones become more prevalent, counter-drone systems are essential for security.</p><h2>Detection Methods</h2><ul><li><strong>Radar:</strong> Tracking small, low-flying objects.</li><li><strong>RF Detection:</strong> Identifying drone communication signals.</li><li><strong>Acoustic Sensors:</strong> Recognizing drone motor signatures.</li></ul><h2>Neutralization</h2><p>Jamming, spoofing, directed energy, and kinetic interceptors.</p>`,
+    category: 'Defense',
+    image: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=1400&auto=format&fit=crop',
+    author: 'Defense Technology Team',
+    date: '2025-11-22',
+    readTime: '6 min read',
+    tags: ['Counter-Drone', 'Security', 'Defense', 'UAV Detection', 'Anti-Drone'],
+  },
+  {
+    id: '23',
+    slug: 'digital-twin-aircraft-development',
+    title: 'Digital Twins in Aircraft Development',
+    excerpt: 'How virtual replicas are revolutionizing aircraft design, testing, and maintenance.',
+    content: `<p>Digital twin technology creates virtual replicas of physical aircraft, enabling simulation throughout the lifecycle.</p><h2>Applications</h2><ul><li><strong>Design:</strong> Virtual testing before physical prototypes.</li><li><strong>Operations:</strong> Real-time performance monitoring.</li><li><strong>Maintenance:</strong> Predictive analytics for component life.</li></ul>`,
+    category: 'Aerospace',
+    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1400&auto=format&fit=crop',
+    author: 'Digital Engineering Team',
+    date: '2025-11-20',
+    readTime: '6 min read',
+    tags: ['Digital Twin', 'Aircraft Development', 'Simulation', 'Aerospace', 'Industry 4.0'],
+  },
+  {
+    id: '24',
+    slug: 'hydrogen-fuel-cells-aviation',
+    title: 'Hydrogen Fuel Cells: The Future of Green Aviation',
+    excerpt: 'Exploring hydrogen as a clean energy source for aircraft propulsion.',
+    content: `<p>Hydrogen fuel cells offer a path to zero-emission aviation, generating electricity from hydrogen and oxygen.</p><h2>Technology</h2><ul><li><strong>PEM Fuel Cells:</strong> Efficient conversion at low temperatures.</li><li><strong>Hydrogen Storage:</strong> Compressed gas or liquid hydrogen.</li><li><strong>Electric Motors:</strong> Driving propellers or fans.</li></ul><h2>Challenges</h2><p>Infrastructure, storage density, and certification.</p>`,
+    category: 'Aerospace',
+    image: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?q=80&w=1400&auto=format&fit=crop',
+    author: 'Sustainable Aviation Team',
+    date: '2025-11-18',
+    readTime: '7 min read',
+    tags: ['Hydrogen', 'Fuel Cells', 'Green Aviation', 'Sustainability', 'Clean Energy'],
+  },
+  {
+    id: '25',
+    slug: 'uav-ground-control-stations',
+    title: 'UAV Ground Control Stations: Command Centers for Drone Operations',
+    excerpt: 'Understanding the technology and ergonomics behind drone control systems.',
+    content: `<p>Ground Control Stations (GCS) are the nerve centers of UAV operations, providing operators with situational awareness and control.</p><h2>Components</h2><ul><li><strong>Displays:</strong> Video feeds, maps, and telemetry.</li><li><strong>Controls:</strong> Joysticks, keyboards, and touchscreens.</li><li><strong>Communications:</strong> Datalinks to the aircraft.</li></ul>`,
+    category: 'UAV',
+    image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1400&auto=format&fit=crop',
+    author: 'UAV Systems Team',
+    date: '2025-11-16',
+    readTime: '5 min read',
+    tags: ['Ground Control', 'UAV Operations', 'Drones', 'Command Systems', 'Telemetry'],
+  },
+  {
+    id: '26',
+    slug: 'supersonic-business-jets',
+    title: 'Supersonic Business Jets: Speed Returns to Executive Travel',
+    excerpt: 'The revival of supersonic flight for business aviation.',
+    content: `<p>After Concorde's retirement, a new generation of supersonic business jets promises to halve travel times.</p><h2>Key Players</h2><ul><li><strong>Boom Supersonic:</strong> Developing the Overture airliner.</li><li><strong>Spike Aerospace:</strong> Working on windowless supersonic jets.</li><li><strong>Aerion:</strong> Pioneering supersonic business aviation.</li></ul>`,
+    category: 'Aerospace',
+    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1400&auto=format&fit=crop',
+    author: 'Business Aviation Team',
+    date: '2025-11-14',
+    readTime: '6 min read',
+    tags: ['Supersonic', 'Business Jets', 'Executive Travel', 'Aviation', 'Speed'],
+  },
+  {
+    id: '27',
+    slug: 'lidar-technology-drones',
+    title: 'LiDAR Technology for Drone Mapping and Surveying',
+    excerpt: 'How Light Detection and Ranging is transforming aerial surveying.',
+    content: `<p>LiDAR-equipped drones provide high-accuracy 3D mapping for construction, mining, and environmental monitoring.</p><h2>How It Works</h2><p>Laser pulses measure distances to create point clouds representing terrain and structures.</p><h2>Applications</h2><ul><li>Topographic surveys</li><li>Power line inspection</li><li>Archaeological mapping</li></ul>`,
+    category: 'UAV',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1400&auto=format&fit=crop',
+    author: 'Survey Solutions Team',
+    date: '2025-11-12',
+    readTime: '5 min read',
+    tags: ['LiDAR', 'Drone Mapping', 'Surveying', 'UAV', '3D Mapping'],
+  },
+  {
+    id: '28',
+    slug: 'robotic-process-automation-enterprise',
+    title: 'Implementing RPA: A Complete Enterprise Guide',
+    excerpt: 'Step-by-step guide to implementing Robotic Process Automation.',
+    content: `<p>RPA uses software robots to automate repetitive business processes.</p><h2>Steps</h2><ol><li>Process Assessment</li><li>Platform Selection</li><li>Pilot Project</li><li>Deployment</li><li>Scale</li></ol><h2>ROI</h2><p>40-75% reduction in processing time typically achieved.</p>`,
+    category: 'Robotics',
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1400&auto=format&fit=crop',
+    author: 'Enterprise Solutions Team',
+    date: '2025-11-10',
+    readTime: '9 min read',
+    tags: ['RPA', 'Automation', 'Enterprise', 'Digital Transformation'],
+  },
+  {
+    id: '29',
+    slug: 'wing-design-aerodynamics',
+    title: 'Wing Design Fundamentals: Aerodynamics Explained',
+    excerpt: 'Understanding the principles of wing design and their impact on flight performance.',
+    content: `<p>Wing design is fundamental to aircraft performance, balancing lift, drag, and structural requirements.</p><h2>Key Parameters</h2><ul><li><strong>Aspect Ratio:</strong> Wingspan to chord ratio.</li><li><strong>Sweep:</strong> Angle of leading edge.</li><li><strong>Airfoil:</strong> Cross-sectional shape.</li></ul>`,
+    category: 'Aerospace',
+    image: 'https://images.unsplash.com/photo-1556388158-158ea5ccacbd?q=80&w=1400&auto=format&fit=crop',
+    author: 'Aerodynamics Team',
+    date: '2025-11-08',
+    readTime: '8 min read',
+    tags: ['Wing Design', 'Aerodynamics', 'Aircraft Design', 'Lift', 'Drag'],
+  },
+  {
+    id: '30',
+    slug: 'autonomous-underwater-vehicles',
+    title: 'Autonomous Underwater Vehicles: Exploring the Deep',
+    excerpt: 'How AUVs are revolutionizing ocean exploration and underwater operations.',
+    content: `<p>Autonomous Underwater Vehicles extend unmanned capabilities beneath the surface.</p><h2>Applications</h2><ul><li>Ocean mapping</li><li>Pipeline inspection</li><li>Scientific research</li><li>Naval operations</li></ul>`,
+    category: 'Robotics',
+    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1400&auto=format&fit=crop',
+    author: 'Marine Systems Team',
+    date: '2025-11-06',
+    readTime: '6 min read',
+    tags: ['AUV', 'Underwater', 'Robotics', 'Ocean Exploration', 'Autonomous'],
+  },
+  {
+    id: '31',
+    slug: 'electric-propulsion-aircraft',
+    title: 'Electric Propulsion: The Dawn of Battery-Powered Flight',
+    excerpt: 'Current state and future prospects of electric aircraft propulsion.',
+    content: `<p>Electric propulsion offers the promise of quiet, emission-free flight.</p><h2>Current Technology</h2><ul><li>Training aircraft</li><li>Short-range commuters</li><li>Urban air mobility</li></ul><h2>Challenges</h2><p>Energy density of batteries remains the primary limitation.</p>`,
+    category: 'Aerospace',
+    image: 'https://images.unsplash.com/photo-1606567595334-d39972c85dfd?q=80&w=1400&auto=format&fit=crop',
+    author: 'Electric Aviation Team',
+    date: '2025-11-04',
+    readTime: '7 min read',
+    tags: ['Electric Aircraft', 'Battery', 'Propulsion', 'Sustainable Aviation'],
+  },
+  {
+    id: '32',
+    slug: 'sensor-fusion-autonomous-systems',
+    title: 'Sensor Fusion for Autonomous Systems',
+    excerpt: 'How combining multiple sensor inputs enables robust autonomous operation.',
+    content: `<p>Sensor fusion combines data from multiple sources to create a comprehensive understanding of the environment.</p><h2>Sensors</h2><ul><li>Cameras</li><li>LiDAR</li><li>Radar</li><li>IMU</li><li>GPS</li></ul><h2>Algorithms</h2><p>Kalman filters, neural networks, and probabilistic methods.</p>`,
+    category: 'AI',
+    image: 'https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?q=80&w=1400&auto=format&fit=crop',
+    author: 'Autonomous Systems Team',
+    date: '2025-11-02',
+    readTime: '6 min read',
+    tags: ['Sensor Fusion', 'Autonomous Systems', 'AI', 'Perception', 'Navigation'],
+  },
+  {
+    id: '33',
+    slug: 'military-drone-communications',
+    title: 'Secure Communications for Military Drones',
+    excerpt: 'How encrypted datalinks protect UAV operations from interception and jamming.',
+    content: `<p>Military drone communications must be secure, reliable, and resistant to interference.</p><h2>Technologies</h2><ul><li><strong>Encryption:</strong> Protecting data in transit.</li><li><strong>Frequency Hopping:</strong> Avoiding jamming.</li><li><strong>Satellite Links:</strong> Beyond-line-of-sight operations.</li></ul>`,
+    category: 'Defense',
+    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1400&auto=format&fit=crop',
+    author: 'Communications Team',
+    date: '2025-10-31',
+    readTime: '7 min read',
+    tags: ['Military UAV', 'Communications', 'Encryption', 'Datalink', 'Security'],
+  },
+  {
+    id: '34',
+    slug: 'uav-payload-integration',
+    title: 'UAV Payload Integration: Sensors, Cameras, and Beyond',
+    excerpt: 'Guide to integrating various payloads into drone platforms.',
+    content: `<p>The payload is what gives a UAV its mission capability.</p><h2>Payload Types</h2><ul><li>EO/IR cameras</li><li>Multispectral sensors</li><li>LiDAR</li><li>Radar</li><li>Communications relay</li></ul><h2>Integration Considerations</h2><p>Weight, power, cooling, and vibration isolation.</p>`,
+    category: 'UAV',
+    image: 'https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=1400&auto=format&fit=crop',
+    author: 'Payload Integration Team',
+    date: '2025-10-29',
+    readTime: '6 min read',
+    tags: ['UAV Payload', 'Sensors', 'Integration', 'Cameras', 'Drones'],
+  },
+  {
+    id: '35',
+    slug: 'scramjet-technology-explained',
+    title: 'Scramjet Technology: Air-Breathing Hypersonic Propulsion',
+    excerpt: 'Understanding how scramjets enable sustained hypersonic flight.',
+    content: `<p>Scramjets (supersonic combustion ramjets) enable air-breathing propulsion at hypersonic speeds.</p><h2>How It Works</h2><p>Air enters at supersonic speeds, fuel is injected and burns without slowing the flow below Mach 1.</p><h2>Challenges</h2><ul><li>Ignition at high speeds</li><li>Thermal management</li><li>Acceleration to operating speed</li></ul>`,
+    category: 'Aerospace',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1400&auto=format&fit=crop',
+    author: 'Propulsion Team',
+    date: '2025-10-27',
+    readTime: '8 min read',
+    tags: ['Scramjet', 'Hypersonic', 'Propulsion', 'Aerospace', 'Air-Breathing'],
+  },
+  {
+    id: '36',
+    slug: 'drone-inspection-infrastructure',
+    title: 'Drone Inspection of Critical Infrastructure',
+    excerpt: 'How drones are making infrastructure inspection safer and more efficient.',
+    content: `<p>Drones are transforming infrastructure inspection across industries.</p><h2>Applications</h2><ul><li>Bridge inspection</li><li>Power line surveys</li><li>Pipeline monitoring</li><li>Wind turbine inspection</li></ul><h2>Benefits</h2><p>Reduced risk, lower costs, and faster data collection.</p>`,
+    category: 'UAV',
+    image: 'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=1400&auto=format&fit=crop',
+    author: 'Industrial Solutions Team',
+    date: '2025-10-25',
+    readTime: '5 min read',
+    tags: ['Drone Inspection', 'Infrastructure', 'UAV', 'Industrial', 'Safety'],
+  },
+  {
+    id: '37',
+    slug: 'flight-simulation-training',
+    title: 'Flight Simulation: The Future of Pilot Training',
+    excerpt: 'How advanced simulators are revolutionizing aviation training.',
+    content: `<p>Flight simulators provide safe, cost-effective training environments for pilots.</p><h2>Levels</h2><ul><li><strong>Level A-D:</strong> Full flight simulators with motion.</li><li><strong>FTD:</strong> Flight Training Devices.</li><li><strong>BATD:</strong> Basic Aviation Training Devices.</li></ul>`,
+    category: 'Aerospace',
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1400&auto=format&fit=crop',
+    author: 'Training Systems Team',
+    date: '2025-10-23',
+    readTime: '6 min read',
+    tags: ['Flight Simulation', 'Pilot Training', 'Aviation', 'Simulators'],
+  },
+  {
+    id: '38',
+    slug: 'ai-air-traffic-management',
+    title: 'AI in Air Traffic Management: Smarter Skies',
+    excerpt: 'How artificial intelligence is optimizing air traffic control.',
+    content: `<p>AI is transforming air traffic management, enabling more efficient use of airspace.</p><h2>Applications</h2><ul><li>Trajectory optimization</li><li>Conflict detection</li><li>Weather integration</li><li>Demand prediction</li></ul>`,
+    category: 'AI',
+    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1400&auto=format&fit=crop',
+    author: 'ATM Systems Team',
+    date: '2025-10-21',
+    readTime: '7 min read',
+    tags: ['AI', 'Air Traffic Management', 'Aviation', 'Optimization', 'ATC'],
+  },
+  {
+    id: '39',
+    slug: 'tiltrotor-aircraft-technology',
+    title: 'Tiltrotor Aircraft: Combining Helicopter and Airplane Capabilities',
+    excerpt: 'Understanding how tiltrotor technology bridges rotorcraft and fixed-wing flight.',
+    content: `<p>Tiltrotor aircraft combine the vertical flight capability of helicopters with the speed and range of airplanes.</p><h2>Design</h2><p>Nacelles rotate from vertical for hover to horizontal for cruise.</p><h2>Examples</h2><ul><li>V-22 Osprey</li><li>AW609</li><li>Bell V-280 Valor</li></ul>`,
+    category: 'Aerospace',
+    image: 'https://images.unsplash.com/photo-1559297434-fae8a1916a79?q=80&w=1400&auto=format&fit=crop',
+    author: 'Rotorcraft Team',
+    date: '2025-10-19',
+    readTime: '6 min read',
+    tags: ['Tiltrotor', 'VTOL', 'Rotorcraft', 'Aviation', 'Hybrid Aircraft'],
+  },
+  {
+    id: '40',
+    slug: 'drone-battery-technology',
+    title: 'Drone Battery Technology: Powering Longer Flights',
+    excerpt: 'Latest advances in battery technology for extended UAV operations.',
+    content: `<p>Battery technology is the key limiting factor for electric drone endurance.</p><h2>Current Technology</h2><ul><li><strong>Li-Po:</strong> Standard for consumer drones.</li><li><strong>Li-Ion:</strong> Higher energy density.</li><li><strong>Solid State:</strong> Future promise of higher capacity.</li></ul><h2>Alternatives</h2><p>Hydrogen fuel cells and hybrid systems for extended range.</p>`,
+    category: 'UAV',
+    image: 'https://images.unsplash.com/photo-1563203369-26f2e4a5ccf7?q=80&w=1400&auto=format&fit=crop',
+    author: 'Power Systems Team',
+    date: '2025-10-17',
+    readTime: '5 min read',
+    tags: ['Battery', 'Drone Technology', 'UAV', 'Energy Storage', 'Flight Time'],
   },
 ];
 
