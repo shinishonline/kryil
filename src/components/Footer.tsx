@@ -84,11 +84,11 @@ export default function Footer() {
             Copyright © {new Date().getFullYear()} Kryil Infotech Private Limited
           </p>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-white">Terms Of Use</a></li>
-            <li><a href="#" className="hover:text-white">Modern Anti-Slavery Policy</a></li>
-            <li><a href="#" className="hover:text-white">Investor Relations</a></li>
-            <li><a href="#" className="hover:text-white">Carbon Reduction Plan</a></li>
+            <li><Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
+            <li><Link to="/terms-of-use" className="hover:text-white">Terms Of Use</Link></li>
+            <li><Link to="/anti-slavery-policy" className="hover:text-white">Modern Anti-Slavery Policy</Link></li>
+            <li><Link to="/investor-relations" className="hover:text-white">Investor Relations</Link></li>
+            <li><Link to="/carbon-reduction-plan" className="hover:text-white">Carbon Reduction Plan</Link></li>
           </ul>
         </div>
 

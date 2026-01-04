@@ -10,6 +10,11 @@ import Cybersecurity from './pages/services/Cybersecurity';
 import SoftwareDevelopment from './pages/services/SoftwareDevelopment';
 import InfrastructureAutomation from './pages/services/InfrastructureAutomation';
 import DigitalMarketing from './pages/services/DigitalMarketing';
+import PrivacyPolicy from './pages/legal/PrivacyPolicy';
+import TermsOfUse from './pages/legal/TermsOfUse';
+import AntiSlaveryPolicy from './pages/legal/AntiSlaveryPolicy';
+import InvestorRelations from './pages/legal/InvestorRelations';
+import CarbonReductionPlan from './pages/legal/CarbonReductionPlan';
 import ChatBot from './components/ChatBot';
 
 // Component to handle hash scroll navigation
@@ -46,6 +51,12 @@ function App() {
             <Route path="/services/software-development" element={<SoftwareDevelopment />} />
             <Route path="/services/automation" element={<InfrastructureAutomation />} />
             <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
+            {/* Legal Pages */}
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-use" element={<TermsOfUse />} />
+            <Route path="/anti-slavery-policy" element={<AntiSlaveryPolicy />} />
+            <Route path="/investor-relations" element={<InvestorRelations />} />
+            <Route path="/carbon-reduction-plan" element={<CarbonReductionPlan />} />
           </Routes>
         </main>
         <Footer />
