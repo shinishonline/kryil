@@ -221,7 +221,7 @@ export default function ServicePageLayout({
             >
               <img
                 src={galleryImages[0]}
-                alt="Team collaboration"
+                alt="Kryil Infotech team collaboration - enterprise software and technology services"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
@@ -241,7 +241,7 @@ export default function ServicePageLayout({
               >
                 <img
                   src={galleryImages[1]}
-                  alt="Innovation"
+                  alt="Kryil Infotech innovation in technology and software development"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
@@ -257,7 +257,7 @@ export default function ServicePageLayout({
               >
                 <img
                   src={galleryImages[2]}
-                  alt="Excellence"
+                  alt="Kryil Infotech excellence in IT services delivery"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
@@ -397,7 +397,7 @@ export default function ServicePageLayout({
               <div className="mt-12 relative aspect-[4/3] overflow-hidden hidden lg:block">
                 <img
                   src={benefitsImage}
-                  alt="Team working"
+                  alt="Kryil Infotech professional team delivering technology solutions"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />

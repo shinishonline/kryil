@@ -220,7 +220,7 @@ export default function Defense() {
         >
           <img
             src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1400&auto=format&fit=crop"
-            alt="Military Aviation"
+            alt="Kryil Infotech defense and aerospace technology - UAV drones and military aviation systems"
             className="w-full h-[120%] object-cover opacity-30"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent" />

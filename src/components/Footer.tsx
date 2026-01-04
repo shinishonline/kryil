@@ -14,7 +14,7 @@ export default function Footer() {
             <Link to="/" className="inline-flex items-center relative group">
               <img
                 src="/logo_white.png"
-                alt="Kryil"
+            alt="Kryil Infotech - Defense Technology and IT Services Company"
                 className="h-16"
                 style={{
                   filter: 'drop-shadow(1px 1px 0px rgba(255,255,255,0.3)) drop-shadow(-1px -1px 1px rgba(0,0,0,0.5))',

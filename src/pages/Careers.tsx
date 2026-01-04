@@ -136,7 +136,7 @@ export default function Careers() {
             >
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
-                alt="Team collaboration"
+                alt="Kryil Infotech careers - team collaboration in software development"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -147,7 +147,7 @@ export default function Careers() {
             >
               <img
                 src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop"
-                alt="Office space"
+                alt="Kryil Infotech modern office workspace in Bangalore"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -158,7 +158,7 @@ export default function Careers() {
             >
               <img
                 src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=800&auto=format&fit=crop"
-                alt="Working together"
+                alt="Kryil Infotech employees working together on technology projects"
                 className="w-full h-full object-cover"
               />
             </div>
