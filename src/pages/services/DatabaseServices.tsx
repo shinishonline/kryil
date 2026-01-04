@@ -6,7 +6,7 @@ export default function DatabaseServices() {
       title="Database Administration"
       subtitle="Data Management Excellence"
       description="Expert database administration and development services. From SQL Server and Oracle to MongoDB and PostgreSQL, we manage, optimize, and secure your data infrastructure for peak performance."
-      image="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=1400&auto=format&fit=crop"
+      image="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1400&auto=format&fit=crop"
       galleryImages={[
         'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1400&auto=format&fit=crop',
         'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1400&auto=format&fit=crop',
