@@ -219,7 +219,7 @@ export default function Defense() {
           style={{ transform: `translateY(${scrollY * 0.3}px)` }}
         >
           <img
-            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1400&auto=format&fit=crop"
             alt="Military Aviation"
             className="w-full h-[120%] object-cover opacity-30"
           />

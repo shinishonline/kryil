@@ -6,7 +6,7 @@ export default function AutomationIoT() {
       title="Automation & IoT"
       subtitle="Smart Solutions"
       description="Transform your operations with intelligent automation and IoT solutions. We help businesses automate processes, connect devices, and leverage data for smarter decision-making."
-      image="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=2070&auto=format&fit=crop"
+      image="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=1400&auto=format&fit=crop"
       stats={[
         { value: '80%', label: 'Manual Tasks Reduced' },
         { value: '10K+', label: 'Devices Connected' },

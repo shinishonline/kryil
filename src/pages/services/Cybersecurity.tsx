@@ -6,13 +6,13 @@ export default function Cybersecurity() {
       title="Cybersecurity"
       subtitle="Protect Your Business"
       description="Comprehensive cybersecurity solutions to protect your business from evolving threats. From security audits to threat detection and incident response, we keep your systems and data secure."
-      image="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070&auto=format&fit=crop"
+      image="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1400&auto=format&fit=crop"
       galleryImages={[
-        'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=2070&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2070&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1562813733-b31f71025d54?q=80&w=2069&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=1400&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1400&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1562813733-b31f71025d54?q=80&w=1400&auto=format&fit=crop',
       ]}
-      benefitsImage="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop"
+      benefitsImage="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1400&auto=format&fit=crop"
       stats={[
         { value: '0', label: 'Breaches on Watch' },
         { value: '24/7', label: 'Threat Monitoring' },

@@ -14,7 +14,7 @@ const projects = [
     title: 'AI-Powered Analytics',
     category: 'Machine Learning',
     description: 'Real-time predictive analytics engine for financial services.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1400&auto=format&fit=crop',
     stats: { accuracy: '98.5%', processed: '50TB+' },
   },
   {
@@ -22,7 +22,7 @@ const projects = [
     title: 'Defense Systems Interface',
     category: 'UI/UX Design',
     description: 'Mission-critical command and control interface for defense operations.',
-    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1400&auto=format&fit=crop',
     stats: { response: '<50ms', nodes: '1000+' },
   },
   {

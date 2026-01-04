@@ -6,13 +6,13 @@ export default function DigitalMarketing() {
       title="Digital Marketing"
       subtitle="Grow Your Brand"
       description="Strategic digital marketing solutions to amplify your brand, drive traffic, and convert leads into customers. From SEO to social media, we help you reach and engage your target audience."
-      image="https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=2070&auto=format&fit=crop"
+      image="https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=1400&auto=format&fit=crop"
       galleryImages={[
-        'https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=2031&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=2074&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1611926653458-09294b3142bf?q=80&w=2070&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=1400&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=1400&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1611926653458-09294b3142bf?q=80&w=1400&auto=format&fit=crop',
       ]}
-      benefitsImage="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop"
+      benefitsImage="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1400&auto=format&fit=crop"
       stats={[
         { value: '300%', label: 'Avg. Traffic Growth' },
         { value: '5M+', label: 'Leads Generated' },

@@ -28,12 +28,12 @@ interface ServicePageLayoutProps {
 
 // Default gallery images for the showcase section
 const defaultGalleryImages = [
-  'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1400&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1400&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1400&auto=format&fit=crop',
 ];
 
-const defaultBenefitsImage = 'https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop';
+const defaultBenefitsImage = 'https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1400&auto=format&fit=crop';
 
 // Wave Text Component
 function WaveText({ text }: { text: string }) {
@@ -146,6 +146,8 @@ export default function ServicePageLayout({
             src={image}
             alt={title}
             className="w-full h-[120%] object-cover opacity-40"
+            loading="eager"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/70 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/80 to-transparent" />
@@ -221,6 +223,7 @@ export default function ServicePageLayout({
                 src={galleryImages[0]}
                 alt="Team collaboration"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-8 left-8 right-8">
@@ -240,6 +243,7 @@ export default function ServicePageLayout({
                   src={galleryImages[1]}
                   alt="Innovation"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6">
@@ -255,6 +259,7 @@ export default function ServicePageLayout({
                   src={galleryImages[2]}
                   alt="Excellence"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6">
@@ -394,6 +399,7 @@ export default function ServicePageLayout({
                   src={benefitsImage}
                   alt="Team working"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>

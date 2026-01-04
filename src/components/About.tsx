@@ -82,7 +82,7 @@ export default function About() {
       <div className="relative h-[70vh] md:h-[80vh] overflow-hidden">
         <div className="absolute inset-0 scale-110">
           <img
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1400&auto=format&fit=crop"
             alt="Kryil Infotech Team"
             className="w-full h-full object-cover will-change-transform"
             style={{

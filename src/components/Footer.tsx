@@ -30,7 +30,7 @@ export default function Footer() {
 
             {/* QUICK LINKS */}
             <div>
-              <p className="text-xs uppercase tracking-widest text-white/40 mb-4">
+              <p className="text-xs uppercase tracking-widest text-white/60 mb-4">
                 Quick Links
               </p>
               <ul className="space-y-4 text-white/80 text-sm">
@@ -44,7 +44,7 @@ export default function Footer() {
 
             {/* SERVICES */}
             <div>
-              <p className="text-xs uppercase tracking-widest text-white/40 mb-4">
+              <p className="text-xs uppercase tracking-widest text-white/60 mb-4">
                 Services
               </p>
               <ul className="space-y-4 text-white/80 text-sm">
@@ -59,7 +59,7 @@ export default function Footer() {
 
             {/* SOCIAL */}
             <div>
-              <p className="text-xs uppercase tracking-widest text-white/40 mb-4">
+              <p className="text-xs uppercase tracking-widest text-white/60 mb-4">
                 Social
               </p>
               <ul className="space-y-4 text-white/80 text-sm">
@@ -79,7 +79,7 @@ export default function Footer() {
       <div className="border-t border-white/10 flex flex-col lg:flex-row justify-between gap-8" style={{ padding: '40px', paddingTop: '24px', paddingBottom: '24px' }}>
 
         {/* LEFT – COPYRIGHT + LEGAL */}
-        <div className="text-xs text-white/40 space-y-3">
+        <div className="text-xs text-white/60 space-y-3">
           <p className="uppercase tracking-wider">
             Copyright © {new Date().getFullYear()} Kryil Infotech Private Limited
           </p>

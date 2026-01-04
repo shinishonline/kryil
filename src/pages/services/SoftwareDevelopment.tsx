@@ -6,13 +6,13 @@ export default function SoftwareDevelopment() {
       title="Custom Software Development"
       subtitle="Tailored Solutions"
       description="We build bespoke software solutions designed to meet your unique business requirements. From enterprise applications to consumer-facing products, our team delivers scalable, secure, and high-performance software."
-      image="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop"
+      image="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1400&auto=format&fit=crop"
       galleryImages={[
-        'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1400&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1400&auto=format&fit=crop',
       ]}
-      benefitsImage="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=2070&auto=format&fit=crop"
+      benefitsImage="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1400&auto=format&fit=crop"
       stats={[
         { value: '200+', label: 'Apps Delivered' },
         { value: '99.9%', label: 'Uptime SLA' },

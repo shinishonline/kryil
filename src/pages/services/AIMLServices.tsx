@@ -6,7 +6,7 @@ export default function AIMLServices() {
       title="AI & Machine Learning"
       subtitle="Intelligent Solutions"
       description="Harness the power of artificial intelligence and machine learning to transform your business. We develop intelligent systems that automate processes, generate insights, and drive data-driven decision making."
-      image="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop"
+      image="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1400&auto=format&fit=crop"
       stats={[
         { value: '95%', label: 'Model Accuracy' },
         { value: '50+', label: 'AI Models Deployed' },
