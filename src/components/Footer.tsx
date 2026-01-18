@@ -3,70 +3,45 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className="relative bg-[#0a0a0a] text-white font-['Lato'] overflow-hidden">
-      {/* Rocket Thruster Smoke Effect - Top to Bottom */}
+      {/* Yellow Smoke Effect - Flowing Left to Right */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Main smoke gradient from top */}
+        {/* Main Smoke Stream */}
         <div
-          className="absolute top-0 left-0 right-0 h-64"
+          className="absolute w-[300%] h-[40%] top-[30%]"
           style={{
-            background: 'linear-gradient(180deg, rgba(223,241,64,0.15) 0%, rgba(223,241,64,0.08) 20%, rgba(255,140,50,0.05) 40%, transparent 100%)',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(223,241,64,0.12) 20%, rgba(223,241,64,0.28) 40%, rgba(223,241,64,0.2) 60%, transparent 85%)',
+            filter: 'blur(65px)',
+            animation: 'footerSmokeMain 15s linear infinite',
           }}
         />
-
-        {/* Animated smoke particles */}
-        <div className="absolute top-0 left-1/4 w-96 h-full opacity-30">
-          <div
-            className="absolute top-0 left-0 w-full h-full"
-            style={{
-              background: 'radial-gradient(ellipse at top, rgba(255,255,255,0.1) 0%, transparent 70%)',
-              animation: 'smokeFlow 8s ease-in-out infinite',
-            }}
-          />
-        </div>
-
-        <div className="absolute top-0 right-1/4 w-80 h-full opacity-20">
-          <div
-            className="absolute top-0 left-0 w-full h-full"
-            style={{
-              background: 'radial-gradient(ellipse at top, rgba(223,241,64,0.15) 0%, transparent 60%)',
-              animation: 'smokeFlow 10s ease-in-out infinite 2s',
-            }}
-          />
-        </div>
-
-        {/* Center exhaust glow */}
+        {/* Secondary Stream */}
         <div
-          className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-80"
+          className="absolute w-[250%] h-[50%] top-[25%]"
           style={{
-            background: 'radial-gradient(ellipse at top center, rgba(255,200,100,0.12) 0%, rgba(223,241,64,0.06) 30%, transparent 70%)',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(223,241,64,0.1) 25%, rgba(223,241,64,0.22) 50%, rgba(223,241,64,0.1) 75%, transparent 100%)',
+            filter: 'blur(80px)',
+            animation: 'footerSmokeMain 18s linear infinite',
+            animationDelay: '-5s',
           }}
         />
-
-        {/* Smoke wisps */}
-        <div className="absolute top-8 left-[20%] w-2 h-32 opacity-20">
-          <div
-            className="w-full h-full bg-gradient-to-b from-white/40 to-transparent rounded-full blur-sm"
-            style={{ animation: 'wispFloat 6s ease-in-out infinite' }}
-          />
-        </div>
-        <div className="absolute top-12 left-[35%] w-1.5 h-24 opacity-15">
-          <div
-            className="w-full h-full bg-gradient-to-b from-[#dff140]/50 to-transparent rounded-full blur-sm"
-            style={{ animation: 'wispFloat 7s ease-in-out infinite 1s' }}
-          />
-        </div>
-        <div className="absolute top-6 right-[30%] w-2 h-28 opacity-20">
-          <div
-            className="w-full h-full bg-gradient-to-b from-white/30 to-transparent rounded-full blur-sm"
-            style={{ animation: 'wispFloat 5s ease-in-out infinite 0.5s' }}
-          />
-        </div>
-        <div className="absolute top-10 right-[20%] w-1 h-20 opacity-15">
-          <div
-            className="w-full h-full bg-gradient-to-b from-orange-300/40 to-transparent rounded-full blur-sm"
-            style={{ animation: 'wispFloat 8s ease-in-out infinite 2s' }}
-          />
-        </div>
+        {/* Smoke Puffs */}
+        <div
+          className="absolute w-[600px] h-[400px] top-[25%]"
+          style={{
+            background: 'radial-gradient(ellipse at center, rgba(223,241,64,0.28) 0%, rgba(223,241,64,0.14) 40%, transparent 70%)',
+            filter: 'blur(60px)',
+            animation: 'footerPuff1 10s linear infinite',
+          }}
+        />
+        <div
+          className="absolute w-[500px] h-[350px] top-[35%]"
+          style={{
+            background: 'radial-gradient(ellipse at center, rgba(223,241,64,0.24) 0%, rgba(223,241,64,0.12) 45%, transparent 70%)',
+            filter: 'blur(55px)',
+            animation: 'footerPuff2 8s linear infinite',
+            animationDelay: '-3s',
+          }}
+        />
 
         {/* Grid pattern overlay */}
         <div
@@ -81,24 +56,23 @@ export default function Footer() {
         />
       </div>
 
-      {/* Top decorative line with glow */}
+      {/* Top decorative line */}
       <div className="relative">
-        <div className="h-px bg-gradient-to-r from-transparent via-[#dff140]/50 to-transparent" />
-        <div className="h-8 bg-gradient-to-b from-[#dff140]/10 to-transparent" />
+        <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-12 lg:px-16 pt-16 pb-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-12 lg:px-16" style={{ paddingTop: '64px', paddingBottom: '8px' }}>
 
         {/* Top Section - Logo and Links */}
         <div className="flex flex-col lg:flex-row justify-between gap-16 mb-16">
 
           {/* Left - Logo & Tagline */}
-          <div className="flex-shrink-0 max-w-sm">
+          <div className="flex-shrink-0 max-w-sm" style={{ paddingLeft: '40px' }}>
             <Link to="/" className="inline-flex items-center gap-3 group mb-6">
               <img
                 src="/logo_white.png"
-                alt="Kryil Infotech"
+                alt="KRYIL Infotech"
                 className="h-14 transition-all duration-300 group-hover:brightness-125"
                 style={{
                   filter: 'drop-shadow(0 0 20px rgba(223,241,64,0.2))',
@@ -197,7 +171,6 @@ export default function Footer() {
               <ul className="space-y-4">
                 <li><Link to="/blog" className="text-sm text-white/50 hover:text-white transition-colors">Blog</Link></li>
                 <li><Link to="/news" className="text-sm text-white/50 hover:text-white transition-colors">Newsroom</Link></li>
-                <li><Link to="/investor-relations" className="text-sm text-white/50 hover:text-white transition-colors">Investors</Link></li>
               </ul>
             </div>
 
@@ -234,13 +207,13 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8" />
+        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" style={{ marginBottom: '8px' }} />
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6" style={{ paddingTop: '5px', paddingBottom: '5px' }}>
 
           {/* Copyright */}
-          <p className="text-xs text-white/30">
+          <p className="text-xs text-white/30" style={{ paddingLeft: '40px' }}>
             © {new Date().getFullYear()} Kryil Infotech Private Limited. All rights reserved.
           </p>
 
@@ -264,34 +237,21 @@ export default function Footer() {
 
       {/* CSS Animations */}
       <style>{`
-        @keyframes smokeFlow {
-          0%, 100% {
-            transform: translateY(0) scale(1);
-            opacity: 0.3;
-          }
-          50% {
-            transform: translateY(20px) scale(1.1);
-            opacity: 0.15;
-          }
+        @keyframes footerSmokeMain {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(50%); }
         }
-
-        @keyframes wispFloat {
-          0%, 100% {
-            transform: translateY(0) translateX(0);
-            opacity: 0.2;
-          }
-          25% {
-            transform: translateY(10px) translateX(5px);
-            opacity: 0.3;
-          }
-          50% {
-            transform: translateY(20px) translateX(-3px);
-            opacity: 0.15;
-          }
-          75% {
-            transform: translateY(15px) translateX(3px);
-            opacity: 0.25;
-          }
+        @keyframes footerPuff1 {
+          0% { transform: translateX(-100vw) translateY(0) scale(1); opacity: 0; }
+          10% { opacity: 0.32; }
+          90% { opacity: 0.32; }
+          100% { transform: translateX(100vw) translateY(-20px) scale(1.2); opacity: 0; }
+        }
+        @keyframes footerPuff2 {
+          0% { transform: translateX(-100vw) translateY(0) scale(1); opacity: 0; }
+          10% { opacity: 0.28; }
+          90% { opacity: 0.28; }
+          100% { transform: translateX(100vw) translateY(20px) scale(1.15); opacity: 0; }
         }
       `}</style>
     </footer>

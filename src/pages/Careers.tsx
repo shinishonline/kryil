@@ -294,7 +294,7 @@ export default function Careers() {
           </p>
           <div className="mt-12">
             <a
-              href="mailto:careers@kryil.com"
+              href="mailto:info@kryil.com"
               className="inline-flex items-center gap-3 bg-[#dff140] text-[#010101] font-['Lato'] text-[0.9rem] font-semibold uppercase tracking-[0.05em] px-10 py-5 hover:bg-white transition-colors duration-300"
             >
               <span>Get in Touch</span>

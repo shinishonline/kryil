@@ -221,7 +221,7 @@ export default function ServicePageLayout({
             >
               <img
                 src={galleryImages[0]}
-                alt="Kryil Infotech team collaboration - enterprise software and technology services"
+                alt="KRYIL Infotech team collaboration - enterprise software and technology services"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
@@ -241,7 +241,7 @@ export default function ServicePageLayout({
               >
                 <img
                   src={galleryImages[1]}
-                  alt="Kryil Infotech innovation in technology and software development"
+                  alt="KRYIL Infotech innovation in technology and software development"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
@@ -257,7 +257,7 @@ export default function ServicePageLayout({
               >
                 <img
                   src={galleryImages[2]}
-                  alt="Kryil Infotech excellence in IT services delivery"
+                  alt="KRYIL Infotech excellence in IT services delivery"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
@@ -291,7 +291,7 @@ export default function ServicePageLayout({
 
       {/* What We Deliver Section */}
       <section ref={featuresRef} className="pt-32 md:pt-48 pb-40 md:pb-56 bg-[#0a0a0a]">
-        <div className="px-4 md:px-6 mb-8 md:mb-10" style={{ marginLeft: 'clamp(16px, 4vw, 40px)', marginRight: 'clamp(16px, 4vw, 40px)' }}>
+        <div className="px-4 md:px-6" style={{ marginLeft: 'clamp(16px, 4vw, 40px)', marginRight: 'clamp(16px, 4vw, 40px)', marginBottom: '40px' }}>
           {/* Section Header */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24" style={{ marginBottom: '40px' }}>
             <div className="lg:col-span-7">
@@ -315,7 +315,7 @@ export default function ServicePageLayout({
           </div>
 
           {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16 md:mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {features.map((feature, index) => (
               <div
                 key={index}
@@ -382,14 +382,14 @@ export default function ServicePageLayout({
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-16 h-[1px] bg-black" />
                 <span className="font-['Lato'] text-[0.7rem] text-black/40 uppercase tracking-[0.3em]">
-                  Why Kryil
+                  Why KRYIL
                 </span>
               </div>
               <h2 className="font-['Lato'] text-[clamp(2.5rem,6vw,5rem)] font-bold leading-[1] tracking-[-0.03em] text-black">
                 The Advantage
               </h2>
               <p className="font-['Lato'] text-[1.15rem] text-black/60 leading-[1.9] mt-10 max-w-lg">
-                Partner with Kryil Infotech to leverage cutting-edge expertise and
+                Partner with KRYIL Infotech to leverage cutting-edge expertise and
                 deliver exceptional results that drive your business forward.
               </p>
 
@@ -397,7 +397,7 @@ export default function ServicePageLayout({
               <div className="mt-12 relative aspect-[4/3] overflow-hidden hidden lg:block">
                 <img
                   src={benefitsImage}
-                  alt="Kryil Infotech professional team delivering technology solutions"
+                  alt="KRYIL Infotech professional team delivering technology solutions"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />

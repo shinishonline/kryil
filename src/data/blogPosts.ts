@@ -411,7 +411,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Current state and future prospects of electric aircraft propulsion.',
     content: `<p>Electric propulsion offers the promise of quiet, emission-free flight.</p><h2>Current Technology</h2><ul><li>Training aircraft</li><li>Short-range commuters</li><li>Urban air mobility</li></ul><h2>Challenges</h2><p>Energy density of batteries remains the primary limitation.</p>`,
     category: 'Aerospace',
-    image: 'https://images.unsplash.com/photo-1606567595334-d39972c85dfd?q=80&w=1400&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=1400&auto=format&fit=crop',
     author: 'Electric Aviation Team',
     date: '2025-11-04',
     readTime: '7 min read',

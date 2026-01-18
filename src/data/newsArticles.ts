@@ -14,7 +14,7 @@ export const newsArticles: NewsArticle[] = [
   {
     id: '1',
     slug: 'kryil-infotech-launches-advanced-uav-division',
-    title: 'Kryil Infotech Launches Advanced UAV Technology Division',
+    title: 'KRYIL Infotech Launches Advanced UAV Technology Division',
     excerpt: 'Bangalore-based technology company expands into defense sector with new UAV manufacturing and R&D capabilities.',
     content: `
       <p><strong>Bangalore, India - January 2026</strong> - Kryil Infotech Private Limited today announced the launch of its Advanced UAV Technology Division, marking a significant expansion into the defense and aerospace sector.</p>
@@ -33,8 +33,8 @@ export const newsArticles: NewsArticle[] = [
         <li>Collaboration with defense research organizations</li>
       </ul>
 
-      <h2>About Kryil Infotech</h2>
-      <p>Kryil Infotech is a Bangalore-based technology company specializing in software development, AI, robotics, IoT solutions, and defense technology. The company serves clients across various sectors including defense, manufacturing, and enterprise.</p>
+      <h2>About KRYIL Infotech</h2>
+      <p>KRYIL Infotech is a Bangalore-based technology company specializing in software development, AI, robotics, IoT solutions, and defense technology. The company serves clients across various sectors including defense, manufacturing, and enterprise.</p>
     `,
     type: 'Press Release',
     image: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=1400&auto=format&fit=crop',
@@ -44,9 +44,9 @@ export const newsArticles: NewsArticle[] = [
     id: '2',
     slug: 'partnership-with-leading-robotics-manufacturer',
     title: 'Strategic Partnership with Leading Industrial Robotics Manufacturer',
-    excerpt: 'Kryil Infotech partners with international robotics company to bring advanced automation solutions to Indian manufacturers.',
+    excerpt: 'KRYIL Infotech partners with international robotics company to bring advanced automation solutions to Indian manufacturers.',
     content: `
-      <p><strong>Bangalore, India - December 2025</strong> - Kryil Infotech has announced a strategic partnership to bring world-class industrial robotics solutions to the Indian manufacturing sector.</p>
+      <p><strong>Bangalore, India - December 2025</strong> - KRYIL Infotech has announced a strategic partnership to bring world-class industrial robotics solutions to the Indian manufacturing sector.</p>
 
       <p>This partnership will enable Indian manufacturers to access advanced robotic systems with local support, integration services, and customization capabilities.</p>
 
@@ -67,10 +67,10 @@ export const newsArticles: NewsArticle[] = [
   {
     id: '3',
     slug: 'kryil-expands-iot-solutions-team',
-    title: 'Kryil Infotech Expands IoT Solutions Team to Meet Growing Demand',
+    title: 'KRYIL Infotech Expands IoT Solutions Team to Meet Growing Demand',
     excerpt: 'Company doubles its IoT engineering team as demand for smart city and industrial IoT solutions surges.',
     content: `
-      <p><strong>Bangalore, India - December 2025</strong> - Responding to increasing demand for IoT solutions across smart city projects and industrial applications, Kryil Infotech has significantly expanded its IoT Solutions division.</p>
+      <p><strong>Bangalore, India - December 2025</strong> - Responding to increasing demand for IoT solutions across smart city projects and industrial applications, KRYIL Infotech has significantly expanded its IoT Solutions division.</p>
 
       <p>The expansion includes hiring of additional IoT engineers, embedded systems developers, and cloud architects to support growing project pipelines.</p>
 
@@ -91,10 +91,10 @@ export const newsArticles: NewsArticle[] = [
   {
     id: '4',
     slug: 'recognition-for-innovation-in-defense-tech',
-    title: 'Kryil Infotech Recognized for Innovation in Defense Technology',
+    title: 'KRYIL Infotech Recognized for Innovation in Defense Technology',
     excerpt: 'Company receives recognition for contributions to indigenous defense technology development.',
     content: `
-      <p><strong>Bangalore, India - November 2025</strong> - Kryil Infotech has been recognized for its innovative contributions to India's indigenous defense technology development.</p>
+      <p><strong>Bangalore, India - November 2025</strong> - KRYIL Infotech has been recognized for its innovative contributions to India's indigenous defense technology development.</p>
 
       <p>The recognition acknowledges the company's work in developing advanced software systems, autonomous technologies, and AI-powered solutions for defense applications.</p>
 

@@ -49,7 +49,7 @@ export default function WhoWeAre() {
     }
   };
 
-  const text = "We bring together exceptional engineers, designers, and strategists who transform challenges into opportunities. Our team blends technical mastery with innovative thinking to build solutions that drive lasting success. From custom software to scalable digital platforms, Kryil builds the tools you need to lead.";
+  const text = "We bring together exceptional engineers, designers, and strategists who transform challenges into opportunities. Our team blends technical mastery with innovative thinking to build solutions that drive lasting success. From custom software to scalable digital platforms, KRYIL builds the tools you need to lead.";
 
   return (
     <section

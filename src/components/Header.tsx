@@ -1,6 +1,21 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
+const products = [
+  {
+    label: 'Avionix',
+    href: '/products/avionix',
+    description: 'Aircraft design & aerodynamic analysis platform',
+    highlight: 'New',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M22 2L11 13" />
+        <path d="M22 2l-7 20-4-9-9-4 20-7z" />
+      </svg>
+    ),
+  },
+];
+
 const services = [
   {
     label: 'Infrastructure Services',
@@ -81,16 +96,18 @@ const services = [
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const lastScrollY = useRef(0);
   const servicesTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const productsTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const location = useLocation();
 
-  // Check if we're on a dark background page (defense page or services pages)
-  const isDarkBgPage = location.pathname === '/defense' || location.pathname.startsWith('/services/');
+  // Check if we're on a dark background page (defense page, services pages, or products pages)
+  const isDarkBgPage = location.pathname === '/defense' || location.pathname.startsWith('/services/') || location.pathname.startsWith('/products/');
   // Use light text (white) on dark pages when not scrolled
-  const useLightText = isDarkBgPage && !isScrolled && !isServicesOpen;
+  const useLightText = isDarkBgPage && !isScrolled && !isServicesOpen && !isProductsOpen;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -112,18 +129,40 @@ export default function Header() {
   useEffect(() => {
     setIsMenuOpen(false);
     setIsServicesOpen(false);
+    setIsProductsOpen(false);
   }, [location]);
 
   const handleServicesEnter = () => {
     if (servicesTimeoutRef.current) {
       clearTimeout(servicesTimeoutRef.current);
     }
+    if (productsTimeoutRef.current) {
+      clearTimeout(productsTimeoutRef.current);
+    }
+    setIsProductsOpen(false);
     setIsServicesOpen(true);
   };
 
   const handleServicesLeave = () => {
     servicesTimeoutRef.current = setTimeout(() => {
       setIsServicesOpen(false);
+    }, 150);
+  };
+
+  const handleProductsEnter = () => {
+    if (productsTimeoutRef.current) {
+      clearTimeout(productsTimeoutRef.current);
+    }
+    if (servicesTimeoutRef.current) {
+      clearTimeout(servicesTimeoutRef.current);
+    }
+    setIsServicesOpen(false);
+    setIsProductsOpen(true);
+  };
+
+  const handleProductsLeave = () => {
+    productsTimeoutRef.current = setTimeout(() => {
+      setIsProductsOpen(false);
     }, 150);
   };
 
@@ -135,19 +174,24 @@ export default function Header() {
     { label: 'Contact', href: '/#contact' },
   ];
 
+  const handleHeaderLeave = () => {
+    handleServicesLeave();
+    handleProductsLeave();
+  };
+
   return (
     <>
       <header
         className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled || isServicesOpen
+          isScrolled || isServicesOpen || isProductsOpen
             ? 'bg-white'
             : useLightText
               ? 'bg-transparent'
               : 'bg-white'
         } ${
-          isHidden && !isServicesOpen && !isMenuOpen ? '-top-28' : 'top-0'
+          isHidden && !isServicesOpen && !isProductsOpen && !isMenuOpen ? '-top-28' : 'top-0'
         }`}
-        onMouseLeave={handleServicesLeave}
+        onMouseLeave={handleHeaderLeave}
       >
         <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-20">
           <div className="flex items-center justify-between h-20 md:h-24">
@@ -182,6 +226,30 @@ export default function Header() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center justify-center gap-8 flex-1">
+              {/* Products with dropdown trigger */}
+              <div className="relative" onMouseEnter={handleProductsEnter}>
+                <button
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full font-['Lato'] text-[0.8rem] uppercase tracking-[0.08em] transition-all duration-300 ${
+                    isProductsOpen
+                      ? 'bg-black/5 text-black'
+                      : useLightText
+                        ? 'text-white/60 hover:text-white hover:bg-white/10'
+                        : 'text-black/60 hover:text-black hover:bg-black/5'
+                  }`}
+                >
+                  <span>Products</span>
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    fill="none"
+                    className={`transition-transform duration-300 ${isProductsOpen ? 'rotate-180' : ''}`}
+                  >
+                    <path d="M2 4L5 7L8 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                </button>
+              </div>
+
               {/* Services with dropdown trigger */}
               <div className="relative" onMouseEnter={handleServicesEnter}>
                 <button
@@ -368,15 +436,109 @@ export default function Header() {
             </div>
           </div>
         </div>
+
+        {/* Products Dropdown Panel */}
+        <div
+          className={`hidden lg:block w-full bg-white border-t border-black/5 transition-all duration-400 ease-out overflow-hidden`}
+          style={{
+            maxHeight: isProductsOpen ? '300px' : '0px',
+            opacity: isProductsOpen ? 1 : 0,
+          }}
+          onMouseEnter={handleProductsEnter}
+        >
+          <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-20 py-8">
+            <div className="flex gap-12">
+              {/* Left side - Info */}
+              <div
+                className="w-72 flex-shrink-0"
+                style={{
+                  opacity: isProductsOpen ? 1 : 0,
+                  transform: isProductsOpen ? 'translateY(0)' : 'translateY(-10px)',
+                  transition: 'opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s',
+                }}
+              >
+                <h3 className="font-['Lato'] text-[0.7rem] font-semibold text-black uppercase tracking-[0.15em] mb-3">
+                  Our Products
+                </h3>
+                <p className="font-['Lato'] text-[0.85rem] text-black/50 leading-relaxed mb-6">
+                  Cutting-edge software solutions for aerospace design and analysis.
+                </p>
+
+                {/* CTA */}
+                <Link
+                  to="/#contact"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-black text-white rounded-full font-['Lato'] text-[0.75rem] uppercase tracking-wider hover:bg-black/80 transition-colors"
+                >
+                  <span>Request Demo</span>
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M2 6h8M8 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </Link>
+              </div>
+
+              {/* Products Grid */}
+              <div className="flex-1">
+                <div className="grid grid-cols-2 gap-4">
+                  {products.map((product, index) => (
+                    <Link
+                      key={product.label}
+                      to={product.href}
+                      className="group p-6 rounded-xl hover:bg-black/[0.03] transition-all duration-300 border border-transparent hover:border-black/5"
+                      style={{
+                        opacity: isProductsOpen ? 1 : 0,
+                        transform: isProductsOpen ? 'translateY(0)' : 'translateY(-10px)',
+                        transition: `opacity 0.3s ease ${0.05 + index * 0.03}s, transform 0.3s ease ${0.05 + index * 0.03}s`,
+                      }}
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-[#dff140]/20 text-black/60 group-hover:bg-[#dff140] group-hover:text-black transition-all duration-300 flex-shrink-0">
+                          {product.icon}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="font-['Lato'] text-[0.9rem] font-medium text-black/80 group-hover:text-black transition-colors">
+                              {product.label}
+                            </span>
+                            <span className="inline-flex items-center px-2 py-0.5 bg-[#dff140] text-[0.6rem] font-bold text-black rounded-full uppercase tracking-wider">
+                              {product.highlight}
+                            </span>
+                          </div>
+                          <p className="font-['Lato'] text-[0.85rem] text-black/50 leading-snug">
+                            {product.description}
+                          </p>
+                        </div>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          className="text-black/20 group-hover:text-black -rotate-45 transition-all duration-300 flex-shrink-0"
+                        >
+                          <path
+                            d="M5 19L19 5M19 5H9M19 5V15"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </header>
 
       {/* Backdrop overlay when dropdown is open */}
       <div
         className={`hidden lg:block fixed inset-0 bg-black/40 z-40 transition-opacity duration-400 ${
-          isServicesOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+          isServicesOpen || isProductsOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}
         style={{ top: '0' }}
-        onClick={() => setIsServicesOpen(false)}
+        onClick={() => { setIsServicesOpen(false); setIsProductsOpen(false); }}
       />
 
       {/* Mobile Menu */}
@@ -388,10 +550,10 @@ export default function Header() {
         <nav className="flex flex-col px-6 pt-28 pb-12 h-full overflow-y-auto">
           {/* Main Nav Items */}
           <div className="space-y-1">
-            {['Services', ...navItems.map(i => i.label)].map((label, index) => (
+            {['Products', 'Services', ...navItems.map(i => i.label)].map((label, index) => (
               <a
                 key={label}
-                href={label === 'Services' ? '#' : navItems.find(i => i.label === label)?.href || '#'}
+                href={label === 'Services' || label === 'Products' ? '#' : navItems.find(i => i.label === label)?.href || '#'}
                 className={`block py-4 font-['Lato'] text-[2rem] font-bold tracking-[-0.02em] text-white/40 hover:text-white transition-all duration-300 border-b border-white/5`}
                 style={{
                   opacity: isMenuOpen ? 1 : 0,
@@ -399,7 +561,7 @@ export default function Header() {
                   transition: `opacity 0.4s ease ${index * 0.05}s, transform 0.4s ease ${index * 0.05}s`,
                 }}
                 onClick={(e) => {
-                  if (label === 'Services') {
+                  if (label === 'Services' || label === 'Products') {
                     e.preventDefault();
                   } else {
                     setIsMenuOpen(false);
@@ -409,6 +571,45 @@ export default function Header() {
                 {label}
               </a>
             ))}
+          </div>
+
+          {/* Products List for Mobile */}
+          <div className="mt-8">
+            <span className="font-['Lato'] text-[0.7rem] text-[#dff140] uppercase tracking-[0.2em]">
+              Our Products
+            </span>
+            <div className="mt-4 space-y-2">
+              {products.map((product, index) => (
+                <Link
+                  key={product.label}
+                  to={product.href}
+                  className="flex items-start gap-4 py-3 px-3 rounded-lg hover:bg-white/5 transition-colors duration-300"
+                  style={{
+                    opacity: isMenuOpen ? 1 : 0,
+                    transform: isMenuOpen ? 'translateX(0)' : 'translateX(-20px)',
+                    transition: `opacity 0.4s ease ${0.25 + index * 0.05}s, transform 0.4s ease ${0.25 + index * 0.05}s`,
+                  }}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#dff140]/20 text-[#dff140] flex-shrink-0">
+                    {product.icon}
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2">
+                      <span className="block font-['Lato'] text-[0.95rem] text-white/80">
+                        {product.label}
+                      </span>
+                      <span className="inline-block px-2 py-0.5 bg-[#dff140] text-[0.55rem] font-bold text-black rounded-full uppercase tracking-wider">
+                        {product.highlight}
+                      </span>
+                    </div>
+                    <span className="block font-['Lato'] text-[0.75rem] text-white/40 mt-0.5">
+                      {product.description}
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Services List for Mobile */}

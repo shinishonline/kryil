@@ -18,10 +18,10 @@ const services = [
   },
   {
     index: '03',
-    title: 'Software',
-    subtitle: 'Development',
-    description: 'Custom enterprise solutions',
-    link: '/services/software-development',
+    title: 'Infrastructure',
+    subtitle: 'Services',
+    description: 'Cloud, network & data center solutions',
+    link: '/services/infrastructure',
   },
   {
     index: '04',
@@ -36,6 +36,13 @@ const services = [
     subtitle: 'Marketing',
     description: 'SEO, PPC & content strategy',
     link: '/services/digital-marketing',
+  },
+  {
+    index: '06',
+    title: 'Database',
+    subtitle: 'Services',
+    description: 'SQL, NoSQL & data warehouse solutions',
+    link: '/services/database',
   },
 ];
 
