@@ -41,7 +41,7 @@ export default function Contact() {
     setFeedbackMessage('');
 
     try {
-      const response = await fetch('/api/contacts', {
+      const response = await fetch('http://76.13.6.200:8001/contacts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
