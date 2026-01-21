@@ -9,10 +9,6 @@ export default function Contact() {
     message: '',
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submissionStatus, setSubmissionStatus] = useState<'success' | 'error' | null>(null);
-  const [feedbackMessage, setFeedbackMessage] = useState('');
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -34,36 +30,14 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmissionStatus(null);
-    setFeedbackMessage('');
-
-    try {
-      const response = await fetch('http://76.13.6.200:8001/contacts', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setSubmissionStatus('success');
-        setFeedbackMessage('Message has been sent.');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        const errorData = await response.json();
-        setSubmissionStatus('error');
-        setFeedbackMessage(errorData.detail?.[0]?.msg || 'An unknown error occurred.');
-      }
-    } catch (error) {
-      setSubmissionStatus('error');
-      setFeedbackMessage('Failed to send message. Please try again later.');
-    } finally {
-      setIsSubmitting(false);
-    }
+    const { name, email, message } = formData;
+    const subject = `Contact form submission from ${name}`;
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+    const mailtoLink = `mailto:info@kryil.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
+    setFormData({ name: '', email: '', message: '' });
   };
 
   return (
@@ -132,7 +106,6 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 placeholder="John Doe"
-                disabled={isSubmitting}
                 className="w-full bg-transparent font-['Lato'] text-[1.1rem] text-black placeholder:text-black/25 focus:outline-none border-b border-black/10 focus:border-black pb-4 transition-colors duration-300"
               />
             </div>
@@ -149,7 +122,6 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 placeholder="john@company.com"
-                disabled={isSubmitting}
                 className="w-full bg-transparent font-['Lato'] text-[1.1rem] text-black placeholder:text-black/25 focus:outline-none border-b border-black/10 focus:border-black pb-4 transition-colors duration-300"
               />
             </div>
@@ -166,26 +138,15 @@ export default function Contact() {
                 required
                 rows={4}
                 placeholder="Tell us about your project..."
-                disabled={isSubmitting}
                 className="w-full bg-transparent font-['Lato'] text-[1.1rem] text-black placeholder:text-black/25 focus:outline-none border-b border-black/10 focus:border-black pb-4 transition-colors duration-300 resize-none"
               />
             </div>
 
             {/* Submit Button */}
             <div className="pt-6">
-              {submissionStatus && (
-                <div
-                  className={`mb-4 font-['Lato'] text-sm ${
-                    submissionStatus === 'success' ? 'text-green-600' : 'text-red-600'
-                  }`}
-                >
-                  {feedbackMessage}
-                </div>
-              )}
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="group inline-flex items-center gap-5 disabled:opacity-50"
+                className="group inline-flex items-center gap-5"
               >
                 <div className="w-14 h-14 bg-orange-500 group-hover:bg-[#dff140] flex items-center justify-center transition-all duration-300">
                   <svg
@@ -201,7 +162,7 @@ export default function Contact() {
                   </svg>
                 </div>
                 <span className="font-['Lato'] text-[0.85rem] font-medium uppercase tracking-[0.15em] text-black/60 group-hover:text-black transition-colors duration-300">
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  Send Message
                 </span>
               </button>
             </div>
