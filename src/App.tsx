@@ -5,13 +5,13 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Careers from './pages/Careers';
 import Defense from './pages/Defense';
-import InfrastructureServices from './pages/services/InfrastructureServices';
+import EnterpriseSolutions from './pages/services/EnterpriseSolutions';
+import ProfessionalServices from './pages/services/ProfessionalServices';
 import Cybersecurity from './pages/services/Cybersecurity';
-import SoftwareDevelopment from './pages/services/SoftwareDevelopment';
 import InfrastructureAutomation from './pages/services/InfrastructureAutomation';
 import DigitalMarketing from './pages/services/DigitalMarketing';
 import DatabaseServices from './pages/services/DatabaseServices';
-import Robotics from './pages/services/Robotics';
+import AIMLServices from './pages/services/AIMLServices';
 import Avionix from './pages/products/Avionix';
 import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 import TermsOfUse from './pages/legal/TermsOfUse';
@@ -52,21 +52,21 @@ const pageSEO: Record<string, PageSEO> = {
     title: 'News & Updates | KRYIL Infotech',
     description: 'Latest news and updates from KRYIL Infotech - announcements, achievements, and industry insights.',
   },
-  '/services/infrastructure': {
-    title: 'Infrastructure Services | Cloud & Network Solutions | KRYIL Infotech',
-    description: 'Enterprise cloud infrastructure, network solutions, and data center services with 99.9% uptime. AWS, Azure, and hybrid cloud expertise.',
+  '/services/enterprise-solutions': {
+    title: 'Enterprise Solution & Application Development | KRYIL Infotech',
+    description: 'Custom enterprise application development services. Build scalable, secure solutions that transform your business operations.',
+  },
+  '/services/professional-services': {
+    title: 'Professional Services | Expert Consulting & Managed Services | KRYIL Infotech',
+    description: 'Strategic technology consulting and managed services. Expert consultants to optimize operations and drive business transformation.',
   },
   '/services/cybersecurity': {
     title: 'Cybersecurity Services | Threat Protection | KRYIL Infotech',
     description: 'Comprehensive cybersecurity services including penetration testing, vulnerability assessment, SOC services, and compliance consulting.',
   },
-  '/services/software-development': {
-    title: 'Software Development | Custom Solutions | KRYIL Infotech',
-    description: 'Custom software development services - React, Node.js, Python, FastAPI. Enterprise applications, web apps, and mobile solutions.',
-  },
   '/services/automation': {
-    title: 'Infrastructure Automation | DevOps & CI/CD | KRYIL Infotech',
-    description: 'DevOps and infrastructure automation services. CI/CD pipelines, Kubernetes, Docker, Terraform, and cloud automation.',
+    title: 'Infrastructure Services & Automation | Cloud & DevOps | KRYIL Infotech',
+    description: 'Comprehensive infrastructure services and automation. Cloud migration, network architecture, CI/CD pipelines, Kubernetes, and Infrastructure as Code.',
   },
   '/services/digital-marketing': {
     title: 'Digital Marketing | SEO & Growth | KRYIL Infotech',
@@ -76,9 +76,9 @@ const pageSEO: Record<string, PageSEO> = {
     title: 'Database Administration | SQL, Oracle, MongoDB | KRYIL Infotech',
     description: 'Professional database administration services. SQL Server, Oracle, PostgreSQL, MongoDB, and data warehouse solutions.',
   },
-  '/services/robotics': {
-    title: 'Robotics & Automation Solutions | KRYIL Infotech',
-    description: 'Industrial robotics and automation solutions. Robot programming, RPA, autonomous systems, and smart manufacturing.',
+  '/services/aimlservices': {
+    title: 'AI/ML Services | Artificial Intelligence | KRYIL Infotech',
+    description: 'Advanced Artificial Intelligence solutions. Custom AI development, predictive analytics, natural language processing, and intelligent automation.',
   },
   '/products/avionix': {
     title: 'Avionix | Free Aircraft Design & Aerodynamic Analysis Platform | KRYIL Infotech',
@@ -196,18 +196,18 @@ function App() {
       </a>
       <div className="min-h-screen bg-[#f1f0ea]">
         <Header />
-        <main id="main-content">
+        <main id="main-content" className="pt-24">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/defense" element={<Defense />} />
-            <Route path="/services/infrastructure" element={<InfrastructureServices />} />
+            <Route path="/services/enterprise-solutions" element={<EnterpriseSolutions />} />
+            <Route path="/services/professional-services" element={<ProfessionalServices />} />
+            <Route path="/services/aimlservices" element={<AIMLServices />} />
             <Route path="/services/cybersecurity" element={<Cybersecurity />} />
-            <Route path="/services/software-development" element={<SoftwareDevelopment />} />
             <Route path="/services/automation" element={<InfrastructureAutomation />} />
             <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
             <Route path="/services/database" element={<DatabaseServices />} />
-            <Route path="/services/robotics" element={<Robotics />} />
             {/* Products */}
             <Route path="/products/avionix" element={<Avionix />} />
             {/* Blog & News */}

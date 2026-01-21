@@ -4,38 +4,38 @@ import { Link } from 'react-router-dom';
 const services = [
   {
     index: '01',
-    title: 'Enterprise',
-    subtitle: 'Software Development',
-    description: 'Custom enterprise solutions & applications',
-    link: '/services/software-development',
+    title: 'Enterprise Solution',
+    subtitle: 'Application Development',
+    description: 'Enterprise applications & solutions',
+    link: '/services/enterprise-solutions',
   },
   {
     index: '02',
+    title: 'Professional',
+    subtitle: 'Services',
+    description: 'Expert consulting & managed services',
+    link: '/services/professional-services',
+  },
+  {
+    index: '03',
+    title: 'Artificial',
+    subtitle: 'Intelligence',
+    description: 'AI/ML development & intelligent automation',
+    link: '/services/aimlservices',
+  },
+  {
+    index: '04',
     title: 'Cybersecurity',
     subtitle: 'Services',
     description: 'Security audits & threat detection',
     link: '/services/cybersecurity',
   },
   {
-    index: '03',
-    title: 'Infrastructure',
-    subtitle: 'Services',
-    description: 'Cloud, network & data center solutions',
-    link: '/services/infrastructure',
-  },
-  {
-    index: '04',
-    title: 'Infrastructure',
-    subtitle: 'Automation',
-    description: 'Terraform, Ansible, Puppet & CI/CD pipelines',
-    link: '/services/automation',
-  },
-  {
     index: '05',
-    title: 'Digital',
-    subtitle: 'Marketing',
-    description: 'SEO, PPC & content strategy',
-    link: '/services/digital-marketing',
+    title: 'Infrastructure',
+    subtitle: 'Services & Automation',
+    description: 'Cloud, network & DevOps solutions',
+    link: '/services/automation',
   },
   {
     index: '06',
@@ -43,6 +43,13 @@ const services = [
     subtitle: 'Services',
     description: 'SQL, NoSQL & data warehouse solutions',
     link: '/services/database',
+  },
+  {
+    index: '07',
+    title: 'Digital',
+    subtitle: 'Marketing',
+    description: 'SEO, PPC & content strategy',
+    link: '/services/digital-marketing',
   },
 ];
 
@@ -164,8 +171,8 @@ export default function ServicesGrid() {
                   </div>
 
                   {/* Title */}
-                  <div className="col-span-10 md:col-span-5 lg:col-span-4">
-                    <h3 className={`font-['Lato'] text-[clamp(1.5rem,3vw,2.5rem)] font-light leading-[1] tracking-[-0.03em] transition-colors duration-500 ${
+                  <div className="col-span-10 md:col-span-5 lg:col-span-5">
+                    <h3 className={`font-['Lato'] text-[clamp(1.5rem,3vw,2.5rem)] font-light leading-[1.1] tracking-[-0.03em] transition-colors duration-500 ${
                       activeIndex === index ? 'text-[#dff140]' : 'text-white'
                     }`}>
                       {service.title}
@@ -178,7 +185,7 @@ export default function ServicesGrid() {
                   </div>
 
                   {/* Description */}
-                  <div className="hidden md:block col-span-4 lg:col-span-5">
+                  <div className="hidden md:block col-span-4 lg:col-span-4 lg:pl-8">
                     <p className={`font-['Lato'] text-[1rem] leading-relaxed transition-all duration-500 ${
                       activeIndex === index ? 'text-white/70 translate-x-0' : 'text-white/40 -translate-x-4'
                     }`}>

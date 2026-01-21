@@ -9,7 +9,7 @@ export default function Footer() {
         <div
           className="absolute w-[300%] h-[40%] top-[30%]"
           style={{
-            background: 'linear-gradient(90deg, transparent 0%, rgba(223,241,64,0.12) 20%, rgba(223,241,64,0.28) 40%, rgba(223,241,64,0.2) 60%, transparent 85%)',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(64, 229, 241, 0.12) 20%, rgba(64, 229, 241,0.28) 40%, rgba(64, 229, 241,0.2) 60%, transparent 85%)',
             filter: 'blur(65px)',
             animation: 'footerSmokeMain 15s linear infinite',
           }}
@@ -18,7 +18,7 @@ export default function Footer() {
         <div
           className="absolute w-[250%] h-[50%] top-[25%]"
           style={{
-            background: 'linear-gradient(90deg, transparent 0%, rgba(223,241,64,0.1) 25%, rgba(223,241,64,0.22) 50%, rgba(223,241,64,0.1) 75%, transparent 100%)',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(64, 229, 241,0.1) 25%, rgba(64, 229, 241,0.22) 50%, rgba(64, 229, 241,0.1) 75%, transparent 100%)',
             filter: 'blur(80px)',
             animation: 'footerSmokeMain 18s linear infinite',
             animationDelay: '-5s',
@@ -28,7 +28,7 @@ export default function Footer() {
         <div
           className="absolute w-[600px] h-[400px] top-[25%]"
           style={{
-            background: 'radial-gradient(ellipse at center, rgba(223,241,64,0.28) 0%, rgba(223,241,64,0.14) 40%, transparent 70%)',
+            background: 'radial-gradient(ellipse at center, rgba(64, 229, 241,0.28) 0%, rgba(64, 229, 241,0.14) 40%, transparent 70%)',
             filter: 'blur(60px)',
             animation: 'footerPuff1 10s linear infinite',
           }}
@@ -36,7 +36,7 @@ export default function Footer() {
         <div
           className="absolute w-[500px] h-[350px] top-[35%]"
           style={{
-            background: 'radial-gradient(ellipse at center, rgba(223,241,64,0.24) 0%, rgba(223,241,64,0.12) 45%, transparent 70%)',
+            background: 'radial-gradient(ellipse at center, rgba(64, 229, 241,0.24) 0%, rgba(64, 229, 241,0.12) 45%, transparent 70%)',
             filter: 'blur(55px)',
             animation: 'footerPuff2 8s linear infinite',
             animationDelay: '-3s',
@@ -155,11 +155,13 @@ export default function Footer() {
                 Services
               </h4>
               <ul className="space-y-4">
-                <li><Link to="/services/infrastructure" className="text-sm text-white/50 hover:text-white transition-colors">Infrastructure</Link></li>
+                <li><Link to="/services/enterprise-solutions" className="text-sm text-white/50 hover:text-white transition-colors">Enterprise App Dev</Link></li>
+                <li><Link to="/services/professional-services" className="text-sm text-white/50 hover:text-white transition-colors">Professional Services</Link></li>
+                <li><Link to="/services/aimlservices" className="text-sm text-white/50 hover:text-white transition-colors">Artificial Intelligence</Link></li>
                 <li><Link to="/services/cybersecurity" className="text-sm text-white/50 hover:text-white transition-colors">Cybersecurity</Link></li>
-                <li><Link to="/services/software-development" className="text-sm text-white/50 hover:text-white transition-colors">Software Dev</Link></li>
-                <li><Link to="/services/robotics" className="text-sm text-white/50 hover:text-white transition-colors">Robotics</Link></li>
-                <li><Link to="/services/database" className="text-sm text-white/50 hover:text-white transition-colors">Database</Link></li>
+                <li><Link to="/services/automation" className="text-sm text-white/50 hover:text-white transition-colors">Infra & Automation</Link></li>
+                <li><Link to="/services/database" className="text-sm text-white/50 hover:text-white transition-colors">Database Services</Link></li>
+                <li><Link to="/services/digital-marketing" className="text-sm text-white/50 hover:text-white transition-colors">Digital Marketing</Link></li>
               </ul>
             </div>
 

@@ -25,12 +25,13 @@ export default function DigitalMarketing() {
           description: 'Comprehensive SEO strategies to improve your search rankings and drive organic traffic.',
         },
         {
-          title: 'Pay-Per-Click Advertising',
-          description: 'Targeted PPC campaigns on Google, Bing, and social platforms to generate qualified leads.',
-        },
-        {
           title: 'Social Media Marketing',
           description: 'Engaging social media strategies to build brand awareness and community engagement.',
+        },
+        
+        {
+          title: 'Analytics & Reporting',
+          description: 'Data-driven insights and reporting to measure ROI and optimize campaign performance.',
         },
         {
           title: 'Content Marketing',
@@ -40,9 +41,10 @@ export default function DigitalMarketing() {
           title: 'Email Marketing',
           description: 'Personalized email campaigns that nurture leads and drive customer retention.',
         },
+        
         {
-          title: 'Analytics & Reporting',
-          description: 'Data-driven insights and reporting to measure ROI and optimize campaign performance.',
+          title: 'Pay-Per-Click Advertising',
+          description: 'Targeted PPC campaigns on Google, Bing, and social platforms to generate qualified leads.',
         },
       ]}
       benefits={[

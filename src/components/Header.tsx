@@ -18,16 +18,41 @@ const products = [
 
 const services = [
   {
-    label: 'Infrastructure Services',
-    href: '/services/infrastructure',
-    description: 'Cloud, network & data center solutions',
-    highlight: '99.9% uptime',
+    label: 'Enterprise Solution',
+    href: '/services/enterprise-solutions',
+    description: 'Application Development | Enterprise apps',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <rect x="2" y="3" width="20" height="6" rx="1" />
-        <rect x="2" y="12" width="20" height="6" rx="1" />
-        <circle cx="6" cy="6" r="1" fill="currentColor" />
-        <circle cx="6" cy="15" r="1" fill="currentColor" />
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <path d="M9 9h6M9 13h6M9 17h4" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Professional Services',
+    href: '/services/professional-services',
+    description: 'Expert consulting & managed services',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Artificial Intelligence',
+    href: '/services/aimlservices',
+    description: 'AI/ML development & intelligent automation',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M12 8V4H8" />
+        <rect x="4" y="4" width="16" height="16" rx="2" />
+        <path d="M12 12h4" />
+        <path d="M12 16h4" />
+        <path d="M8 12h.01" />
+        <path d="M8 16h.01" />
       </svg>
     ),
   },
@@ -35,7 +60,6 @@ const services = [
     label: 'Cybersecurity Services',
     href: '/services/cybersecurity',
     description: 'Threat protection & compliance',
-    highlight: 'Zero breaches',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M12 2L3 7v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7l-9-5z" />
@@ -44,22 +68,9 @@ const services = [
     ),
   },
   {
-    label: 'Software Development',
-    href: '/services/software-development',
-    description: 'Custom applications & enterprise solutions',
-    highlight: '200+ projects',
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <polyline points="16,18 22,12 16,6" />
-        <polyline points="8,6 2,12 8,18" />
-      </svg>
-    ),
-  },
-  {
-    label: 'Infrastructure Automation',
+    label: 'Infrastructure Services & Automation',
     href: '/services/automation',
-    description: 'DevOps, CI/CD & workflow automation',
-    highlight: '60% faster',
+    description: 'Cloud, network & DevOps solutions',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <circle cx="12" cy="12" r="3" />
@@ -67,22 +78,10 @@ const services = [
       </svg>
     ),
   },
-  {
-    label: 'Digital Marketing',
-    href: '/services/digital-marketing',
-    description: 'SEO, PPC & growth strategies',
-    highlight: '3x ROI avg',
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M18 20V10M12 20V4M6 20v-6" />
-      </svg>
-    ),
-  },
-  {
+   {
     label: 'Database Services',
     href: '/services/database',
     description: 'SQL, NoSQL & data warehouse solutions',
-    highlight: '500+ DBs',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <ellipse cx="12" cy="5" rx="9" ry="3" />
@@ -91,6 +90,17 @@ const services = [
       </svg>
     ),
   },
+  {
+    label: 'Digital Marketing',
+    href: '/services/digital-marketing',
+    description: 'SEO, PPC & growth strategies',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M18 20V10M12 20V4M6 20v-6" />
+      </svg>
+    ),
+  },
+ 
 ];
 
 export default function Header() {
@@ -211,7 +221,7 @@ export default function Header() {
                 KRYIL
               </span>
               <span
-                className={`font-['Lato'] text-[1.6rem] md:text-[2rem] font-light tracking-[0.02em] transition-all duration-300 ${
+                className={`font-['Lato'] text-[1.8rem] md:text-[2.2rem] font-light tracking-[0.02em] transition-all duration-300 ${
                   useLightText ? 'text-white/50' : 'text-black/50'
                 }`}
                 style={{
@@ -330,6 +340,7 @@ export default function Header() {
           style={{
             maxHeight: isServicesOpen ? '550px' : '0px',
             opacity: isServicesOpen ? 1 : 0,
+            padding: isServicesOpen ? '15px' : '0px',
           }}
           onMouseEnter={handleServicesEnter}
         >
@@ -354,7 +365,7 @@ export default function Header() {
                 {/* CTA */}
                 <Link
                   to="/#contact"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-black text-white rounded-full font-['Lato'] text-[0.75rem] uppercase tracking-wider hover:bg-black/80 transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-black text-white font-['Lato'] text-[0.75rem] uppercase tracking-wider hover:bg-black/80 transition-colors"
                 >
                   <span>Get a Quote</span>
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -387,12 +398,9 @@ export default function Header() {
                               {service.label}
                             </span>
                           </div>
-                          <p className="font-['Lato'] text-[0.75rem] text-black/40 leading-snug mb-2">
+                          <p className="font-['Lato'] text-[0.75rem] text-black/40 leading-snug">
                             {service.description}
                           </p>
-                          <span className="inline-flex items-center px-2 py-0.5 bg-[#dff140]/20 text-[0.65rem] font-semibold text-black/60 rounded-full uppercase tracking-wider">
-                            {service.highlight}
-                          </span>
                         </div>
                       </div>
                     </Link>
@@ -443,6 +451,7 @@ export default function Header() {
           style={{
             maxHeight: isProductsOpen ? '300px' : '0px',
             opacity: isProductsOpen ? 1 : 0,
+            padding: isProductsOpen ? '15px' : '0px',
           }}
           onMouseEnter={handleProductsEnter}
         >
@@ -467,7 +476,7 @@ export default function Header() {
                 {/* CTA */}
                 <Link
                   to="/#contact"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-black text-white rounded-full font-['Lato'] text-[0.75rem] uppercase tracking-wider hover:bg-black/80 transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-black text-white font-['Lato'] text-[0.75rem] uppercase tracking-wider hover:bg-black/80 transition-colors"
                 >
                   <span>Request Demo</span>
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -639,9 +648,6 @@ export default function Header() {
                     </span>
                     <span className="block font-['Lato'] text-[0.75rem] text-white/40 mt-0.5">
                       {service.description}
-                    </span>
-                    <span className="inline-block mt-1.5 px-2 py-0.5 bg-[#dff140]/10 text-[0.6rem] font-semibold text-[#dff140] rounded-full uppercase tracking-wider">
-                      {service.highlight}
                     </span>
                   </div>
                 </Link>

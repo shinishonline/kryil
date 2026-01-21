@@ -480,51 +480,64 @@ export default function Defense() {
 
       {/* CTA Section */}
       <section className="relative py-40 md:py-56 bg-[#f1f0ea] overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-full h-full"
+            style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, black 1px, transparent 0)`,
+              backgroundSize: '50px 50px'
+            }}
+          />
+        </div>
+
         {/* Large Background Text */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
           <span className="font-['Lato'] text-[20vw] font-bold text-black/[0.02] whitespace-nowrap">
-            DEFENSE
+            KRYIL
           </span>
         </div>
 
-        <div className="relative z-10 text-center" style={{ marginLeft: '40px', marginRight: '40px', paddingBottom: '30px' }}>
-          <span className="inline-block px-6 py-2.5 bg-black/10 text-black font-['Lato'] text-[0.7rem] uppercase tracking-[0.15em] font-medium mb-10">
-            Get Started
+        <div className="relative z-10 text-center px-4 md:px-6 w-full flex flex-col items-center justify-center">
+          <span className="inline-block px-5 py-2 bg-[#dff140] text-black font-['Lato'] text-[0.7rem] uppercase tracking-[0.15em] font-medium mb-10">
+            Get Started Today
           </span>
 
-          <h2 className="font-['Lato'] text-[clamp(2.5rem,7vw,6rem)] font-bold leading-[1.05] tracking-[-0.03em] text-black max-w-5xl mx-auto">
-            Ready to Elevate Your Defense Capabilities?
+          <h2 className="font-['Lato'] text-[clamp(2.5rem,7vw,6rem)] font-bold leading-[1.05] tracking-[-0.03em] text-black max-w-5xl mx-auto" style={{ paddingTop: '30px' }}>
+            Ready to Partner for Defense Excellence?
           </h2>
 
-          <p className="font-['Lato'] text-[1.2rem] text-black/50 leading-[1.9] mt-10 max-w-2xl mx-auto">
-            Contact our defense specialists for a confidential consultation
-            on your unmanned systems requirements.
+          <p className="font-['Lato'] text-[1.2rem] text-black/50 leading-[1.9] mt-10 max-w-2xl mx-auto" style={{ marginBottom: '30px' }}>
+            Let's discuss how KRYIL Infotech can enhance your defense capabilities with our advanced technology solutions.
           </p>
 
-          <div className="mt-14 mb-16 flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap justify-center gap-5">
             <Link
               to="/#contact"
-              className="group inline-flex items-center gap-4 bg-black text-white font-['Lato'] text-[0.95rem] font-bold uppercase tracking-[0.1em] px-12 py-6 hover:bg-black/80 transition-colors duration-300"
+              className="group inline-flex items-center gap-3 bg-black text-white font-['Lato'] text-[0.95rem] font-bold uppercase tracking-[0.05em] px-12 py-6 hover:bg-black/80 transition-colors duration-300"
             >
-              <span>Contact Defense Team</span>
+              <span>Contact Us</span>
               <svg
-                width="16"
-                height="16"
+                width="14"
+                height="14"
                 viewBox="0 0 12 12"
                 fill="none"
                 className="transform -rotate-45 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
               >
-                <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" strokeWidth="2" />
+                <path
+                  d="M1 11L11 1M11 1H3M11 1V9"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
               </svg>
             </Link>
             <a
               href="tel:+918089090365"
-              className="group inline-flex items-center gap-4 border border-black/20 text-black font-['Lato'] text-[0.95rem] font-bold uppercase tracking-[0.1em] px-12 py-6 hover:border-black hover:bg-black/5 transition-all duration-300"
+              className="group inline-flex items-center gap-3 border border-black/20 text-black font-['Lato'] text-[0.95rem] font-bold uppercase tracking-[0.05em] px-12 py-6 hover:border-black hover:bg-black/5 transition-all duration-300"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
               </svg>
-              <span>Secure Line</span>
+              <span>+91-8089090365</span>
             </a>
           </div>
         </div>

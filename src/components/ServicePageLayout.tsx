@@ -169,7 +169,7 @@ export default function ServicePageLayout({
 
           {/* Title */}
           <h1
-            className={`font-['Lato'] text-[clamp(2.8rem,10vw,8rem)] font-bold leading-[0.9] tracking-[-0.04em] text-white max-w-5xl transition-all duration-1000 delay-100 ${
+            className={`font-['Lato'] text-[clamp(2.8rem,8vw,6.5rem)] font-bold leading-[0.92] tracking-[-0.03em] text-white max-w-5xl transition-all duration-1000 delay-100 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
             }`}
           >
@@ -455,20 +455,20 @@ export default function ServicePageLayout({
           </span>
         </div>
 
-        <div className="relative z-10 text-center px-4 md:px-6" style={{ marginLeft: 'clamp(16px, 4vw, 40px)', marginRight: 'clamp(16px, 4vw, 40px)' }}>
+        <div className="relative z-10 text-center px-4 md:px-6 w-full flex flex-col items-center justify-center">
           <span className="inline-block px-5 py-2 bg-[#dff140] text-black font-['Lato'] text-[0.7rem] uppercase tracking-[0.15em] font-medium mb-10">
             Get Started Today
           </span>
 
-          <h2 className="font-['Lato'] text-[clamp(2.5rem,7vw,6rem)] font-bold leading-[1.05] tracking-[-0.03em] text-white max-w-5xl mx-auto">
+          <h2 className="font-['Lato'] text-[clamp(2.5rem,7vw,6rem)] font-bold leading-[1.05] tracking-[-0.03em] text-white max-w-5xl mx-auto" style={{ paddingTop: '30px' }}>
             Ready to Transform Your Business?
           </h2>
 
-          <p className="font-['Lato'] text-[1.2rem] text-white/50 leading-[1.9] mt-10 max-w-2xl mx-auto">
+          <p className="font-['Lato'] text-[1.2rem] text-white/50 leading-[1.9] mt-10 max-w-2xl mx-auto" style={{ marginBottom: '30px' }}>
             Let's discuss how our {title.toLowerCase()} solutions can help you achieve your goals and stay ahead of the competition.
           </p>
 
-          <div className="mt-14 flex flex-wrap justify-center gap-5">
+          <div className="flex flex-wrap justify-center gap-5">
             <Link
               to="/#contact"
               className="group inline-flex items-center gap-3 bg-[#dff140] text-black font-['Lato'] text-[0.95rem] font-bold uppercase tracking-[0.05em] px-12 py-6 hover:bg-white transition-colors duration-300"

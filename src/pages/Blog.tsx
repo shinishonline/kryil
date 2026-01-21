@@ -101,17 +101,17 @@ export default function Blog() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
-              <Link to="/" className="text-white/40 hover:text-white text-sm font-['Lato'] transition-colors">
+              <Link to="/" className="text-white/40 hover:text-white text-sm transition-colors">
                 Home
               </Link>
               <span className="text-white/20">/</span>
-              <span className="text-white/60 text-sm font-['Lato']">Blog</span>
+              <span className="text-white/60 text-sm">Blog</span>
             </nav>
 
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <div>
                 <span
-                  className={`inline-block px-4 py-2 bg-[#dff140]/10 border border-[#dff140]/20 text-[#dff140] text-xs uppercase tracking-[0.2em] mb-8 font-['Lato'] transition-all duration-700 delay-100 ${
+                  className={`inline-block px-4 py-2 bg-[#dff140]/10 border border-[#dff140]/20 text-[#dff140] text-xs uppercase tracking-[0.2em] mb-8 transition-all duration-700 delay-100 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                 >
@@ -119,7 +119,7 @@ export default function Blog() {
                 </span>
 
                 <h1
-                  className={`font-['Lato'] text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-[1.05] transition-all duration-700 delay-200 ${
+                  className={`text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-[1.05] transition-all duration-700 delay-200 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
                 >
@@ -129,7 +129,7 @@ export default function Blog() {
                 </h1>
 
                 <p
-                  className={`text-white/50 text-lg md:text-xl font-['Lato'] leading-relaxed max-w-xl transition-all duration-700 delay-300 ${
+                  className={`text-white/50 text-lg md:text-xl leading-relaxed max-w-xl transition-all duration-700 delay-300 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                 >
@@ -152,7 +152,7 @@ export default function Blog() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search articles..."
-                    className="w-full py-5 bg-white/5 border border-white/10 text-white placeholder:text-white/30 font-['Lato'] text-base focus:outline-none focus:border-[#dff140]/50 focus:bg-white/[0.07] transition-all"
+                    className="w-full py-5 bg-white/5 border border-white/10 text-white placeholder:text-white/30 text-base focus:outline-none focus:border-[#dff140]/50 focus:bg-white/[0.07] transition-all"
                     style={{ paddingLeft: '56px', paddingRight: '24px' }}
                   />
                 </div>
@@ -166,9 +166,9 @@ export default function Blog() {
               }`}
             >
               <div className="flex items-center gap-4 mb-5">
-                <span className="text-xs text-white/40 uppercase tracking-wider font-['Lato']">Browse by topic</span>
+                <span className="text-xs text-white/40 uppercase tracking-wider">Browse by topic</span>
                 <div className="flex-1 h-px bg-white/10" />
-                <span className="text-xs text-white/30 font-['Lato']">
+                <span className="text-xs text-white/30">
                   {filteredPosts.length} {filteredPosts.length === 1 ? 'article' : 'articles'}
                 </span>
               </div>
@@ -177,7 +177,7 @@ export default function Blog() {
                   <button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`px-5 py-2.5 text-sm font-medium font-['Lato'] transition-all duration-300 ${
+                    className={`px-5 py-2.5 text-sm font-medium transition-all duration-300 ${
                       selectedCategory === category
                         ? 'bg-[#dff140] text-black'
                         : 'bg-white/[0.03] text-white/50 hover:text-white hover:bg-white/[0.08] border border-white/10 hover:border-white/20'
@@ -215,17 +215,17 @@ export default function Blog() {
                   </div>
                   <div className="relative h-full flex flex-col justify-end p-8 md:p-10" style={{ minHeight: '500px' }}>
                     <div className="flex items-center gap-4 mb-6">
-                      <span className="px-4 py-2 bg-[#dff140] text-black text-xs font-bold uppercase tracking-wider font-['Lato']">
+                      <span className="px-4 py-2 bg-[#dff140] text-black text-xs font-bold uppercase tracking-wider">
                         Featured
                       </span>
-                      <span className="px-4 py-2 bg-black/50 backdrop-blur text-white text-xs font-bold uppercase tracking-wider font-['Lato']">
+                      <span className="px-4 py-2 bg-black/50 backdrop-blur text-white text-xs font-bold uppercase tracking-wider">
                         {featuredPost.category}
                       </span>
                     </div>
-                    <h2 className="font-['Lato'] text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight group-hover:text-white/90 transition-colors">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight group-hover:text-white/90 transition-colors">
                       {featuredPost.title}
                     </h2>
-                    <p className="text-white/60 font-['Lato'] text-lg leading-relaxed mb-6 max-w-2xl line-clamp-2">
+                    <p className="text-white/60 text-lg leading-relaxed mb-6 max-w-2xl line-clamp-2">
                       {featuredPost.excerpt}
                     </p>
                     <div className="flex items-center gap-6">
@@ -234,8 +234,8 @@ export default function Blog() {
                           <span className="text-sm font-bold text-white">{featuredPost.author.charAt(0)}</span>
                         </div>
                         <div>
-                          <p className="text-sm font-medium text-white font-['Lato']">{featuredPost.author}</p>
-                          <p className="text-xs text-white/50 font-['Lato']">
+                          <p className="text-sm font-medium text-white">{featuredPost.author}</p>
+                          <p className="text-xs text-white/50">
                             {new Date(featuredPost.date).toLocaleDateString('en-US', {
                               month: 'short',
                               day: 'numeric',
@@ -244,7 +244,7 @@ export default function Blog() {
                           </p>
                         </div>
                       </div>
-                      <span className="text-white/40 text-sm font-['Lato']">
+                      <span className="text-white/40 text-sm">
                         {featuredPost.readTime}
                       </span>
                     </div>
@@ -268,13 +268,13 @@ export default function Blog() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
                     </div>
                     <div className="relative h-full flex flex-col justify-end p-6" style={{ minHeight: '240px' }}>
-                      <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur text-white text-xs font-bold uppercase tracking-wider font-['Lato'] mb-4 self-start">
+                      <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur text-white text-xs font-bold uppercase tracking-wider mb-4 self-start">
                         {post.category}
                       </span>
-                      <h3 className="font-['Lato'] text-xl font-bold text-white mb-2 leading-snug group-hover:text-white/90 transition-colors line-clamp-2">
+                      <h3 className="text-xl font-bold text-white mb-2 leading-snug group-hover:text-white/90 transition-colors line-clamp-2">
                         {post.title}
                       </h3>
-                      <div className="flex items-center gap-4 text-sm text-white/50 font-['Lato']">
+                      <div className="flex items-center gap-4 text-sm text-white/50">
                         <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
                         <span>{post.readTime}</span>
                       </div>
@@ -293,7 +293,7 @@ export default function Blog() {
           <div className="max-w-[1800px] mx-auto">
             <AnimatedSection>
               <div className="flex items-center gap-6 mb-10">
-                <h2 className="text-2xl font-bold text-white font-['Lato']">All Articles</h2>
+                <h2 className="text-2xl font-bold text-white">All Articles</h2>
                 <div className="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent" />
               </div>
             </AnimatedSection>
@@ -319,10 +319,10 @@ export default function Blog() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
                 </div>
-                <p className="text-white/40 font-['Lato'] text-xl mb-6">
+                <p className="text-white/40 text-xl mb-6">
                   No articles found
                 </p>
-                <p className="text-white/30 font-['Lato'] mb-8 max-w-md mx-auto">
+                <p className="text-white/30 mb-8 max-w-md mx-auto">
                   Try adjusting your search or filter to find what you're looking for.
                 </p>
                 <button
@@ -330,7 +330,7 @@ export default function Blog() {
                     setSelectedCategory('All');
                     setSearchQuery('');
                   }}
-                  className="px-8 py-3 bg-[#dff140] text-black font-bold font-['Lato'] text-sm hover:bg-white transition-colors"
+                  className="px-8 py-3 bg-[#dff140] text-black font-bold text-sm hover:bg-white transition-colors"
                 >
                   Clear Filters
                 </button>
@@ -341,47 +341,7 @@ export default function Blog() {
       )}
 
       {/* Newsletter Section */}
-      <section className="relative overflow-hidden border-t border-white/10">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#111] to-[#0a0a0a]" />
-        <div className="absolute top-0 left-1/4 w-1/2 h-px bg-gradient-to-r from-transparent via-[#dff140]/20 to-transparent" />
 
-        <div className="relative" style={{ padding: '100px 40px' }}>
-          <div className="max-w-[1800px] mx-auto">
-            <AnimatedSection>
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <span className="inline-block px-4 py-2 bg-[#dff140]/10 border border-[#dff140]/20 text-[#dff140] text-xs uppercase tracking-[0.2em] mb-6 font-['Lato']">
-                    Newsletter
-                  </span>
-                  <h2 className="font-['Lato'] text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                    Stay ahead of
-                    <br />
-                    <span className="text-white/30">the curve</span>
-                  </h2>
-                  <p className="text-white/50 font-['Lato'] text-lg max-w-md">
-                    Get the latest insights on UAV technology, defense innovation, and industry trends delivered to your inbox.
-                  </p>
-                </div>
-                <div>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <input
-                      type="email"
-                      placeholder="Enter your email"
-                      className="flex-1 px-6 py-5 bg-white/5 border border-white/10 text-white placeholder:text-white/30 font-['Lato'] text-base focus:outline-none focus:border-[#dff140]/50 transition-all"
-                    />
-                    <button className="px-10 py-5 bg-[#dff140] text-black font-bold font-['Lato'] text-sm hover:bg-white transition-colors whitespace-nowrap">
-                      Subscribe
-                    </button>
-                  </div>
-                  <p className="text-white/30 text-sm font-['Lato'] mt-4">
-                    No spam. Unsubscribe anytime.
-                  </p>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
@@ -400,26 +360,26 @@ function BlogCard({ post }: { post: BlogPost }) {
           loading="lazy"
         />
         <div className="absolute top-4 left-4">
-          <span className="px-3 py-1.5 bg-black/60 backdrop-blur text-white/90 text-xs font-bold uppercase tracking-wider font-['Lato']">
+          <span className="px-3 py-1.5 bg-black/60 backdrop-blur text-white/90 text-xs font-bold uppercase tracking-wider">
             {post.category}
           </span>
         </div>
       </div>
       <div className="p-5 flex flex-col flex-grow">
-        <h3 className="font-['Lato'] text-base font-bold text-white mb-3 leading-snug group-hover:text-[#dff140] transition-colors line-clamp-2">
+        <h3 className="text-base font-bold text-white mb-3 leading-snug group-hover:text-[#dff140] transition-colors line-clamp-2">
           {post.title}
         </h3>
-        <p className="text-white/40 text-sm font-['Lato'] leading-relaxed line-clamp-2 mb-4 flex-grow">
+        <p className="text-white/40 text-sm leading-relaxed line-clamp-2 mb-4 flex-grow">
           {post.excerpt}
         </p>
         <div className="flex items-center justify-between pt-4 border-t border-white/5 mt-auto">
-          <span className="text-xs text-white/30 font-['Lato']">
+          <span className="text-xs text-white/30">
             {new Date(post.date).toLocaleDateString('en-US', {
               month: 'short',
               day: 'numeric'
             })}
           </span>
-          <span className="text-xs text-white/30 font-['Lato']">
+          <span className="text-xs text-white/30">
             {post.readTime}
           </span>
         </div>
