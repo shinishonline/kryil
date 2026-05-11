@@ -1,0 +1,314 @@
+Digital Out-of-Home Platform
+Control
+Every
+Screen.
+Deploy media to Android displays, schedule content zones, and manage every device remotely — in real time, from anywhere on earth.
+
+Launch Console
+Sign In
+∞ Screens
+No device limit
+< 2s
+Sync latency
+99.9%
+Uptime SLA
+LIVE
+New Arrivals — Now Live
+SPRING COLLECTION 2026
+Channel 9 · Live News
+EVENING BROADCAST
+NextDOOH Digital Signage
+LOBBY WELCOME
+Today Only · All Brands
+FLASH SALE — 50% OFF
+New Arrivals — Now Live
+SPRING COLLECTION 2026
+●12 Devices Online●Content Synced
+Scroll
+Device Management
+Live Sync
+Zone Layouts
+Remote Reboot
+Kiosk Mode
+App Integration
+Content Scheduling
+JWT Auth
+Device Management
+Live Sync
+Zone Layouts
+Remote Reboot
+Kiosk Mode
+App Integration
+Content Scheduling
+JWT Auth
+Device Management
+Live Sync
+Zone Layouts
+Remote Reboot
+Kiosk Mode
+App Integration
+Content Scheduling
+JWT Auth
+Android TV
+Real-Time Push
+Multi-Screen
+Cloud Storage
+Playlist Loop
+Secure Tokens
+Analytics
+Per-Account Isolation
+Android TV
+Real-Time Push
+Multi-Screen
+Cloud Storage
+Playlist Loop
+Secure Tokens
+Analytics
+Per-Account Isolation
+Android TV
+Real-Time Push
+Multi-Screen
+Cloud Storage
+Playlist Loop
+Secure Tokens
+Analytics
+Per-Account Isolation
+<2s
+Content sync latency
+99.9%
+Platform uptime SLA
+∞
+Screens supported
+24/7
+Remote access
+Our Platform
+We
+built
+NextDOOH
+for
+operators
+who
+demand
+real-time
+control
+over
+their
+display
+networks.
+Upload
+once.
+Push
+everywhere.
+Manage
+from
+anywhere.
+Start Free Trial
+Sign In
+Platform Capabilities
+Built for operators
+who move fast.
+01
+Device Fleet Management
+Register and operate unlimited Android displays from a single dashboard. Portrait, landscape, 4K — any orientation, any resolution, any location.
+
+02
+Rich Media Library
+Upload images and videos. Build playlists that auto-sync the moment content changes. Zero manual intervention required on the device side.
+
+03
+Multi-Zone Layouts
+Divide any screen into vertical zones. Run a live exchange-rate ticker beside a product video wall — simultaneously, in perfect sync.
+
+04
+Instant Content Push
+Hit save. Content propagates to every paired display in under two seconds over WebSocket. No polling. No delays. Real broadcast speed.
+
+05
+Web App Integration
+Embed any URL into a zone. Live dashboards, restaurant menus, weather widgets, news tickers — if it runs in a browser, it runs on your screen.
+
+06
+Remote Device Control
+Reboot devices, schedule power on/off windows, and push firmware updates — all without physical access. Full kiosk-mode lockdown supported.
+
+07
+Real-Time Sync Protocol
+WebSocket-powered two-way communication keeps every device in perfect sync with the server. Reconnects automatically after any network interruption.
+
+08
+Zero-Trust Security
+JWT device tokens, encrypted local storage, HTTPS-only API, per-account content isolation. Built for operators who cannot afford a breach.
+
+How It Works
+Live in minutes.
+Not days.
+01
+Upload Media
+Drag and drop images or videos into your media library. Organise, reorder, and set per-item display durations in seconds.
+
+02
+Design a Layout
+Use the zone editor to split your screen. Assign media playlists, web apps, or live tickers to each zone independently.
+
+03
+Pair Your Screen
+Install the NextDOOH app on any Android TV or display. Scan the QR code once — the device pairs and starts playing instantly.
+
+04
+Push & Monitor
+Update content from anywhere in the world. Watch devices come online, push new layouts, and reboot remotely if needed.
+
+Lobby Screen
+Online
+Reception Display
+Online
+Menu Board
+Online
+Entrance TV
+Offline
+3 / 4 Devices Online
+Ready to Deploy
+Take control of
+every screen.
+No hardware needed to start. Register, upload media, pair a device — your first screen is live within minutes.
+
+Create Account
+Sign In
+Pricing
+Scale as you grow.
+No surprises.
+Free
+₹0
+/mo
+1 screen, 500 MB storage
+—
+1 screen slot
+—
+500 MB media storage
+—
+Basic playback
+—
+Community support
+Get Started
+Starter
+₹999
+/mo
+Up to 3 screens
+—
+3 screen slots
+—
+5 GB media storage
+—
+Basic analytics
+—
+1 admin user
+Get Started
+Most Popular
+Pro
+₹2,499
+/mo
+Up to 15 screens
+—
+15 screen slots
+—
+50 GB storage
+—
+Zone layouts
+—
+Priority support
+—
+API access
+Get Started
+Enterprise
+Custom
+Unlimited screens
+—
+Unlimited screens
+—
+Custom storage
+—
+SLA guarantee
+—
+Dedicated onboarding
+Get Started
+Industry Use Cases
+Digital signage for
+every industry.
+🍽️
+Restaurants & Cafés
+Digital menu boards that change by time of day. Breakfast, lunch, dinner — automated.
+
+🛍️
+Retail Stores
+Promotional displays, product launches, and seasonal offers across every branch — pushed instantly.
+
+🏨
+Hotels & Hospitality
+Lobby welcome screens, event schedules, wayfinding signage, and room service menus.
+
+🏥
+Healthcare
+Waiting room entertainment, health tips, appointment queues, and emergency notices.
+
+🏫
+Education
+Campus announcements, class schedules, canteen menus, and event promotions.
+
+🏢
+Corporate Offices
+Internal communications, meeting room boards, KPI dashboards, and visitor welcome screens.
+
+🚉
+Transport Hubs
+Departure boards, platform announcements, safety notices, and advertising panels.
+
+💪
+Gyms & Fitness
+Class timetables, motivational content, membership promotions, and live workout videos.
+
+FAQ
+Everything you need to know
+about digital signage & DOOH.
+
+What is digital signage software?
++
+
+
+What is DOOH advertising?
++
+
+
+What is the difference between DOOH and ADOOH?
++
+
+
+Is NextDOOH free digital signage software?
++
+
+
+Does NextDOOH work with Android TV?
++
+
+
+What is proof of play in digital signage?
++
+
+
+Can I schedule content on digital signage screens?
++
+
+
+Does NextDOOH support emergency broadcast alerts?
++
+
+
+How many screens can I manage with NextDOOH?
++
+
+
+What media formats does NextDOOH support?
++
+
+
+Is NextDOOH suitable for restaurants and retail stores?
++

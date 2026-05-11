@@ -13,6 +13,7 @@ import DigitalMarketing from './pages/services/DigitalMarketing';
 import DatabaseServices from './pages/services/DatabaseServices';
 import AIMLServices from './pages/services/AIMLServices';
 import Avionix from './pages/products/Avionix';
+import NextDOOH from './pages/products/NextDOOH';
 import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 import TermsOfUse from './pages/legal/TermsOfUse';
 import AntiSlaveryPolicy from './pages/legal/AntiSlaveryPolicy';
@@ -85,6 +86,12 @@ const pageSEO: Record<string, PageSEO> = {
     description: 'Avionix is a free browser-based aircraft design platform with real-time CFD analysis, flight simulation, and 3D visualization. Design fighters, UAVs, and transport aircraft with 58+ templates. No signup required.',
     keywords: 'aircraft design software, aerodynamic analysis, CFD simulation, flight simulator, aircraft CAD, UAV design, drone design software, aerospace engineering tool, free aircraft design, parametric modeling, stability analysis, 3D aircraft visualization',
     ogImage: 'https://www.kryil.com/avionix-og.png',
+  },
+  '/products/nextdooh': {
+    title: 'NextDOOH | Digital Signage Platform | Cloud-Based DOOH Solution | KRYIL Infotech',
+    description: 'NextDOOH is a cloud-based digital signage platform for Android displays. Real-time content sync (<2s), multi-zone layouts, remote device management, and WebSocket-powered control. Manage unlimited screens from anywhere.',
+    keywords: 'digital signage software, DOOH platform, digital out of home, Android TV signage, cloud signage, content management system, remote screen control, digital menu boards, retail displays, WebSocket sync, multi-zone layouts, kiosk mode',
+    ogImage: 'https://www.kryil.com/nextdooh-og.png',
   },
   '/privacy-policy': {
     title: 'Privacy Policy | KRYIL Infotech',
@@ -210,6 +217,7 @@ function App() {
             <Route path="/services/database" element={<DatabaseServices />} />
             {/* Products */}
             <Route path="/products/avionix" element={<Avionix />} />
+            <Route path="/products/nextdooh" element={<NextDOOH />} />
             {/* Blog & News */}
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />

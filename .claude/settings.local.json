@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.nextdooh.com)",
+      "Bash(npm run dev:*)"
+    ]
+  }
+}
