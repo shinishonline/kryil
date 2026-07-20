@@ -82,7 +82,7 @@ export default function Projects() {
 
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
             <h2
-              className={`font-['Lato'] text-[clamp(2.5rem,8vw,6rem)] font-black leading-[0.95] tracking-[-0.05em] text-white transition-all duration-700 delay-100 ${
+              className={`heading-display text-white transition-all duration-700 delay-100 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >

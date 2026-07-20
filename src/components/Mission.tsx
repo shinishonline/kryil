@@ -86,7 +86,7 @@ export default function Mission() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-black py-40 md:py-56 overflow-hidden"
+      className="relative bg-black overflow-hidden" style={{ padding: '100px 40px' }}
       onMouseMove={handleMouseMove}
     >
       {/* Animated Background Grid */}
@@ -145,7 +145,7 @@ export default function Mission() {
             </div>
 
             <h2
-              className={`font-['Lato'] text-[clamp(2.5rem,7vw,5.5rem)] font-bold leading-[0.95] tracking-[-0.04em] text-white transition-all duration-1000 delay-100 ${
+              className={`heading-display text-white transition-all duration-1000 delay-100 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
             >

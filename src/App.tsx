@@ -9,7 +9,6 @@ import EnterpriseSolutions from './pages/services/EnterpriseSolutions';
 import ProfessionalServices from './pages/services/ProfessionalServices';
 import Cybersecurity from './pages/services/Cybersecurity';
 import InfrastructureAutomation from './pages/services/InfrastructureAutomation';
-import DigitalMarketing from './pages/services/DigitalMarketing';
 import DatabaseServices from './pages/services/DatabaseServices';
 import AIMLServices from './pages/services/AIMLServices';
 import Avionix from './pages/products/Avionix';
@@ -18,6 +17,7 @@ import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 import TermsOfUse from './pages/legal/TermsOfUse';
 import AntiSlaveryPolicy from './pages/legal/AntiSlaveryPolicy';
 import CarbonReductionPlan from './pages/legal/CarbonReductionPlan';
+import BrandRefresh from './pages/BrandRefresh';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import News from './pages/News';
@@ -69,10 +69,6 @@ const pageSEO: Record<string, PageSEO> = {
     title: 'Infrastructure Services & Automation | Cloud & DevOps | KRYIL Infotech',
     description: 'Comprehensive infrastructure services and automation. Cloud migration, network architecture, CI/CD pipelines, Kubernetes, and Infrastructure as Code.',
   },
-  '/services/digital-marketing': {
-    title: 'Digital Marketing | SEO & Growth | KRYIL Infotech',
-    description: 'Digital marketing services including SEO, PPC, social media marketing, and content strategy. 3x average ROI for clients.',
-  },
   '/services/database': {
     title: 'Database Administration | SQL, Oracle, MongoDB | KRYIL Infotech',
     description: 'Professional database administration services. SQL Server, Oracle, PostgreSQL, MongoDB, and data warehouse solutions.',
@@ -92,6 +88,11 @@ const pageSEO: Record<string, PageSEO> = {
     description: 'NextDOOH is a cloud-based digital signage platform for Android displays. Real-time content sync (<2s), multi-zone layouts, remote device management, and WebSocket-powered control. Manage unlimited screens from anywhere.',
     keywords: 'digital signage software, DOOH platform, digital out of home, Android TV signage, cloud signage, content management system, remote screen control, digital menu boards, retail displays, WebSocket sync, multi-zone layouts, kiosk mode',
     ogImage: 'https://www.kryil.com/nextdooh-og.png',
+  },
+  '/brand': {
+    title: 'Our New Logo | Brand Update | KRYIL Infotech',
+    description: 'KRYIL Infotech has refreshed its logo and colour system. The previous logo was in use through 8 July 2026; the new mark is effective from 9 July 2026. Download the approved brand assets.',
+    keywords: 'KRYIL logo, KRYIL Infotech brand, new logo 2026, brand refresh, brand assets, logo download',
   },
   '/privacy-policy': {
     title: 'Privacy Policy | KRYIL Infotech',
@@ -213,11 +214,12 @@ function App() {
             <Route path="/services/aimlservices" element={<AIMLServices />} />
             <Route path="/services/cybersecurity" element={<Cybersecurity />} />
             <Route path="/services/automation" element={<InfrastructureAutomation />} />
-            <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
             <Route path="/services/database" element={<DatabaseServices />} />
             {/* Products */}
             <Route path="/products/avionix" element={<Avionix />} />
             <Route path="/products/nextdooh" element={<NextDOOH />} />
+            {/* Brand */}
+            <Route path="/brand" element={<BrandRefresh />} />
             {/* Blog & News */}
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />

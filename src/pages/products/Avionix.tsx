@@ -941,7 +941,7 @@ export default function Avionix() {
                 Powerful Features
               </span>
             </div>
-            <h2 className="font-['Lato'] text-[clamp(2.5rem,6vw,4.5rem)] font-black leading-[1] tracking-[-0.04em] text-black">
+            <h2 className="heading-section text-black">
               Built for<br />
               <span className="text-black/30">Innovation</span>
             </h2>
@@ -1239,7 +1239,7 @@ export default function Avionix() {
                 Template Library
               </span>
             </div>
-            <h2 className="font-['Lato'] text-[clamp(2.5rem,6vw,4.5rem)] font-black leading-[1] tracking-[-0.04em] text-white">
+            <h2 className="heading-section text-white">
               {/* Aircraft - letter by letter */}
               {'Aircraft'.split('').map((letter, i) => (
                 <span
@@ -1373,7 +1373,7 @@ export default function Avionix() {
               </span>
               <div className="w-12 h-[2px] bg-black" />
             </div>
-            <h2 className="font-['Lato'] text-[clamp(3rem,8vw,5.5rem)] font-black leading-[0.9] tracking-[-0.04em] text-black">
+            <h2 className="heading-display text-black">
               From Template
               <span className="block text-black/30">To Takeoff</span>
             </h2>
@@ -1488,7 +1488,7 @@ export default function Avionix() {
             </div>
 
             {/* Big bold title */}
-            <h2 className="font-['Lato'] text-[clamp(2.5rem,8vw,5.5rem)] font-black leading-[0.95] tracking-[-0.04em] text-black">
+            <h2 className="heading-display text-black">
               Ready to design<br />
               your aircraft?
             </h2>

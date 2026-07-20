@@ -282,7 +282,7 @@ export default function Hero() {
   <div className="absolute bottom-full left-1/2 -translate-x-1/2 flex justify-center">
     {/* Core Beam */}
     <div
-      className="w-[3px] bg-gradient-to-t from-[#dff140] to-transparent blur-[2px]"
+      className="w-[3px] bg-gradient-to-t from-[#25a9e0] to-transparent blur-[2px]"
       style={{
         height: `${trailHeight + 10}vh`,
         opacity: 0.9
@@ -295,7 +295,7 @@ export default function Hero() {
     width="28"
     height="50"
     viewBox="0 0 60 100"
-    className="rotate-180 drop-shadow-[0_0_12px_rgba(223,241,64,0.4)]"
+    className="rotate-180 drop-shadow-[0_0_12px_rgba(37,169,224,0.45)]"
   >
     <defs>
       <linearGradient id="heroJetBody" x1="0%" y1="100%" x2="0%" y2="0%">
@@ -311,8 +311,8 @@ export default function Hero() {
 
       <radialGradient id="heroJetEngine" cx="50%" cy="100%" r="80%">
         <stop offset="0%" stopColor="#ffffff" />
-        <stop offset="50%" stopColor="#dff140" />
-        <stop offset="100%" stopColor="#dff140" stopOpacity="0" />
+        <stop offset="50%" stopColor="#25a9e0" />
+        <stop offset="100%" stopColor="#25a9e0" stopOpacity="0" />
       </radialGradient>
     </defs>
 

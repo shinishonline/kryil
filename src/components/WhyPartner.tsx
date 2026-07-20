@@ -72,7 +72,7 @@ export default function WhyPartner() {
       style={{ padding: '100px 40px' }}
     >
       {/* Header */}
-      <div className="mb-24">
+      <div style={{ marginBottom: '120px' }}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-8 items-center">
           {/* Left Column - Label and Title */}
           <div>
@@ -81,20 +81,20 @@ export default function WhyPartner() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <div className="w-3 h-3 bg-orange-500 group-hover:bg-[#dff140] transition-colors duration-300" />
+              <div className="w-3 h-3 bg-[#25a9e0] transition-colors duration-300" />
               <span className="font-['Lato'] text-[0.7rem] text-black/40 uppercase tracking-[0.3em]">
                 Why Partner With Us
               </span>
             </div>
 
             <h2
-              className={`font-['Lato'] text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.1] tracking-[-0.03em] text-black transition-all duration-1000 delay-100 ${
+              className={`heading-display text-black transition-all duration-1000 delay-100 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
             >
               Built on principles
               <br />
-              <span className="text-black/25">that drive success</span>
+              <span className="text-[#25a9e0]">that drive success</span>
             </h2>
           </div>
 
@@ -111,7 +111,7 @@ export default function WhyPartner() {
       </div>
 
       {/* Benefits Grid with Staggered Parallax */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16 mb-24">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0 mb-24">
         {benefits.map((benefit, index) => (
           <div
             key={benefit.title}
@@ -124,7 +124,7 @@ export default function WhyPartner() {
             }}
           >
             <div className="border-t border-black/15 pt-8">
-              <span className="font-['Lato'] text-[3rem] md:text-[4rem] font-bold leading-none text-black/[0.06]">
+              <span className="font-['Lato'] text-[3rem] md:text-[4rem] font-bold leading-none text-[#25a9e0]/25">
                 {String(index + 1).padStart(2, '0')}
               </span>
 

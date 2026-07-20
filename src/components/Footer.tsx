@@ -3,59 +3,6 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className="relative bg-[#0a0a0a] text-white font-['Lato'] overflow-hidden">
-      {/* Yellow Smoke Effect - Flowing Left to Right */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Main Smoke Stream */}
-        <div
-          className="absolute w-[300%] h-[40%] top-[30%]"
-          style={{
-            background: 'linear-gradient(90deg, transparent 0%, rgba(64, 229, 241, 0.12) 20%, rgba(64, 229, 241,0.28) 40%, rgba(64, 229, 241,0.2) 60%, transparent 85%)',
-            filter: 'blur(65px)',
-            animation: 'footerSmokeMain 15s linear infinite',
-          }}
-        />
-        {/* Secondary Stream */}
-        <div
-          className="absolute w-[250%] h-[50%] top-[25%]"
-          style={{
-            background: 'linear-gradient(90deg, transparent 0%, rgba(64, 229, 241,0.1) 25%, rgba(64, 229, 241,0.22) 50%, rgba(64, 229, 241,0.1) 75%, transparent 100%)',
-            filter: 'blur(80px)',
-            animation: 'footerSmokeMain 18s linear infinite',
-            animationDelay: '-5s',
-          }}
-        />
-        {/* Smoke Puffs */}
-        <div
-          className="absolute w-[600px] h-[400px] top-[25%]"
-          style={{
-            background: 'radial-gradient(ellipse at center, rgba(64, 229, 241,0.28) 0%, rgba(64, 229, 241,0.14) 40%, transparent 70%)',
-            filter: 'blur(60px)',
-            animation: 'footerPuff1 10s linear infinite',
-          }}
-        />
-        <div
-          className="absolute w-[500px] h-[350px] top-[35%]"
-          style={{
-            background: 'radial-gradient(ellipse at center, rgba(64, 229, 241,0.24) 0%, rgba(64, 229, 241,0.12) 45%, transparent 70%)',
-            filter: 'blur(55px)',
-            animation: 'footerPuff2 8s linear infinite',
-            animationDelay: '-3s',
-          }}
-        />
-
-        {/* Grid pattern overlay */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(223,241,64,0.5) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(223,241,64,0.5) 1px, transparent 1px)
-            `,
-            backgroundSize: '40px 40px',
-          }}
-        />
-      </div>
-
       {/* Top decorative line */}
       <div className="relative">
         <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
@@ -71,12 +18,9 @@ export default function Footer() {
           <div className="flex-shrink-0 max-w-sm" style={{ paddingLeft: '40px' }}>
             <Link to="/" className="inline-flex items-center gap-3 group mb-6">
               <img
-                src="/logo_white.png"
+                src="/brand/Kryil-Logo-Full-White-Trimmed.png"
                 alt="KRYIL Infotech"
-                className="h-14 transition-all duration-300 group-hover:brightness-125"
-                style={{
-                  filter: 'drop-shadow(0 0 20px rgba(223,241,64,0.2))',
-                }}
+                className="h-14 w-auto transition-all duration-300 group-hover:brightness-125"
               />
             </Link>
             <p className="text-white/40 text-sm leading-relaxed mb-8">
@@ -161,7 +105,6 @@ export default function Footer() {
                 <li><Link to="/services/cybersecurity" className="text-sm text-white/50 hover:text-white transition-colors">Cybersecurity</Link></li>
                 <li><Link to="/services/automation" className="text-sm text-white/50 hover:text-white transition-colors">Infra & Automation</Link></li>
                 <li><Link to="/services/database" className="text-sm text-white/50 hover:text-white transition-colors">Database Services</Link></li>
-                <li><Link to="/services/digital-marketing" className="text-sm text-white/50 hover:text-white transition-colors">Digital Marketing</Link></li>
               </ul>
             </div>
 
@@ -237,25 +180,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* CSS Animations */}
-      <style>{`
-        @keyframes footerSmokeMain {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(50%); }
-        }
-        @keyframes footerPuff1 {
-          0% { transform: translateX(-100vw) translateY(0) scale(1); opacity: 0; }
-          10% { opacity: 0.32; }
-          90% { opacity: 0.32; }
-          100% { transform: translateX(100vw) translateY(-20px) scale(1.2); opacity: 0; }
-        }
-        @keyframes footerPuff2 {
-          0% { transform: translateX(-100vw) translateY(0) scale(1); opacity: 0; }
-          10% { opacity: 0.28; }
-          90% { opacity: 0.28; }
-          100% { transform: translateX(100vw) translateY(20px) scale(1.15); opacity: 0; }
-        }
-      `}</style>
     </footer>
   );
 }

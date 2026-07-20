@@ -418,6 +418,52 @@ export default function NextDOOH() {
         .screen-float {
           animation: screenFloat 3s ease-in-out infinite;
         }
+
+        @keyframes broadcastRing {
+          0% {
+            transform: scale(1);
+            opacity: 0.7;
+          }
+          100% {
+            transform: scale(1.35, 1.9);
+            opacity: 0;
+          }
+        }
+
+        .broadcast-ring {
+          animation: broadcastRing 2.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+
+        .broadcast-ring-delayed {
+          animation: broadcastRing 2.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+          animation-delay: 1.3s;
+        }
+
+        @keyframes buttonSheen {
+          0%, 55% {
+            transform: translateX(-120%) skewX(-20deg);
+          }
+          85%, 100% {
+            transform: translateX(280%) skewX(-20deg);
+          }
+        }
+
+        .button-sheen {
+          animation: buttonSheen 3.4s ease-in-out infinite;
+        }
+
+        @keyframes glowBreathe {
+          0%, 100% {
+            box-shadow: 0 0 30px rgba(223, 241, 64, 0.35);
+          }
+          50% {
+            box-shadow: 0 0 60px rgba(223, 241, 64, 0.65);
+          }
+        }
+
+        .glow-breathe {
+          animation: glowBreathe 2.6s ease-in-out infinite;
+        }
       `}</style>
 
       {/* ==================== HERO SECTION ==================== */}
@@ -472,32 +518,13 @@ export default function NextDOOH() {
             </div>
 
             {/* Main title - NextDOOH */}
-            <div className="mb-6">
-              <h1 className="font-['Lato'] text-[clamp(4.5rem,13vw,11rem)] font-black leading-[0.85] tracking-[-0.05em]">
-                {/* Next - White letters */}
-                {['N', 'e', 'x', 't'].map((letter, index) => (
-                  <span
-                    key={`white-${index}`}
-                    className="letter-slide-up text-white drop-shadow-[0_0_60px_rgba(255,255,255,0.15)]"
-                    style={{
-                      animationDelay: `${index * 0.12}s`,
-                    }}
-                  >
-                    {letter}
-                  </span>
-                ))}
-                {/* DOOH - Lime letters */}
-                {['D', 'O', 'O', 'H'].map((letter, index) => (
-                  <span
-                    key={`lime-${index}`}
-                    className="letter-slide-up text-[#dff140] drop-shadow-[0_0_80px_rgba(223,241,64,0.4)]"
-                    style={{
-                      animationDelay: `${(index + 4) * 0.12}s`,
-                    }}
-                  >
-                    {letter}
-                  </span>
-                ))}
+            <div style={{ marginTop: '48px', marginBottom: '48px' }}>
+              <h1 className="element-fade-in" style={{ animationDelay: '0.2s' }}>
+                <img
+                  src="/nextdooh-logo-white.png"
+                  alt="NextDOOH — Outdoor Media, Reinvented"
+                  className="animate-float w-full max-w-[640px] h-auto drop-shadow-[0_0_40px_rgba(255,255,255,0.25)]"
+                />
               </h1>
             </div>
 
@@ -524,55 +551,24 @@ export default function NextDOOH() {
                 className="element-fade-in"
                 style={{ animationDelay: '1.9s' }}
               >
-                <div className="cta-button-wrapper relative inline-block screen-float">
-                  {/* Left Floating Screen */}
-                  <div className="absolute -top-10 md:-top-12 left-1 md:left-2 z-10">
-                    <svg className="w-8 h-8 md:w-10 md:h-10" viewBox="0 0 40 40" fill="none">
-                      {/* Screen frame */}
-                      <rect x="2" y="4" width="36" height="24" rx="2" fill="#dff140" opacity="0.9"/>
-                      <rect x="4" y="6" width="32" height="20" fill="#0a0a0a"/>
-                      {/* Content lines */}
-                      <line x1="8" y1="10" x2="16" y2="10" stroke="#dff140" strokeWidth="1"/>
-                      <line x1="8" y1="14" x2="20" y2="14" stroke="#dff140" strokeWidth="1" opacity="0.6"/>
-                      <line x1="8" y1="18" x2="14" y2="18" stroke="#dff140" strokeWidth="1" opacity="0.4"/>
-                      {/* Stand */}
-                      <rect x="18" y="28" width="4" height="6" fill="#dff140" opacity="0.9"/>
-                      <rect x="12" y="34" width="16" height="2" fill="#dff140" opacity="0.9"/>
-                      {/* Signal indicator */}
-                      <circle cx="32" cy="10" r="1.5" fill="#dff140" className="animate-pulse"/>
-                    </svg>
-                  </div>
-                  {/* Left Connection Line */}
-                  <svg className="absolute -top-6 md:-top-7 left-1 md:left-2 z-0 pointer-events-none w-8 h-10 md:w-10 md:h-12" viewBox="0 0 40 48">
-                    <path d="M20 0 Q 15 23, 20 48" stroke="#dff140" strokeWidth="2" fill="none" opacity="0.5" strokeDasharray="4 4" className="animate-pulse"/>
-                  </svg>
-
-                  {/* Right Floating Screen */}
-                  <div className="absolute -top-10 md:-top-12 right-1 md:right-2 z-10">
-                    <svg className="w-8 h-8 md:w-10 md:h-10" viewBox="0 0 40 40" fill="none">
-                      <rect x="2" y="4" width="36" height="24" rx="2" fill="#dff140" opacity="0.9"/>
-                      <rect x="4" y="6" width="32" height="20" fill="#0a0a0a"/>
-                      <line x1="8" y1="10" x2="16" y2="10" stroke="#dff140" strokeWidth="1"/>
-                      <line x1="8" y1="14" x2="20" y2="14" stroke="#dff140" strokeWidth="1" opacity="0.6"/>
-                      <line x1="8" y1="18" x2="14" y2="18" stroke="#dff140" strokeWidth="1" opacity="0.4"/>
-                      <rect x="18" y="28" width="4" height="6" fill="#dff140" opacity="0.9"/>
-                      <rect x="12" y="34" width="16" height="2" fill="#dff140" opacity="0.9"/>
-                      <circle cx="32" cy="10" r="1.5" fill="#dff140" className="animate-pulse"/>
-                    </svg>
-                  </div>
-                  {/* Right Connection Line */}
-                  <svg className="absolute -top-6 md:-top-7 right-1 md:right-2 z-0 pointer-events-none w-8 h-10 md:w-10 md:h-12" viewBox="0 0 40 48">
-                    <path d="M20 0 Q 25 23, 20 48" stroke="#dff140" strokeWidth="2" fill="none" opacity="0.5" strokeDasharray="4 4" className="animate-pulse"/>
-                  </svg>
+                <div className="cta-button-wrapper relative inline-block">
+                  {/* Broadcast rings */}
+                  <span className="broadcast-ring absolute inset-0 border-2 border-[#dff140]/70 pointer-events-none" aria-hidden="true" />
+                  <span className="broadcast-ring-delayed absolute inset-0 border-2 border-[#dff140]/50 pointer-events-none" aria-hidden="true" />
 
                   {/* Button */}
                   <a
                     href="https://www.nextdooh.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-2 md:gap-4 bg-[#dff140] text-black font-['Lato'] text-[0.9rem] md:text-[1.1rem] font-black uppercase tracking-[0.1em] px-6 md:px-12 py-4 md:py-6 hover:bg-white transition-all duration-300 shadow-[0_0_40px_rgba(223,241,64,0.5)]"
+                    className="glow-breathe group relative inline-flex items-center gap-2 md:gap-4 overflow-hidden bg-[#dff140] text-black font-['Lato'] text-[0.9rem] md:text-[1.1rem] font-black uppercase tracking-[0.1em] px-6 md:px-12 py-4 md:py-6 hover:bg-white transition-colors duration-300"
                   >
-                    <span className="flex items-center gap-2 md:gap-3">
+                    {/* Light sweep */}
+                    <span
+                      className="button-sheen absolute top-0 bottom-0 w-1/3 bg-gradient-to-r from-transparent via-white/60 to-transparent pointer-events-none"
+                      aria-hidden="true"
+                    />
+                    <span className="relative flex items-center gap-2 md:gap-3">
                       LAUNCH CONSOLE
                       <svg className="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 12 12" fill="none">
                         <path d="M1 6H11M11 6L6 1M11 6L6 11" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transform group-hover:translate-x-2 transition-transform duration-300" />
@@ -603,22 +599,22 @@ export default function NextDOOH() {
       </section>
 
       {/* ==================== OUR PLATFORM - LIGHT ==================== */}
-      <section ref={platformRef} className="relative bg-[#f1f0ea] overflow-hidden" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+      <section ref={platformRef} className="relative bg-[#dff140] overflow-hidden" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <div className="relative z-10 max-w-6xl mx-auto" style={{ marginLeft: '40px', marginRight: '40px' }}>
 
           {/* Top Tag */}
           <div className={`flex items-center gap-4 mb-10 transition-all duration-700 ${platformVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="w-12 h-[2px] bg-black" />
-            <span className="font-['Lato'] text-[0.7rem] text-black/50 uppercase tracking-[0.3em] font-bold">
+            <span className="w-3 h-3 bg-black" />
+            <span className="font-['Lato'] text-[0.7rem] text-black/60 uppercase tracking-[0.3em] font-bold">
               Our Platform
             </span>
           </div>
 
           {/* Main Statement - Full Width */}
           <div className={`transition-all duration-1000 delay-200 ${platformVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-            <h2 className="font-['Lato'] text-[clamp(2rem,5vw,4rem)] font-black leading-[1.15] tracking-[-0.04em] text-black max-w-5xl">
+            <h2 className="heading-section text-black max-w-5xl">
               We built NextDOOH for operators who demand{' '}
-              <span className="text-black/30">real-time control</span>{' '}
+              <span className="text-black/45">real-time control</span>{' '}
               over their display networks.
             </h2>
           </div>
@@ -647,7 +643,7 @@ export default function NextDOOH() {
                 Platform Capabilities
               </span>
             </div>
-            <h2 className="font-['Lato'] text-[clamp(3rem,8vw,6rem)] font-bold leading-[0.9] tracking-[-0.04em] text-white mb-6">
+            <h2 className="heading-display text-white mb-6">
               Built for operators<br />
               <span className="text-white/20">who move fast.</span>
             </h2>
@@ -720,7 +716,7 @@ export default function NextDOOH() {
               </span>
               <div className="w-12 h-[2px] bg-black" />
             </div>
-            <h2 className="font-['Lato'] text-[clamp(3rem,8vw,5.5rem)] font-black leading-[0.9] tracking-[-0.04em] text-black">
+            <h2 className="heading-display text-black">
               Live in minutes.
               <span className="block text-black/30">Not days.</span>
             </h2>
@@ -803,7 +799,7 @@ export default function NextDOOH() {
                 Industry Use Cases
               </span>
             </div>
-            <h2 className={`font-['Lato'] text-[clamp(2.5rem,6vw,4.5rem)] font-black leading-[1] tracking-[-0.04em] text-white transition-all duration-1000 delay-200 ${useCasesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+            <h2 className={`heading-section text-white transition-all duration-1000 delay-200 ${useCasesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
               Digital signage for<br />
               <span className="text-[#dff140]">every industry.</span>
             </h2>
@@ -850,13 +846,13 @@ export default function NextDOOH() {
             {/* Left Column - Label and Title */}
             <div>
               <div className={`group flex items-center gap-4 mb-8 transition-all duration-1000 cursor-pointer ${pricingVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <div className="w-3 h-3 bg-black group-hover:bg-[#dff140] transition-colors duration-300" />
+                <div className="w-3 h-3 bg-black group-hover:bg-[#25a9e0] transition-colors duration-300" />
                 <span className="font-['Lato'] text-[0.7rem] text-black/40 uppercase tracking-[0.3em]">
                   Platform Features
                 </span>
               </div>
 
-              <h2 className={`font-['Lato'] text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.1] tracking-[-0.03em] text-black transition-all duration-1000 delay-100 ${pricingVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+              <h2 className={`heading-section text-black transition-all duration-1000 delay-100 ${pricingVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
                 Everything you need.
                 <br />
                 <span className="text-black/25">Nothing you don't.</span>
@@ -920,7 +916,7 @@ export default function NextDOOH() {
                 FAQ
               </span>
             </div>
-            <h2 className={`font-['Lato'] text-[clamp(2.5rem,6vw,4.5rem)] font-black leading-[1] tracking-[-0.04em] text-white transition-all duration-1000 delay-200 ${faqVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+            <h2 className={`heading-section text-white transition-all duration-1000 delay-200 ${faqVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
               Everything you need to know<br />
               <span className="text-white/30">about digital signage & DOOH.</span>
             </h2>
@@ -1029,7 +1025,7 @@ export default function NextDOOH() {
             </div>
 
             {/* Big bold title */}
-            <h2 className={`font-['Lato'] text-[clamp(2.5rem,8vw,5.5rem)] font-black leading-[0.95] tracking-[-0.04em] text-black transition-all duration-1000 delay-100 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+            <h2 className={`heading-display text-black transition-all duration-1000 delay-100 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
               Ready to control<br />
               every screen?
             </h2>

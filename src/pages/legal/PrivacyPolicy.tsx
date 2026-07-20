@@ -13,6 +13,7 @@ const sections: Section[] = [
   { id: 'information-sharing', title: 'Information Sharing' },
   { id: 'data-security', title: 'Data Security' },
   { id: 'your-rights', title: 'Your Rights' },
+  { id: 'dpdp', title: 'DPDP Act Compliance' },
   { id: 'cookies', title: 'Cookies & Tracking' },
   { id: 'third-party', title: 'Third-Party Links' },
   { id: 'children', title: "Children's Privacy" },
@@ -312,13 +313,56 @@ export default function PrivacyPolicy() {
                 </ul>
               </section>
 
+              {/* DPDP Act */}
+              <section
+                id="dpdp"
+                ref={setSectionRef('dpdp')}
+                className={`scroll-mt-32 mb-16 pb-16 border-b border-white/10 transition-all duration-700 ${getAnimationClass('dpdp')}`}
+              >
+                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">7. Digital Personal Data Protection Act, 2023 (India)</h2>
+                <p className="text-white/70 font-['Lato'] leading-relaxed mb-5">
+                  Kryil Infotech Private Limited processes digital personal data in accordance with India's
+                  Digital Personal Data Protection Act, 2023 ("DPDP Act") and the rules made under it. For the
+                  personal data you share with us — for example through our contact or job application forms —
+                  we act as a Data Fiduciary within the meaning of the DPDP Act.
+                </p>
+                <h3 className="font-['Lato'] text-lg font-semibold text-white mb-4">Lawful processing and consent</h3>
+                <p className="text-white/70 font-['Lato'] leading-relaxed mb-5">
+                  We process personal data only for lawful purposes for which you have given consent, or for
+                  certain legitimate uses recognised by the DPDP Act (such as responding to an enquiry you
+                  voluntarily initiate). A request for consent will be presented in clear and plain language,
+                  and you may withdraw consent at any time with the same ease with which it was given.
+                </p>
+                <h3 className="font-['Lato'] text-lg font-semibold text-white mb-4">Your rights as a Data Principal</h3>
+                <ul className="list-disc list-inside space-y-3 text-white/70 font-['Lato'] ml-4 mb-5">
+                  <li>Right to access a summary of your personal data and the processing activities applied to it</li>
+                  <li>Right to correction, completion and updating of your personal data</li>
+                  <li>Right to erasure of personal data that is no longer necessary for the purpose it was collected</li>
+                  <li>Right to a readily available grievance redressal mechanism</li>
+                  <li>Right to nominate another individual to exercise your rights in the event of death or incapacity</li>
+                </ul>
+                <h3 className="font-['Lato'] text-lg font-semibold text-white mb-4">Our obligations</h3>
+                <ul className="list-disc list-inside space-y-3 text-white/70 font-['Lato'] ml-4 mb-5">
+                  <li>We implement reasonable security safeguards to prevent personal data breaches</li>
+                  <li>We notify the Data Protection Board of India and affected Data Principals of any personal data breach as required by law</li>
+                  <li>We erase personal data once the purpose of processing is served and retention is no longer required by law</li>
+                  <li>We do not process personal data of children without verifiable parental consent, nor undertake tracking or targeted advertising directed at children</li>
+                </ul>
+                <p className="text-white/70 font-['Lato'] leading-relaxed">
+                  To exercise any of these rights, or to raise a grievance, contact us at{' '}
+                  <a href="mailto:info@kryil.com" className="text-[#dff140] hover:underline">info@kryil.com</a>.
+                  If you are not satisfied with our response, you have the right to complain to the Data
+                  Protection Board of India.
+                </p>
+              </section>
+
               {/* Cookies */}
               <section
                 id="cookies"
                 ref={setSectionRef('cookies')}
                 className={`scroll-mt-32 mb-16 pb-16 border-b border-white/10 transition-all duration-700 ${getAnimationClass('cookies')}`}
               >
-                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">7. Cookies & Tracking</h2>
+                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">8. Cookies & Tracking</h2>
                 <p className="text-white/70 font-['Lato'] leading-relaxed">
                   We use cookies and similar tracking technologies to enhance your experience on our website.
                   You can control cookies through your browser settings. For more information, please refer to our Cookie Policy.
@@ -331,7 +375,7 @@ export default function PrivacyPolicy() {
                 ref={setSectionRef('third-party')}
                 className={`scroll-mt-32 mb-16 pb-16 border-b border-white/10 transition-all duration-700 ${getAnimationClass('third-party')}`}
               >
-                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">8. Third-Party Links</h2>
+                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">9. Third-Party Links</h2>
                 <p className="text-white/70 font-['Lato'] leading-relaxed">
                   Our website may contain links to third-party websites. We are not responsible for the privacy
                   practices of these external sites. We encourage you to read the privacy policies of any
@@ -345,7 +389,7 @@ export default function PrivacyPolicy() {
                 ref={setSectionRef('children')}
                 className={`scroll-mt-32 mb-16 pb-16 border-b border-white/10 transition-all duration-700 ${getAnimationClass('children')}`}
               >
-                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">9. Children's Privacy</h2>
+                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">10. Children's Privacy</h2>
                 <p className="text-white/70 font-['Lato'] leading-relaxed">
                   Our services are not intended for individuals under the age of 18. We do not knowingly collect
                   personal information from children. If we become aware that we have collected personal information
@@ -359,7 +403,7 @@ export default function PrivacyPolicy() {
                 ref={setSectionRef('changes')}
                 className={`scroll-mt-32 mb-16 pb-16 border-b border-white/10 transition-all duration-700 ${getAnimationClass('changes')}`}
               >
-                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">10. Changes to This Policy</h2>
+                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">11. Changes to This Policy</h2>
                 <p className="text-white/70 font-['Lato'] leading-relaxed">
                   We may update this Privacy Policy from time to time. We will notify you of any changes by posting
                   the new Privacy Policy on this page and updating the "Last Updated" date. Your continued use of
@@ -373,7 +417,7 @@ export default function PrivacyPolicy() {
                 ref={setSectionRef('contact')}
                 className={`scroll-mt-32 mb-12 transition-all duration-700 ${getAnimationClass('contact')}`}
               >
-                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">11. Contact Us</h2>
+                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">12. Contact Us</h2>
                 <p className="text-white/70 font-['Lato'] leading-relaxed mb-6">
                   If you have any questions about this Privacy Policy or our data practices, please contact us at:
                 </p>

@@ -148,7 +148,7 @@ function MissionSection() {
           <span className="inline-block px-6 py-2.5 bg-black text-white font-['Lato'] text-[0.7rem] uppercase tracking-[0.15em] font-medium mb-8">
             Our Mission
           </span>
-          <h2 className="font-['Lato'] text-[clamp(2.2rem,4.5vw,4rem)] font-bold leading-[1.15] tracking-[-0.03em] text-black max-w-5xl">
+          <h2 className="heading-section text-black max-w-5xl">
             {chars.map((char, index) => (
               <span
                 key={index}
@@ -282,7 +282,7 @@ export default function Defense() {
       </section>
 
       {/* Products Section */}
-      <section ref={productsRef} className="py-32 md:py-48 bg-[#0a0a0a]">
+      <section ref={productsRef} className="bg-[#0a0a0a]" style={{ padding: '100px 0' }}>
         <div style={{ marginLeft: '40px', marginRight: '40px' }}>
           {/* Section Header */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 mb-20 md:mb-28">
@@ -293,7 +293,7 @@ export default function Defense() {
                   Our Systems
                 </span>
               </div>
-              <h2 className="font-['Lato'] text-[clamp(2.5rem,6vw,5rem)] font-bold leading-[1] tracking-[-0.03em] text-white">
+              <h2 className="heading-section text-white">
                 UAV Fleet
               </h2>
             </div>
@@ -396,7 +396,7 @@ export default function Defense() {
       <MissionSection />
 
       {/* Capabilities Section */}
-      <section ref={capabilitiesRef} className="py-32 md:py-48 bg-black">
+      <section ref={capabilitiesRef} className="bg-black" style={{ padding: '100px 0' }}>
         <div style={{ marginLeft: '40px', marginRight: '40px', marginBottom: '40px' }}>
           {/* Header */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 mb-24 md:mb-32">
@@ -407,7 +407,7 @@ export default function Defense() {
                   Technology
                 </span>
               </div>
-              <h2 className="font-['Lato'] text-[clamp(2.5rem,6vw,5rem)] font-bold leading-[1] tracking-[-0.03em] text-white">
+              <h2 className="heading-section text-white">
                 Core
                 <br />
                 <span className="text-white/30">Capabilities</span>
@@ -479,7 +479,7 @@ export default function Defense() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-40 md:py-56 bg-[#f1f0ea] overflow-hidden">
+      <section className="relative bg-[#dff140] overflow-hidden" style={{ padding: '100px 40px' }}>
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-full h-full"
@@ -498,11 +498,11 @@ export default function Defense() {
         </div>
 
         <div className="relative z-10 text-center px-4 md:px-6 w-full flex flex-col items-center justify-center">
-          <span className="inline-block px-5 py-2 bg-[#dff140] text-black font-['Lato'] text-[0.7rem] uppercase tracking-[0.15em] font-medium mb-10">
+          <span className="inline-block bg-black text-[#dff140] font-['Lato'] text-[0.7rem] uppercase tracking-[0.15em] font-medium mb-10" style={{ padding: '8px 20px' }}>
             Get Started Today
           </span>
 
-          <h2 className="font-['Lato'] text-[clamp(2.5rem,7vw,6rem)] font-bold leading-[1.05] tracking-[-0.03em] text-black max-w-5xl mx-auto" style={{ paddingTop: '30px' }}>
+          <h2 className="heading-section text-black max-w-5xl mx-auto" style={{ paddingTop: '30px' }}>
             Ready to Partner for Defense Excellence?
           </h2>
 

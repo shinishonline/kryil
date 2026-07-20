@@ -104,16 +104,6 @@ const services = [
       </svg>
     ),
   },
-  {
-    label: 'Digital Marketing',
-    href: '/services/digital-marketing',
-    description: 'SEO, PPC & growth strategies',
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M18 20V10M12 20V4M6 20v-6" />
-      </svg>
-    ),
-  },
  
 ];
 

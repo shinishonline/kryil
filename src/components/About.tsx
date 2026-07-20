@@ -82,8 +82,8 @@ export default function About() {
       <div className="relative h-[70vh] md:h-[80vh] overflow-hidden">
         <div className="absolute inset-0 scale-110">
           <img
-            src="/aboutus1.jpg"
-            alt="Kryil Infotech software development team collaborating on defense and enterprise technology projects in Bangalore"
+            src="/aboutus-office.jpg"
+            alt="Kryil Infotech office in Bangalore - modern workspace where defense, UAV and enterprise technology projects are built"
             className="w-full h-full object-cover will-change-transform"
             style={{
               transform: `translate3d(0, ${Math.max(0, (scrollY - 500) * 0.15)}px, 0)`,
@@ -91,6 +91,19 @@ export default function About() {
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-[#010101]" />
+
+        {/* Uneven black vignette from all edges */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: [
+              'linear-gradient(to right, rgba(0,0,0,0.8) 0%, transparent 28%)',
+              'linear-gradient(to left, rgba(0,0,0,0.65) 0%, transparent 28%)',
+              'linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, transparent 30%)',
+              'linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 45%)',
+            ].join(', '),
+          }}
+        />
 
         {/* Animated Grid Overlay */}
         <div className="absolute inset-0 opacity-20">
@@ -111,7 +124,7 @@ export default function About() {
               About Kryil Infotech
             </span>
             <h1
-              className={`font-['Lato'] text-[clamp(2.5rem,8vw,5rem)] font-bold leading-[1] tracking-[-0.04em] text-white transition-all duration-1000 delay-200 ${
+              className={`heading-display text-white transition-all duration-1000 delay-200 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
             >
@@ -160,7 +173,7 @@ export default function About() {
                 </span>
               </div>
               <h2
-                className={`font-['Lato'] text-[clamp(3rem,7vw,6rem)] font-bold leading-[0.95] tracking-[-0.04em] text-white transition-all duration-1000 delay-100 ${
+                className={`heading-display text-white transition-all duration-1000 delay-100 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                 }`}
               >

@@ -206,7 +206,7 @@ export default function ServicePageLayout({
                 Our Approach
               </span>
             </div>
-            <h2 className="font-['Lato'] text-[clamp(2rem,5vw,4rem)] font-bold leading-[1.1] tracking-[-0.03em] text-white">
+            <h2 className="heading-section text-white">
               We combine expertise with innovation to deliver results that matter
             </h2>
           </div>
@@ -278,7 +278,7 @@ export default function ServicePageLayout({
             <span className="inline-block px-6 py-2.5 bg-black text-white font-['Lato'] text-[0.7rem] uppercase tracking-[0.15em] font-medium mb-8">
               Trusted Partner
             </span>
-            <h2 className="font-['Lato'] text-[clamp(2.5rem,6vw,5rem)] font-bold leading-[1.05] tracking-[-0.03em] text-black max-w-4xl">
+            <h2 className="heading-section text-black max-w-4xl">
               <WaveText text="Delivering excellence" />
               <br />
               <WaveText text="through innovation and" />
@@ -301,7 +301,7 @@ export default function ServicePageLayout({
                   What We Deliver
                 </span>
               </div>
-              <h2 className="font-['Lato'] text-[clamp(2.5rem,6vw,5rem)] font-bold leading-[1] tracking-[-0.03em] text-white" style={{ marginBottom: '40px' }}>
+              <h2 className="heading-section text-white" style={{ marginBottom: '40px' }}>
                 Our
                 <br />
                 <span className="text-white/30">Services</span>
@@ -379,22 +379,22 @@ export default function ServicePageLayout({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32">
             {/* Left Column - Header */}
             <div className="lg:sticky lg:top-32 lg:h-fit">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-16 h-[1px] bg-black" />
+              <div className="flex items-center gap-4" style={{ marginBottom: '24px' }}>
+                <div className="w-3 h-3 bg-[#25a9e0]" />
                 <span className="font-['Lato'] text-[0.7rem] text-black/40 uppercase tracking-[0.3em]">
                   Why KRYIL
                 </span>
               </div>
-              <h2 className="font-['Lato'] text-[clamp(2.5rem,6vw,5rem)] font-bold leading-[1] tracking-[-0.03em] text-black">
+              <h2 className="heading-display text-black">
                 The Advantage
               </h2>
-              <p className="font-['Lato'] text-[1.15rem] text-black/60 leading-[1.9] mt-10 max-w-lg">
+              <p className="font-['Lato'] text-[1.15rem] text-black/60 leading-[1.9] max-w-lg" style={{ marginTop: '28px' }}>
                 Partner with KRYIL Infotech to leverage cutting-edge expertise and
                 deliver exceptional results that drive your business forward.
               </p>
 
               {/* Image in Left Column */}
-              <div className="mt-12 relative aspect-[4/3] overflow-hidden hidden lg:block">
+              <div className="relative aspect-[4/3] overflow-hidden hidden lg:block" style={{ marginTop: '40px' }}>
                 <img
                   src={benefitsImage}
                   alt="KRYIL Infotech professional team delivering technology solutions"
@@ -407,20 +407,20 @@ export default function ServicePageLayout({
             </div>
 
             {/* Right Column - Benefits List */}
-            <div className="space-y-6 lg:flex lg:flex-col lg:justify-end">
+            <div className="flex flex-col gap-5 lg:justify-end">
               {benefits.map((benefit, index) => (
                 <div
                   key={index}
-                  className={`group flex items-start gap-8 p-8 md:p-10 bg-white hover:bg-black transition-all duration-500 cursor-default ${
+                  className={`group flex items-start gap-8 bg-white hover:bg-black transition-all duration-500 cursor-default ${
                     benefitsVisible
                       ? 'opacity-100 translate-x-0'
                       : 'opacity-0 translate-x-12'
                   }`}
-                  style={{ transitionDelay: `${index * 80}ms` }}
+                  style={{ padding: '32px', transitionDelay: `${index * 80}ms` }}
                 >
                   {/* Icon */}
-                  <div className="w-12 h-12 bg-[#dff140] flex items-center justify-center flex-shrink-0 group-hover:bg-[#dff140] transition-colors duration-300">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#010101" strokeWidth="3">
+                  <div className="w-12 h-12 bg-[#25a9e0] flex items-center justify-center flex-shrink-0 group-hover:bg-[#25a9e0] transition-colors duration-300">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="3">
                       <path d="M20 6L9 17l-5-5" />
                     </svg>
                   </div>
@@ -460,7 +460,7 @@ export default function ServicePageLayout({
             Get Started Today
           </span>
 
-          <h2 className="font-['Lato'] text-[clamp(2.5rem,7vw,6rem)] font-bold leading-[1.05] tracking-[-0.03em] text-white max-w-5xl mx-auto" style={{ paddingTop: '30px' }}>
+          <h2 className="heading-section text-white max-w-5xl mx-auto" style={{ paddingTop: '30px' }}>
             Ready to Transform Your Business?
           </h2>
 

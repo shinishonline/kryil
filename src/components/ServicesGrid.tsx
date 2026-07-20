@@ -44,13 +44,6 @@ const services = [
     description: 'SQL, NoSQL & data warehouse solutions',
     link: '/services/database',
   },
-  {
-    index: '07',
-    title: 'Digital',
-    subtitle: 'Marketing',
-    description: 'SEO, PPC & content strategy',
-    link: '/services/digital-marketing',
-  },
 ];
 
 export default function ServicesGrid() {
@@ -92,21 +85,21 @@ export default function ServicesGrid() {
       className="relative bg-black overflow-hidden"
     >
       {/* Top Section - Header */}
-      <div className="pt-32 md:pt-48" style={{ marginLeft: '40px', marginRight: '40px', paddingBottom: '40px' }}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+      <div style={{ marginTop: '100px', marginLeft: '40px', marginRight: '40px', marginBottom: '120px' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-8 items-center">
           <div>
             <div
               className={`flex items-center gap-4 mb-8 transition-all duration-1000 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <div className="w-12 h-[1px] bg-white/20" />
+              <div className="w-3 h-3 bg-[#25a9e0] transition-colors duration-300" />
               <span className="font-['Lato'] text-[0.7rem] text-white/40 uppercase tracking-[0.3em]">
                 Services
               </span>
             </div>
             <h2
-              className={`font-['Lato'] text-[clamp(3rem,8vw,6rem)] font-bold leading-[0.9] tracking-[-0.04em] text-white transition-all duration-1000 delay-100 ${
+              className={`heading-display text-white transition-all duration-1000 delay-100 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
             >
@@ -117,12 +110,12 @@ export default function ServicesGrid() {
           </div>
 
           <div
-            className={`transition-all duration-1000 delay-200 flex justify-end ${
+            className={`transition-all duration-1000 delay-200 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           > 
             <p className="font-['Lato'] text-[1.1rem] text-white/50 leading-[1.8] max-w-lg">
-              <br />We craft digital experiences and build technology solutions that transform businesses. Five core services, infinite possibilities.
+              We craft digital experiences and build technology solutions that transform businesses. Five core services, infinite possibilities.
             </p>
           </div>
         </div>

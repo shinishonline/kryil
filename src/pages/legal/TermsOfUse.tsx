@@ -12,6 +12,7 @@ const sections: Section[] = [
   { id: 'responsibilities', title: 'User Responsibilities' },
   { id: 'intellectual-property', title: 'Intellectual Property' },
   { id: 'confidentiality', title: 'Confidentiality' },
+  { id: 'data-protection', title: 'Data Protection (DPDP)' },
   { id: 'service-agreements', title: 'Service Agreements' },
   { id: 'payment', title: 'Payment Terms' },
   { id: 'liability', title: 'Limitation of Liability' },
@@ -269,13 +270,35 @@ export default function TermsOfUse() {
                 </p>
               </section>
 
+              {/* Data Protection */}
+              <section
+                id="data-protection"
+                ref={setSectionRef('data-protection')}
+                className={`scroll-mt-32 mb-16 pb-16 border-b border-white/10 transition-all duration-700 ${getAnimationClass('data-protection')}`}
+              >
+                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">6. Data Protection &amp; Privacy (DPDP Act, 2023)</h2>
+                <p className="text-white/70 font-['Lato'] leading-relaxed mb-5">
+                  Personal data submitted through this website or in the course of any engagement is processed
+                  in accordance with India's Digital Personal Data Protection Act, 2023 and our{' '}
+                  <a href="/privacy-policy" className="text-[#dff140] hover:underline">Privacy Policy</a>, which
+                  describes the purposes of processing, your rights as a Data Principal (including access,
+                  correction, erasure and grievance redressal), and how to exercise them.
+                </p>
+                <p className="text-white/70 font-['Lato'] leading-relaxed">
+                  By providing personal data to us you confirm that the information is accurate and, where you
+                  provide personal data of another person, that you are authorised to do so. Where KRYIL
+                  processes personal data on behalf of a client as part of a service engagement, it does so as
+                  a data processor under the client's instructions, subject to the applicable service agreement.
+                </p>
+              </section>
+
               {/* Service Agreements */}
               <section
                 id="service-agreements"
                 ref={setSectionRef('service-agreements')}
                 className={`scroll-mt-32 mb-16 pb-16 border-b border-white/10 transition-all duration-700 ${getAnimationClass('service-agreements')}`}
               >
-                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">6. Service Agreements</h2>
+                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">7. Service Agreements</h2>
                 <p className="text-white/70 font-['Lato'] leading-relaxed">
                   Specific services may be governed by separate service agreements or statements of work. In case of any conflict between these Terms of Use and a specific service agreement, the service agreement shall prevail.
                 </p>
@@ -287,7 +310,7 @@ export default function TermsOfUse() {
                 ref={setSectionRef('payment')}
                 className={`scroll-mt-32 mb-16 pb-16 border-b border-white/10 transition-all duration-700 ${getAnimationClass('payment')}`}
               >
-                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">7. Payment Terms</h2>
+                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">8. Payment Terms</h2>
                 <p className="text-white/70 font-['Lato'] leading-relaxed mb-5">For paid services:</p>
                 <ul className="list-disc list-inside space-y-3 text-white/70 font-['Lato'] ml-4">
                   <li>Payment terms will be specified in the service agreement</li>
@@ -303,7 +326,7 @@ export default function TermsOfUse() {
                 ref={setSectionRef('liability')}
                 className={`scroll-mt-32 mb-16 pb-16 border-b border-white/10 transition-all duration-700 ${getAnimationClass('liability')}`}
               >
-                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">8. Limitation of Liability</h2>
+                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">9. Limitation of Liability</h2>
                 <p className="text-white/70 font-['Lato'] leading-relaxed mb-5">
                   To the maximum extent permitted by law, KRYIL Infotech shall not be liable for:
                 </p>
@@ -324,7 +347,7 @@ export default function TermsOfUse() {
                 ref={setSectionRef('indemnification')}
                 className={`scroll-mt-32 mb-16 pb-16 border-b border-white/10 transition-all duration-700 ${getAnimationClass('indemnification')}`}
               >
-                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">9. Indemnification</h2>
+                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">10. Indemnification</h2>
                 <p className="text-white/70 font-['Lato'] leading-relaxed">
                   You agree to indemnify, defend, and hold harmless KRYIL Infotech, its officers, directors, employees, and agents from any claims, damages, losses, or expenses arising from your use of our services or violation of these Terms.
                 </p>
@@ -336,7 +359,7 @@ export default function TermsOfUse() {
                 ref={setSectionRef('termination')}
                 className={`scroll-mt-32 mb-16 pb-16 border-b border-white/10 transition-all duration-700 ${getAnimationClass('termination')}`}
               >
-                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">10. Termination</h2>
+                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">11. Termination</h2>
                 <p className="text-white/70 font-['Lato'] leading-relaxed">
                   We may terminate or suspend your access to our services at any time, with or without cause or notice. Upon termination, your right to use our services will immediately cease. All provisions of these Terms that should survive termination shall remain in effect.
                 </p>
@@ -348,7 +371,7 @@ export default function TermsOfUse() {
                 ref={setSectionRef('disputes')}
                 className={`scroll-mt-32 mb-16 pb-16 border-b border-white/10 transition-all duration-700 ${getAnimationClass('disputes')}`}
               >
-                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">11. Dispute Resolution</h2>
+                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">12. Dispute Resolution</h2>
                 <p className="text-white/70 font-['Lato'] leading-relaxed mb-5">
                   Any disputes arising from these Terms or our services shall be:
                 </p>
@@ -368,7 +391,7 @@ export default function TermsOfUse() {
                 ref={setSectionRef('force-majeure')}
                 className={`scroll-mt-32 mb-16 pb-16 border-b border-white/10 transition-all duration-700 ${getAnimationClass('force-majeure')}`}
               >
-                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">12. Force Majeure</h2>
+                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">13. Force Majeure</h2>
                 <p className="text-white/70 font-['Lato'] leading-relaxed">
                   Neither party shall be liable for any failure or delay in performance due to circumstances beyond reasonable control, including but not limited to acts of God, natural disasters, war, terrorism, riots, pandemics, government actions, or infrastructure failures.
                 </p>
@@ -380,7 +403,7 @@ export default function TermsOfUse() {
                 ref={setSectionRef('modifications')}
                 className={`scroll-mt-32 mb-16 pb-16 border-b border-white/10 transition-all duration-700 ${getAnimationClass('modifications')}`}
               >
-                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">13. Modifications</h2>
+                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">14. Modifications</h2>
                 <p className="text-white/70 font-['Lato'] leading-relaxed">
                   We reserve the right to modify these Terms at any time. Changes will be effective upon posting to our website. Your continued use of our services after such changes constitutes acceptance of the modified Terms.
                 </p>
@@ -392,7 +415,7 @@ export default function TermsOfUse() {
                 ref={setSectionRef('severability')}
                 className={`scroll-mt-32 mb-16 pb-16 border-b border-white/10 transition-all duration-700 ${getAnimationClass('severability')}`}
               >
-                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">14. Severability</h2>
+                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">15. Severability</h2>
                 <p className="text-white/70 font-['Lato'] leading-relaxed">
                   If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions shall continue in full force and effect.
                 </p>
@@ -404,7 +427,7 @@ export default function TermsOfUse() {
                 ref={setSectionRef('contact')}
                 className={`scroll-mt-32 mb-12 transition-all duration-700 ${getAnimationClass('contact')}`}
               >
-                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">15. Contact Information</h2>
+                <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">16. Contact Information</h2>
                 <p className="text-white/70 font-['Lato'] leading-relaxed mb-6">
                   For questions about these Terms of Use, please contact us at:
                 </p>

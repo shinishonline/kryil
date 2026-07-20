@@ -119,7 +119,7 @@ export default function Blog() {
                 </span>
 
                 <h1
-                  className={`text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-[1.05] transition-all duration-700 delay-200 ${
+                  className={`heading-display text-white mb-8 transition-all duration-700 delay-200 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
                 >
@@ -213,7 +213,7 @@ export default function Blog() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                   </div>
-                  <div className="relative h-full flex flex-col justify-end p-8 md:p-10" style={{ minHeight: '500px' }}>
+                  <div className="relative h-full flex flex-col justify-end k-card-pad" style={{ minHeight: '500px' }}>
                     <div className="flex items-center gap-4 mb-6">
                       <span className="px-4 py-2 bg-[#dff140] text-black text-xs font-bold uppercase tracking-wider">
                         Featured
@@ -267,7 +267,7 @@ export default function Blog() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
                     </div>
-                    <div className="relative h-full flex flex-col justify-end p-6" style={{ minHeight: '240px' }}>
+                    <div className="relative h-full flex flex-col justify-end" style={{ padding: '28px', minHeight: '240px' }}>
                       <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur text-white text-xs font-bold uppercase tracking-wider mb-4 self-start">
                         {post.category}
                       </span>
@@ -365,7 +365,7 @@ function BlogCard({ post }: { post: BlogPost }) {
           </span>
         </div>
       </div>
-      <div className="p-5 flex flex-col flex-grow">
+      <div className="flex flex-col flex-grow" style={{ padding: '24px' }}>
         <h3 className="text-base font-bold text-white mb-3 leading-snug group-hover:text-[#dff140] transition-colors line-clamp-2">
           {post.title}
         </h3>

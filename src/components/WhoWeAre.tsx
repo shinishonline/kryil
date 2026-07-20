@@ -54,7 +54,7 @@ export default function WhoWeAre() {
   return (
     <section
       ref={sectionRef}
-      className="bg-black py-32 md:py-48 overflow-hidden flex items-center justify-center min-h-[60vh]"
+      className="bg-[#dff140] overflow-hidden flex items-center justify-center min-h-[60vh]" style={{ padding: '100px 40px' }}
     >
       <div className="w-full flex flex-col items-center justify-center px-8 md:px-12">
         {/* Section Label */}
@@ -62,11 +62,11 @@ export default function WhoWeAre() {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
           <div className="flex items-center justify-center gap-4">
-            <div className="w-12 h-[1px] bg-white/20" />
-            <span className="font-['Lato'] text-[0.85rem] text-white/40 uppercase tracking-[0.3em]">
+            <div className="w-12 h-[1px] bg-black/30" />
+            <span className="font-['Lato'] text-[0.85rem] text-black/50 uppercase tracking-[0.3em]">
               Who We Are & What We Do
             </span>
-            <div className="w-12 h-[1px] bg-white/20" />
+            <div className="w-12 h-[1px] bg-black/30" />
           </div>
         </div>
 
@@ -85,13 +85,13 @@ export default function WhoWeAre() {
           style={{ cursor: 'default' }}
         >
           {/* Base text */}
-          <p className="font-['Lato'] text-[clamp(1.2rem,2.5vw,1.75rem)] text-white/30 leading-[2] text-center">
+          <p className="font-['Lato'] text-[clamp(1.2rem,2.5vw,1.75rem)] text-black/35 leading-[2] text-center">
             {text}
           </p>
 
           {/* Sharp revealed text with gradient mask */}
           <p
-            className="font-['Lato'] text-[clamp(1.2rem,2.5vw,1.75rem)] text-white leading-[2] text-center absolute inset-0 pointer-events-none"
+            className="font-['Lato'] text-[clamp(1.2rem,2.5vw,1.75rem)] text-black leading-[2] text-center absolute inset-0 pointer-events-none"
             style={{
               opacity: isHovering ? 1 : 0,
               transition: 'opacity 0.4s ease',

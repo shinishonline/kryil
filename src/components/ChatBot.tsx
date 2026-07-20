@@ -47,11 +47,6 @@ const knowledgeBase = {
       stats: '90% Faster Deployments, 80% Less Manual Work, 1000+ Pipelines',
     },
     {
-      name: 'Digital Marketing',
-      description: 'SEO, PPC advertising, social media marketing, content marketing, email campaigns, and analytics.',
-      stats: '300% Traffic Growth, 5M+ Leads Generated, 4.2x ROI',
-    },
-    {
       name: 'Database Administration',
       description: 'Database management, optimization, migration, and business intelligence. SQL Server, Oracle, MySQL, PostgreSQL, MongoDB, Power BI, Microsoft Fabric.',
       stats: '500+ Databases Managed, 99.99% Uptime, 60% Performance Boost',
@@ -61,9 +56,10 @@ const knowledgeBase = {
     { title: 'Senior Full Stack Developer', department: 'Engineering', location: 'Remote', experience: '5+ years' },
     { title: 'AI/ML Engineer', department: 'AI & Data Science', location: 'Remote', experience: '3+ years' },
     { title: 'Cloud Solutions Architect', department: 'Cloud Infrastructure', location: 'Remote', experience: '7+ years' },
-    { title: 'Cybersecurity Analyst', department: 'Security', location: 'Remote', experience: '4+ years' },
-    { title: 'Digital Marketing Specialist', department: 'Marketing', location: 'Remote', experience: '3+ years' },
     { title: 'UI/UX Designer', department: 'Design', location: 'Remote', experience: '4+ years' },
+    { title: 'Marketing Intern', department: 'Marketing', location: 'Bangalore / Remote', experience: 'Students & freshers' },
+    { title: 'Software Development Intern (Backend)', department: 'Engineering', location: 'Bangalore / Remote', experience: 'Students & freshers' },
+    { title: 'UAV Design Engineer Intern (SolidWorks / Aerospace)', department: 'Aerospace & UAV', location: 'Bangalore', experience: 'Students & freshers' },
   ],
   defense: {
     about: 'KRYIL Defense Division specializes in advanced UAV/drone technology for defense applications.',
@@ -127,15 +123,9 @@ function getResponse(input: string): string {
     return `**${s.name}**\n${s.description}\n\n📊 ${s.stats}`;
   }
 
-  // Digital Marketing
-  if (lowerInput.includes('marketing') || lowerInput.includes('seo') || lowerInput.includes('ppc') || lowerInput.includes('social media')) {
-    const s = knowledgeBase.services[4];
-    return `**${s.name}**\n${s.description}\n\n📊 ${s.stats}`;
-  }
-
   // Database Administration
   if (lowerInput.includes('database') || lowerInput.includes('dba') || lowerInput.includes('sql') || lowerInput.includes('power bi') || lowerInput.includes('fabric') || lowerInput.includes('mongodb') || lowerInput.includes('postgresql')) {
-    const s = knowledgeBase.services[5];
+    const s = knowledgeBase.services[4];
     return `**${s.name}**\n${s.description}\n\n📊 ${s.stats}`;
   }
 
@@ -284,15 +274,15 @@ export default function ChatBot() {
       {/* Chat Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#dff140] hover:bg-[#e8f756] rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25a9e0] hover:bg-[#1d8ec0] rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
         aria-label="Chat with us"
       >
         {isOpen ? (
-          <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         ) : (
-          <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
           </svg>
         )}
@@ -302,28 +292,28 @@ export default function ChatBot() {
       {isOpen && (
         <div className="fixed bottom-24 right-6 z-50 w-80 sm:w-96 h-[28rem] bg-black border border-white/10 rounded-lg shadow-2xl flex flex-col overflow-hidden animate-fade-in-up">
           {/* Header */}
-          <div className="bg-[#dff140] px-5 py-4 flex items-center gap-3">
+          <div className="bg-[#25a9e0] flex items-center gap-3" style={{ padding: '16px 20px' }}>
             <div className="w-10 h-10 bg-black flex items-center justify-center">
-              <span className="text-[#dff140] text-sm font-bold font-['Lato']">K</span>
+              <span className="text-[#25a9e0] text-sm font-bold font-['Lato']">K</span>
             </div>
             <div>
-              <h3 className="text-black font-semibold text-sm font-['Lato']">KRYIL Assistant</h3>
-              <p className="text-black/60 text-xs font-['Lato']">Online • Here to help</p>
+              <h3 className="text-white font-semibold text-sm font-['Lato']">KRYIL Assistant</h3>
+              <p className="text-white/70 text-xs font-['Lato']">Online • Here to help</p>
             </div>
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-3">
+          <div className="flex-1 overflow-y-auto flex flex-col gap-3" style={{ padding: '16px 20px' }}>
             {messages.map((msg) => (
               <div
                 key={msg.id}
                 className={`flex ${msg.isBot ? 'justify-start' : 'justify-end'}`}
               >
                 <div
-                  className={`max-w-[85%] px-4 py-3 text-sm whitespace-pre-line font-['Lato'] ${
+                  style={{ padding: '10px 14px' }} className={`max-w-[85%] text-sm whitespace-pre-line font-['Lato'] ${
                     msg.isBot
                       ? 'bg-white/10 text-white'
-                      : 'bg-[#dff140] text-black'
+                      : 'bg-[#25a9e0] text-white'
                   }`}
                 >
                   {msg.text}
@@ -333,15 +323,15 @@ export default function ChatBot() {
 
             {/* Lead Form */}
             {showForm && !formSubmitted && (
-              <div className="bg-white/5 border border-white/10 p-4 mt-2">
-                <form onSubmit={handleFormSubmit} className="space-y-3">
+              <div className="bg-white/5 border border-white/10" style={{ padding: '16px', marginTop: '8px' }}>
+                <form onSubmit={handleFormSubmit} className="flex flex-col gap-3">
                   <input
                     type="text"
                     placeholder="Your Name *"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white text-sm font-['Lato'] placeholder:text-white/40 focus:outline-none focus:border-[#dff140]"
+                    style={{ padding: '10px 14px' }} className="w-full bg-white/10 border border-white/20 text-white text-sm font-['Lato'] placeholder:text-white/40 focus:outline-none focus:border-[#25a9e0]"
                   />
                   <input
                     type="email"
@@ -349,25 +339,25 @@ export default function ChatBot() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white text-sm font-['Lato'] placeholder:text-white/40 focus:outline-none focus:border-[#dff140]"
+                    style={{ padding: '10px 14px' }} className="w-full bg-white/10 border border-white/20 text-white text-sm font-['Lato'] placeholder:text-white/40 focus:outline-none focus:border-[#25a9e0]"
                   />
                   <input
                     type="tel"
                     placeholder="Phone Number"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white text-sm font-['Lato'] placeholder:text-white/40 focus:outline-none focus:border-[#dff140]"
+                    style={{ padding: '10px 14px' }} className="w-full bg-white/10 border border-white/20 text-white text-sm font-['Lato'] placeholder:text-white/40 focus:outline-none focus:border-[#25a9e0]"
                   />
                   <textarea
                     placeholder="How can we help?"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     rows={2}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white text-sm font-['Lato'] placeholder:text-white/40 focus:outline-none focus:border-[#dff140] resize-none"
+                    style={{ padding: '10px 14px' }} className="w-full bg-white/10 border border-white/20 text-white text-sm font-['Lato'] placeholder:text-white/40 focus:outline-none focus:border-[#25a9e0] resize-none"
                   />
                   <button
                     type="submit"
-                    className="w-full py-3 bg-[#dff140] hover:bg-[#e8f756] text-black font-semibold text-sm font-['Lato'] transition-colors"
+                    style={{ padding: '12px 0' }} className="w-full bg-[#25a9e0] hover:bg-[#1d8ec0] text-white font-semibold text-sm font-['Lato'] transition-colors"
                   >
                     Send Details
                   </button>
@@ -380,7 +370,7 @@ export default function ChatBot() {
 
           {/* Quick Actions */}
           {messages.length === 1 && (
-            <div className="px-5 pb-3 flex gap-2 flex-wrap">
+            <div className="flex gap-2 flex-wrap" style={{ padding: '0 20px 12px' }}>
               {quickActions.map((action) => (
                 <button
                   key={action.label}
@@ -405,7 +395,7 @@ export default function ChatBot() {
           )}
 
           {/* Input */}
-          <div className="px-5 py-4 border-t border-white/10">
+          <div className="border-t border-white/10" style={{ padding: '16px 20px' }}>
             <div className="flex gap-3">
               <input
                 type="text"
@@ -413,14 +403,14 @@ export default function ChatBot() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                 placeholder="Type a message..."
-                className="flex-1 px-4 py-3 bg-white/10 border border-white/20 text-white text-sm font-['Lato'] placeholder:text-white/40 focus:outline-none focus:border-[#dff140]"
+                style={{ padding: '10px 14px' }} className="flex-1 bg-white/10 border border-white/20 text-white text-sm font-['Lato'] placeholder:text-white/40 focus:outline-none focus:border-[#25a9e0]"
               />
               <button
                 onClick={handleSend}
                 disabled={!input.trim()}
-                className="px-4 py-3 bg-[#dff140] hover:bg-[#e8f756] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                style={{ padding: '10px 14px' }} className="bg-[#25a9e0] hover:bg-[#1d8ec0] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
-                <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                 </svg>
               </button>
