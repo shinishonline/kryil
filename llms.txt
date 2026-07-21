@@ -74,14 +74,6 @@ Kryil Infotech Private Limited (also known as Kryil Industries) is a cutting-edg
 - Sensor Integration
 - Smart Home & Smart City Solutions
 
-### Digital Marketing
-- Search Engine Optimization (SEO)
-- PPC Advertising (Google Ads, Facebook Ads)
-- Social Media Marketing
-- Content Marketing
-- Email Marketing
-- Marketing Automation
-
 ### Database Administration & Development
 - Database Administration (DBA Services)
 - Database Development & Design
