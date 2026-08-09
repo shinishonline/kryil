@@ -558,7 +558,7 @@ export default function NextDOOH() {
 
                   {/* Button */}
                   <a
-                    href="https://www.nextdooh.com/"
+                    href="https://nextdooh.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="glow-breathe group relative inline-flex items-center gap-2 md:gap-4 overflow-hidden bg-[#dff140] text-black font-['Lato'] text-[0.9rem] md:text-[1.1rem] font-black uppercase tracking-[0.1em] px-6 md:px-12 py-4 md:py-6 hover:bg-white transition-colors duration-300"
@@ -1038,7 +1038,7 @@ export default function NextDOOH() {
             {/* CTA Button */}
             <div className={`mt-12 transition-all duration-1000 delay-300 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <a
-                href="https://www.nextdooh.com/"
+                href="https://nextdooh.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-4 bg-black text-white font-['Lato'] text-[1rem] font-black uppercase tracking-[0.12em] px-10 py-5 hover:bg-black/80 transition-all duration-300"
