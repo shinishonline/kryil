@@ -279,7 +279,7 @@ const sections: Section[] = [
         </p>
         <div className="p-6 bg-white/5 border border-white/10 rounded-lg">
           <p className="text-white font-semibold">Kryil Infotech Private Limited</p>
-          <p className="text-white/70 mt-2">Workflow Ranka Junction, 3rd Floor, 224 KR Puram</p>
+          <p className="text-white/70 mt-2">RK No 224, Old Madras Road, Doorvaninagar, Bangalore North</p>
           <p className="text-white/70">Bangalore, Karnataka - 560016, India</p>
           <p className="text-white/70 mt-3">Email: contact@kryil.com</p>
         </div>

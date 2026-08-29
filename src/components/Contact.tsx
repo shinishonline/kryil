@@ -293,9 +293,9 @@ export default function Contact() {
                       Location
                     </span>
                     <span className="block font-['Lato'] text-[0.95rem] text-white/85 leading-[1.7]">
-                      Workflow Ranka Junction, 3rd Floor, 224
+                      RK No 224, Old Madras Road
                       <br />
-                      KR Puram, Bangalore &ndash; 560016
+                      Doorvaninagar, Bangalore North &ndash; 560016
                       <br />
                       Karnataka, India
                     </span>

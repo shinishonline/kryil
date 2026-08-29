@@ -385,7 +385,7 @@ const sections: Section[] = [
         <div className="bg-white/5 p-6 border border-white/10">
           <h3 className="text-lg font-bold text-white mb-4">Kryil Infotech Private Limited</h3>
           <div className="space-y-3 text-white/70">
-            <p>Workflow Ranka Junction, 3rd Floor, 224 KR Puram</p>
+            <p>RK No 224, Old Madras Road, Doorvaninagar, Bangalore North</p>
             <p>Bangalore, Karnataka - 560016, India</p>
             <p className="mt-4">
               <span className="text-white/50">Email:</span>{' '}

@@ -19,7 +19,7 @@ const knowledgeBase = {
   company: {
     name: 'KRYIL Infotech',
     location: 'Bangalore, India',
-    address: 'Workflow Ranka Junction, 3rd Floor, 224 KR Puram, Bangalore, Karnataka 560016',
+    address: 'RK No 224, Old Madras Road, Doorvaninagar, Bangalore North, Bengaluru, Karnataka 560016',
     phone: '+91-8089090365',
     email: 'info@kryil.com',
     coverage: 'Worldwide',
