@@ -34,7 +34,7 @@ interface PageSEO {
 
 const pageSEO: Record<string, PageSEO> = {
   '/': {
-    title: 'KRYIL Infotech | UAV Drone Manufacturer | Robotics & IoT Solutions | Bangalore India',
+    title: 'KRYIL Infotech — UAV Drones, Robotics & IoT | Bangalore',
     description: 'KRYIL Infotech - Leading UAV Drone Manufacturer & Robotics Company in Bangalore, India. Specializing in UAV Development, Drone Technology, Industrial Robotics, IoT Solutions, Defense Systems, AI/ML, and Autonomous Systems.',
   },
   '/defense': {
@@ -46,7 +46,7 @@ const pageSEO: Record<string, PageSEO> = {
     description: 'Join KRYIL Infotech and work on cutting-edge UAV, robotics, and defense technology. Explore career opportunities in Bangalore.',
   },
   '/blog': {
-    title: 'Blog | Expert Insights on UAV, Aerospace & Technology | KRYIL Infotech',
+    title: 'Blog — UAV, Aerospace & Tech Insights | KRYIL Infotech',
     description: 'Read expert insights and articles on UAV technology, aerospace engineering, robotics, IoT, and emerging technologies from KRYIL Infotech.',
   },
   '/news': {
@@ -54,11 +54,11 @@ const pageSEO: Record<string, PageSEO> = {
     description: 'Latest news and updates from KRYIL Infotech - announcements, achievements, and industry insights.',
   },
   '/services/enterprise-solutions': {
-    title: 'Enterprise Solution & Application Development | KRYIL Infotech',
+    title: 'Enterprise Software Development | KRYIL Infotech',
     description: 'Custom enterprise application development services. Build scalable, secure solutions that transform your business operations.',
   },
   '/services/professional-services': {
-    title: 'Professional Services | Expert Consulting & Managed Services | KRYIL Infotech',
+    title: 'Professional Services & Consulting | KRYIL Infotech',
     description: 'Strategic technology consulting and managed services. Expert consultants to optimize operations and drive business transformation.',
   },
   '/services/cybersecurity': {
@@ -66,11 +66,11 @@ const pageSEO: Record<string, PageSEO> = {
     description: 'Comprehensive cybersecurity services including penetration testing, vulnerability assessment, SOC services, and compliance consulting.',
   },
   '/services/automation': {
-    title: 'Infrastructure Services & Automation | Cloud & DevOps | KRYIL Infotech',
+    title: 'Infrastructure Automation & Cloud DevOps | KRYIL Infotech',
     description: 'Comprehensive infrastructure services and automation. Cloud migration, network architecture, CI/CD pipelines, Kubernetes, and Infrastructure as Code.',
   },
   '/services/database': {
-    title: 'Database Administration | SQL, Oracle, MongoDB | KRYIL Infotech',
+    title: 'Database Administration & Development | KRYIL Infotech',
     description: 'Professional database administration services. SQL Server, Oracle, PostgreSQL, MongoDB, and data warehouse solutions.',
   },
   '/services/aimlservices': {
@@ -78,13 +78,13 @@ const pageSEO: Record<string, PageSEO> = {
     description: 'Advanced Artificial Intelligence solutions. Custom AI development, predictive analytics, natural language processing, and intelligent automation.',
   },
   '/products/avionix': {
-    title: 'Avionix | Free Aircraft Design & Aerodynamic Analysis Platform | KRYIL Infotech',
+    title: 'Avionix — Aircraft Design & Analysis | KRYIL Infotech',
     description: 'Avionix is a free browser-based aircraft design platform with real-time CFD analysis, flight simulation, and 3D visualization. Design fighters, UAVs, and transport aircraft with 58+ templates. No signup required.',
     keywords: 'aircraft design software, aerodynamic analysis, CFD simulation, flight simulator, aircraft CAD, UAV design, drone design software, aerospace engineering tool, free aircraft design, parametric modeling, stability analysis, 3D aircraft visualization',
     ogImage: 'https://www.kryil.com/avionix-og.png',
   },
   '/products/nextdooh': {
-    title: 'NextDOOH | Digital Signage Platform | Cloud-Based DOOH Solution | KRYIL Infotech',
+    title: 'NextDOOH — Cloud Digital Signage | KRYIL Infotech',
     description: 'NextDOOH is a cloud-based digital signage platform for Android displays. Real-time content sync (<2s), multi-zone layouts, remote device management, and WebSocket-powered control. Manage unlimited screens from anywhere.',
     keywords: 'digital signage software, DOOH platform, digital out of home, Android TV signage, cloud signage, content management system, remote screen control, digital menu boards, retail displays, WebSocket sync, multi-zone layouts, kiosk mode',
     ogImage: 'https://www.kryil.com/nextdooh-og.png',
