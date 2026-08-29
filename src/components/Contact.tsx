@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { labelClass, inputClass } from '../styles/formClasses';
 
 const socialLinks = [
-  { label: 'LinkedIn', href: 'https://linkedin.com/company/kryil-infotech' },
+  { label: 'LinkedIn', href: 'https://linkedin.com/company/kryil' },
   { label: 'X (Twitter)', href: 'https://twitter.com/kryilinfotech' },
   { label: 'YouTube', href: 'https://youtube.com/@kryilinfotech' },
 ];

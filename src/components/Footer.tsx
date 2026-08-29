@@ -30,7 +30,7 @@ export default function Footer() {
             {/* Social Icons */}
             <div className="flex gap-3">
               <a
-                href="https://linkedin.com/company/kryil-infotech"
+                href="https://linkedin.com/company/kryil"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center text-white/40 hover:bg-[#dff140] hover:text-black hover:border-[#dff140] transition-all duration-300"
