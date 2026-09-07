@@ -208,7 +208,7 @@ export default function TermsOfUse() {
               >
                 <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">1. Acceptance of Terms</h2>
                 <p className="text-white/70 font-['Lato'] leading-relaxed">
-                  Welcome to Kryil Infotech Private Limited ("KRYIL", "we", "our", or "us"). By accessing or using our website <span className="text-white font-medium">www.kryil.com</span> and our services, you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use our services.
+                  Welcome to Kryil Infotech Private Limited ("KRYIL", "we", "our", or "us"). By accessing or using our website <span className="text-white font-medium">kryil.com</span> and our services, you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use our services.
                 </p>
               </section>
 

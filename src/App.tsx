@@ -75,7 +75,7 @@ const pageSEO: Record<string, PageSEO> = {
     title: 'NextDOOH — Cloud Digital Signage | KRYIL Infotech',
     description: 'NextDOOH is a cloud-based digital signage platform for Android displays. Real-time content sync (<2s), multi-zone layouts, remote device management, and WebSocket-powered control. Manage unlimited screens from anywhere.',
     keywords: 'digital signage software, DOOH platform, digital out of home, Android TV signage, cloud signage, content management system, remote screen control, digital menu boards, retail displays, WebSocket sync, multi-zone layouts, kiosk mode',
-    ogImage: 'https://www.kryil.com/nextdooh-og.png',
+    ogImage: 'https://kryil.com/nextdooh-og.png',
   },
   '/brand': {
     title: 'Our New Logo | Brand Update | KRYIL Infotech',
@@ -149,7 +149,7 @@ function ScrollToHash() {
     // Update Open Graph tags
     updateMetaTag('og:title', seo.title, true);
     updateMetaTag('og:description', seo.description, true);
-    updateMetaTag('og:url', `https://www.kryil.com${location.pathname}`, true);
+    updateMetaTag('og:url', `https://kryil.com${location.pathname}`, true);
     if (seo.ogImage) {
       updateMetaTag('og:image', seo.ogImage, true);
     }
@@ -157,10 +157,10 @@ function ScrollToHash() {
     // Update Twitter tags
     updateMetaTag('twitter:title', seo.title);
     updateMetaTag('twitter:description', seo.description);
-    updateMetaTag('twitter:url', `https://www.kryil.com${location.pathname}`);
+    updateMetaTag('twitter:url', `https://kryil.com${location.pathname}`);
 
     // Update canonical URL
-    updateCanonical(`https://www.kryil.com${location.pathname}`);
+    updateCanonical(`https://kryil.com${location.pathname}`);
 
     // Scroll to top on route change
     window.scrollTo(0, 0);

@@ -206,7 +206,7 @@ export default function PrivacyPolicy() {
                 <p className="text-white/70 font-['Lato'] leading-relaxed">
                   Kryil Infotech Private Limited ("KRYIL", "we", "our", or "us") is committed to protecting your privacy.
                   This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you
-                  visit our website <span className="text-white font-medium">www.kryil.com</span> or use our services.
+                  visit our website <span className="text-white font-medium">kryil.com</span> or use our services.
                 </p>
               </section>
 

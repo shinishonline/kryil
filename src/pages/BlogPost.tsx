@@ -69,14 +69,14 @@ export default function BlogPost() {
           "name": "KRYIL Infotech",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://www.kryil.com/logo.png"
+            "url": "https://kryil.com/logo.png"
           }
         },
         "datePublished": post.date,
         "dateModified": post.date,
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": `https://www.kryil.com/blog/${post.slug}`
+          "@id": `https://kryil.com/blog/${post.slug}`
         },
         "keywords": post.tags.join(', '),
         "articleSection": post.category
@@ -386,7 +386,7 @@ export default function BlogPost() {
               <p className="text-white/40 text-sm font-['Lato']">Share this article</p>
               <div className="flex gap-3">
                 <a
-                  href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(`https://www.kryil.com/blog/${post.slug}`)}&title=${encodeURIComponent(post.title)}`}
+                  href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(`https://kryil.com/blog/${post.slug}`)}&title=${encodeURIComponent(post.title)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-white/5 flex items-center justify-center hover:bg-[#0077b5] text-white/50 hover:text-white transition-all"
@@ -396,7 +396,7 @@ export default function BlogPost() {
                   </svg>
                 </a>
                 <a
-                  href={`mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(`Read: https://www.kryil.com/blog/${post.slug}`)}`}
+                  href={`mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(`Read: https://kryil.com/blog/${post.slug}`)}`}
                   className="w-10 h-10 bg-white/5 flex items-center justify-center hover:bg-white text-white/50 hover:text-black transition-all"
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
