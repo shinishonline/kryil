@@ -2,9 +2,9 @@ User-agent: *
 Allow: /
 
 # Sitemap for search engines
-Sitemap: https://www.kryil.com/sitemap.xml
+Sitemap: https://kryil.com/sitemap.xml
 
-# LLMs.txt for AI platforms: https://www.kryil.com/llms.txt
+# LLMs.txt for AI platforms: https://kryil.com/llms.txt
 # Learn more at https://llmstxt.org/
 
 # Kryil Infotech - Defense Technology & Enterprise Software
