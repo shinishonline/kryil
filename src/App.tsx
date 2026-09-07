@@ -32,7 +32,7 @@ interface PageSEO {
 
 const pageSEO: Record<string, PageSEO> = {
   '/': {
-    title: 'KRYIL Infotech | Applied AI & Data Engineering | Bangalore, India',
+    title: 'KRYIL Infotech | Applied AI & Data Engineering | Bangalore',
     description: 'KRYIL Infotech builds production AI systems for Indian enterprises \u2014 deployed inside your own cloud or on your own hardware. Applied AI, data engineering and private LLM deployment from Bangalore.',
   },
   '/careers': {
@@ -40,7 +40,7 @@ const pageSEO: Record<string, PageSEO> = {
     description: 'Join KRYIL Infotech and work on production AI systems, data platforms and our own products. Explore career opportunities in Bangalore.',
   },
   '/blog': {
-    title: 'Blog | Engineering Notes on Applied AI & Data | KRYIL Infotech',
+    title: 'Blog | Engineering Notes on AI & Data | KRYIL Infotech',
     description: 'Technical writing from the KRYIL engineering team on production AI, retrieval systems, private model deployment, data engineering and the things that did not work.',
   },
   '/news': {
@@ -48,23 +48,23 @@ const pageSEO: Record<string, PageSEO> = {
     description: 'Latest news and updates from KRYIL Infotech - announcements, achievements, and industry insights.',
   },
   '/services/enterprise-solutions': {
-    title: 'Enterprise Solution & Application Development | KRYIL Infotech',
+    title: 'Enterprise Software Development | KRYIL Infotech',
     description: 'Custom enterprise application development services. Build scalable, secure solutions that transform your business operations.',
   },
   '/services/professional-services': {
-    title: 'Professional Services | Expert Consulting & Managed Services | KRYIL Infotech',
+    title: 'Professional Services & Consulting | KRYIL Infotech',
     description: 'Strategic technology consulting and managed services. Expert consultants to optimize operations and drive business transformation.',
   },
   '/services/cybersecurity': {
-    title: 'Security Engineering | AI Security & DPDP Readiness | KRYIL Infotech',
+    title: 'Security Engineering | AI Security & DPDP | KRYIL Infotech',
     description: 'Threat modelling, secure architecture review, AI security and governance, and DPDP Act readiness. Security designed into the systems we build, not sold as a separate retainer.',
   },
   '/services/automation': {
-    title: 'Infrastructure Services & Automation | Cloud & DevOps | KRYIL Infotech',
+    title: 'Infrastructure Automation & Cloud DevOps | KRYIL Infotech',
     description: 'Comprehensive infrastructure services and automation. Cloud migration, network architecture, CI/CD pipelines, Kubernetes, and Infrastructure as Code.',
   },
   '/services/database': {
-    title: 'Database Administration | SQL, Oracle, MongoDB | KRYIL Infotech',
+    title: 'Database Administration & Development | KRYIL Infotech',
     description: 'Professional database administration services. SQL Server, Oracle, PostgreSQL, MongoDB, and data warehouse solutions.',
   },
   '/services/aimlservices': {
@@ -72,7 +72,7 @@ const pageSEO: Record<string, PageSEO> = {
     description: 'Advanced Artificial Intelligence solutions. Custom AI development, predictive analytics, natural language processing, and intelligent automation.',
   },
   '/products/nextdooh': {
-    title: 'NextDOOH | Digital Signage Platform | Cloud-Based DOOH Solution | KRYIL Infotech',
+    title: 'NextDOOH — Cloud Digital Signage | KRYIL Infotech',
     description: 'NextDOOH is a cloud-based digital signage platform for Android displays. Real-time content sync (<2s), multi-zone layouts, remote device management, and WebSocket-powered control. Manage unlimited screens from anywhere.',
     keywords: 'digital signage software, DOOH platform, digital out of home, Android TV signage, cloud signage, content management system, remote screen control, digital menu boards, retail displays, WebSocket sync, multi-zone layouts, kiosk mode',
     ogImage: 'https://www.kryil.com/nextdooh-og.png',
