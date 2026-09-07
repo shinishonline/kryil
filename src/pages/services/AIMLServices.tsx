@@ -13,12 +13,6 @@ export default function AIMLServices() {
         'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1400&auto=format&fit=crop',
       ]}
       benefitsImage="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1400&auto=format&fit=crop"
-      stats={[
-        { value: '60+', label: 'AI & GenAI Projects' },
-        { value: '99%', label: 'Model Accuracy' },
-        { value: '30%', label: 'Operational Efficiency Gain' },
-        { value: '10+', label: 'Years AI Expertise' },
-      ]}
       features={[
         {
           title: 'Retrieval-Augmented Generation (RAG)',

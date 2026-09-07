@@ -19,37 +19,32 @@ const knowledgeBase = {
   company: {
     name: 'KRYIL Infotech',
     location: 'Bangalore, India',
-    address: 'Workflow Ranka Junction, 3rd Floor, 224 KR Puram, Bangalore, Karnataka 560016',
+    address: 'RK No 224, Old Madras Road, Doorvaninagar, Bangalore North, Karnataka 560016',
     phone: '+91-8089090365',
     email: 'info@kryil.com',
     coverage: 'Worldwide',
-    about: 'KRYIL Infotech is a technology company specializing in AI, Cloud, and Software Solutions. We build digital excellence through innovative infrastructure, cybersecurity, and software development services.',
+    about: "KRYIL Infotech builds production AI systems and data platforms for Indian enterprises, deployed inside the customer's own cloud or on-premise infrastructure. We also build our own product, NextDOOH.",
   },
   services: [
     {
       name: 'Infrastructure Services',
       description: 'Cloud migration across AWS, Azure, GCP. Multi-cloud management, network architecture, disaster recovery, and cost optimization.',
-      stats: '99.99% Uptime SLA, 50% Cost Reduction, 200+ Projects, 24/7 Support',
     },
     {
       name: 'Cybersecurity Services',
       description: 'Security audits, penetration testing, threat detection, incident response, and compliance management (GDPR, HIPAA, PCI-DSS, SOC 2).',
-      stats: '0 Breaches, 24/7 Monitoring, 500+ Audits, <15min Response',
     },
     {
       name: 'Software Development',
       description: 'Enterprise applications, web & mobile development, API development (REST/GraphQL), legacy modernization. Tech: React, Node.js, Python, Java, TypeScript.',
-      stats: '200+ Apps Built, 99.9% Uptime, 40% Faster Delivery',
     },
     {
       name: 'Infrastructure Automation',
       description: 'Infrastructure as Code (Terraform, Ansible), CI/CD pipelines, configuration management, RPA, monitoring & alerting.',
-      stats: '90% Faster Deployments, 80% Less Manual Work, 1000+ Pipelines',
     },
     {
       name: 'Database Administration',
       description: 'Database management, optimization, migration, and business intelligence. SQL Server, Oracle, MySQL, PostgreSQL, MongoDB, Power BI, Microsoft Fabric.',
-      stats: '500+ Databases Managed, 99.99% Uptime, 60% Performance Boost',
     },
   ],
   careers: [
@@ -57,16 +52,10 @@ const knowledgeBase = {
     { title: 'AI/ML Engineer', department: 'AI & Data Science', location: 'Remote', experience: '3+ years' },
     { title: 'Cloud Solutions Architect', department: 'Cloud Infrastructure', location: 'Remote', experience: '7+ years' },
     { title: 'UI/UX Designer', department: 'Design', location: 'Remote', experience: '4+ years' },
+    { title: 'Marketing Executive', department: 'Marketing', location: 'Bangalore', experience: 'Executive MBA + 1 year' },
     { title: 'Marketing Intern', department: 'Marketing', location: 'Bangalore / Remote', experience: 'Students & freshers' },
     { title: 'Software Development Intern (Backend)', department: 'Engineering', location: 'Bangalore / Remote', experience: 'Students & freshers' },
-    { title: 'UAV Design Engineer Intern (SolidWorks / Aerospace)', department: 'Aerospace & UAV', location: 'Bangalore', experience: 'Students & freshers' },
   ],
-  defense: {
-    about: 'KRYIL Defense Division specializes in advanced UAV/drone technology for defense applications.',
-    products: ['QDYNA 101 (Surveillance UAV)', 'QDYNA 501 (Combat UAV)', 'QDYNA 901 (Tactical Swarm)'],
-    capabilities: 'Autonomous navigation, encrypted communications, real-time intelligence, swarm coordination, stealth technology.',
-    stats: '500+ Units Deployed, 99.9% Mission Success, 15+ Defense Partners',
-  },
 };
 
 // Simple keyword-based response system
@@ -102,31 +91,31 @@ function getResponse(input: string): string {
   // Infrastructure
   if (lowerInput.includes('infrastructure') || lowerInput.includes('cloud') || lowerInput.includes('aws') || lowerInput.includes('azure')) {
     const s = knowledgeBase.services[0];
-    return `**${s.name}**\n${s.description}\n\n📊 ${s.stats}`;
+    return `**${s.name}**\n${s.description}`;
   }
 
   // Cybersecurity
   if (lowerInput.includes('cyber') || lowerInput.includes('security') || lowerInput.includes('penetration') || lowerInput.includes('audit')) {
     const s = knowledgeBase.services[1];
-    return `**${s.name}**\n${s.description}\n\n📊 ${s.stats}`;
+    return `**${s.name}**\n${s.description}`;
   }
 
   // Software Development
   if (lowerInput.includes('software') || lowerInput.includes('development') || lowerInput.includes('app') || lowerInput.includes('web') || lowerInput.includes('mobile')) {
     const s = knowledgeBase.services[2];
-    return `**${s.name}**\n${s.description}\n\n📊 ${s.stats}`;
+    return `**${s.name}**\n${s.description}`;
   }
 
   // Automation
   if (lowerInput.includes('automation') || lowerInput.includes('devops') || lowerInput.includes('ci/cd') || lowerInput.includes('terraform')) {
     const s = knowledgeBase.services[3];
-    return `**${s.name}**\n${s.description}\n\n📊 ${s.stats}`;
+    return `**${s.name}**\n${s.description}`;
   }
 
   // Database Administration
   if (lowerInput.includes('database') || lowerInput.includes('dba') || lowerInput.includes('sql') || lowerInput.includes('power bi') || lowerInput.includes('fabric') || lowerInput.includes('mongodb') || lowerInput.includes('postgresql')) {
     const s = knowledgeBase.services[4];
-    return `**${s.name}**\n${s.description}\n\n📊 ${s.stats}`;
+    return `**${s.name}**\n${s.description}`;
   }
 
   // Careers - general
@@ -157,10 +146,6 @@ function getResponse(input: string): string {
     }
   }
 
-  // Defense
-  if (lowerInput.includes('defense') || lowerInput.includes('drone') || lowerInput.includes('uav') || lowerInput.includes('military')) {
-    return `**KRYIL Defense Division**\n${knowledgeBase.defense.about}\n\nProducts: ${knowledgeBase.defense.products.join(', ')}\n\nCapabilities: ${knowledgeBase.defense.capabilities}\n\n📊 ${knowledgeBase.defense.stats}`;
-  }
 
   // Pricing
   if (lowerInput.includes('price') || lowerInput.includes('cost') || lowerInput.includes('pricing') || lowerInput.includes('quote')) {
@@ -169,7 +154,7 @@ function getResponse(input: string): string {
 
   // Help
   if (lowerInput.includes('help') || lowerInput.includes('what can you')) {
-    return "I can help you with:\n• Company information\n• Our services (Infrastructure, Cybersecurity, Software, Automation, Marketing)\n• Career opportunities\n• Defense products\n• Contact details\n\nJust ask away!";
+    return "I can help you with:\n• Company information\n• Our services (Infrastructure, Cybersecurity, Software, Automation, Marketing)\n• Career opportunities\n• Contact details\n\nJust ask away!";
   }
 
   // Connect / Talk to someone
@@ -248,7 +233,7 @@ export default function ChatBot() {
     );
 
     // Open mailto link
-    window.open(`mailto:shinish@kryil.com?subject=${subject}&body=${body}`, '_blank');
+    window.open(`mailto:info@kryil.com?subject=${subject}&body=${body}`, '_blank');
 
     // Also log to console for backend integration
     console.log('Lead submitted:', formData);
@@ -274,7 +259,7 @@ export default function ChatBot() {
       {/* Chat Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25a9e0] hover:bg-[#1d8ec0] rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#17beb0] hover:bg-[#1d8ec0] rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
         aria-label="Chat with us"
       >
         {isOpen ? (
@@ -292,9 +277,9 @@ export default function ChatBot() {
       {isOpen && (
         <div className="fixed bottom-24 right-6 z-50 w-80 sm:w-96 h-[28rem] bg-black border border-white/10 rounded-lg shadow-2xl flex flex-col overflow-hidden animate-fade-in-up">
           {/* Header */}
-          <div className="bg-[#25a9e0] flex items-center gap-3" style={{ padding: '16px 20px' }}>
+          <div className="bg-[#17beb0] flex items-center gap-3" style={{ padding: '16px 20px' }}>
             <div className="w-10 h-10 bg-black flex items-center justify-center">
-              <span className="text-[#25a9e0] text-sm font-bold font-['Lato']">K</span>
+              <span className="text-[#17beb0] text-sm font-bold font-['Lato']">K</span>
             </div>
             <div>
               <h3 className="text-white font-semibold text-sm font-['Lato']">KRYIL Assistant</h3>
@@ -313,7 +298,7 @@ export default function ChatBot() {
                   style={{ padding: '10px 14px' }} className={`max-w-[85%] text-sm whitespace-pre-line font-['Lato'] ${
                     msg.isBot
                       ? 'bg-white/10 text-white'
-                      : 'bg-[#25a9e0] text-white'
+                      : 'bg-[#17beb0] text-white'
                   }`}
                 >
                   {msg.text}
@@ -331,7 +316,7 @@ export default function ChatBot() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    style={{ padding: '10px 14px' }} className="w-full bg-white/10 border border-white/20 text-white text-sm font-['Lato'] placeholder:text-white/40 focus:outline-none focus:border-[#25a9e0]"
+                    style={{ padding: '10px 14px' }} className="w-full bg-white/10 border border-white/20 text-white text-sm font-['Lato'] placeholder:text-white/40 focus:outline-none focus:border-[#17beb0]"
                   />
                   <input
                     type="email"
@@ -339,25 +324,25 @@ export default function ChatBot() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    style={{ padding: '10px 14px' }} className="w-full bg-white/10 border border-white/20 text-white text-sm font-['Lato'] placeholder:text-white/40 focus:outline-none focus:border-[#25a9e0]"
+                    style={{ padding: '10px 14px' }} className="w-full bg-white/10 border border-white/20 text-white text-sm font-['Lato'] placeholder:text-white/40 focus:outline-none focus:border-[#17beb0]"
                   />
                   <input
                     type="tel"
                     placeholder="Phone Number"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    style={{ padding: '10px 14px' }} className="w-full bg-white/10 border border-white/20 text-white text-sm font-['Lato'] placeholder:text-white/40 focus:outline-none focus:border-[#25a9e0]"
+                    style={{ padding: '10px 14px' }} className="w-full bg-white/10 border border-white/20 text-white text-sm font-['Lato'] placeholder:text-white/40 focus:outline-none focus:border-[#17beb0]"
                   />
                   <textarea
                     placeholder="How can we help?"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     rows={2}
-                    style={{ padding: '10px 14px' }} className="w-full bg-white/10 border border-white/20 text-white text-sm font-['Lato'] placeholder:text-white/40 focus:outline-none focus:border-[#25a9e0] resize-none"
+                    style={{ padding: '10px 14px' }} className="w-full bg-white/10 border border-white/20 text-white text-sm font-['Lato'] placeholder:text-white/40 focus:outline-none focus:border-[#17beb0] resize-none"
                   />
                   <button
                     type="submit"
-                    style={{ padding: '12px 0' }} className="w-full bg-[#25a9e0] hover:bg-[#1d8ec0] text-white font-semibold text-sm font-['Lato'] transition-colors"
+                    style={{ padding: '12px 0' }} className="w-full bg-[#17beb0] hover:bg-[#1d8ec0] text-white font-semibold text-sm font-['Lato'] transition-colors"
                   >
                     Send Details
                   </button>
@@ -403,12 +388,12 @@ export default function ChatBot() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                 placeholder="Type a message..."
-                style={{ padding: '10px 14px' }} className="flex-1 bg-white/10 border border-white/20 text-white text-sm font-['Lato'] placeholder:text-white/40 focus:outline-none focus:border-[#25a9e0]"
+                style={{ padding: '10px 14px' }} className="flex-1 bg-white/10 border border-white/20 text-white text-sm font-['Lato'] placeholder:text-white/40 focus:outline-none focus:border-[#17beb0]"
               />
               <button
                 onClick={handleSend}
                 disabled={!input.trim()}
-                style={{ padding: '10px 14px' }} className="bg-[#25a9e0] hover:bg-[#1d8ec0] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                style={{ padding: '10px 14px' }} className="bg-[#17beb0] hover:bg-[#1d8ec0] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />

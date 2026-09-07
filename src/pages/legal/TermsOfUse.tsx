@@ -187,10 +187,10 @@ export default function TermsOfUse() {
               <div className="mt-8 pt-8 border-t border-white/10">
                 <p className="text-white/40 text-sm font-['Lato'] mb-2">Questions?</p>
                 <a
-                  href="mailto:contact@kryil.com"
+                  href="mailto:info@kryil.com"
                   className="text-white text-sm font-['Lato'] font-medium hover:underline"
                 >
-                  contact@kryil.com
+                  info@kryil.com
                 </a>
               </div>
             </div>
@@ -220,7 +220,7 @@ export default function TermsOfUse() {
               >
                 <h2 className="font-['Lato'] text-2xl font-bold text-white mb-6">2. Description of Services</h2>
                 <p className="text-white/70 font-['Lato'] leading-relaxed">
-                  KRYIL Infotech provides technology solutions including but not limited to defense technology, UAV systems, enterprise software development, cloud infrastructure, AI/ML solutions, cybersecurity services, database administration, and digital marketing services.
+                  KRYIL Infotech provides technology services including but not limited to applied artificial intelligence and machine learning engineering, private and on-premise model deployment, data engineering and data platform development, cloud infrastructure and DevOps, enterprise software development, database administration, and security engineering. We also develop and operate our own software products.
                 </p>
               </section>
 
@@ -439,8 +439,8 @@ export default function TermsOfUse() {
                     <p>Bangalore, Karnataka - 560016, India</p>
                     <p className="mt-4">
                       <span className="text-white/50">Email:</span>{' '}
-                      <a href="mailto:contact@kryil.com" className="text-white font-medium hover:underline">
-                        contact@kryil.com
+                      <a href="mailto:info@kryil.com" className="text-white font-medium hover:underline">
+                        info@kryil.com
                       </a>
                     </p>
                     <p>

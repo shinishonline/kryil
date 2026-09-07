@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { blogPosts } from '../data/blogPosts';
 import type { BlogPost } from '../data/blogPosts';
 
-const categories = ['All', 'UAV', 'Robotics', 'IoT', 'Defense', 'AI', 'Aerospace'];
+const categories = ['All', 'AI', 'Data', 'Engineering', 'IoT', 'Robotics'];
 
 function useScrollAnimation() {
   const [isVisible, setIsVisible] = useState(false);
@@ -133,7 +133,7 @@ export default function Blog() {
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                 >
-                  Expert insights on UAV technology, aerospace engineering, robotics, and defense innovation from industry leaders.
+                  Engineering notes on production AI, retrieval systems, data platforms and the things that did not work from industry leaders.
                 </p>
               </div>
 

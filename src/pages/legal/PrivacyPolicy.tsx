@@ -183,10 +183,10 @@ export default function PrivacyPolicy() {
               <div className="mt-8 pt-8 border-t border-white/10">
                 <p className="text-white/40 text-sm font-['Lato'] mb-2">Questions?</p>
                 <a
-                  href="mailto:contact@kryil.com"
+                  href="mailto:info@kryil.com"
                   className="text-white text-sm font-['Lato'] font-medium hover:underline"
                 >
-                  contact@kryil.com
+                  info@kryil.com
                 </a>
               </div>
             </div>
@@ -349,10 +349,32 @@ export default function PrivacyPolicy() {
                   <li>We do not process personal data of children without verifiable parental consent, nor undertake tracking or targeted advertising directed at children</li>
                 </ul>
                 <p className="text-white/70 font-['Lato'] leading-relaxed">
-                  To exercise any of these rights, or to raise a grievance, contact us at{' '}
-                  <a href="mailto:info@kryil.com" className="text-[#dff140] hover:underline">info@kryil.com</a>.
+                  To exercise any of these rights, or to raise a grievance, contact our Grievance
+                  Officer at{' '}
+                  <a href="mailto:grievance@kryil.com" className="text-[#dff140] hover:underline">grievance@kryil.com</a>.
                   If you are not satisfied with our response, you have the right to complain to the Data
                   Protection Board of India.
+                </p>
+                <h3 className="font-['Lato'] text-lg font-semibold text-white mb-4 mt-10">Grievance redressal</h3>
+                <p className="text-white/70 font-['Lato'] leading-relaxed mb-5">
+                  In accordance with Section 8(9) of the DPDP Act, we publish a contact point for
+                  questions and grievances about how we process your personal data. Write to our
+                  Grievance Officer at{' '}
+                  <a href="mailto:grievance@kryil.com" className="text-[#dff140] hover:underline">grievance@kryil.com</a>. We acknowledge grievances within
+                  72 hours and aim to resolve them within 30 days.
+                </p>
+                <h3 className="font-['Lato'] text-lg font-semibold text-white mb-4 mt-10">Withdrawing consent</h3>
+                <p className="text-white/70 font-['Lato'] leading-relaxed mb-5">
+                  You may withdraw consent at any time, with the same ease as it was given, by emailing
+                  the address above. Withdrawal does not affect the lawfulness of processing carried out
+                  before withdrawal. Where you withdraw consent, we will cease processing and erase the
+                  personal data unless retention is required by law.
+                </p>
+                <h3 className="font-['Lato'] text-lg font-semibold text-white mb-4 mt-10">Retention</h3>
+                <p className="text-white/70 font-['Lato'] leading-relaxed">
+                  Contact and enquiry data is retained for 24 months from last contact. Job application
+                  data is retained for 12 months unless you ask us to keep it longer. After these periods
+                  the data is erased, together with any backups, unless a statutory retention duty applies.
                 </p>
               </section>
 
@@ -429,8 +451,8 @@ export default function PrivacyPolicy() {
                     <p>Bangalore, Karnataka - 560016, India</p>
                     <p className="mt-4">
                       <span className="text-white/50">Email:</span>{' '}
-                      <a href="mailto:contact@kryil.com" className="text-white font-medium hover:underline">
-                        contact@kryil.com
+                      <a href="mailto:info@kryil.com" className="text-white font-medium hover:underline">
+                        info@kryil.com
                       </a>
                     </p>
                     <p>

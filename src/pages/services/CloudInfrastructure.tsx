@@ -7,12 +7,6 @@ export default function CloudInfrastructure() {
       subtitle="Scalable & Reliable"
       description="Design, migrate, and manage cloud infrastructure that scales with your business. Our cloud experts help you leverage AWS, Azure, and GCP to build resilient, cost-effective, and high-performance systems."
       image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
-      stats={[
-        { value: '99.99%', label: 'Uptime Achieved' },
-        { value: '40%', label: 'Cost Savings' },
-        { value: '100+', label: 'Migrations Done' },
-        { value: '3x', label: 'Faster Scaling' },
-      ]}
       features={[
         {
           title: 'Cloud Migration',
@@ -35,8 +29,8 @@ export default function CloudInfrastructure() {
           description: 'Continuous optimization of cloud resources to reduce costs while maintaining performance.',
         },
         {
-          title: '24/7 Monitoring',
-          description: 'Proactive monitoring and alerting to ensure high availability and rapid incident response.',
+          title: 'Monitoring & Alerting',
+          description: 'Metrics, logs and traces with alerting on service-level objectives, escalating within your agreed support window.',
         },
       ]}
       benefits={[

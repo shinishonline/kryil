@@ -201,7 +201,8 @@ export default function Mission() {
               </p>
               {/* Revealed text */}
               <p
-                className="font-['Lato'] text-[1.15rem] text-white/80 leading-[1.8] absolute inset-0 pointer-events-none"
+                aria-hidden="true"
+                  className="font-['Lato'] text-[1.15rem] text-white/80 leading-[1.8] absolute inset-0 pointer-events-none"
                 style={{
                   opacity: isHovering ? 1 : 0,
                   transition: 'opacity 0.4s ease',

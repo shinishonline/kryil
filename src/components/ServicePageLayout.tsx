@@ -380,7 +380,7 @@ export default function ServicePageLayout({
             {/* Left Column - Header */}
             <div className="lg:sticky lg:top-32 lg:h-fit">
               <div className="flex items-center gap-4" style={{ marginBottom: '24px' }}>
-                <div className="w-3 h-3 bg-[#25a9e0]" />
+                <div className="w-3 h-3 bg-[#17beb0]" />
                 <span className="font-['Lato'] text-[0.7rem] text-black/40 uppercase tracking-[0.3em]">
                   Why KRYIL
                 </span>
@@ -419,7 +419,7 @@ export default function ServicePageLayout({
                   style={{ padding: '32px', transitionDelay: `${index * 80}ms` }}
                 >
                   {/* Icon */}
-                  <div className="w-12 h-12 bg-[#25a9e0] flex items-center justify-center flex-shrink-0 group-hover:bg-[#25a9e0] transition-colors duration-300">
+                  <div className="w-12 h-12 bg-[#17beb0] flex items-center justify-center flex-shrink-0 group-hover:bg-[#17beb0] transition-colors duration-300">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="3">
                       <path d="M20 6L9 17l-5-5" />
                     </svg>

@@ -846,7 +846,7 @@ export default function NextDOOH() {
             {/* Left Column - Label and Title */}
             <div>
               <div className={`group flex items-center gap-4 mb-8 transition-all duration-1000 cursor-pointer ${pricingVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <div className="w-3 h-3 bg-black group-hover:bg-[#25a9e0] transition-colors duration-300" />
+                <div className="w-3 h-3 bg-black group-hover:bg-[#17beb0] transition-colors duration-300" />
                 <span className="font-['Lato'] text-[0.7rem] text-black/40 uppercase tracking-[0.3em]">
                   Platform Features
                 </span>

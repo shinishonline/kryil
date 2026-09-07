@@ -1,11 +1,15 @@
 import ServicePageLayout from '../../components/ServicePageLayout';
 
+// Scope deliberately narrowed (Sept 2026). Offerings that require credentials KRYIL does
+// not hold — penetration testing (OSCP/CREST), 24/7 SOC monitoring, incident response
+// retainers, and SOC 2 / HIPAA / PCI-DSS compliance attestation — have been removed rather
+// than advertised. What remains is what we can evidence today.
 export default function Cybersecurity() {
   return (
     <ServicePageLayout
-      title="Cybersecurity"
-      subtitle="Protect Your Business"
-      description="Comprehensive cybersecurity solutions to protect your business from evolving threats. From security audits to threat detection and incident response, we keep your systems and data secure."
+      title="Security Engineering"
+      subtitle="Built In, Not Bolted On"
+      description="Security is part of how we build, not a separate invoice. Every system we deliver is threat-modelled at design time, scanned in CI, and access-controlled by default. We also review systems you already run — including the AI ones, where the risks are newest and least understood."
       image="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1400&auto=format&fit=crop"
       galleryImages={[
         '/group1.jpg',
@@ -13,62 +17,56 @@ export default function Cybersecurity() {
         'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=1400&auto=format&fit=crop',
       ]}
       benefitsImage="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1400&auto=format&fit=crop"
-      stats={[
-        { value: '0', label: 'Breaches on Watch' },
-        { value: '24/7', label: 'Threat Monitoring' },
-        { value: '500+', label: 'Audits Completed' },
-        { value: '<15min', label: 'Response Time' },
-      ]}
       features={[
         {
-          title: 'Compliance Management',
-          description: 'Ensure compliance with GDPR, HIPAA, PCI-DSS, SOC 2, and other regulatory requirements.',
+          title: 'AI Security & Governance Review',
+          description:
+            'Prompt injection, data leakage through retrieval, model supply chain, and access boundaries on tool-using agents. A newer risk surface than most security practices currently cover.',
         },
         {
-          title: 'Incident Response',
-          description: 'Rapid response services to contain breaches and minimize damage when security incidents occur.',
+          title: 'Secure Architecture Review',
+          description:
+            'Threat modelling of a system you already run or are about to build, delivered as a written architecture record with the trade-offs stated.',
         },
         {
-          title: 'Security Audits',
-          description: 'Comprehensive security assessments to identify vulnerabilities and compliance gaps in your systems.',
+          title: 'DPDP Act Readiness',
+          description:
+            'A practical mapping of your data flows against the Digital Personal Data Protection Act 2023: classification, retention, erasure paths and sub-processors.',
         },
         {
-          title: 'Penetration Testing',
-          description: 'Simulated cyber attacks to test your defenses and identify weaknesses before real attackers do.',
+          title: 'Secure Development Standard',
+          description:
+            'Dependency and container scanning in CI with builds failing on critical findings, secrets in a managed store, least-privilege IAM documented per grant.',
         },
         {
-          title: 'Security Training',
-          description: 'Employee awareness training to reduce human error and strengthen your security culture.',
+          title: 'Data Handling Design',
+          description:
+            'Classification maps, encryption in transit and at rest, and audit logging on every path that touches personal or regulated data.',
         },
         {
-          title: 'Threat Detection',
-          description: 'Advanced monitoring and detection systems to identify and respond to threats in real-time.',
+          title: 'Private Deployment',
+          description:
+            'Running AI and data workloads inside your own VPC or on your own hardware, so sensitive data never leaves a network you control.',
         },
-        
-        
-        
       ]}
       benefits={[
-        'Protection against data breaches and cyber attacks',
-        'Compliance with industry regulations and standards',
-        'Reduced risk of financial losses from security incidents',
-        'Improved customer trust through demonstrated security practices',
-        '24/7 security monitoring and incident response',
-        'Regular security assessments and continuous improvement',
+        'Security designed in at architecture stage, not retrofitted after a finding',
+        'Data residency you can evidence to an auditor or a regulator',
+        'A written threat model and architecture record you keep',
+        'Reduced exposure from third-party AI sub-processors',
+        'Clear, documented data classification and retention rules',
       ]}
       technologies={[
-        'SIEM',
-        'IDS/IPS',
-        'WAF',
-        'EDR',
+        'STRIDE',
+        'OWASP ASVS',
+        'OWASP LLM Top 10',
         'Zero Trust',
         'OAuth 2.0',
-        'OWASP',
-        'Nessus',
-        'Burp Suite',
-        'Splunk',
+        'Trivy',
+        'Terraform',
+        'HashiCorp Vault',
       ]}
-      ctaText="Secure Your Business"
+      ctaText="Request a Security Review"
     />
   );
 }

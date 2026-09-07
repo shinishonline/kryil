@@ -228,6 +228,7 @@ export default function About() {
                 </p>
                 {/* Revealed text */}
                 <p
+                  aria-hidden="true"
                   className="font-['Lato'] text-[1.3rem] font-light text-white leading-[1.6] absolute inset-0 pointer-events-none"
                   style={{
                     opacity: isHovering ? 1 : 0,
@@ -249,18 +250,19 @@ export default function About() {
                 {/* Base text */}
                 <div>
                   <p className="font-['Lato'] text-[1rem] text-white/25 leading-[1.9]">
-                    We specialize in transforming businesses through cutting-edge AI, cloud computing,
-                    and custom software development. Our approach combines deep technical expertise
-                    with a keen understanding of business challenges.
+                    We build production AI systems and the data platforms underneath them — deployed
+                    inside our clients' own cloud or on-premise infrastructure, so operational data
+                    never has to leave their network.
                   </p>
                   <p className="font-['Lato'] text-[1rem] text-white/25 leading-[1.9] mt-6">
-                    From startups to Fortune 500 companies, we've helped organizations across
-                    industries achieve their digital transformation goals with innovation,
-                    scalability, and security.
+                    We are a young company and we would rather show the work than claim a track record
+                    we do not have. Our own products are the reference — they are live, they are
+                    inspectable, and we published how they are built.
                   </p>
                 </div>
                 {/* Revealed text */}
                 <div
+                  aria-hidden="true"
                   className="absolute inset-0 pointer-events-none"
                   style={{
                     opacity: isHovering ? 1 : 0,
@@ -270,14 +272,14 @@ export default function About() {
                   }}
                 >
                   <p className="font-['Lato'] text-[1rem] text-white/70 leading-[1.9]">
-                    We specialize in transforming businesses through cutting-edge AI, cloud computing,
-                    and custom software development. Our approach combines deep technical expertise
-                    with a keen understanding of business challenges.
+                    We build production AI systems and the data platforms underneath them — deployed
+                    inside our clients' own cloud or on-premise infrastructure, so operational data
+                    never has to leave their network.
                   </p>
                   <p className="font-['Lato'] text-[1rem] text-white/70 leading-[1.9] mt-6">
-                    From startups to Fortune 500 companies, we've helped organizations across
-                    industries achieve their digital transformation goals with innovation,
-                    scalability, and security.
+                    We are a young company and we would rather show the work than claim a track record
+                    we do not have. Our own products are the reference — they are live, they are
+                    inspectable, and we published how they are built.
                   </p>
                 </div>
               </div>

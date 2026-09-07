@@ -84,7 +84,7 @@ export default function BlogPost() {
       document.head.appendChild(schema);
     }
     return () => {
-      document.title = 'KRYIL Infotech | UAV Drone Manufacturer | Robotics & IoT Solutions | Bangalore India';
+      document.title = 'KRYIL Infotech | Applied AI & Data Engineering | Bangalore, India';
       const schema = document.querySelector('script[data-schema="article"]');
       if (schema) schema.remove();
     };
@@ -106,12 +106,11 @@ export default function BlogPost() {
 
   const getCategoryStyles = (category: string) => {
     const styles: Record<string, { bg: string; text: string; accent: string }> = {
-      'UAV': { bg: 'bg-blue-500', text: 'text-white', accent: '#3b82f6' },
-      'Robotics': { bg: 'bg-emerald-500', text: 'text-white', accent: '#10b981' },
-      'IoT': { bg: 'bg-cyan-500', text: 'text-white', accent: '#06b6d4' },
-      'Defense': { bg: 'bg-red-500', text: 'text-white', accent: '#ef4444' },
       'AI': { bg: 'bg-violet-500', text: 'text-white', accent: '#8b5cf6' },
-      'Aerospace': { bg: 'bg-amber-500', text: 'text-black', accent: '#f59e0b' },
+      'Data': { bg: 'bg-teal-500', text: 'text-white', accent: '#17beb0' },
+      'Engineering': { bg: 'bg-amber-500', text: 'text-black', accent: '#f59e0b' },
+      'Robotics': { bg: 'bg-emerald-500', text: 'text-white', accent: '#10b981' },
+      'IoT': { bg: 'bg-sky-500', text: 'text-white', accent: '#0ea5e9' },
     };
     return styles[category] || { bg: 'bg-gray-500', text: 'text-white', accent: '#6b7280' };
   };
@@ -387,16 +386,6 @@ export default function BlogPost() {
               <p className="text-white/40 text-sm font-['Lato']">Share this article</p>
               <div className="flex gap-3">
                 <a
-                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://www.kryil.com/blog/${post.slug}`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/5 flex items-center justify-center hover:bg-white text-white/50 hover:text-black transition-all"
-                >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                  </svg>
-                </a>
-                <a
                   href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(`https://www.kryil.com/blog/${post.slug}`)}&title=${encodeURIComponent(post.title)}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -461,7 +450,7 @@ export default function BlogPost() {
                       <div className="absolute top-4 left-4">
                         <span
                           className="inline-block px-3 py-1 text-[10px] font-bold uppercase tracking-wider font-['Lato']"
-                          style={{ backgroundColor: postCategoryStyles.accent, color: relatedPost.category === 'Aerospace' ? '#000' : '#fff' }}
+                          style={{ backgroundColor: postCategoryStyles.accent, color: relatedPost.category === 'Engineering' ? '#000' : '#fff' }}
                         >
                           {relatedPost.category}
                         </span>
@@ -502,7 +491,7 @@ export default function BlogPost() {
                   Ready to Innovate?
                 </h2>
                 <p className="text-black/50 font-['Lato'] text-lg max-w-md">
-                  Connect with our experts to discuss your UAV, robotics, or IoT project requirements.
+                  Talk to an engineer about your AI, data platform or automation project.
                 </p>
               </div>
 

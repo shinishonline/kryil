@@ -220,7 +220,7 @@ const sections: Section[] = [
           </li>
           <li className="flex items-start gap-3">
             <span className="text-[#dff140] mt-1">•</span>
-            <span>Email: contact@kryil.com</span>
+            <span>Email: info@kryil.com</span>
           </li>
           <li className="flex items-start gap-3">
             <span className="text-[#dff140] mt-1">•</span>
@@ -281,7 +281,7 @@ const sections: Section[] = [
           <p className="text-white font-semibold">Kryil Infotech Private Limited</p>
           <p className="text-white/70 mt-2">Workflow Ranka Junction, 3rd Floor, 224 KR Puram</p>
           <p className="text-white/70">Bangalore, Karnataka - 560016, India</p>
-          <p className="text-white/70 mt-3">Email: contact@kryil.com</p>
+          <p className="text-white/70 mt-3">Email: info@kryil.com</p>
         </div>
       </div>
     ),

@@ -15,7 +15,7 @@ const benefits = [
   },
   {
     title: 'Reliability',
-    description: '24/7 expert support ensuring your systems run smoothly at all times.',
+    description: 'Named engineers who stay with your system after go-live, with a runbook you own.',
   },
 ];
 
@@ -81,7 +81,7 @@ export default function WhyPartner() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <div className="w-3 h-3 bg-[#25a9e0] transition-colors duration-300" />
+              <div className="w-3 h-3 bg-[#17beb0] transition-colors duration-300" />
               <span className="font-['Lato'] text-[0.7rem] text-black/40 uppercase tracking-[0.3em]">
                 Why Partner With Us
               </span>
@@ -94,7 +94,7 @@ export default function WhyPartner() {
             >
               Built on principles
               <br />
-              <span className="text-[#25a9e0]">that drive success</span>
+              <span className="text-[#17beb0]">that drive success</span>
             </h2>
           </div>
 
@@ -124,7 +124,7 @@ export default function WhyPartner() {
             }}
           >
             <div className="border-t border-black/15 pt-8">
-              <span className="font-['Lato'] text-[3rem] md:text-[4rem] font-bold leading-none text-[#25a9e0]/25">
+              <span className="font-['Lato'] text-[3rem] md:text-[4rem] font-bold leading-none text-[#17beb0]/25">
                 {String(index + 1).padStart(2, '0')}
               </span>
 

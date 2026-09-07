@@ -3,18 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 
 const products = [
   {
-    label: 'Avionix',
-    href: '/products/avionix',
-    description: 'Aircraft design & aerodynamic analysis platform',
-    highlight: 'New',
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M22 2L11 13" />
-        <path d="M22 2l-7 20-4-9-9-4 20-7z" />
-      </svg>
-    ),
-  },
-  {
     label: 'NextDOOH',
     href: '/products/nextdooh',
     description: 'Digital signage & DOOH platform',
@@ -71,7 +59,7 @@ const services = [
     ),
   },
   {
-    label: 'Cybersecurity Services',
+    label: 'Security Engineering',
     href: '/services/cybersecurity',
     description: 'Threat protection & compliance',
     icon: (
@@ -118,8 +106,8 @@ export default function Header() {
   const productsTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const location = useLocation();
 
-  // Check if we're on a dark background page (defense page, services pages, or products pages)
-  const isDarkBgPage = location.pathname === '/defense' || location.pathname.startsWith('/services/') || location.pathname.startsWith('/products/');
+  // Check if we're on a dark background page (services pages or products pages)
+  const isDarkBgPage = location.pathname.startsWith('/services/') || location.pathname.startsWith('/products/');
   // Use light text (white) on dark pages when not scrolled
   const useLightText = isDarkBgPage && !isScrolled && !isServicesOpen && !isProductsOpen;
 
@@ -181,7 +169,6 @@ export default function Header() {
   };
 
   const navItems = [
-    { label: 'Defense', href: '/defense' },
     { label: 'Blog', href: '/blog' },
     { label: 'News', href: '/news' },
     { label: 'Careers', href: '/careers' },
@@ -425,7 +412,7 @@ export default function Header() {
                   Industries We Serve
                 </h4>
                 <ul className="space-y-2 mb-6">
-                  {['Defense & Aerospace', 'Manufacturing', 'Healthcare', 'Financial Services', 'E-Commerce'].map((industry) => (
+                  {['Manufacturing', 'Healthcare', 'Logistics', 'Financial Services', 'Professional Services'].map((industry) => (
                     <li key={industry} className="flex items-center gap-2">
                       <span className="w-1 h-1 bg-[#dff140] rounded-full"></span>
                       <span className="font-['Lato'] text-[0.8rem] text-black/50">{industry}</span>

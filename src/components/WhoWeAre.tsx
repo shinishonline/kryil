@@ -91,7 +91,8 @@ export default function WhoWeAre() {
 
           {/* Sharp revealed text with gradient mask */}
           <p
-            className="font-['Lato'] text-[clamp(1.2rem,2.5vw,1.75rem)] text-black leading-[2] text-center absolute inset-0 pointer-events-none"
+            aria-hidden="true"
+                  className="font-['Lato'] text-[clamp(1.2rem,2.5vw,1.75rem)] text-black leading-[2] text-center absolute inset-0 pointer-events-none"
             style={{
               opacity: isHovering ? 1 : 0,
               transition: 'opacity 0.4s ease',

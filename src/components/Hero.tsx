@@ -4,152 +4,53 @@ import { Link } from "react-router-dom";
 const slides = [
   {
     id: 1,
-    label: "Defense & Aerospace",
-    title: "Powering",
-    titleLine2: "the Future",
-    highlight: "of Defense",
-    description: "Advanced UAV systems, jet propulsion technology, and cutting-edge aerospace solutions for modern defense requirements.",
-    link: "/defense",
-    linkText: "Explore Defense",
+    label: "Applied AI",
+    title: "Production AI.",
+    titleLine2: "Your data.",
+    highlight: "Your infrastructure.",
+    description: "We build AI systems that run inside your own cloud or on your own hardware \u2014 for enterprises whose operational data cannot leave the building.",
+    link: "/services/aimlservices",
+    linkText: "Explore AI Systems",
   },
   {
     id: 2,
-    label: "Enterprise Solutions",
-    title: "Build What",
-    titleLine2: "",
-    highlight: "Matters",
-    description: "Custom enterprise applications, web platforms, and mobile solutions. Transform your business with scalable, secure software.",
-    link: "/services/enterprise-solutions",
-    linkText: "View Solutions",
+    label: "Data Engineering",
+    title: "The half",
+    titleLine2: "nobody",
+    highlight: "demos",
+    description: "Pipelines, warehouse modelling, quality checks and lineage. If your last AI project stalled, this is usually why.",
+    link: "/services/database",
+    linkText: "Explore Data Platform",
   },
   {
     id: 3,
-    label: "Cybersecurity",
-    title: "Protect What",
-    titleLine2: "",
-    highlight: "Matters Most",
-    description: "Comprehensive security solutions including threat detection, penetration testing, and 24/7 monitoring.",
-    link: "/services/cybersecurity",
-    linkText: "Explore Security",
-  },
-  {
-    id: 4,
-    label: "Professional Services",
-    title: "Expert Solutions",
-    titleLine2: "",
-    highlight: "That Deliver",
-    description: "Strategic consulting, managed services, and expert guidance to optimize operations and drive transformation.",
-    link: "/services/professional-services",
-    linkText: "Our Services",
+    label: "Products",
+    title: "We build our own",
+    titleLine2: "software, so you can",
+    highlight: "inspect the engineering",
+    description: "NextDOOH keeps Android display fleets in sync in under two seconds across unreliable networks. We built it, we run it, and you can see it working.",
+    link: "/products/nextdooh",
+    linkText: "See the products",
   },
 ];
 
 // Animated Icons for each slide
-const DefenseIcon = () => (
+// Animated icon: synchronised displays (NextDOOH), reuses existing animate-* classes
+const ProductsIcon = () => (
   <svg viewBox="0 0 200 200" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-    <style>
-      {`
-        .drone-hover { animation: hover-y 3s ease-in-out infinite; }
-        .prop-fast { animation: spin 0.1s linear infinite; transform-box: fill-box; transform-origin: center; }
-        .prop-counter { animation: spin-rev 0.1s linear infinite; transform-box: fill-box; transform-origin: center; }
-        .blink-light { animation: blink 2s infinite; }
-        
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-        @keyframes spin-rev { 100% { transform: rotate(-360deg); } }
-        @keyframes hover-y {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-8px); }
-        }
-        @keyframes blink {
-          0%, 90%, 100% { opacity: 0.3; }
-          95% { opacity: 1; }
-        }
-      `}
-    </style>
-
-    {/* ================= BACKGROUND GLOW ================= */}
-    {/* No hard-coded black fills here, just soft light */}
-    <defs>
-      <radialGradient id="tech-glow" cx="0.5" cy="0.5" r="0.5">
-        <stop offset="0%" stopColor="#dff140" stopOpacity="0.2" />
-        <stop offset="100%" stopColor="#dff140" stopOpacity="0" />
-      </radialGradient>
-    </defs>
-    <circle cx="100" cy="100" r="60" fill="url(#tech-glow)" />
-
-    <g className="drone-hover">
-      
-      {/* ================= STRUCTURAL ARMS ================= */}
-      {/* Thickened arms to look like hardware, not just lines */}
-      <path 
-        d="M60 60 L100 90 L140 60 M60 140 L100 110 L140 140" 
-        stroke="#dff140" 
-        strokeWidth="4" 
-        strokeLinecap="round" 
-        strokeLinejoin="round"
-        fill="none"
-      />
-
-      {/* ================= FUSELAGE (MAIN BODY) ================= */}
-      {/* Elongated body to fill the Top/Bottom gap */}
-      <rect 
-        x="88" y="75" 
-        width="24" height="50" 
-        rx="8" 
-        fill="#dff140" 
-        fillOpacity="0.15" 
-        stroke="#dff140" 
-        strokeWidth="2" 
-      />
-      
-      {/* Internal Tech Detail (The "Brain") */}
-      <rect x="94" y="85" width="12" height="15" rx="2" fill="#dff140" fillOpacity="0.5" />
-      
-      {/* Front LED Sensor (Blinking) */}
-      <circle cx="100" cy="118" r="3" fill="#dff140" className="blink-light" />
-
-      {/* ================= PROPELLERS ================= */}
-      
-      {/* --- TOP LEFT (CW) --- */}
-      <g transform="translate(60, 60)">
-        {/* Motor Mount */}
-        <circle r="5" fill="#dff140" opacity="0.8"/>
-        {/* Blur Disc */}
-        <circle r="18" fill="#dff140" opacity="0.15" />
-        {/* Blade */}
-        <g className="prop-fast">
-          <rect x="-18" y="-2" width="36" height="4" rx="2" fill="#dff140" />
-        </g>
-      </g>
-
-      {/* --- TOP RIGHT (CCW) --- */}
-      <g transform="translate(140, 60)">
-        <circle r="5" fill="#dff140" opacity="0.8"/>
-        <circle r="18" fill="#dff140" opacity="0.15" />
-        <g className="prop-counter">
-          <rect x="-18" y="-2" width="36" height="4" rx="2" fill="#dff140" />
-        </g>
-      </g>
-
-      {/* --- BOTTOM LEFT (CCW) --- */}
-      <g transform="translate(60, 140)">
-        <circle r="5" fill="#dff140" opacity="0.8"/>
-        <circle r="18" fill="#dff140" opacity="0.15" />
-        <g className="prop-counter">
-          <rect x="-18" y="-2" width="36" height="4" rx="2" fill="#dff140" />
-        </g>
-      </g>
-
-      {/* --- BOTTOM RIGHT (CW) --- */}
-      <g transform="translate(140, 140)">
-        <circle r="5" fill="#dff140" opacity="0.8"/>
-        <circle r="18" fill="#dff140" opacity="0.15" />
-        <g className="prop-fast">
-          <rect x="-18" y="-2" width="36" height="4" rx="2" fill="#dff140" />
-        </g>
-      </g>
-
+    <g className="animate-float">
+      <rect x="62" y="58" width="76" height="52" rx="4" fill="none" stroke="#dff140" strokeWidth="3" />
+      <rect x="72" y="68" width="30" height="32" fill="none" stroke="#dff140" strokeWidth="1.5" className="animate-block-1" />
+      <rect x="108" y="68" width="22" height="14" fill="none" stroke="#dff140" strokeWidth="1.5" className="animate-block-2" />
+      <rect x="108" y="88" width="22" height="12" fill="none" stroke="#dff140" strokeWidth="1.5" className="animate-block-1" />
+      <path d="M100 110 L100 126 M84 126 L116 126" stroke="#dff140" strokeWidth="3" strokeLinecap="round" />
     </g>
+    <rect x="18" y="140" width="46" height="32" rx="3" fill="none" stroke="#dff140" strokeWidth="2" opacity="0.65" />
+    <rect x="136" y="140" width="46" height="32" rx="3" fill="none" stroke="#dff140" strokeWidth="2" opacity="0.65" />
+    <line x1="64" y1="156" x2="136" y2="156" stroke="#dff140" strokeWidth="0.75" opacity="0.35" strokeDasharray="4,4" className="animate-dash-line" />
+    <circle cx="41" cy="156" r="3" fill="#dff140" className="animate-pulse-dot" />
+    <circle cx="159" cy="156" r="3" fill="#dff140" className="animate-pulse-dot-delay" />
+    <circle cx="100" cy="84" r="3" fill="#dff140" className="animate-pulse-glow" />
   </svg>
 );
 
@@ -173,23 +74,6 @@ const DefenseIcon = () => (
     </svg>
   );
   
-  const CybersecurityIcon = () => (
-    <svg viewBox="0 0 200 200" className="w-full h-full">
-      <g className="animate-float">
-        <path d="M100 30 L150 50 L150 100 Q150 140 100 170 Q50 140 50 100 L50 50 Z" fill="none" stroke="#dff140" strokeWidth="2" className="animate-shield" />
-        <rect x="80" y="90" width="40" height="35" rx="3" fill="none" stroke="#dff140" strokeWidth="2" />
-        <path d="M88 90 L88 75 Q88 60 100 60 Q112 60 112 75 L112 90" fill="none" stroke="#dff140" strokeWidth="2" className="animate-lock" />
-        <circle cx="100" cy="105" r="5" fill="#dff140" className="animate-pulse-glow" />
-        <rect x="98" y="108" width="4" height="10" fill="#dff140" />
-      </g>
-      <line x1="30" y1="100" x2="50" y2="100" stroke="#dff140" strokeWidth="1" opacity="0.4" className="animate-scan" />
-      <line x1="150" y1="100" x2="170" y2="100" stroke="#dff140" strokeWidth="1" opacity="0.4" className="animate-scan-delay" />
-      <circle cx="35" cy="70" r="2" fill="#dff140" opacity="0.6" className="animate-particle-1" />
-      <circle cx="165" cy="130" r="2" fill="#dff140" opacity="0.6" className="animate-particle-2" />
-      <circle cx="40" cy="140" r="1.5" fill="#dff140" opacity="0.5" className="animate-particle-3" />
-      <circle cx="160" cy="60" r="1.5" fill="#dff140" opacity="0.5" className="animate-particle-4" />
-    </svg>
-  );
   
   const ProfessionalIcon = () => (
     <svg viewBox="0 0 200 200" className="w-full h-full">
@@ -282,7 +166,7 @@ export default function Hero() {
   <div className="absolute bottom-full left-1/2 -translate-x-1/2 flex justify-center">
     {/* Core Beam */}
     <div
-      className="w-[3px] bg-gradient-to-t from-[#25a9e0] to-transparent blur-[2px]"
+      className="w-[3px] bg-gradient-to-t from-[#17beb0] to-transparent blur-[2px]"
       style={{
         height: `${trailHeight + 10}vh`,
         opacity: 0.9
@@ -311,8 +195,8 @@ export default function Hero() {
 
       <radialGradient id="heroJetEngine" cx="50%" cy="100%" r="80%">
         <stop offset="0%" stopColor="#ffffff" />
-        <stop offset="50%" stopColor="#25a9e0" />
-        <stop offset="100%" stopColor="#25a9e0" stopOpacity="0" />
+        <stop offset="50%" stopColor="#17beb0" />
+        <stop offset="100%" stopColor="#17beb0" stopOpacity="0" />
       </radialGradient>
     </defs>
 
@@ -550,10 +434,9 @@ export default function Hero() {
                   <div className="absolute inset-8 flex items-center justify-center">
                     {slides.map((s, index) => (
                         <div key={s.id} className={`absolute inset-0 transition-all duration-700 ${index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
-                            {index === 0 && <DefenseIcon />}
-                            {index === 1 && <EnterpriseIcon />}
-                            {index === 2 && <CybersecurityIcon />}
-                            {index === 3 && <ProfessionalIcon />}
+                            {index === 0 && <EnterpriseIcon />}
+                            {index === 1 && <ProfessionalIcon />}
+                            {index === 2 && <ProductsIcon />}
                         </div>
                     ))}
                   </div>

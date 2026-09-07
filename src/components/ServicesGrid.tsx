@@ -25,9 +25,9 @@ const services = [
   },
   {
     index: '04',
-    title: 'Cybersecurity',
-    subtitle: 'Services',
-    description: 'Security audits & threat detection',
+    title: 'Security',
+    subtitle: 'Engineering',
+    description: 'Threat modelling, AI security & DPDP readiness',
     link: '/services/cybersecurity',
   },
   {
@@ -93,7 +93,7 @@ export default function ServicesGrid() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <div className="w-3 h-3 bg-[#25a9e0] transition-colors duration-300" />
+              <div className="w-3 h-3 bg-[#17beb0] transition-colors duration-300" />
               <span className="font-['Lato'] text-[0.7rem] text-white/40 uppercase tracking-[0.3em]">
                 Services
               </span>
@@ -115,7 +115,7 @@ export default function ServicesGrid() {
             }`}
           > 
             <p className="font-['Lato'] text-[1.1rem] text-white/50 leading-[1.8] max-w-lg">
-              We craft digital experiences and build technology solutions that transform businesses. Five core services, infinite possibilities.
+              Six capabilities, built around one thing: getting AI and data systems into production inside your own infrastructure.
             </p>
           </div>
         </div>

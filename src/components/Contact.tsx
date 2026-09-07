@@ -3,8 +3,6 @@ import { labelClass, inputClass } from '../styles/formClasses';
 
 const socialLinks = [
   { label: 'LinkedIn', href: 'https://linkedin.com/company/kryil-infotech' },
-  { label: 'X (Twitter)', href: 'https://twitter.com/kryilinfotech' },
-  { label: 'YouTube', href: 'https://youtube.com/@kryilinfotech' },
 ];
 
 const contactDetails = [
@@ -89,7 +87,7 @@ export default function Contact() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <div className="w-3 h-3 bg-[#25a9e0] transition-colors duration-300" />
+              <div className="w-3 h-3 bg-[#17beb0] transition-colors duration-300" />
               <span className="font-['Lato'] text-[0.7rem] text-black/40 uppercase tracking-[0.3em]">
                 Contact Us
               </span>
@@ -102,7 +100,7 @@ export default function Contact() {
             >
               Let's start a
               <br />
-              <span className="text-[#25a9e0]">conversation</span>
+              <span className="text-[#17beb0]">conversation</span>
             </h2>
           </div>
 
@@ -130,7 +128,7 @@ export default function Contact() {
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="contact-name" className={labelClass}>
-                  Your name <span className="text-[#25a9e0]">*</span>
+                  Your name <span className="text-[#17beb0]">*</span>
                 </label>
                 <input
                   id="contact-name"
@@ -147,7 +145,7 @@ export default function Contact() {
 
               <div>
                 <label htmlFor="contact-email" className={labelClass}>
-                  Email address <span className="text-[#25a9e0]">*</span>
+                  Email address <span className="text-[#17beb0]">*</span>
                 </label>
                 <input
                   id="contact-email"
@@ -181,7 +179,7 @@ export default function Contact() {
 
             <div>
               <label htmlFor="contact-message" className={labelClass}>
-                Your message <span className="text-[#25a9e0]">*</span>
+                Your message <span className="text-[#17beb0]">*</span>
               </label>
               <textarea
                 id="contact-message"
@@ -200,7 +198,7 @@ export default function Contact() {
                 type="submit"
                 className="group inline-flex items-center gap-5"
               >
-                <div className="w-14 h-14 bg-[#25a9e0] group-hover:bg-black rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-105">
+                <div className="w-14 h-14 bg-[#17beb0] group-hover:bg-black rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-105">
                   <svg
                     width="18"
                     height="18"
@@ -250,8 +248,8 @@ export default function Contact() {
               {/* Status */}
               <div className="flex items-center gap-3" style={{ marginBottom: '28px' }}>
                 <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25a9e0] opacity-60" />
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#25a9e0]" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#17beb0] opacity-60" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#17beb0]" />
                 </span>
                 <span className="font-['Lato'] text-[0.7rem] text-white/60 uppercase tracking-[0.2em]">
                   We reply within 24 hours
@@ -264,16 +262,16 @@ export default function Contact() {
                   <a
                     key={item.label}
                     href={item.href}
-                    className="k-row-pad group flex items-center gap-5 rounded-xl border border-white/10 bg-white/[0.03] hover:border-[#25a9e0]/50 hover:bg-white/[0.06] transition-all duration-300"
+                    className="k-row-pad group flex items-center gap-5 rounded-xl border border-white/10 bg-white/[0.03] hover:border-[#17beb0]/50 hover:bg-white/[0.06] transition-all duration-300"
                   >
-                    <span className="w-11 h-11 rounded-full bg-[#25a9e0]/15 text-[#25a9e0] flex items-center justify-center flex-shrink-0 group-hover:bg-[#25a9e0] group-hover:text-white transition-colors duration-300">
+                    <span className="w-11 h-11 rounded-full bg-[#17beb0]/15 text-[#17beb0] flex items-center justify-center flex-shrink-0 group-hover:bg-[#17beb0] group-hover:text-white transition-colors duration-300">
                       {item.icon}
                     </span>
                     <span>
                       <span className="block font-['Lato'] text-[0.65rem] text-white/40 uppercase tracking-[0.2em]" style={{ marginBottom: '4px' }}>
                         {item.label}
                       </span>
-                      <span className="block font-['Lato'] text-[1.02rem] text-white group-hover:text-[#25a9e0] transition-colors duration-300">
+                      <span className="block font-['Lato'] text-[1.02rem] text-white group-hover:text-[#17beb0] transition-colors duration-300">
                         {item.value}
                       </span>
                     </span>
@@ -282,7 +280,7 @@ export default function Contact() {
 
                 {/* Location */}
                 <div className="k-row-pad flex items-center gap-5 rounded-xl border border-white/10 bg-white/[0.03]">
-                  <span className="w-11 h-11 rounded-full bg-[#25a9e0]/15 text-[#25a9e0] flex items-center justify-center flex-shrink-0">
+                  <span className="w-11 h-11 rounded-full bg-[#17beb0]/15 text-[#17beb0] flex items-center justify-center flex-shrink-0">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                       <circle cx="12" cy="10" r="3" />
@@ -315,7 +313,7 @@ export default function Contact() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-['Lato'] text-[0.85rem] text-white/70 border border-white/15 rounded-full hover:border-[#25a9e0] hover:text-[#25a9e0] transition-colors duration-300" style={{ padding: '8px 16px' }}
+                      className="font-['Lato'] text-[0.85rem] text-white/70 border border-white/15 rounded-full hover:border-[#17beb0] hover:text-[#17beb0] transition-colors duration-300" style={{ padding: '8px 16px' }}
                     >
                       {social.label}
                     </a>

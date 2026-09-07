@@ -389,8 +389,8 @@ const sections: Section[] = [
             <p>Bangalore, Karnataka - 560016, India</p>
             <p className="mt-4">
               <span className="text-white/50">Email:</span>{' '}
-              <a href="mailto:contact@kryil.com" className="text-white font-medium hover:underline">
-                contact@kryil.com
+              <a href="mailto:info@kryil.com" className="text-white font-medium hover:underline">
+                info@kryil.com
               </a>
             </p>
           </div>

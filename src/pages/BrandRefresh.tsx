@@ -6,7 +6,7 @@ const NEW_LOGO_EFFECTIVE_DATE = '9 July 2026';
 const brandColors = [
   {
     name: 'Kryil Blue',
-    hex: '#25A9E0',
+    hex: '#17beb0',
     role: 'Primary accent — the mark, the dot on the "i", interactive states.',
   },
   {

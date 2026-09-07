@@ -1,17 +1,15 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Careers from './pages/Careers';
-import Defense from './pages/Defense';
 import EnterpriseSolutions from './pages/services/EnterpriseSolutions';
 import ProfessionalServices from './pages/services/ProfessionalServices';
 import Cybersecurity from './pages/services/Cybersecurity';
 import InfrastructureAutomation from './pages/services/InfrastructureAutomation';
 import DatabaseServices from './pages/services/DatabaseServices';
 import AIMLServices from './pages/services/AIMLServices';
-import Avionix from './pages/products/Avionix';
 import NextDOOH from './pages/products/NextDOOH';
 import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 import TermsOfUse from './pages/legal/TermsOfUse';
@@ -34,20 +32,16 @@ interface PageSEO {
 
 const pageSEO: Record<string, PageSEO> = {
   '/': {
-    title: 'KRYIL Infotech | UAV Drone Manufacturer | Robotics & IoT Solutions | Bangalore India',
-    description: 'KRYIL Infotech - Leading UAV Drone Manufacturer & Robotics Company in Bangalore, India. Specializing in UAV Development, Drone Technology, Industrial Robotics, IoT Solutions, Defense Systems, AI/ML, and Autonomous Systems.',
-  },
-  '/defense': {
-    title: 'Defense & Aerospace Technology | UAV Drones | KRYIL Infotech',
-    description: 'Advanced defense and aerospace technology solutions including UAV drones, autonomous systems, military-grade software, and next-generation propulsion systems.',
+    title: 'KRYIL Infotech | Applied AI & Data Engineering | Bangalore, India',
+    description: 'KRYIL Infotech builds production AI systems for Indian enterprises \u2014 deployed inside your own cloud or on your own hardware. Applied AI, data engineering and private LLM deployment from Bangalore.',
   },
   '/careers': {
     title: 'Careers | Join Our Team | KRYIL Infotech',
-    description: 'Join KRYIL Infotech and work on cutting-edge UAV, robotics, and defense technology. Explore career opportunities in Bangalore.',
+    description: 'Join KRYIL Infotech and work on production AI systems, data platforms and our own products. Explore career opportunities in Bangalore.',
   },
   '/blog': {
-    title: 'Blog | Expert Insights on UAV, Aerospace & Technology | KRYIL Infotech',
-    description: 'Read expert insights and articles on UAV technology, aerospace engineering, robotics, IoT, and emerging technologies from KRYIL Infotech.',
+    title: 'Blog | Engineering Notes on Applied AI & Data | KRYIL Infotech',
+    description: 'Technical writing from the KRYIL engineering team on production AI, retrieval systems, private model deployment, data engineering and the things that did not work.',
   },
   '/news': {
     title: 'News & Updates | KRYIL Infotech',
@@ -62,8 +56,8 @@ const pageSEO: Record<string, PageSEO> = {
     description: 'Strategic technology consulting and managed services. Expert consultants to optimize operations and drive business transformation.',
   },
   '/services/cybersecurity': {
-    title: 'Cybersecurity Services | Threat Protection | KRYIL Infotech',
-    description: 'Comprehensive cybersecurity services including penetration testing, vulnerability assessment, SOC services, and compliance consulting.',
+    title: 'Security Engineering | AI Security & DPDP Readiness | KRYIL Infotech',
+    description: 'Threat modelling, secure architecture review, AI security and governance, and DPDP Act readiness. Security designed into the systems we build, not sold as a separate retainer.',
   },
   '/services/automation': {
     title: 'Infrastructure Services & Automation | Cloud & DevOps | KRYIL Infotech',
@@ -76,12 +70,6 @@ const pageSEO: Record<string, PageSEO> = {
   '/services/aimlservices': {
     title: 'AI/ML Services | Artificial Intelligence | KRYIL Infotech',
     description: 'Advanced Artificial Intelligence solutions. Custom AI development, predictive analytics, natural language processing, and intelligent automation.',
-  },
-  '/products/avionix': {
-    title: 'Avionix | Free Aircraft Design & Aerodynamic Analysis Platform | KRYIL Infotech',
-    description: 'Avionix is a free browser-based aircraft design platform with real-time CFD analysis, flight simulation, and 3D visualization. Design fighters, UAVs, and transport aircraft with 58+ templates. No signup required.',
-    keywords: 'aircraft design software, aerodynamic analysis, CFD simulation, flight simulator, aircraft CAD, UAV design, drone design software, aerospace engineering tool, free aircraft design, parametric modeling, stability analysis, 3D aircraft visualization',
-    ogImage: 'https://www.kryil.com/avionix-og.png',
   },
   '/products/nextdooh': {
     title: 'NextDOOH | Digital Signage Platform | Cloud-Based DOOH Solution | KRYIL Infotech',
@@ -144,7 +132,7 @@ function ScrollToHash() {
     const basePath = location.pathname.split('/').slice(0, 3).join('/');
     const seo = pageSEO[location.pathname] || pageSEO[basePath] || {
       title: 'KRYIL Infotech',
-      description: 'KRYIL Infotech - Leading UAV Drone Manufacturer & Robotics Company in Bangalore, India.',
+      description: 'KRYIL Infotech \u2014 applied AI and data engineering for Indian enterprises. Bangalore, India.',
     };
 
     // Set document title
@@ -208,7 +196,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/careers" element={<Careers />} />
-            <Route path="/defense" element={<Defense />} />
+            {/* Retired: defence/UAV positioning removed. Kept as a redirect so existing links and
+                indexed URLs do not 404. src/pages/Defense.tsx is retained but unrouted. */}
+            <Route path="/defense" element={<Navigate to="/" replace />} />
             <Route path="/services/enterprise-solutions" element={<EnterpriseSolutions />} />
             <Route path="/services/professional-services" element={<ProfessionalServices />} />
             <Route path="/services/aimlservices" element={<AIMLServices />} />
@@ -216,7 +206,9 @@ function App() {
             <Route path="/services/automation" element={<InfrastructureAutomation />} />
             <Route path="/services/database" element={<DatabaseServices />} />
             {/* Products */}
-            <Route path="/products/avionix" element={<Avionix />} />
+            {/* Retired: Avionix withdrawn from the public site. Redirect keeps indexed URLs
+                alive; src/pages/products/Avionix.tsx is retained but unrouted. */}
+            <Route path="/products/avionix" element={<Navigate to="/" replace />} />
             <Route path="/products/nextdooh" element={<NextDOOH />} />
             {/* Brand */}
             <Route path="/brand" element={<BrandRefresh />} />

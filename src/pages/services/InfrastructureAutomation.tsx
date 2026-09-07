@@ -13,12 +13,6 @@ export default function InfrastructureAutomation() {
         'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?q=80&w=1400&auto=format&fit=crop',
       ]}
       benefitsImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1400&auto=format&fit=crop"
-      stats={[
-        { value: '99.99%', label: 'Uptime SLA' },
-        { value: '90%', label: 'Faster Deployments' },
-        { value: '200+', label: 'Infra Projects' },
-        { value: '24/7', label: 'Support' },
-      ]}
       features={[
         {
           title: 'Cloud Migration & Management',

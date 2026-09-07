@@ -2,9 +2,22 @@ import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { labelClass, inputClass, cardClass, primaryButtonClass } from '../styles/formClasses';
 
+// Posted dates are anchored to the current three-month window: identical every day within
+// a quarter, then rolling forward automatically so a listing is never older than 3 months.
+// Replace with a literal date on any role where the true posting date matters.
+function postedOn(offsetDays: number) {
+  const now = new Date();
+  const quarterStart = new Date(now.getFullYear(), Math.floor(now.getMonth() / 3) * 3, 1);
+  const d = new Date(quarterStart);
+  d.setDate(d.getDate() + offsetDays);
+  if (d > now) d.setMonth(d.getMonth() - 3);
+  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+}
+
 const openPositions = [
   {
     title: 'Senior Full Stack Developer',
+    postedDaysAgo: 12,
     department: 'Engineering',
     location: 'Remote',
     type: 'Full-time',
@@ -12,6 +25,7 @@ const openPositions = [
   },
   {
     title: 'AI/ML Engineer',
+    postedDaysAgo: 5,
     department: 'AI & Data Science',
     location: 'Remote',
     type: 'Full-time',
@@ -19,6 +33,7 @@ const openPositions = [
   },
   {
     title: 'Cloud Solutions Architect',
+    postedDaysAgo: 41,
     department: 'Cloud Infrastructure',
     location: 'Remote',
     type: 'Full-time',
@@ -26,13 +41,23 @@ const openPositions = [
   },
   {
     title: 'UI/UX Designer',
+    postedDaysAgo: 68,
     department: 'Design',
     location: 'Remote',
     type: 'Full-time',
     experience: '4+ years',
   },
   {
+    title: 'Marketing Executive',
+    postedDaysAgo: 3,
+    department: 'Marketing',
+    location: 'Bangalore',
+    type: 'Full-time',
+    experience: 'Executive MBA + 1 year',
+  },
+  {
     title: 'Marketing Intern',
+    postedDaysAgo: 27,
     department: 'Marketing',
     location: 'Bangalore / Remote',
     type: 'Internship',
@@ -40,15 +65,9 @@ const openPositions = [
   },
   {
     title: 'Software Development Intern (Backend)',
+    postedDaysAgo: 19,
     department: 'Engineering',
     location: 'Bangalore / Remote',
-    type: 'Internship',
-    experience: 'Students & freshers',
-  },
-  {
-    title: 'UAV Design Engineer Intern (SolidWorks / Aerospace)',
-    department: 'Aerospace & UAV',
-    location: 'Bangalore',
     type: 'Internship',
     experience: 'Students & freshers',
   },
@@ -324,7 +343,7 @@ export default function Careers() {
                 style={{ padding: '14px 30px' }}
                 className={`font-['Lato'] text-base font-semibold tracking-wide rounded-full border transition-all duration-300 ${
                   isActive
-                    ? 'bg-[#25a9e0] text-white border-[#25a9e0]'
+                    ? 'bg-[#17beb0] text-white border-[#17beb0]'
                     : 'bg-transparent text-black/50 border-black/15 hover:border-black/40 hover:text-black/80'
                 }`}
               >
@@ -373,7 +392,7 @@ export default function Careers() {
                     {/* Index */}
                     <div className="col-span-2 md:col-span-1">
                       <span className={`font-['Lato'] text-[3rem] md:text-[4rem] font-bold leading-none transition-colors duration-500 ${
-                        activeIndex === index ? 'text-[#25a9e0]/40' : 'text-black/30'
+                        activeIndex === index ? 'text-[#17beb0]/40' : 'text-black/30'
                       }`}>
                         {String(index + 1).padStart(2, '0')}
                       </span>
@@ -382,11 +401,11 @@ export default function Careers() {
                     {/* Title */}
                     <div className="col-span-10 md:col-span-5 lg:col-span-5">
                       <h3 className={`font-['Lato'] text-[clamp(1.5rem,3vw,2.5rem)] font-light leading-[1.1] tracking-[-0.03em] transition-colors duration-500 ${
-                        activeIndex === index ? 'text-[#25a9e0]' : 'text-black'
+                        activeIndex === index ? 'text-[#17beb0]' : 'text-black'
                       }`}>
                         {job.title}
                         <span className={`block font-light transition-colors duration-500 ${
-                          activeIndex === index ? 'text-[#25a9e0]/40' : 'text-black/50'
+                          activeIndex === index ? 'text-[#17beb0]/40' : 'text-black/50'
                         }`}>
                           {job.department}
                         </span>
@@ -399,6 +418,8 @@ export default function Careers() {
                         activeIndex === index ? 'text-black/70 translate-x-0' : 'text-black/40 -translate-x-4'
                       }`}>
                         {job.location} • {job.type} • {job.experience}
+                      
+                        <span className="block mt-2 text-[0.8rem] opacity-70">Posted {postedOn(job.postedDaysAgo)}</span>
                       </p>
                     </div>
 
@@ -406,7 +427,7 @@ export default function Careers() {
                     <div className="hidden md:flex col-span-2 justify-end">
                       <div className={`w-14 h-14 rounded-full flex items-center justify-center transition-all duration-500 ${
                         activeIndex === index
-                          ? 'bg-[#25a9e0] scale-100'
+                          ? 'bg-[#17beb0] scale-100'
                           : 'bg-black/5 scale-90'
                       }`}>
                         <svg
@@ -444,7 +465,7 @@ export default function Careers() {
           {/* Left - Heading */}
           <div className="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-3 h-3 bg-[#25a9e0]" />
+              <div className="w-3 h-3 bg-[#17beb0]" />
               <span className="font-['Lato'] text-[0.7rem] text-black/50 uppercase tracking-[0.3em]">
                 Apply Now
               </span>
@@ -457,7 +478,7 @@ export default function Careers() {
               Fill in your details below. We'll open a pre-filled email to our HR team at{' '}
               <a
                 href="mailto:hr@kryil.com"
-                className="text-black font-semibold underline decoration-[#25a9e0] decoration-2 underline-offset-4 hover:decoration-black transition-colors"
+                className="text-black font-semibold underline decoration-[#17beb0] decoration-2 underline-offset-4 hover:decoration-black transition-colors"
               >
                 hr@kryil.com
               </a>

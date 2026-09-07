@@ -13,12 +13,6 @@ export default function ProfessionalServices() {
         '/group2.jpg',
       ]}
       benefitsImage="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1400&auto=format&fit=crop"
-      stats={[
-        { value: '150+', label: 'Expert Consultants' },
-        { value: '300+', label: 'Projects Delivered' },
-        { value: '98%', label: 'Client Retention' },
-        { value: '20+', label: 'Industries Served' },
-      ]}
       features={[
         {
           title: 'Consulting Services',

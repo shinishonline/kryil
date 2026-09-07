@@ -14,12 +14,6 @@ export default function DatabaseServices() {
         'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1400&auto=format&fit=crop',
       ]}
       benefitsImage="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1400&auto=format&fit=crop"
-      stats={[
-        { value: '99.99%', label: 'Uptime SLA' },
-        { value: '500+', label: 'Databases Managed' },
-        { value: '24/7', label: 'DBA Support' },
-        { value: '10TB+', label: 'Data Processed Daily' },
-      ]}
       features={[
         {
           title: 'Data Warehousing',
@@ -49,7 +43,7 @@ export default function DatabaseServices() {
       ]}
       benefits={[
         'Improved database performance and query optimization',
-        '24/7 monitoring and proactive issue resolution',
+        'Monitoring and alerting configured to your agreed support window',
         'Reduced downtime with high availability solutions',
         'Secure data with encryption and compliance',
         'Cost-effective managed DBA services',

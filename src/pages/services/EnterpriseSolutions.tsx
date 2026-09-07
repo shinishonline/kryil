@@ -13,12 +13,6 @@ export default function EnterpriseSolutions() {
         'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1400&auto=format&fit=crop',
       ]}
       benefitsImage="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1400&auto=format&fit=crop"
-      stats={[
-        { value: '200+', label: 'Enterprise Clients' },
-        { value: '500+', label: 'Applications Built' },
-        { value: '99%', label: 'Client Satisfaction' },
-        { value: '15+', label: 'Years Experience' },
-      ]}
       features={[
         {
           title: 'Enterprise Application Development',
