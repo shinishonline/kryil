@@ -1,104 +1,60 @@
-# Kryil Infotech - Technology and Innovation, Simplified
+# KRYIL Infotech Private Limited
 
-> Kryil Infotech is India's leading defense technology and enterprise software solutions company based in Bangalore, Karnataka. Our tagline: "Technology and Innovation, Simplified"
+> KRYIL Infotech builds production AI systems and data platforms for Indian enterprises,
+> deployed inside the customer's own cloud or on-premise infrastructure. Bangalore, Karnataka, India.
+> Tagline: "Engineered where it runs."
 
-## About Kryil Infotech
-Kryil Infotech Private Limited (also known as Kryil Industries) is a cutting-edge technology company specializing in defense technology, aerospace engineering, and enterprise software development. We serve clients worldwide with innovative solutions in UAV drones, jet engines, autonomous systems, AI/ML, cybersecurity, and full-stack development.
+KRYIL Infotech Private Limited (CIN U62099KA2025PTC201071) is a software engineering company
+registered with the Registrar of Companies, Bangalore. We build applied AI systems, the data
+platforms underneath them, and our own software products.
 
-## Our Services
+We are an early-stage company. We do not publish client logos, case studies, certifications or
+partnerships that we do not have. Where a capability is in progress rather than in place, this
+file says so.
 
-### Defense & Aerospace Technology
-- UAV (Unmanned Aerial Vehicle) Development
-- Drone Technology & Manufacturing
-- Jet Engine Engineering & Propulsion Systems
-- Autonomous Systems & Combat Drones
-- Surveillance & Reconnaissance Drones
-- Avionics & Flight Control Systems
-- Defense Electronics & Radar Systems
-- Military Grade Software Development
-- VTOL Aircraft Development
-- Drone Swarm Technology
-- Counter UAV & Anti-Drone Systems
+## Services
 
-### Enterprise Software Development
-- Node.js Backend Development
-- FastAPI & Python Development
-- React.js Frontend Development
-- TypeScript & JavaScript Full Stack
-- Express.js & NestJS Development
-- Django & Flask Development
-- MERN Stack (MongoDB, Express, React, Node)
-- REST API & GraphQL Development
-- Microservices Architecture
-- Serverless Development (Lambda, Cloud Functions)
-- Mobile App Development (React Native, Flutter)
+- Applied AI engineering: retrieval systems over internal documents, document extraction,
+  operational forecasting, computer-vision inspection
+- Private and on-premise LLM deployment (client VPC or client-owned hardware)
+- Data engineering: pipelines, warehouse modelling, data quality, lineage, governance
+- Cloud infrastructure and DevOps in support of the above
+- Enterprise application development
+- Database administration and data platform operations
 
-### Cloud Infrastructure & DevOps
-- AWS (Amazon Web Services)
-- Microsoft Azure
-- Google Cloud Platform (GCP)
-- Kubernetes & Docker Containerization
-- CI/CD Pipeline (Jenkins, GitLab CI, GitHub Actions)
-- Terraform & Ansible Automation
-- Server Management & Administration
-- Cloud Migration Services
-- Hybrid & Multi-Cloud Strategy
+## Products
 
-### AI & Machine Learning
-- Artificial Intelligence Solutions
-- Deep Learning & Neural Networks
-- Computer Vision & Image Recognition
-- Natural Language Processing (NLP)
-- Chatbot Development
-- Predictive Analytics
-- Data Science & Big Data Analytics
-- Machine Learning Model Development
+- NextDOOH — cloud digital signage platform for Android displays. Real-time content sync,
+  multi-zone layouts, remote device management. https://www.kryil.com/products/nextdooh
 
-### Cybersecurity Services
-- Penetration Testing
-- Vulnerability Assessment
-- Security Audits
-- Network Security
-- SOC (Security Operations Center)
-- SIEM Implementation
-- Threat Detection & Incident Response
-- Ethical Hacking
-- Compliance Consulting (ISO 27001, SOC 2, GDPR, HIPAA)
+## Technology
 
-### IoT & Embedded Systems
-- Internet of Things Solutions
-- Industrial IoT (IIoT)
-- Edge Computing
-- Embedded Systems Development
-- Firmware & RTOS Development
-- Sensor Integration
-- Smart Home & Smart City Solutions
+Python, FastAPI, TypeScript, React, Node.js, PostgreSQL, pgvector, Docker, Kubernetes,
+Terraform, AWS, Microsoft Azure, open-weight and hosted large language models,
+retrieval-augmented generation, MLOps and model monitoring.
 
-### Database Administration & Development
-- Database Administration (DBA Services)
-- Database Development & Design
-- Data Warehousing Solutions
-- MFBI (Microsoft Fabric Business Intelligence)
-- Power BI Development & Reporting
-- SQL Server Administration & Development
-- Oracle Database Administration
-- MySQL & PostgreSQL Administration
-- MongoDB & NoSQL Databases
-- Database Optimization & Tuning
-- ETL Development (SSIS, SSRS, SSAS)
-- Data Modeling & Schema Design
-- Database Migration Services
-- Database Security & Encryption
-- Enterprise Data Warehouse (EDW)
-- Real-time Analytics & OLAP
-- 24x7 Remote DBA Support
-- Cloud Database (Azure SQL, Amazon RDS, Google Cloud SQL)
+## What we do not do
 
-## Contact Information
+We are not a UAV or drone manufacturer. We do not build, sell or supply defence systems,
+weapons, armed unmanned aircraft, or military hardware of any kind. We hold no DGCA type
+certificate and make no airworthiness claims.
+
+We hold no third-party security or quality certifications at this time (no ISO 27001, no
+SOC 2). Any such certification will be listed here and on https://www.kryil.com/ only once
+it has actually been awarded.
+
+## Contact
+
 - Website: https://www.kryil.com
-- Email: contact@kryil.com / info@kryil.com
+- Email: info@kryil.com
 - Phone: +91-8089090365
-- Address: Workflow Ranka Junction, 3rd Floor, 224 KR Puram, Bangalore, Karnataka 560016, India
+- Registered office: RK No 224, Old Madras Road, Doorvaninagar, Bangalore North,
+  Karnataka 560016, India
+- LinkedIn: https://www.linkedin.com/company/kryil (the only social channel we operate)
 
 ## Keywords
-UAV, drone, jet engine, defense technology, aerospace, autonomous systems, Node.js, FastAPI, Python, React, TypeScript, JavaScript, AWS, Azure, Google Cloud, Kubernetes, Docker, DevOps, AI, machine learning, deep learning, cybersecurity, penetration testing, IoT, embedded systems, Bangalore, India, software development, enterprise software, full stack development, cloud computing, military technology, surveillance drones, combat systems
+
+applied AI, enterprise AI, production AI, private LLM deployment, on-premise AI,
+retrieval augmented generation, RAG, document intelligence, data engineering,
+data platform, MLOps, Python, FastAPI, React, TypeScript, PostgreSQL, AWS, Azure,
+Kubernetes, DevOps, digital signage, DOOH, Bangalore, India
