@@ -371,6 +371,17 @@ const sections: Section[] = [
             <span>Recognition for sustainable practices</span>
           </li>
         </ul>
+        <h3 className="text-white font-semibold mt-6">Data used in this plan</h3>
+        <p className="text-white/70 leading-relaxed">
+          The emissions figures reported here are aggregate operational data and contain no personal
+          data. Where an individual submits a suggestion or takes part in a programme described above,
+          any personal data involved is processed under India&rsquo;s Digital Personal Data Protection
+          Act, 2023, only for administering that programme, and is erased once that purpose is served.
+          Questions or grievances go to our Grievance Officer at{' '}
+          <a href="mailto:grievance@kryil.com" className="text-[#dff140] hover:underline">grievance@kryil.com</a>{' '}
+          &mdash; see our{' '}
+          <Link to="/privacy-policy" className="text-[#dff140] hover:underline">Privacy Policy</Link>.
+        </p>
       </div>
     ),
   },

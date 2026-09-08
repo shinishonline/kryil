@@ -550,27 +550,29 @@ export default function Header() {
         <nav className="flex flex-col px-6 pt-28 pb-12 h-full overflow-y-auto">
           {/* Main Nav Items */}
           <div className="space-y-1">
-            {['Products', 'Services', ...navItems.map(i => i.label)].map((label, index) => (
-              <a
+            {['Products', 'Services', ...navItems.map(i => i.label)].map((label, index) => {
+              // Products/Services are section headings in the mobile menu - the actual lists
+              // render below - so they are spans, not dead anchors that preventDefault().
+              const isHeading = label === 'Services' || label === 'Products';
+              const Tag = (isHeading ? 'span' : 'a') as 'span' | 'a';
+              return (
+              <Tag
                 key={label}
-                href={label === 'Services' || label === 'Products' ? '#' : navItems.find(i => i.label === label)?.href || '#'}
+                {...(isHeading ? {} : { href: navItems.find(i => i.label === label)?.href || '/' })}
                 className={`block py-4 font-['Lato'] text-[2rem] font-bold tracking-[-0.02em] text-white/40 hover:text-white transition-all duration-300 border-b border-white/5`}
                 style={{
                   opacity: isMenuOpen ? 1 : 0,
                   transform: isMenuOpen ? 'translateY(0)' : 'translateY(20px)',
                   transition: `opacity 0.4s ease ${index * 0.05}s, transform 0.4s ease ${index * 0.05}s`,
                 }}
-                onClick={(e) => {
-                  if (label === 'Services' || label === 'Products') {
-                    e.preventDefault();
-                  } else {
-                    setIsMenuOpen(false);
-                  }
+                onClick={() => {
+                  if (!isHeading) setIsMenuOpen(false);
                 }}
               >
                 {label}
-              </a>
-            ))}
+              </Tag>
+              );
+            })}
           </div>
 
           {/* Products List for Mobile */}

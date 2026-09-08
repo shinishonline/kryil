@@ -230,6 +230,37 @@ const sections: Section[] = [
         <p className="text-white/70 leading-relaxed">
           All reports will be investigated thoroughly, and appropriate action will be taken. We will not retaliate against anyone who reports concerns in good faith.
         </p>
+        <h3 className="text-white font-semibold mt-6">How we handle your data when you report</h3>
+        <p className="text-white/70 leading-relaxed">
+          A report may contain personal data about you or others. We process it as a Data Fiduciary
+          under India&rsquo;s Digital Personal Data Protection Act, 2023, solely to investigate the
+          concern and to meet our legal obligations &mdash; never for any other purpose.
+        </p>
+        <ul className="space-y-2 text-white/70">
+          <li className="flex items-start gap-3">
+            <span className="text-[#dff140] mt-1">&bull;</span>
+            <span>Access is restricted to the individuals conducting the investigation</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-[#dff140] mt-1">&bull;</span>
+            <span>You may report anonymously; if you do, we will not attempt to identify you</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-[#dff140] mt-1">&bull;</span>
+            <span>Report data is retained for 36 months after the investigation closes, then erased</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-[#dff140] mt-1">&bull;</span>
+            <span>You may request access, correction or erasure, subject to our duty to preserve investigation records</span>
+          </li>
+        </ul>
+        <p className="text-white/70 leading-relaxed">
+          To exercise those rights or raise a grievance about how we handled your data, contact our
+          Grievance Officer at{' '}
+          <a href="mailto:grievance@kryil.com" className="text-[#dff140] hover:underline">grievance@kryil.com</a>.
+          Full detail is in our{' '}
+          <Link to="/privacy-policy" className="text-[#dff140] hover:underline">Privacy Policy</Link>.
+        </p>
       </div>
     ),
   },
