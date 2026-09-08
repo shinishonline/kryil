@@ -9,28 +9,10 @@
   </url>
 
   <!-- Main Sections -->
-  <url>
-    <loc>https://kryil.com/#services</loc>
-    <lastmod>2026-01-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://kryil.com/#about</loc>
-    <lastmod>2026-01-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://kryil.com/#contact</loc>
-    <lastmod>2026-01-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
 
   <!-- Products -->
   <url>
-    <loc>https://kryil.com/products/nextdooh</loc>
+    <loc>https://kryil.com/products/nextdooh/</loc>
     <lastmod>2026-08-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -38,7 +20,7 @@
 
   <!-- Careers -->
   <url>
-    <loc>https://kryil.com/careers</loc>
+    <loc>https://kryil.com/careers/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -46,14 +28,14 @@
 
   <!-- Blog Main Page -->
   <url>
-    <loc>https://kryil.com/blog</loc>
+    <loc>https://kryil.com/blog/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://kryil.com/news</loc>
+    <loc>https://kryil.com/news/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
@@ -61,19 +43,19 @@
 
   <!-- Service Pages -->
   <url>
-    <loc>https://kryil.com/services/cybersecurity</loc>
+    <loc>https://kryil.com/services/cybersecurity/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kryil.com/services/automation</loc>
+    <loc>https://kryil.com/services/automation/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kryil.com/services/database</loc>
+    <loc>https://kryil.com/services/database/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -81,25 +63,25 @@
 
   <!-- Legal Pages -->
   <url>
-    <loc>https://kryil.com/privacy-policy</loc>
+    <loc>https://kryil.com/privacy-policy/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://kryil.com/terms-of-use</loc>
+    <loc>https://kryil.com/terms-of-use/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://kryil.com/anti-slavery-policy</loc>
+    <loc>https://kryil.com/anti-slavery-policy/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://kryil.com/carbon-reduction-plan</loc>
+    <loc>https://kryil.com/carbon-reduction-plan/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
@@ -107,7 +89,7 @@
 
   <!-- LLMs.txt for AI platforms -->
   <url>
-    <loc>https://kryil.com/brand</loc>
+    <loc>https://kryil.com/brand/</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
@@ -115,73 +97,73 @@
 
   <!-- Blog -->
   <url>
-    <loc>https://kryil.com/blog/fprs-female-fighter-pilot-relief-system-concept</loc>
+    <loc>https://kryil.com/blog/fprs-female-fighter-pilot-relief-system-concept/</loc>
     <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kryil.com/blog/private-llm-inference-cost-india</loc>
+    <loc>https://kryil.com/blog/private-llm-inference-cost-india/</loc>
     <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kryil.com/blog/dpdp-act-requirements-for-ai-systems</loc>
+    <loc>https://kryil.com/blog/dpdp-act-requirements-for-ai-systems/</loc>
     <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kryil.com/blog/pgvector-vs-dedicated-vector-database</loc>
+    <loc>https://kryil.com/blog/pgvector-vs-dedicated-vector-database/</loc>
     <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kryil.com/blog/why-enterprise-ai-pilots-stall</loc>
+    <loc>https://kryil.com/blog/why-enterprise-ai-pilots-stall/</loc>
     <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kryil.com/blog/document-extraction-llm-vs-ocr-rules</loc>
+    <loc>https://kryil.com/blog/document-extraction-llm-vs-ocr-rules/</loc>
     <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kryil.com/blog/industrial-robotics-manufacturing-revolution</loc>
+    <loc>https://kryil.com/blog/industrial-robotics-manufacturing-revolution/</loc>
     <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kryil.com/blog/iot-smart-cities-bangalore</loc>
+    <loc>https://kryil.com/blog/iot-smart-cities-bangalore/</loc>
     <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kryil.com/blog/machine-learning-predictive-maintenance</loc>
+    <loc>https://kryil.com/blog/machine-learning-predictive-maintenance/</loc>
     <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kryil.com/blog/robotic-process-automation-enterprise</loc>
+    <loc>https://kryil.com/blog/robotic-process-automation-enterprise/</loc>
     <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kryil.com/blog/digital-twins-industrial-robotics</loc>
+    <loc>https://kryil.com/blog/digital-twins-industrial-robotics/</loc>
     <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kryil.com/blog/iot-predictive-maintenance-that-works</loc>
+    <loc>https://kryil.com/blog/iot-predictive-maintenance-that-works/</loc>
     <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -189,13 +171,13 @@
 
   <!-- News -->
   <url>
-    <loc>https://kryil.com/news/kryil-infotech-unveils-new-brand-identity</loc>
+    <loc>https://kryil.com/news/kryil-infotech-unveils-new-brand-identity/</loc>
     <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kryil.com/news/nextdooh-crosses-major-deployment-milestone</loc>
+    <loc>https://kryil.com/news/nextdooh-crosses-major-deployment-milestone/</loc>
     <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

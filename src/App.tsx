@@ -146,10 +146,16 @@ function ScrollToHash() {
       updateMetaTag('keywords', seo.keywords);
     }
 
+    // GitHub Pages serves each prerendered route at its trailing-slash URL and 301s the
+    // bare path to it, so the canonical must carry the slash or it points at a redirect.
+    const canonicalPath =
+      location.pathname === '/' ? '/' : location.pathname.replace(/\/?$/, '/');
+    const canonicalUrl = `https://kryil.com${canonicalPath}`;
+
     // Update Open Graph tags
     updateMetaTag('og:title', seo.title, true);
     updateMetaTag('og:description', seo.description, true);
-    updateMetaTag('og:url', `https://kryil.com${location.pathname}`, true);
+    updateMetaTag('og:url', canonicalUrl, true);
     if (seo.ogImage) {
       updateMetaTag('og:image', seo.ogImage, true);
     }
@@ -157,10 +163,10 @@ function ScrollToHash() {
     // Update Twitter tags
     updateMetaTag('twitter:title', seo.title);
     updateMetaTag('twitter:description', seo.description);
-    updateMetaTag('twitter:url', `https://kryil.com${location.pathname}`);
+    updateMetaTag('twitter:url', canonicalUrl);
 
     // Update canonical URL
-    updateCanonical(`https://kryil.com${location.pathname}`);
+    updateCanonical(canonicalUrl);
 
     // Scroll to top on route change
     window.scrollTo(0, 0);
