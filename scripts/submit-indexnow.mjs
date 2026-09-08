@@ -21,19 +21,46 @@ if (urlList.length === 0) {
   process.exit(1);
 }
 
-const res = await fetch("https://api.indexnow.org/indexnow", {
-  method: "POST",
-  headers: { "Content-Type": "application/json; charset=utf-8" },
-  body: JSON.stringify({
-    host: HOST,
-    key: KEY,
-    keyLocation: `https://${HOST}/${KEY}.txt`,
-    urlList,
-  }),
+// Submit to each participating endpoint independently. api.indexnow.org is meant to
+// fan out to all of them, but it is fronted by Bing, so a Bing-side rejection there
+// silently costs us Yandex, Naver and Seznam too. Posting directly to each keeps one
+// engine's authorisation state from blocking the others.
+const ENDPOINTS = [
+  ["Bing",   "https://www.bing.com/indexnow"],
+  ["Yandex", "https://yandex.com/indexnow"],
+  ["Naver",  "https://searchadvisor.naver.com/indexnow"],
+  ["Seznam", "https://search.seznam.cz/indexnow"],
+];
+
+const body = JSON.stringify({
+  host: HOST,
+  key: KEY,
+  keyLocation: `https://${HOST}/${KEY}.txt`,
+  urlList,
 });
 
-console.log(`IndexNow submitted ${urlList.length} URLs → HTTP ${res.status} ${res.statusText}`);
-if (res.status !== 200 && res.status !== 202) {
-  console.error(await res.text());
+let accepted = 0;
+for (const [name, endpoint] of ENDPOINTS) {
+  try {
+    const res = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json; charset=utf-8" },
+      body,
+    });
+    const ok = res.status === 200 || res.status === 202;
+    if (ok) accepted++;
+    const detail = ok ? "" : ` — ${(await res.text()).slice(0, 120)}`;
+    console.log(`  ${ok ? "OK  " : "FAIL"} ${name.padEnd(7)} HTTP ${res.status}${detail}`);
+  } catch (err) {
+    console.log(`  FAIL ${name.padEnd(7)} ${err.message}`);
+  }
+}
+
+console.log(`IndexNow: ${urlList.length} URLs to ${accepted}/${ENDPOINTS.length} endpoints.`);
+
+// Google does not participate in IndexNow; its discovery is sitemap and Search
+// Console driven, so nothing here affects Google either way.
+if (accepted === 0) {
+  console.error("No endpoint accepted the submission.");
   process.exit(1);
 }
