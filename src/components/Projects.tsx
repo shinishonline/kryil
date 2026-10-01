@@ -1,37 +1,48 @@
 import { useEffect, useRef, useState } from 'react';
 
+// Work we have actually delivered. No invented metrics: each entry states the
+// client's sector and where they operate, and links to the live site so the
+// claim is checkable. Replaced four placeholder projects that were never real.
 const projects = [
   {
     id: '01',
-    title: 'Enterprise Cloud Platform',
-    category: 'Cloud Architecture',
-    description: 'Scalable multi-tenant SaaS platform handling 10M+ daily transactions.',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop',
-    stats: { users: '2M+', uptime: '99.99%' },
+    title: 'Cheers Wisdom',
+    category: 'Web platform',
+    description:
+      'Website and front end for a behavioural-AI platform working across healthcare and education, built to carry research claims and study status without overstating them.',
+    image: '/work/cheers-wisdom.png',
+    url: 'https://www.cheerswisdom.com/',
+    stats: { sector: 'Health & education', region: 'India' },
   },
   {
     id: '02',
-    title: 'AI-Powered Analytics',
-    category: 'Machine Learning',
-    description: 'Real-time predictive analytics engine for financial services.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1400&auto=format&fit=crop',
-    stats: { accuracy: '98.5%', processed: '50TB+' },
+    title: 'Abdulwahab Trading',
+    category: 'Corporate website',
+    description:
+      'Corporate website for an industrial supply and engineering business — global sourcing, automation components and refractories — across two Gulf markets.',
+    image: '/work/abdulwahab-trading.png',
+    url: 'http://wahabintl.com/',
+    stats: { sector: 'Industrial supply', region: 'UAE & KSA' },
   },
   {
     id: '03',
-    title: 'Defense Systems Interface',
-    category: 'UI/UX Design',
-    description: 'Mission-critical command and control interface for defense operations.',
-    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1400&auto=format&fit=crop',
-    stats: { response: '<50ms', nodes: '1000+' },
+    title: 'True Star Business Solutions',
+    category: 'Corporate website',
+    description:
+      'Corporate website for a printing, signage and office-supply company, covering a wide product catalogue with enquiry routed straight to the branch.',
+    image: '/work/true-star.png',
+    url: 'https://truestaroman.com/',
+    stats: { sector: 'Printing & signage', region: 'Oman' },
   },
   {
     id: '04',
-    title: 'Distributed Computing Grid',
-    category: 'Infrastructure',
-    description: 'Global edge computing network for IoT data processing.',
-    image: 'https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2032&auto=format&fit=crop',
-    stats: { regions: '24', latency: '<10ms' },
+    title: 'NextDOOH',
+    category: 'Our own product',
+    description:
+      'Our cloud digital-signage platform: publish once from a web dashboard and every paired screen picks it up, across Android TV, Tizen, webOS and browser players.',
+    image: '/work/nextdooh.png',
+    url: '/products/nextdooh',
+    stats: { sector: 'Digital signage', region: 'Multi-platform' },
   },
 ];
 
@@ -94,8 +105,8 @@ export default function Projects() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              A selection of projects that showcase our expertise in building
-              complex, high-performance systems.
+              Sites and systems we have built and shipped, plus the product we
+              run ourselves. Every one is live — follow the link and judge it.
             </p>
           </div>
         </div>
@@ -103,8 +114,13 @@ export default function Projects() {
         {/* Projects grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {projects.map((project, index) => (
-            <div
+            <a
               key={project.id}
+              href={project.url}
+              {...(project.url.startsWith('http')
+                ? { target: '_blank', rel: 'noopener noreferrer' }
+                : {})}
+              aria-label={`${project.title} — ${project.category}`}
               className={`group relative overflow-hidden transition-all duration-700 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
@@ -177,7 +193,7 @@ export default function Projects() {
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 
@@ -188,10 +204,10 @@ export default function Projects() {
           }`}
         >
           <a
-            href="#"
+            href="/#contact"
             className="inline-flex items-center gap-3 border border-white/20 text-white font-['Lato'] text-[0.85rem] font-bold uppercase tracking-[0.05em] px-10 py-5 rounded-full hover:border-[#dff140] hover:text-[#dff140] transition-all duration-300"
           >
-            <span>View All Projects</span>
+            <span>Talk to us about yours</span>
             <svg
               width="14"
               height="14"
