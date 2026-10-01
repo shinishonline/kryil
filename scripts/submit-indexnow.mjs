@@ -9,11 +9,19 @@
 // The key is published at https://kryil.com/<key>.txt (via public/, copied
 // into dist/ by the Vite build), which is how IndexNow verifies ownership.
 
+import { readFileSync } from "node:fs";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+
 const HOST = "kryil.com";
 const KEY = "060e564583ecf47ffc26b5d70ff2c8a1";
-const SITEMAP = `https://${HOST}/sitemap.xml`;
 
-const xml = await fetch(SITEMAP).then((r) => r.text());
+// Read the sitemap we just built, not the live one. `npm run deploy` runs this
+// immediately after gh-pages publishes, and GitHub Pages has not served the new
+// file by then — fetching the URL submitted the *previous* deploy's URL set, so
+// pages added in this build were never announced (27 URLs instead of 30).
+const DIST = join(dirname(fileURLToPath(import.meta.url)), "..", "dist");
+const xml = readFileSync(join(DIST, "sitemap.xml"), "utf8");
 const urlList = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
 
 if (urlList.length === 0) {
