@@ -399,10 +399,19 @@ export default function Hero() {
                         </div>
                         <div className="h-[1px] w-16 bg-gradient-to-r from-[#dff140]/50 to-transparent" />
                       </div>
-                      <h1 className="font-['Lato'] text-[clamp(2.8rem,8vw,6rem)] font-black leading-[0.95] tracking-[-0.03em] text-white mb-8">
-                        <span className="block">{s.title} {s.titleLine2}</span>
-                        <span className="text-[#dff140]">{s.highlight}</span>
-                      </h1>
+                      {/* Every slide is in the DOM at once and only toggled by
+                          opacity, so one <h1> per slide gave the home page three.
+                          The first slide carries the page's single h1; the rest
+                          are h2 with identical styling. */}
+                      {(() => {
+                        const Heading = index === 0 ? 'h1' : 'h2';
+                        return (
+                          <Heading className="font-['Lato'] text-[clamp(2.8rem,8vw,6rem)] font-black leading-[0.95] tracking-[-0.03em] text-white mb-8">
+                            <span className="block">{s.title} {s.titleLine2}</span>
+                            <span className="text-[#dff140]">{s.highlight}</span>
+                          </Heading>
+                        );
+                      })()}
                       <p className="font-['Lato'] text-[1.05rem] md:text-[1.15rem] leading-[1.8] text-white/50 max-w-lg mb-10">{s.description}</p>
                       <div className="flex flex-wrap items-center gap-4">
                         <Link to={s.link} className="group relative inline-flex items-center gap-3 bg-[#dff140] text-[#0a0a0a] font-['Lato'] text-[0.8rem] font-bold uppercase tracking-[0.15em] px-8 py-4 overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(223,241,64,0.3)]">

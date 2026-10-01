@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { getNewsArticleBySlug, getRecentNews } from '../data/newsArticles';
+import { setArticleMeta } from '../lib/meta';
 
 export default function NewsArticle() {
   const { slug } = useParams<{ slug: string }>();
@@ -47,6 +48,12 @@ export default function NewsArticle() {
   useEffect(() => {
     if (article) {
       document.title = `${article.title} | KRYIL Infotech News`;
+      setArticleMeta({
+        title: article.title,
+        excerpt: article.excerpt,
+        image: article.image,
+        url: `https://kryil.com/news/${article.slug}`,
+      });
 
       // Add NewsArticle schema for SEO
       const existingSchema = document.querySelector('script[data-schema="news-article"]');

@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { getBlogPostBySlug, getRecentPosts } from '../data/blogPosts';
+import { setArticleMeta } from '../lib/meta';
 
 const SERVICE_FOR_CATEGORY: Record<string, { href: string; label: string; blurb: string }> = {
   AI: {
@@ -74,6 +75,13 @@ export default function BlogPost() {
   useEffect(() => {
     if (post) {
       document.title = `${post.title} | KRYIL Infotech Blog`;
+
+      setArticleMeta({
+        title: post.title,
+        excerpt: post.excerpt,
+        image: post.image,
+        url: `https://kryil.com/blog/${post.slug}`,
+      });
 
       // Add Article schema for SEO
       const existingSchema = document.querySelector('script[data-schema="article"]');

@@ -123,7 +123,7 @@ export default function About() {
             >
               About Kryil Infotech
             </span>
-            <h1
+            <h2
               className={`heading-display text-white transition-all duration-1000 delay-200 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
@@ -132,7 +132,7 @@ export default function About() {
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#dff140] to-[#a8c928]">
                 Digital Excellence
               </span>
-            </h1>
+            </h2>
           </div>
         </div>
 
