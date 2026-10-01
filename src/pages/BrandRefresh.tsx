@@ -98,7 +98,7 @@ export default function BrandRefresh() {
             <div className="bg-white/5 border border-white/10 rounded-lg overflow-hidden">
               <div className="h-56 flex items-center justify-center px-10 bg-black/40">
                 <img
-                  src="/logo_white.png"
+                  src="/brand/Kryil-Logo-Retired-White.png"
                   alt="Previous KRYIL Infotech logo, retired 8 July 2026"
                   className="max-h-16 w-auto opacity-40 grayscale"
                 />

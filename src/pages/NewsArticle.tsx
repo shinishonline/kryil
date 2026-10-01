@@ -70,7 +70,7 @@ export default function NewsArticle() {
           "name": "KRYIL Infotech",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://kryil.com/logo.png"
+            "url": "https://kryil.com/brand/Kryil-Logo-Full-Color.png"
           }
         },
         "datePublished": article.date,
