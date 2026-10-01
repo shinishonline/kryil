@@ -3,9 +3,9 @@ import ServicePageLayout from '../../components/ServicePageLayout';
 export default function AIMLServices() {
   return (
     <ServicePageLayout
-      title="Artificial Intelligence"
-      subtitle="Generative AI, RAG & Intelligent AI Solutions"
-      description="Leverage next-generation Artificial Intelligence solutions including Generative AI, Retrieval-Augmented Generation (RAG), and Machine Learning to automate workflows, enhance decision-making, and build intelligent, future-ready products."
+      title="Applied AI & Private LLM Deployment"
+      subtitle="Retrieval, document extraction and private models — in your VPC or on your hardware"
+      description="We build retrieval systems over your internal documents, extraction pipelines that read the forms your business actually runs on, and the private model deployments that keep both inside your own boundary — in your VPC or on hardware you own. Where a capability is still in progress, we say so."
       image="/aihero1.jpg"
       galleryImages={[
                 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop',

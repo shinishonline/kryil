@@ -47,6 +47,53 @@ const ROUTES = [
   ...slugsFrom("newsArticles.ts", "/news"),
 ];
 
+// ---- sitemap ----------------------------------------------------------------
+// Built from the same ROUTES the prerenderer walks, because the hand-written
+// public/sitemap.xml drifted: it omitted the three /services pages that carry
+// the most commercial intent and left 11 entries on a January lastmod.
+const SITE = "https://kryil.com";
+
+function priorityFor(route) {
+  if (route === "/") return "1.0";
+  if (route.startsWith("/services/") || route.startsWith("/products/")) return "0.9";
+  if (route === "/blog" || route === "/news") return "0.8";
+  if (route.startsWith("/blog/") || route.startsWith("/news/")) return "0.7";
+  return "0.5";
+}
+
+function changefreqFor(route) {
+  if (route === "/" || route === "/blog" || route === "/news") return "weekly";
+  if (route.startsWith("/blog/") || route.startsWith("/news/")) return "yearly";
+  return "monthly";
+}
+
+// Posts carry their own publication date; everything else is dated by this build.
+function lastmodFor(route) {
+  const m = route.match(/^\/(blog|news)\/(.+)$/);
+  if (m) {
+    const file = m[1] === "blog" ? "blogPosts.ts" : "newsArticles.ts";
+    const src = readFileSync(join(ROOT, "src/data", file), "utf8");
+    const entry = src.split(/slug:\s*['"]/).find((chunk) => chunk.startsWith(m[2]));
+    const date = entry?.match(/date:\s*['"](\d{4}-\d{2}-\d{2})['"]/)?.[1];
+    if (date) return date;
+  }
+  return new Date().toISOString().slice(0, 10);
+}
+
+function writeSitemap() {
+  const urls = ROUTES.map((route) => {
+    const loc = route === "/" ? `${SITE}/` : `${SITE}${route}/`;
+    return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmodFor(route)}</lastmod>\n`
+      + `    <changefreq>${changefreqFor(route)}</changefreq>\n`
+      + `    <priority>${priorityFor(route)}</priority>\n  </url>`;
+  }).join("\n");
+  writeFileSync(
+    join(DIST, "sitemap.xml"),
+    `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`
+  );
+  console.log(`Wrote sitemap.xml with ${ROUTES.length} URLs.`);
+}
+
 // ---- a tiny static server with SPA fallback (so BrowserRouter routes load) ---
 const MIME = {
   ".html": "text/html", ".js": "text/javascript", ".css": "text/css",
@@ -118,6 +165,8 @@ async function main() {
 
   // 404.html = the app shell, so genuinely-unknown routes still boot the SPA
   writeFileSync(join(DIST, "404.html"), readFileSync(join(DIST, "index.html")));
+
+  writeSitemap();
 
   await browser.close();
   server.close();

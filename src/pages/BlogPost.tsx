@@ -2,6 +2,34 @@ import { useEffect, useState, useRef, useCallback } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { getBlogPostBySlug, getRecentPosts } from '../data/blogPosts';
 
+const SERVICE_FOR_CATEGORY: Record<string, { href: string; label: string; blurb: string }> = {
+  AI: {
+    href: '/services/aimlservices',
+    label: 'Applied AI & private LLM deployment',
+    blurb: 'Retrieval over your own documents, extraction pipelines, and models that stay inside your boundary.',
+  },
+  Data: {
+    href: '/services/database',
+    label: 'Data engineering & database services',
+    blurb: 'Pipelines, warehouse modelling, quality and lineage — the layer production AI depends on.',
+  },
+  Engineering: {
+    href: '/services/enterprise-solutions',
+    label: 'Enterprise application development',
+    blurb: 'Systems built and run by the team that designed them.',
+  },
+  IoT: {
+    href: '/services/automation',
+    label: 'Infrastructure automation & cloud DevOps',
+    blurb: 'Cloud, CI/CD and the operational plumbing behind connected deployments.',
+  },
+  Robotics: {
+    href: '/services/automation',
+    label: 'Infrastructure automation & cloud DevOps',
+    blurb: 'Cloud, CI/CD and the operational plumbing behind connected deployments.',
+  },
+};
+
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getBlogPostBySlug(slug) : undefined;
@@ -364,6 +392,26 @@ export default function BlogPost() {
               prose-a:text-[#dff140] prose-a:no-underline hover:prose-a:underline`}
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
+
+          {/* Related service — the posts carry the topical weight but linked to
+              nothing, so no article passed relevance to a commercial page.
+              Keyed off the existing category so new posts are covered too. */}
+          {SERVICE_FOR_CATEGORY[post.category] && (
+            <div className="mt-16 p-8 border border-white/10 bg-white/[0.03]">
+              <p className="text-white/40 text-sm font-['Lato'] uppercase tracking-widest mb-3">
+                Related service
+              </p>
+              <Link
+                to={SERVICE_FOR_CATEGORY[post.category].href}
+                className="text-[#dff140] font-['Lato'] text-xl font-bold hover:underline"
+              >
+                {SERVICE_FOR_CATEGORY[post.category].label}
+              </Link>
+              <p className="text-white/50 text-sm font-['Lato'] mt-2 leading-relaxed">
+                {SERVICE_FOR_CATEGORY[post.category].blurb}
+              </p>
+            </div>
+          )}
 
           {/* Tags Section */}
           <div className="mt-16 pt-8 border-t border-white/10">

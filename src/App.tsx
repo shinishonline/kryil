@@ -48,12 +48,12 @@ const pageSEO: Record<string, PageSEO> = {
     description: 'Latest news and updates from KRYIL Infotech - announcements, achievements, and industry insights.',
   },
   '/services/enterprise-solutions': {
-    title: 'Enterprise Software Development | KRYIL Infotech',
-    description: 'Custom enterprise application development services. Build scalable, secure solutions that transform your business operations.',
+    title: 'Enterprise Application Development | KRYIL Infotech',
+    description: 'Custom enterprise applications built and run by the team that designs them — API and service architecture, integration with the systems you already run, and the data model underneath. Deployed in your cloud or ours.',
   },
   '/services/professional-services': {
-    title: 'Professional Services & Consulting | KRYIL Infotech',
-    description: 'Strategic technology consulting and managed services. Expert consultants to optimize operations and drive business transformation.',
+    title: 'Engineering Consulting & Managed Services | KRYIL Infotech',
+    description: 'Hands-on engineering help rather than slideware: architecture review, build-and-handover, and ongoing operation of the AI, data and cloud systems we deliver.',
   },
   '/services/cybersecurity': {
     title: 'Security Engineering | AI Security & DPDP | KRYIL Infotech',
@@ -64,12 +64,14 @@ const pageSEO: Record<string, PageSEO> = {
     description: 'Comprehensive infrastructure services and automation. Cloud migration, network architecture, CI/CD pipelines, Kubernetes, and Infrastructure as Code.',
   },
   '/services/database': {
-    title: 'Database Administration & Development | KRYIL Infotech',
-    description: 'Professional database administration services. SQL Server, Oracle, PostgreSQL, MongoDB, and data warehouse solutions.',
+    title: 'Data Engineering & Database Services | KRYIL Infotech',
+    description: 'The data layer underneath production AI: pipelines, warehouse modelling, data quality, lineage and governance, plus day-to-day administration of PostgreSQL, SQL Server, Oracle and MongoDB.',
+    keywords: 'data engineering services India, data pipelines, warehouse modelling, data quality, data lineage, database administration, PostgreSQL, pgvector',
   },
   '/services/aimlservices': {
-    title: 'AI/ML Services | Artificial Intelligence | KRYIL Infotech',
-    description: 'Advanced Artificial Intelligence solutions. Custom AI development, predictive analytics, natural language processing, and intelligent automation.',
+    title: 'Private LLM Deployment & Applied AI | KRYIL Infotech',
+    description: 'Applied AI engineering deployed inside your own cloud or on your own hardware: private and on-premise LLM deployment, retrieval over internal documents, document extraction, and computer-vision inspection. Built for DPDP-era data boundaries.',
+    keywords: 'private LLM deployment, on-premise LLM, LLM in VPC, self-hosted LLM India, RAG retrieval system, document extraction, applied AI engineering, DPDP compliant AI',
   },
   '/products/nextdooh': {
     title: 'NextDOOH — Cloud Digital Signage | KRYIL Infotech',
