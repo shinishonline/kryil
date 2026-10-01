@@ -7,6 +7,6 @@ Sitemap: https://kryil.com/sitemap.xml
 # LLMs.txt for AI platforms: https://kryil.com/llms.txt
 # Learn more at https://llmstxt.org/
 
-# Kryil Infotech - Defense Technology & Enterprise Software
-# UAV, Drones, Jet Engines, Node.js, FastAPI, React, AI, Cybersecurity
+# Kryil Infotech - Applied AI & Data Engineering
+# Private LLM deployment, retrieval systems, document extraction, data platforms
 # Bangalore, India | Serving Worldwide
