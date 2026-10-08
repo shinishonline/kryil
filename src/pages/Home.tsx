@@ -4,7 +4,6 @@ import WhoWeAre from '../components/WhoWeAre';
 import Mission from '../components/Mission';
 import WhyPartner from '../components/WhyPartner';
 import ServicesGrid from '../components/ServicesGrid';
-import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
       <Mission />
       <WhyPartner />
       <ServicesGrid />
-      <Projects />
       <Contact />
     </>
   );
