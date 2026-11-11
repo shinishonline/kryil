@@ -14,6 +14,27 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'trace-first-slow-api',
+    slug: 'trace-a-slow-api-request',
+    title: 'How to Trace a Slow API Request Across Services',
+    excerpt: 'Follow a slow API request from the gateway to its dependencies, measure where it waits, and verify the fix against user-visible latency.',
+    content: `<p>An order status endpoint takes two seconds, but the application log reports only 40 milliseconds of handler work. Before increasing timeouts or adding capacity, follow one slow request across the services it actually used.</p>
+<h2>Start with the request the user sees</h2>
+<p>Record end-to-end latency by route and outcome. Compare a normal request with one from the slow tail, such as the 95th percentile. Keep failed requests separate so that fast failures do not make successful requests look faster. <a href="https://sre.google/sre-book/monitoring-distributed-systems/">Google’s SRE guide to monitoring</a> explains why latency, traffic, errors and saturation provide complementary views of a system.</p>
+<h2>Find the wait in the trace</h2>
+<p>In <a href="https://opentelemetry.io/docs/concepts/signals/traces/">OpenTelemetry</a>, a trace follows a request through a set of spans. Instrument the gateway, handler and outbound calls first. If the handler takes two seconds but the database query takes 30 milliseconds, add a span around connection acquisition to distinguish waiting for the pool from executing the query. Compare parent and child timings on the timeline. Parallel calls can overlap, so summing every span can overstate the time the user waited.</p>
+<p>Use route templates and operation names to group traces. Keep customer identifiers, authorization headers and request bodies out of telemetry unless their collection is explicitly governed. A route and a trace ID are usually enough to start the investigation.</p>
+<h2>Verify a change with comparable traffic</h2>
+<p>Write down the hypothesis before changing configuration. If pool wait dominates, check connection usage and database saturation before raising the pool limit. A bigger pool can move the queue to the database. Reproduce the same traffic shape after the change and compare end-to-end latency, error rates and saturation. Keep the change only if the user-facing metric improves without creating a new bottleneck.</p>
+<p>Start with one route, one slow trace and one measurable hypothesis. That gives the team a test it can repeat when the next latency regression appears.</p>`,
+    category: 'Engineering',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1400&auto=format&fit=crop',
+    author: 'KRYIL Engineering',
+    date: '2026-11-11',
+    readTime: '3 min read',
+    tags: ['Observability', 'OpenTelemetry', 'API Performance'],
+  },
+  {
     id: 'fprs-fem-7',
     slug: 'fprs-female-fighter-pilot-relief-system-concept',
     title: 'Designing a Relief System for Female Fast-Jet Aircrew: An Engineering Concept',
@@ -175,19 +196,6 @@ export const blogPosts: BlogPost[] = [
     tags: ['Machine Learning', 'Predictive Maintenance', 'Aviation', 'AI', 'MRO'],
   },
   {
-    id: '28',
-    slug: 'robotic-process-automation-enterprise',
-    title: 'Implementing RPA: A Complete Enterprise Guide',
-    excerpt: 'Step-by-step guide to implementing Robotic Process Automation.',
-    content: `<p>RPA uses software robots to automate repetitive business processes.</p><h2>Steps</h2><ol><li>Process Assessment</li><li>Platform Selection</li><li>Pilot Project</li><li>Deployment</li><li>Scale</li></ol><h2>ROI</h2><p>40-75% reduction in processing time typically achieved.</p>`,
-    category: 'Robotics',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1400&auto=format&fit=crop',
-    author: 'Enterprise Solutions Team',
-    date: '2025-11-10',
-    readTime: '9 min read',
-    tags: ['RPA', 'Automation', 'Enterprise', 'Digital Transformation'],
-  },
-  {
     id: '44',
     slug: 'digital-twins-industrial-robotics',
     title: 'Digital Twins in Industrial Robotics',
@@ -215,8 +223,26 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
+// Archived articles stay routable and in the sitemap at their original URLs.
+const archivedBlogPosts: BlogPost[] = [
+  {
+    id: '28',
+    slug: 'robotic-process-automation-enterprise',
+    title: 'Implementing RPA: A Complete Enterprise Guide',
+    excerpt: 'Step-by-step guide to implementing Robotic Process Automation.',
+    content: `<p>RPA uses software robots to automate repetitive business processes.</p><h2>Steps</h2><ol><li>Process Assessment</li><li>Platform Selection</li><li>Pilot Project</li><li>Deployment</li><li>Scale</li></ol><h2>ROI</h2><p>40-75% reduction in processing time typically achieved.</p>`,
+    category: 'Robotics',
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1400&auto=format&fit=crop',
+    author: 'Enterprise Solutions Team',
+    date: '2025-11-10',
+    readTime: '9 min read',
+    tags: ['RPA', 'Automation', 'Enterprise', 'Digital Transformation'],
+  },
+];
+
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
-  return blogPosts.find(post => post.slug === slug);
+  return blogPosts.find(post => post.slug === slug)
+    ?? archivedBlogPosts.find(post => post.slug === slug);
 }
 
 export function getBlogPostsByCategory(category: string): BlogPost[] {
