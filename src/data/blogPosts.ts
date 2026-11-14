@@ -14,6 +14,27 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'digital-menu-board-dayparts',
+    slug: 'test-digital-menu-board-dayparts',
+    title: 'How to Test Digital Menu Board Dayparts Before Rollout',
+    excerpt: 'Pilot a breakfast-to-lunch switch at one restaurant. Check the schedule, compare screen prices with the till, and rehearse a fallback before rollout.',
+    content: `<p>At 11 a.m., the till starts taking lunch orders, but the screen above the counter still shows breakfast. The cashier has to explain which items and prices apply while the queue grows. A one-store pilot can expose that mismatch before a chain rolls out a new menu schedule.</p>
+<h2>Write down the expected switch</h2>
+<p>Start with one store and one transition. For an illustrative 11 a.m. handoff, write down what each screen should show at 10:59 and 11:01 in the store’s local time. Include the playlist name, menu version and prices for a few items that change. Check any separate weekend hours. Give the shift lead a copy so they can verify the screen without opening the publishing dashboard.</p>
+<p><a href="https://kryil.com/products/nextdooh/">NextDOOH supports time-of-day scheduling for playlists</a>. Whichever tool you use, rehearse the change on the intended screen before the first live service.</p>
+<h2>Check the till and the view from the queue</h2>
+<p>Ask the shift lead to compare the screen with the point of sale just before and after the switch. Include one item that becomes unavailable and one whose price changes. Walk to the back of the queue and read the item name and price under normal store lighting. If glare or a busy background makes a price hard to read, simplify the layout and repeat the check. The <a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html">W3C’s guidance on text contrast</a> is a useful starting point for artwork. The in-store check also accounts for glare and viewing distance.</p>
+<h2>Rehearse the fallback before adding stores</h2>
+<p>Decide what staff will do if a screen misses the switch. Keep a current printed menu at the counter and name the person who can remove a stale playlist from rotation. During a quiet period, rehearse the fallback and record who noticed the issue, how long recovery took and what customers would have seen in the meantime.</p>
+<p>Expand after the shift lead can confirm three things: the screens switched at the intended local time, the prices matched the till, and staff could recover from a missed switch. Repeat those checks at the next store before rolling out to the rest.</p>`,
+    category: 'Engineering',
+    image: 'https://kryil.com/work/nextdooh.png',
+    author: 'KRYIL Engineering',
+    date: '2026-11-14',
+    readTime: '3 min read',
+    tags: ['Digital Signage', 'Menu Boards', 'Restaurant Operations'],
+  },
+  {
     id: 'trace-first-slow-api',
     slug: 'trace-a-slow-api-request',
     title: 'How to Trace a Slow API Request Across Services',
