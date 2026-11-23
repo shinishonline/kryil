@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { blogPosts } from '../data/blogPosts';
 import type { BlogPost } from '../data/blogPosts';
 
-const categories = ['All', 'AI', 'Data', 'Engineering', 'IoT', 'Robotics'];
+const categories = ['All', 'AI', 'Aerospace', 'Data', 'Defense', 'Engineering', 'IoT', 'Robotics', 'UAV'];
 
 function useScrollAnimation() {
   const [isVisible, setIsVisible] = useState(false);

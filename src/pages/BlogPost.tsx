@@ -147,6 +147,11 @@ export default function BlogPost() {
       'Engineering': { bg: 'bg-amber-500', text: 'text-black', accent: '#f59e0b' },
       'Robotics': { bg: 'bg-emerald-500', text: 'text-white', accent: '#10b981' },
       'IoT': { bg: 'bg-sky-500', text: 'text-white', accent: '#0ea5e9' },
+      // Aerospace was amber before the 2026-09 repositioning; Engineering holds
+      // amber now, so it takes orange to stay distinguishable from it.
+      'Aerospace': { bg: 'bg-orange-500', text: 'text-black', accent: '#f97316' },
+      'Defense': { bg: 'bg-red-500', text: 'text-white', accent: '#ef4444' },
+      'UAV': { bg: 'bg-blue-500', text: 'text-white', accent: '#3b82f6' },
     };
     return styles[category] || { bg: 'bg-gray-500', text: 'text-white', accent: '#6b7280' };
   };

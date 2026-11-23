@@ -11,6 +11,7 @@ import InfrastructureAutomation from './pages/services/InfrastructureAutomation'
 import DatabaseServices from './pages/services/DatabaseServices';
 import AIMLServices from './pages/services/AIMLServices';
 import NextDOOH from './pages/products/NextDOOH';
+import Defense from './pages/Defense';
 import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 import TermsOfUse from './pages/legal/TermsOfUse';
 import AntiSlaveryPolicy from './pages/legal/AntiSlaveryPolicy';
@@ -204,9 +205,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/careers" element={<Careers />} />
-            {/* Retired: defence/UAV positioning removed. Kept as a redirect so existing links and
-                indexed URLs do not 404. src/pages/Defense.tsx is retained but unrouted. */}
-            <Route path="/defense" element={<Navigate to="/" replace />} />
+            <Route path="/defense" element={<Defense />} />
             <Route path="/services/enterprise-solutions" element={<EnterpriseSolutions />} />
             <Route path="/services/professional-services" element={<ProfessionalServices />} />
             <Route path="/services/aimlservices" element={<AIMLServices />} />
@@ -214,7 +213,7 @@ function App() {
             <Route path="/services/automation" element={<InfrastructureAutomation />} />
             <Route path="/services/database" element={<DatabaseServices />} />
             {/* Products */}
-            {/* Retired: Avionix withdrawn from the public site. Redirect keeps indexed URLs
+            {/* Avionix is not offered as a product. Redirect keeps indexed URLs
                 alive; src/pages/products/Avionix.tsx is retained but unrouted. */}
             <Route path="/products/avionix" element={<Navigate to="/" replace />} />
             <Route path="/products/nextdooh" element={<NextDOOH />} />

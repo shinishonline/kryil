@@ -30,6 +30,7 @@ const STATIC_ROUTES = [
   "/services/enterprise-solutions", "/services/professional-services",
   "/services/aimlservices", "/services/cybersecurity",
   "/services/automation", "/services/database", "/products/nextdooh",
+  "/defense",
   "/blog", "/news",
   "/privacy-policy", "/terms-of-use", "/anti-slavery-policy",
   "/carbon-reduction-plan",

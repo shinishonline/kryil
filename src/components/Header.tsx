@@ -107,7 +107,9 @@ export default function Header() {
   const location = useLocation();
 
   // Check if we're on a dark background page (services pages or products pages)
-  const isDarkBgPage = location.pathname.startsWith('/services/') || location.pathname.startsWith('/products/');
+  // /defense renders on a dark hero, so the header needs light text there too -
+  // omitting it leaves dark-on-dark nav links that are effectively invisible.
+  const isDarkBgPage = location.pathname === '/defense' || location.pathname.startsWith('/services/') || location.pathname.startsWith('/products/');
   // Use light text (white) on dark pages when not scrolled
   const useLightText = isDarkBgPage && !isScrolled && !isServicesOpen && !isProductsOpen;
 
@@ -169,6 +171,7 @@ export default function Header() {
   };
 
   const navItems = [
+    { label: 'Defense', href: '/defense' },
     { label: 'Blog', href: '/blog' },
     { label: 'News', href: '/news' },
     { label: 'Careers', href: '/careers' },
