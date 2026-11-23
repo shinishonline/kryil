@@ -74,7 +74,9 @@ export default function BlogPost() {
 
   useEffect(() => {
     if (post) {
-      document.title = `${post.title} | KRYIL Infotech Blog`;
+      // Short brand suffix: article titles here run long, and " | KRYIL Infotech
+      // Blog" pushed 50 of 53 posts past the ~60 characters Google renders.
+      document.title = `${post.title} | KRYIL`;
 
       setArticleMeta({
         title: post.title,
@@ -98,7 +100,10 @@ export default function BlogPost() {
         "image": post.image,
         "author": {
           "@type": "Person",
-          "name": post.author
+          "name": post.author,
+          // An author needs a resolvable identity or the Person is just a
+          // string with a type on it; /about is where these will live.
+          "url": "https://kryil.com/about"
         },
         "publisher": {
           "@type": "Organization",
@@ -118,11 +123,30 @@ export default function BlogPost() {
         "articleSection": post.category
       });
       document.head.appendChild(schema);
+
+      // BreadcrumbList: tells search and answer engines where this page sits,
+      // and is one of the few schema types still eligible for a rich result.
+      document.querySelector('script[data-schema="breadcrumb"]')?.remove();
+      const crumb = document.createElement('script');
+      crumb.type = 'application/ld+json';
+      crumb.setAttribute('data-schema', 'breadcrumb');
+      crumb.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kryil.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://kryil.com/blog" },
+          { "@type": "ListItem", "position": 3, "name": post.title,
+            "item": `https://kryil.com/blog/${post.slug}` },
+        ],
+      });
+      document.head.appendChild(crumb);
     }
     return () => {
       document.title = 'KRYIL Infotech | Applied AI & Data Engineering | Bangalore, India';
       const schema = document.querySelector('script[data-schema="article"]');
       if (schema) schema.remove();
+      document.querySelector('script[data-schema="breadcrumb"]')?.remove();
     };
   }, [post]);
 

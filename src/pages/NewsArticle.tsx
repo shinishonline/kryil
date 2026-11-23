@@ -47,7 +47,7 @@ export default function NewsArticle() {
 
   useEffect(() => {
     if (article) {
-      document.title = `${article.title} | KRYIL Infotech News`;
+      document.title = `${article.title} | KRYIL`;
       setArticleMeta({
         title: article.title,
         excerpt: article.excerpt,

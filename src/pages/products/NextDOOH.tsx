@@ -236,6 +236,41 @@ export default function NextDOOH() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [sectionTop, setSectionTop] = useState(0);
 
+  // The 11 answers below were already on the page as plain markup. Answer
+  // engines (AI Overviews, Copilot, Perplexity) read FAQPage to lift a direct
+  // answer; SoftwareApplication is what identifies NextDOOH as a product
+  // entity rather than just another marketing page. Note FAQ *rich results*
+  // are limited to government and health sites since 2023 - this is for the
+  // answer engines, not for a SERP snippet.
+  useEffect(() => {
+    const ld = document.createElement('script');
+    ld.type = 'application/ld+json';
+    ld.setAttribute('data-schema', 'nextdooh');
+    ld.textContent = JSON.stringify([
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "NextDOOH",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Android, Android TV, webOS, Tizen, BrightSign, Windows, Linux",
+        "url": "https://kryil.com/products/nextdooh",
+        "publisher": { "@type": "Organization", "name": "Kryil Infotech Private Limited",
+          "url": "https://kryil.com/" },
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqData.map(f => ({
+          "@type": "Question",
+          "name": f.question,
+          "acceptedAnswer": { "@type": "Answer", "text": f.answer },
+        })),
+      },
+    ]);
+    document.head.appendChild(ld);
+    return () => { document.querySelector('script[data-schema="nextdooh"]')?.remove(); };
+  }, []);
+
   useEffect(() => {
     setIsVisible(true);
     window.scrollTo(0, 0);
