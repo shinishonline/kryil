@@ -11,6 +11,7 @@ This is a public navigation summary for assistants and other readers. Consult th
 - [News](https://kryil.com/news): Company announcements.
 - [Blog](https://kryil.com/blog): Engineering articles and explanations. Concept-stage articles are not evidence of a shipped product or tested capability.
 - [Careers](https://kryil.com/careers): Current published opportunities and application instructions; do not infer that an unlisted role is open.
+- [Defense and aviation technology](https://kryil.com/defense): Published defence and unmanned-aerial-systems concept work. Treat the aircraft described there as design concepts, not as products offered for sale, certified platforms or evidence of manufacturing capability. Kryil Infotech is registered as an IT services company.
 
 ## Services
 
